@@ -5,14 +5,15 @@
     <title>Listagem de Bugs | UEDA</title>
 </head>
 <body>
-<?php require("../template/header2.php");?>
+<?php require("../../template/header3.php");?>
     <br><br><br><br><br>
     <center>
       <h1 class="h1_título_topo">COMENTÁRIOS DOS BUGS</h1>
     </center>
     <br>
 <?php
-    include '../include/MySql.php';
+    include '../../include/MySql.php';
+    include "../../include/functions.php";
 
     $sql = $pdo->prepare("SELECT * FROM bug");
 
@@ -29,4 +30,4 @@
         }
     }
 ?>
-<?php require("template/footer2.php");?>
+<?php require("../../template/footer3.php");?>
