@@ -1,5 +1,5 @@
 <head>
-    <title>Reportar Erros | UEDA</title>
+    <title>Sobre | UEDA</title>
 </head>
 <?php require("template/header1.php");?>
     <main>
