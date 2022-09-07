@@ -3,6 +3,7 @@
     registrados ao usuário, tendo a mesma função que as listagens,
     no entanto, NÃO POSSUEM funções como exclusão o alteração dos artigos */
 
+    
     // include "include/MySql.php";
     // include "include/functions.php";
 ?>
