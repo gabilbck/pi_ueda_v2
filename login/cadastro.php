@@ -64,16 +64,16 @@
                 <br>
                 <form action="" method="post">
                     <input name="nome_real_usu" value="<?php echo $nome_real_usu?>" type="text" placeholder="Nome Completo">
-                    <span class="obrigatorio">* <?php  echo $nome_real_usuErr ?></span>
+                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_real_usuErr ?></span>
                     <br><br>
                     <input name="nome_usu" value="<?php  echo $nome_usu?>" type="text" placeholder="Nome de Usuário">
-                    <span class="obrigatorio">* <?php  echo $nome_usuErr ?></span>
+                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_usuErr ?></span>
                     <br><br>
                     <input name="email_usu" value="<?php  echo $email_usu?>" type="email" placeholder="E-mail">
-                    <span class="obrigatorio">* <?php  echo $email_usuErr ?></span>
+                    <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
                     <br><br>
                     <input name="senha_usu" value="<?php  echo $senha_usu?>" type="password" placeholder="Senha">
-                    <span class="obrigatorio">* <?php  echo $email_usuErr ?></span>
+                    <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
                     <br><br>
                     <div class="final-cad">
                         <div class="final-cad-1">

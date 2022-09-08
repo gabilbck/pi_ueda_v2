@@ -54,10 +54,10 @@
                 <h4>Preencha seu E-mail e reporte preenchendo às informações abaixo:</h4>
                 <br>
                 <input name="email_bug" type="email" placeholder="E-mail">
-                <span class="obrigatorio">* <?php $email_bugErr ?></span>
+                <span class="obrigatorio">* <?php echo '<br>'.$email_bugErr ?></span>
                 <br><br>
                 <textarea name="desc_bug" placeholder="Descreva o erro aqui"></textarea> 
-                <span class="obrigatorio">* <?php $desc_bugErr ?></span>
+                <span class="obrigatorio">* <?php echo '<br>'.$desc_bugErr ?></span>
                 <br><br>
                 <button type="submit" name="submit">REPORTAR</button>
             </form>
