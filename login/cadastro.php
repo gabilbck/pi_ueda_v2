@@ -77,7 +77,7 @@
                     <br><br>
                     <div class="final-cad">
                         <div class="final-cad-1">
-                            <a href="entrar.php">Entrar</a>
+                            <a href="login.php">Entrar</a>
                         </div>
                         <div class="final-cad-2">
                             <a href="esqueci_senha.php">Esqueci minha senha</a>
