@@ -7,7 +7,7 @@
     $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
-        if (empty($_POST['nome_usu'])){
+        if (empty ($_POST['nome_usu'])){
             $nome_usuErr = "Nome Completo é obrigatório!";
         } else {
             $nome_usu = test_input($_POST["nome_usu"]);
