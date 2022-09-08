@@ -1,5 +1,8 @@
 <!-- ATENÇÃO!!!!!!!!!!
 Header APENAS para as páginas que ESTÃO DENTRO de pastas! -->
+<?php
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,6 +29,9 @@ Header APENAS para as páginas que ESTÃO DENTRO de pastas! -->
     <a href="../forum.php">Fórum</a>
     <a href="../jogos.php">Jogos</a>
     <a href="../sobre.php">Sobre</a>
+    <?php if($_SESSION['adm']){?>
+        <a class="sair" href="../adm/adm.php">ADM</a>
+    <?php }?>
     <a class="sair" href="../#">Cadastrar-se</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"><img src="../images/hamburguer.png"></i>

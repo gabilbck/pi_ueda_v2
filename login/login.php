@@ -1,5 +1,5 @@
 <?php
-    /*
+
     include "../include/MySql.php";
     include "../include/functions.php";
     
@@ -38,7 +38,7 @@
                 echo '<h6>Email de usuário não cadastrado</h6>';
             }
         }
-    }*/
+    }
 ?>
 <head>
     <title>Login | UEDA</title>
@@ -51,11 +51,11 @@
                 <h1>LOGIN</h1>
                 <br>
                 <form action="" method="post">
-                    <input name="email_usu" value="<?php // echo $email_usu?>" type="email" placeholder="E-mail">
-                    <span class="obrigatorio">* <?php // echo $email_usuErr ?></span>
+                    <input name="email_usu" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
+                    <span class="obrigatorio">* <?php echo $email_usuErr ?></span>
                     <br><br>
-                    <input name="senha_usu" value="<?php // echo $senha_usu?>" type="password" placeholder="Senha">
-                    <span class="obrigatorio">* <?php // echo $email_usuErr ?></span>
+                    <input name="senha_usu" value="<?php echo $senha_usu?>" type="password" placeholder="Senha">
+                    <span class="obrigatorio">* <?php echo $email_usuErr ?></span>
                     <br><br>
                     <div class="final-cad">
                         <div class="final-cad-1">

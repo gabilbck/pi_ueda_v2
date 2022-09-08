@@ -1,8 +1,8 @@
 <?php
-    // include "include/MySql.php";
-    // include "include/functions.php";
+    include "include/MySql.php";
+    include "include/functions.php";
 
-    /*
+    
     $email_bug = $desc_bug = $cod_bug =  "";
     $email_bugErr = $desc_bugErr = $msgErr = "";
 
@@ -33,9 +33,11 @@
         }else {
             $msgErr = "Erro no comando Select";
         }
-        }
-    echo $msgErr; 
-    */   
+    } else{
+        echo $msgErr;
+    }
+ 
+    
 ?>
 <head>
     <title>Reportar Erros | UEDA</title>
@@ -52,8 +54,10 @@
                 <h4>Preencha seu E-mail e reporte preenchendo às informações abaixo:</h4>
                 <br>
                 <input name="email_bug" type="email" placeholder="E-mail">
+                <span class="obrigatorio">* <?php $email_bugErr ?></span>
                 <br><br>
                 <textarea name="desc_bug" placeholder="Descreva o erro aqui"></textarea> 
+                <span class="obrigatorio">* <?php $desc_bugErr ?></span>
                 <br><br>
                 <button type="submit" name="submit">REPORTAR</button>
             </form>

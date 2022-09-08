@@ -4,8 +4,8 @@
     no entanto, NÃO POSSUEM funções como exclusão o alteração dos artigos */
 
     
-    // include "include/MySql.php";
-    // include "include/functions.php";
+    include "include/MySql.php";
+    include "include/functions.php";
 ?>
 <head>
     <title>Artigos | UEDA</title>
