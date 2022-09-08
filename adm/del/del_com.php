@@ -1,6 +1,7 @@
 <?php 
-    // include "../../include/MySql.php";
-    // include "../../include/functions.php";
+    include "../../include/MySql.php";
+    include "../../include/functions.php";
+    session_start();
 ?>
 <head>
     <title>Deletar Comentário do Fórum</title>
