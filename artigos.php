@@ -2,7 +2,7 @@
     /* Deve ser feito o php da página, para que mostre esses artigos
     registrados ao usuário, tendo a mesma função que as listagens,
     no entanto, NÃO POSSUEM funções como exclusão o alteração dos artigos */
-
+    session_start();
     
     include "include/MySql.php";
     include "include/functions.php";

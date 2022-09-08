@@ -1,7 +1,7 @@
 <?php
+    session_start();
     include "include/MySql.php";
     include "include/functions.php";
-
     
     $email_bug = $desc_bug = $cod_bug =  "";
     $email_bugErr = $desc_bugErr = $msgErr = "";

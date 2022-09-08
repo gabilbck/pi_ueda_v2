@@ -1,4 +1,5 @@
 <?php
+    session_start();
     /* Essa página de "listagem" do fórum só pode ser utilizada se o
     usuário for cadastrado */
     
