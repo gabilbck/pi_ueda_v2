@@ -2,8 +2,8 @@
     /* Essa página de "listagem" do fórum só pode ser utilizada se o
     usuário for cadastrado */
     
-    // include "include/MySql.php";
-    // include "include/functions.php";
+    include "include/MySql.php";
+    include "include/functions.php";
 ?>
 <head>
     <title>Fórum | UEDA</title>

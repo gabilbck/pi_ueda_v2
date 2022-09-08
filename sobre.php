@@ -1,6 +1,6 @@
 <?php
-    // include "include/MySql.php";
-    // include "include/functions.php";
+    include "include/MySql.php";
+    include "include/functions.php";
 ?>
 <head>
     <title>Sobre | UEDA</title>
