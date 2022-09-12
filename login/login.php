@@ -43,7 +43,7 @@
 <head>
     <title>Login | UEDA</title>
 </head>
-<?php require("../template/header2.php");?>
+<?php require("../template/header_login.php");?>
     <main>
         <div class="margem-lados">
             <center>

@@ -3,29 +3,14 @@
     include "../include/MySql.php";
     include "../include/functions.php";
 
-    $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
-    $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
+    $text_publi = $img_usu = "";
+    $text_publiErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
-        if (empty ($_POST['nome_usu'])){
-            $nome_usuErr = "Nome Completo é obrigatório!";
+        if (empty ($_POST['text_publi'])){
+            $text_publiErr = "Texto para pblicação é obrigatória!";
         } else {
-            $nome_usu = test_input($_POST["nome_usu"]);
-        }
-        if (empty($_POST['email_usu'])){
-            $email_usuErr = "E-mail é obrigatório!";
-        } else {
-            $email_usu = test_input($_POST["email_usu"]);
-        }
-        if (empty($_POST['senha_usu'])){
-            $senha_usuErr = "Senha é obrigatória!";
-        } else {
-            $senha_usu = test_input($_POST["senha_usu"]);
-        }
-        if (empty($_POST['nome_real_usu'])){
-            $nome_real_usuErr = "Nome de Usuário é obrigatório!";
-        } else {
-            $nome_real_usu = test_input($_POST["nome_real_usu"]);
+            $text_publi = test_input($_POST["text_publi"]);
         }
 
         if ($nome_usu && $email_usu && $senha_usu && $nome_real_usu){
@@ -60,21 +45,13 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>CADASTRE</h1>
+                <h1>PUBLICAR FORUM</h1>
                 <br>
                 <form action="" method="post">
-                    <input name="nome_real_usu" value="<?php echo $nome_real_usu?>" type="text" placeholder="Nome Completo">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_real_usuErr ?></span>
+                    <input name="text_publi" value="<?php echo $text_publi?>" type="text" placeholder="Texto para publicação">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$text_publiErr ?></span>
                     <br><br>
-                    <input name="nome_usu" value="<?php  echo $nome_usu?>" type="text" placeholder="Nome de Usuário">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_usuErr ?></span>
-                    <br><br>
-                    <input name="email_usu" value="<?php  echo $email_usu?>" type="email" placeholder="E-mail">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
-                    <br><br>
-                    <input name="senha_usu" value="<?php  echo $senha_usu?>" type="password" placeholder="Senha">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
-                    <br><br>
+                    
                     <div class="final-cad">
                         <div class="final-cad-1">
                             <a href="login.php">Entrar</a>
