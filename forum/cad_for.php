@@ -13,16 +13,28 @@
             $text_publi = test_input($_POST["text_publi"]);
         }
 
-        if ($nome_usu && $email_usu && $senha_usu && $nome_real_usu){
-            $sql = $pdo->prepare("SELECT * FROM usuario WHERE email_usu = ?");
-            if ($sql->execute(array($email_usu))){
-                if ($sql->rowCount() > 0){
-                    $msgErr = "E-mail já cadastrado";
+        if (isset($_POST["submit"])){
+            if (!empty($_FILES["image"]["name"])){
+                //Pegar informações
+                $fileName = basename($_FILES["image"]["name"]);
+                $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+                //Permitir somente alguns formatos
+                $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+    
+                if (in_array($fileType, $allowTypes)){
+                    $img_publica = $_FILES['image']['tmp_name'];
+                    $imgContent = file_get_contents($image);
                 } else {
+                    $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
+                }
+            } else {
+                $msgErr = "Informações incorretas";
+            }
+
                     //Inserir dados
-                    $sql = $pdo->prepare("INSERT INTO USUARIO (id_usu, nome_usu, email_usu, senha_usu, nome_real_usu, adm)
+                    $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publica, id_usu, text_publica, img_publica, curtida_publica)
                                         VALUES (null, ?, ?, ?, ?, 0)");
-                    if ($sql->execute(array($nome_usu, $email_usu, MD5($senha_usu), $nome_real_usu))){
+                    if ($sql->execute(array($nome_usu, $email_usu, , $nome_real_usu))){
                         $msgErr = "Dados cadastrados com sucesso!";
                         header("location: ../index.php");
                     } else {
@@ -51,18 +63,13 @@
                     <input name="text_publi" value="<?php echo $text_publi?>" type="text" placeholder="Texto para publicação">
                     <span class="obrigatorio">* <?php  echo '<br>'.$text_publiErr ?></span>
                     <br><br>
+                    <label for="img_publi">Inserir imagem da sua escolha:</label>
+                    <input type="file" name="image" value="<?php echo base64_encode($img_publi)?>"/><br><br>
                     
-                    <div class="final-cad">
-                        <div class="final-cad-1">
-                            <a href="login.php">Entrar</a>
-                        </div>
-                        <div class="final-cad-2">
-                            <a href="esqueci_senha.php">Esqueci minha senha</a>
-                        </div>
-                    </div>
+                   
                     <div class="clear"></div>
                     <br>
-                    <button type="submit" name="cadastro">CADASTRAR-SE</button>
+                    <button type="submit" name="salvar">ENVIAR</button>
                 </form>
                 <br><br>
             </center>
