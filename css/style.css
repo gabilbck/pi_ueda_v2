@@ -217,3 +217,214 @@ h1{
     .artigo hr{
         margin-top: 10px;
     }
+
+    .subtitulo-sobre h1{
+        margin-left: 50px;
+        font-size: 2rem;
+    }
+    
+    .sobre-txtprincipal h1{
+        font-size: 1.3rem;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .titulo-img-sobre h1{
+        font-size: 2rem;
+    }
+    
+    .colunas-sobre1{
+        position: absolute;
+        left: 150px;
+    }
+    
+    .colunas-sobre2{
+        position: absolute;
+        left: 800px;
+    }
+    
+    .colunas-sobre3{
+        position: absolute;
+        left: 1480px;
+    }
+    
+    .obj-sobre{
+        margin: 25px;
+        height: 600px;
+    }
+    
+    .obj-sobre h1{
+        font-size: 1.5rem;
+        position: absolute;
+        left: 480px;
+        top: 960px;
+    }
+
+    .img-sobre{
+        width: 30%;
+    }
+
+    @media (max-width: 1500px){
+        .obj-sobre h1{
+            top: 880px;
+        }
+    }
+    @media (max-width: 840px){
+        .obj-sobre h1{
+            font-size: 1.5rem;
+            position: absolute;
+            left: 15px;
+            top: 1260px;
+        }
+        .obj-sobre img{
+            position: absolute;
+            left: 16%;
+        }
+    }
+
+    @media (max-width: 750px){
+        .obj-sobre img{
+            position: absolute;
+            left: 14%;
+        }
+    }
+
+    @media (max-width: 450px){
+        .obj-sobre img{
+            position: absolute;
+            left: 10%;
+        }
+    }
+
+    @media (max-width: 755px){
+        .obj-sobre h1{
+            font-size: 1.5rem;
+            position: absolute;
+            left: 15px;
+            top: 140%;
+        }
+    }
+
+    @media (max-width: 655px){
+        .obj-sobre h1{
+            font-size: 1.5rem;
+            position: absolute;
+            left: 15px;
+            top: 150%;
+        }
+    }
+
+    @media (max-width: 605px){
+        .obj-sobre h1{
+            font-size: 1.5rem;
+            position: absolute;
+            left: 15px;
+            top: 150%;
+        }
+    }
+
+    @media (max-width: 426px){
+        .obj-sobre h1{
+            font-size: 1.5rem;
+            position: absolute;
+            left: 15px;
+            top: 152%;
+        }
+    }
+
+    @media (max-width: 389px){
+        .obj-sobre h1{
+            font-size: 1.5rem;
+            position: absolute;
+            left: 15px;
+            top: 165%;
+        }
+    }
+    
+    .container_images_sobre{
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .div-developers{
+        margin-top: -200px;
+        position: relative;
+        display: flex;
+    }
+
+    .desenvolvedores{
+        color: white;
+        text-align: center;
+        position: absolute;
+        left: 19%;
+        top: 168%;
+    }
+
+    @media (max-width: 1700px){
+        .desenvolvedores{
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 19%;
+            top: 165%;
+        }
+    }
+
+    @media (max-width: 1450px){
+        .desenvolvedores{
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 6%;
+            top: 155%;
+        }
+    }
+
+    @media (max-width: 1220px){
+        .desenvolvedores{
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 3%;
+            top: 150%;
+        }
+    }
+
+    @media (max-width: 850px){
+        .desenvolvedores{
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 3%;
+            top: 160%;
+        }
+    }
+
+    @media (max-width: 760px){
+        .desenvolvedores{
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 3%;
+            top: 160%;
+        }
+    }
+
+    @media (max-width: 758px){
+        .desenvolvedores{
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 3%;
+            top: 166%;
+        }
+    }
+
+    @media (max-width: 840px){
+        .div-developers{
+            margin-top: -50px;
+            position: relative;
+            display: flex;
+        }
+    }
