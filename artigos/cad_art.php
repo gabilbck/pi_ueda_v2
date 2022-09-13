@@ -3,53 +3,53 @@
     include "../include/MySql.php";
     include "../include/functions.php";
 
-    $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
-    $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
+    $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $data_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = "";
+    $titulo_artErr = $id_etiErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr ="";
+   
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
-        if (empty ($_POST['nome_usu'])){
-            $nome_usuErr = "Nome Completo é obrigatório!";
+        if (empty ($_POST['titulo_art'])){
+            $titulo_artErr = "Nome do título é obrigatório!";
         } else {
-            $nome_usu = test_input($_POST["nome_usu"]);
+            $titulo_art = test_input($_POST["titulo_art"]);
         }
-        if (empty($_POST['email_usu'])){
-            $email_usuErr = "E-mail é obrigatório!";
+        if (empty($_POST['resumo_art'])){
+            $resumo_artErr = "Resumo é obrigatório!";
         } else {
-            $email_usu = test_input($_POST["email_usu"]);
+            $resumo_art = test_input($_POST["resumo_art"]);
         }
-        if (empty($_POST['senha_usu'])){
-            $senha_usuErr = "Senha é obrigatória!";
+        if (empty($_POST['intro_art'])){
+            $intro_artErr = " Intridução é obrigatória!";
         } else {
-            $senha_usu = test_input($_POST["senha_usu"]);
+            $intro_art = test_input($_POST["intro_art"]);
         }
-        if (empty($_POST['nome_real_usu'])){
-            $nome_real_usuErr = "Nome de Usuário é obrigatório!";
+        if (empty($_POST['des_art'])){
+            $des_artErr = " Desenvolvimento é obrigatório!";
         } else {
-            $nome_real_usu = test_input($_POST["nome_real_usu"]);
+            $des_art = test_input($_POST["des_art"]);
         }
+        if (empty($_POST['con_art'])){
+            $con_artErr = " Conclusão é obrigatório!";
+        } else {
+            $con_art = test_input($_POST["con_art"]);
+        }
+        if (empty($_POST['ref_art'])){
+            $ref_artErr = " Referências é obrigatório!";
+        } else {
+            $ref_art = test_input($_POST["ref_art"]);
+        }
+        // falta a a etiqueta de arte
 
-        if ($nome_usu && $email_usu && $senha_usu && $nome_real_usu){
-            $sql = $pdo->prepare("SELECT * FROM usuario WHERE email_usu = ?");
-            if ($sql->execute(array($email_usu))){
-                if ($sql->rowCount() > 0){
-                    $msgErr = "E-mail já cadastrado";
-                } else {
+        
                     //Inserir dados
-                    $sql = $pdo->prepare("INSERT INTO USUARIO (id_usu, nome_usu, email_usu, senha_usu, nome_real_usu, adm)
-                                        VALUES (null, ?, ?, ?, ?, 0)");
-                    if ($sql->execute(array($nome_usu, $email_usu, MD5($senha_usu), $nome_real_usu))){
+                    $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, data_art, img_art, intro_art, des_art, con_art, ref_art)
+                                        VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    if ($sql->execute(array($id_art,$titulo_art, $id_eti, $link_art, $resumo_art, $data_art, $img_art, $intro_art, $des_art, $con_art, $ref_art))){
                         $msgErr = "Dados cadastrados com sucesso!";
                         header("location: ../index.php");
                     } else {
                         $msgErr = "Dados não cadastrados!";
                     }
-                }   
-            } else{
-                $msgErr = "Erro no comando Select";
-            }     
-        } else {
-            $msgErr = "Dados não informados!"; 
-        }
     }
 ?>
 <head>
@@ -60,32 +60,30 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>CADASTRE-SE</h1>
+                <h1>PUBLICAR ARTIGO</h1>
                 <br>
                 <form action="" method="post">
-                    <input name="nome_real_usu" value="<?php echo $nome_real_usu?>" type="text" placeholder="Nome Completo">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_real_usuErr ?></span>
+                    <input name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$titulo_artErr ?></span>
                     <br><br>
-                    <input name="nome_usu" value="<?php  echo $nome_usu?>" type="text" placeholder="Nome de Usuário">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_usuErr ?></span>
+                    <input name="resumo_art" value="<?php  echo $resumo_art?>" type="text" placeholder="Resumo do Texto">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$resumo_artErr ?></span>
                     <br><br>
-                    <input name="email_usu" value="<?php  echo $email_usu?>" type="email" placeholder="E-mail">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
+                    <input name="intro_art" value="<?php  echo $intro_art?>" type="text" placeholder="Introdução do Texto">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$intro_artErr ?></span>
                     <br><br>
-                    <input name="senha_usu" value="<?php  echo $senha_usu?>" type="password" placeholder="Senha">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
+                    <input name="des_art" value="<?php  echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$des_artErr ?></span>
                     <br><br>
-                    <div class="final-cad">
-                        <div class="final-cad-1">
-                            <a href="login.php">Entrar</a>
-                        </div>
-                        <div class="final-cad-2">
-                            <a href="esqueci_senha.php">Esqueci minha senha</a>
-                        </div>
-                    </div>
+                    <input name="con_art" value="<?php  echo $con_art?>" type="text" placeholder="Conclusão do Texto">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$con_artErr ?></span>
+                    <br><br>
+                    <input name="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$ref_artErr ?></span>
+                    <br><br>
                     <div class="clear"></div>
                     <br>
-                    <button type="submit" name="cadastro">CADASTRAR-SE</button>
+                    <button type="submit" name="cadastro">ENVIAR</button>
                 </form>
                 <br><br>
             </center>
