@@ -3,10 +3,11 @@
     include "../include/MySql.php";
     include "../include/functions.php";
 
-    $text_publi = $img_usu = "";
-    $text_publiErr = "";
+    $id_publica = $id_usu = $text_publica = $img_publica = $curtida_publica = $imgContent = "";
+    $text_publiErr = $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
+        
         if (empty ($_POST['text_publi'])){
             $text_publiErr = "Texto para pblicação é obrigatória!";
         } else {
@@ -23,30 +24,26 @@
     
                 if (in_array($fileType, $allowTypes)){
                     $img_publica = $_FILES['image']['tmp_name'];
-                    $imgContent = file_get_contents($image);
+                    $imgContent = file_get_contents($img_publica);
                 } else {
                     $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
                 }
             } else {
                 $msgErr = "Informações incorretas";
             }
-
-                    //Inserir dados
-                    $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publica, id_usu, text_publica, img_publica, curtida_publica)
-                                        VALUES (null, ?, ?, ?, ?, 0)");
-                    if ($sql->execute(array($nome_usu, $email_usu, , $nome_real_usu))){
-                        $msgErr = "Dados cadastrados com sucesso!";
-                        header("location: ../index.php");
-                    } else {
-                        $msgErr = "Dados não cadastrados!";
-                    }
-                }   
-            } else{
-                $msgErr = "Erro no comando Select";
-            }     
-        } else {
-            $msgErr = "Dados não informados!"; 
         }
+
+        //Inserir dados
+        $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publica, id_usu, text_publica, img_publica, curtida_publica)
+                            VALUES (null, ?, ?, ?, ?, ?, ?)");
+        if ($sql->execute(array($id_usu, $text_publica, $img_publica, $curtida_publica, $imgContent))){
+            $msgErr = "Dados cadastrados com sucesso!";
+            header("location: ../index.php");
+        } else {
+            $msgErr = "Dados não cadastrados!";
+        }
+    } else {
+        $msgErr = "Dados não informados!"; 
     }
 ?>
 <head>
@@ -60,16 +57,16 @@
                 <h1>PUBLICAR FORUM</h1>
                 <br>
                 <form action="" method="post">
-                    <input name="text_publi" value="<?php echo $text_publi?>" type="text" placeholder="Texto para publicação">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$text_publiErr ?></span>
+                    <input name="text_publi" value="<?php $text_publi?>" type="text" placeholder="Texto para publicação">
+                    <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
                     <br><br>
-                    <label for="img_publi">Inserir imagem da sua escolha:</label>
+                    <label for="img_publi">Inserir imagem da sua escolha:</label><br>
                     <input type="file" name="image" value="<?php echo base64_encode($img_publi)?>"/><br><br>
                     
                    
                     <div class="clear"></div>
                     <br>
-                    <button type="submit" name="salvar">ENVIAR</button>
+                    <button type="submit" name="cadastro">ENVIAR</button>
                 </form>
                 <br><br>
             </center>
