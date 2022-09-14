@@ -376,6 +376,7 @@ h1{
         border: 1px solid #000000;
     }
 
+/* Main - jogos */
     .escolha-imagem label:hover{
         background-color: #567D96;
         color: #fff;
@@ -401,5 +402,3 @@ h1{
     .form-jogo{
         margin-top: 94px;
     }
-
-    
