@@ -259,7 +259,8 @@ h1{
         font-size: 1.5rem;
         position: absolute;
         left: 480px;
-        top: 960px;
+        top: 76%;
+        margin-right: 5%;
     }
 
     .img-sobre{
@@ -268,26 +269,32 @@ h1{
 
     @media (max-width: 1500px){
         .obj-sobre h1{
-            top: 880px;
+            top: 76%;
         }
     }
+
+    @media (max-width: 1400px){
+        .obj-sobre h1{
+            top: 70%;
+        }
+    }
+
+    @media (max-width: 1200px){
+        .obj-sobre h1{
+            top: 68%;
+        }
+    }
+
     @media (max-width: 840px){
         .obj-sobre h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 1260px;
+            top: 95%;
         }
         .obj-sobre img{
             position: absolute;
-            left: 16%;
-        }
-    }
-
-    @media (max-width: 750px){
-        .obj-sobre img{
-            position: absolute;
-            left: 14%;
+            left: 25%;
         }
     }
 
@@ -303,7 +310,14 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 140%;
+            top: 95%;
+        }
+    }
+
+    @media (max-width: 750px){
+        .obj-sobre img{
+            position: absolute;
+            left: 21%;
         }
     }
 
@@ -312,7 +326,7 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 150%;
+            top: 100%;
         }
     }
 
@@ -321,7 +335,16 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 150%;
+            top: 100%;
+        }
+    }
+
+    @media (max-width: 555px){
+        .obj-sobre h1{
+            font-size: 1.5rem;
+            position: absolute;
+            left: 15px;
+            top: 100%;
         }
     }
 
@@ -330,7 +353,7 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 152%;
+            top: 105%;
         }
     }
 
@@ -338,8 +361,8 @@ h1{
         .obj-sobre h1{
             font-size: 1.5rem;
             position: absolute;
-            left: 15px;
-            top: 165%;
+            left: 35px;
+            top: 110%;
         }
     }
     
@@ -347,6 +370,8 @@ h1{
         text-align: center;
         display: flex;
         align-items: center;
+        margin-left: 15%;
+        margin-right: 15%;
     }
 
     .container-devs{
