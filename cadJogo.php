@@ -53,7 +53,7 @@
 
 
 ?>
-<?php require("./template/header1.php");?>
+<?php require("./template/headerjogo.php");?>
 <head>
     <link rel="stylesheet" href="./css/style.css">
     <title>Cadastro de jogos | UEDA</title>
@@ -63,30 +63,33 @@
                 <br><br>
                 <h1>PUBLIQUE SEU JOGO:</h1>
                 <br>
-                <form action="" method="post">
-                    <input name="nome_jogo" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
-                    <br><br>
-                    <input name="desc_jogo" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
-                    <br><br>
-                    <input name="link_jogo" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
-                    <br><br>
-                    <div class="escolha-imagem">
-                        <label for="file">Selecione uma imagem</label>
-                        <input type="file" id='file' name="image_jogo"/><br> <br>
-                        <span class="obrigatorio">* <?php echo $msgErro ?></span> <br>   
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-jogo">
+                        <input name="nome_jogo" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
+                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
+                        <br><br>
+                        <input name="desc_jogo" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo">
+                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
+                        <br><br>
+                        <input name="link_jogo" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">
+                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
+                        <br><br>
+                        <div class="escolha-imagem">
+                            <label for="file">Selecione uma imagem</label>
+                            <input type="file" id='file' name="image_jogo"/><br> <br>
+                            <span class="obrigatorio">* <?php echo $msgErro ?></span> <br>   
+                        </div>
+                        
+                        <div class="final-cad">
+                            <div class="final-cad-jogo">
+                                <button type="submit" name="submit">Salvar</button>
+                            </div>
+                        </div>
+                        <div class="clear"></div>    
                     </div>
                     
-                    <div class="final-cad">
-                        <div class="final-cad-jogo">
-                            <button href="jogos.php">Salvar</button>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
                 </form>
-                <br><br>
+                <br>
             </center>
         </div>
         <?php require("./template/footer2.php");?>

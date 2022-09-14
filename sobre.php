@@ -50,12 +50,10 @@
         </div>
         <div class="margem-lados">
         </div>
-        <div class="div-developers">
-        <img style="width: 50%;" src="./images/bg-developers.png" alt=""> <img style="width: 50%;" src="./images/bg-developers.png" alt="">            
-        </div>
-
-        <div class="desenvolvedores">
-            <h1 style="font-weight: 100; font-size: 1.3rem">Adriano Ramos | Felipe Gabriel Schmitt | Gabrieli Eduarda Lembeck | Lucas Inacio Diomario Coelho | Nina Carolina Lima Barater</h1>
+        <div class="container-devs">
+            <div class="devs">
+                <h1 style="font-weight: 100; font-size: 1.3rem;">Adriano Ramos | Felipe Gabriel Schmitt | Gabrieli Eduarda Lembeck | Lucas Inacio Diomario Coelho | Nina Carolina Lima Barater</h1>
+            </div>
         </div>
     </main>
 <?php require("template/footer1.php");?>
