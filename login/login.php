@@ -6,6 +6,7 @@
     session_start();
     $_SESSION['nome_usu'] = "";
     $_SESSION['adm'] = "";
+    $_SESSION['id_usu'] = "";
 
     $email_usu = $senha_usu = "";
     $email_usuErr = $senha_usuErr = "";
@@ -31,6 +32,7 @@
             if (count($info) > 0){
                 foreach($info as $key => $values){
                     $_SESSION['nome_usu'] = $values['nome_usu'];
+                    $_SESSION['id_usu'] = $values['id_usu'];
                     $_SESSION['adm'] = $values['adm'];
                 }
                 header('location:../index.php');

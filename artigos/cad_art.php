@@ -39,6 +39,7 @@
             $ref_art = test_input($_POST["ref_art"]);
         }
         // falta a a etiqueta de arte
+        // codgo da imagem
 
         
                     //Inserir dados
@@ -53,7 +54,7 @@
     }
 ?>
 <head>
-    <title>Cadastre-se | UEDA</title>
+    <title>Publicar artigo| UEDA</title>
 </head>
 <?php require("../template/header_login.php");?>
     <main>
