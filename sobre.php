@@ -13,12 +13,12 @@
         <center>
             <h1 style="font-text: 17px;" class="h1_título_topo">SOBRE</h1>
         </center>
-        <br
+        <br>
         <div class="subtitulo-sobre">
-            <p style="font-size: 17px;">O que é?</p>
+            <h2>O que é?</h2>
         </div>
         <div class="sobre-txtprincipal">
-            <p style="font-size: 17px; margin-left: 5%; margin-right: 5%;">O Projeto Integrador (PI) é uma Unidade Curricular, baseada na metodologia de ação-reflexão-ação, que se constitui na proposição de situações desafiadoras a serem cumpridas pelo aluno.</p>
+            <p style="font-size: 17px;">O Projeto Integrador (PI) é uma Unidade Curricular, baseada na metodologia de ação-reflexão-ação, que se constitui na proposição de situações desafiadoras a serem cumpridas pelo aluno.</p>
         </div>
         <br>
         <center>
@@ -30,15 +30,15 @@
 
             <div class="container_images_sobre"> 
                 <div class="imgs-sobre">
-                    <img src="./images/sobre_img1.png" style="width:40%">
+                    <img src="./images/sobre_img1.png">
                     <p style="text-align: center; font-size: 17px;">Aprendizagem Comercial</p>
                 </div>
                 <div class="imgs-sobre">
-                    <img src="./images/sobre_img2.png" style="width:40%">
+                    <img src="./images/sobre_img2.png">
                     <p style="text-align: center; font-size: 17px;">Qualificação Profissional</p>
                 </div>
                 <div class="imgs-sobre">
-                    <img src="./images/sobre_img3.png" style="width:40%">
+                    <img src="./images/sobre_img3.png">
                     <p style="text-align: center; font-size: 17px;">Cursos Técnicos</p>
                 </div>
             </div>
