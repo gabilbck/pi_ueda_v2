@@ -1,6 +1,6 @@
 <?php
-    include "./include/functions.php";
-    include "./include/MySql.php";
+    include "../include/functions.php";
+    include "../include/MySql.php";
 
     $msgErro = "";
     $nome_jogo = $desc_jogo = $link_jogo = "";
@@ -50,14 +50,11 @@
             $msgErro = "Selecione uma imagem para upload";
         }
     }
-
-
 ?>
-<?php require("./template/headerjogo.php");?>
 <head>
-    <link rel="stylesheet" href="./css/style.css">
     <title>Cadastro de jogos | UEDA</title>
 </head>
+<?php require("../template/headerjogo.php");?>
 <div class="margem-lados">
             <center>
                 <br><br>
@@ -92,8 +89,4 @@
                 <br>
             </center>
         </div>
-        <?php require("./template/footer2.php");?>
-</body>
-</html>
-</body>
-</html>
+<?php require("../template/footer2.php");?>
