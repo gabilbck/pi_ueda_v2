@@ -26,10 +26,10 @@ Header APENAS para as páginas que ESTÃO DENTRO de pastas! -->
     <a href="../forum.php">Fórum</a>
     <a href="../jogos.php">Jogos</a>
     <a href="../sobre.php">Sobre</a>
-    <?php if(array_key_exists("adm",$_SESSION) && $_SESSION['adm']){?>
+    <?php if(array_key_exists("id_usu",$_SESSION) && $_SESSION['adm']){?>
         <a class="sair" href="../adm/adm.php">ADM</a>
     <?php }?>
-    <?php if(!array_key_exists("adm",$_SESSION)){?>
+    <?php if(!array_key_exists("id_usu",$_SESSION) && $_SESSION['id_usu'] == ""){?>
         <a class="sair" href="../login/cadastro.php">Cadastrar-se</a>
     <?php } else{
         echo '<a class="sair" href="../login/sair.php">Sair</a>';

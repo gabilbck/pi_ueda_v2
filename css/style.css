@@ -221,8 +221,8 @@ h1{
 
 /* Main - Sobre */
     .subtitulo-sobre h1{
-        margin-left: 50px;
-        font-size: 2rem;
+        font-size: 28px;
+        font-weight: normal;
     }
     
     .sobre-txtprincipal h1{
@@ -413,7 +413,6 @@ h1{
         border: 1px solid #000000;
     }
 
-/* Main - jogos */
     .escolha-imagem label:hover{
         background-color: #567D96;
         color: #fff;
@@ -438,4 +437,21 @@ h1{
 
     .form-jogo{
         margin-top: 94px;
+    }
+
+
+
+
+
+
+
+/* Main - ADM */
+    .link-branco{
+        color: white;
+        text-decoration: none;
+    }
+    .link-branco :hover{
+        color: white;
+        text-decoration: none;
+        font-weight: bolder;
     }

@@ -1,5 +1,8 @@
 <!-- ATENÇÃO!!!!!!!!!!
 Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
+<?php 
+var_dump($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,12 +31,12 @@ Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
     <a href="jogos.php">Jogos</a>
     <a href="sobre.php">Sobre</a>
     <?php if(array_key_exists("id_usu",$_SESSION) && $_SESSION['adm']){?>
-        <a class="sair" href="../adm/adm.php">ADM</a>
+        <a class="sair" href="adm/adm.php">ADM</a>
     <?php }?>
     <?php if(!array_key_exists("id_usu",$_SESSION)){?>
-        <a class="sair" href="../login/cadastro.php">Cadastrar-se</a>
+        <a class="sair" href="login/cadastro.php">Cadastrar-se</a>
     <?php } else{
-        echo '<a class="sair" href="../login/sair.php">Sair</a>';
+        echo '<a class="sair" href="login/sair.php">Sair</a>';
     }
     ?>
     
