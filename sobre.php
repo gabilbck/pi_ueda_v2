@@ -11,7 +11,7 @@
     <div class="margem-lados">
         <br><br>
         <center>
-            <h1 style="font-text: 17px;" class="h1_título_topo">Projeto Integrador</h1>
+            <h1 style="font-text: 17px;" class="h1_título_topo">SOBRE</h1>
         </center>
         <br
         <div class="subtitulo-sobre">
