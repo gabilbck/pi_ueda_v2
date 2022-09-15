@@ -350,12 +350,12 @@ h1{
         }
     }
 
-    @media (max-width: 605px){
+    @media (max-width: 600px){
         .obj-sobre h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 110git%;
+            top: 155%;
         }
     }
 
@@ -364,7 +364,7 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 100%;
+            top: 150%;
         }
     }
 
