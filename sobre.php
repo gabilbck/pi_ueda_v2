@@ -13,12 +13,12 @@
         <center>
             <h1 style="font-text: 17px;" class="h1_título_topo">SOBRE</h1>
         </center>
-        <br
+        <br>
         <div class="subtitulo-sobre">
-            <p style="font-size: 17px;">O que é?</p>
+            <h2>O que é?</h2>
         </div>
         <div class="sobre-txtprincipal">
-            <p style="font-size: 17px; margin-left: 5%; margin-right: 5%;">O Projeto Integrador (PI) é uma Unidade Curricular, baseada na metodologia de ação-reflexão-ação, que se constitui na proposição de situações desafiadoras a serem cumpridas pelo aluno.</p>
+            <p style="font-size: 17px;">O Projeto Integrador (PI) é uma Unidade Curricular, baseada na metodologia de ação-reflexão-ação, que se constitui na proposição de situações desafiadoras a serem cumpridas pelo aluno.</p>
         </div>
         <br>
         <center>

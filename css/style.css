@@ -221,8 +221,8 @@ h1{
 
 /* Main - Sobre */
     .subtitulo-sobre h1{
-        margin-left: 50px;
-        font-size: 2rem;
+        font-size: 28px;
+        font-weight: normal;
     }
     
     .sobre-txtprincipal h1{
