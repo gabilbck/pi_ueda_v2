@@ -259,12 +259,32 @@ h1{
         font-size: 1.5rem;
         position: absolute;
         left: 480px;
-        top: 76%;
+        top: 70%;
         margin-right: 5%;
     }
 
-    .img-sobre{
+    .imgs-sobre img{
         width: 30%;
+    }
+
+    .container_images_sobre{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    @media (max-width: 600px){
+        .container_images_sobre{
+            text-align: center;
+            align-items: center;
+            width: 100%;
+            display:contents;
+        }
+        .imgs-sobre img{
+            width: 25%;
+        }
     }
 
     @media (max-width: 1500px){
@@ -290,7 +310,7 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 95%;
+            top: 100%;
         }
         .obj-sobre img{
             position: absolute;
@@ -310,7 +330,7 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 95%;
+            top: 100%;
         }
     }
 
@@ -321,12 +341,12 @@ h1{
         }
     }
 
-    @media (max-width: 655px){
+    @media (max-width: 640px){
         .obj-sobre h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 100%;
+            top: 110%;
         }
     }
 
@@ -335,7 +355,7 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 100%;
+            top: 110%;
         }
     }
 
@@ -364,14 +384,6 @@ h1{
             left: 35px;
             top: 110%;
         }
-    }
-    
-    .container_images_sobre{
-        text-align: center;
-        display: flex;
-        align-items: center;
-        margin-left: 15%;
-        margin-right: 15%;
     }
 
     .container-devs{

@@ -30,15 +30,15 @@
 
             <div class="container_images_sobre"> 
                 <div class="imgs-sobre">
-                    <img src="./images/sobre_img1.png" style="width:40%">
+                    <img src="./images/sobre_img1.png">
                     <p style="text-align: center; font-size: 17px;">Aprendizagem Comercial</p>
                 </div>
                 <div class="imgs-sobre">
-                    <img src="./images/sobre_img2.png" style="width:40%">
+                    <img src="./images/sobre_img2.png">
                     <p style="text-align: center; font-size: 17px;">Qualificação Profissional</p>
                 </div>
                 <div class="imgs-sobre">
-                    <img src="./images/sobre_img3.png" style="width:40%">
+                    <img src="./images/sobre_img3.png">
                     <p style="text-align: center; font-size: 17px;">Cursos Técnicos</p>
                 </div>
             </div>
