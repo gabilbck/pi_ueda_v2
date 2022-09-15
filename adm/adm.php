@@ -14,16 +14,15 @@
         </center>
         <div class="margem-lados">
             <h2>Cadastros</h2>
-            <button><a class="link-branco" href="listas/lista_bug.php">Reporte de Bugs</a></button>
-            <button><a class="link-branco" href="listas/lista_usu.php">sdsdsd</a></button>
-            <button><a class="link-branco" href="listas/">dsdsd</a></button>
-            <button><a class="link-branco" href="listas/">sdds</a></button>
+            <button><a class="link-branco" href="../artigos/cad_art.php">Artigos</a></button>
+            <button><a class="link-branco" href="../jogo/cad_jogo.php">Jogos</a></button>
             <br><br><hr><br>
             <h2>Listagens</h2>
-            <button><a class="link-branco" href="">Bug</a></button>
-            <button><a class="link-branco" href=""></a></button>
-            <button><a class="link-branco" href=""></a></button>
-            <button><a class="link-branco" href=""></a></button>
+            <button><a class="link-branco" href="listas/lista_usu.php">Usuários</a></button>
+            <button><a class="link-branco" href="listas/lista_art.php">Artigos</a></button>
+            <button><a class="link-branco" href="listas/lista_bug.php">Reporte de Bugs</a></button>
+            <button><a class="link-branco" href="listas/lista_forum.php">Fórum</a></button>
+            <button><a class="link-branco" href="listas/lista_jogo.php">Jogos</a></button>
             <br><br><hr><br>
         </div> 
     </main>
