@@ -53,13 +53,11 @@
                 <h1 style=" font-weight: 100; font-size: 17px;">O planejamento e execução do Projeto Integrador propiciam a articulação das competências previstas no perfil profissional de conclusão do curso, pois apresenta ao aluno situações que estimulam o seu desenvolvimento profissional ao ter que decidir, opinar e debater com o grupo a resolução de problemas a partir do tema gerador, portanto, o aluno poderá demonstrar sua atuação profissional pautada pelas marcas formativas do Senac, uma vez que permite o trabalho em equipe e o exercício da ética, da responsabilidade social e da atitude empreendedora.</h1>
             </div> 
         </div>
-        <div class="margem-lados">
         </div>
         <div class="container-devs">
             <div class="devs">
                 <h1 style="font-weight: 100; font-size: 1.3rem;">Adriano Ramos | Felipe Gabriel Schmitt | Gabrieli Eduarda Lembeck | Lucas Inacio Diomario Coelho | Nina Carolina Lima Barater</h1>
             </div>
         </div>
-</div>
     </main>
 <?php require("template/footer1.php");?>
