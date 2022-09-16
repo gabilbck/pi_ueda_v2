@@ -310,7 +310,7 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 100%;
+            top: 110%;
         }
         .obj-sobre img{
             position: absolute;
@@ -330,7 +330,7 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 100%;
+            top: 110%;
         }
     }
 
@@ -341,12 +341,21 @@ h1{
         }
     }
 
+    @media (max-width: 657px) and (min-width: 641px){
+        .obj-sobre h1{
+            font-size: 1.5rem;
+            position: absolute;
+            left: 15px;
+            top: 115%;
+        }
+    }
+
     @media (max-width: 640px){
         .obj-sobre h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 110%;
+            top: 115%;
         }
     }
 
@@ -357,7 +366,12 @@ h1{
             left: 15px;
             top: 155%;
         }
+        .obj-sobre img{
+            position: absolute;
+            left: 20%;
+        }
     }
+    
 
     @media (max-width: 555px){
         .obj-sobre h1{
@@ -373,7 +387,11 @@ h1{
             font-size: 1.5rem;
             position: absolute;
             left: 15px;
-            top: 105%;
+            top: 150%;
+        }
+        .obj-sobre img{
+            position: absolute;
+            left: 8%;
         }
     }
 
@@ -381,8 +399,12 @@ h1{
         .obj-sobre h1{
             font-size: 1.5rem;
             position: absolute;
-            left: 35px;
-            top: 110%;
+            left: 15px;
+            top: 150%;
+        }
+        .obj-sobre img{
+            position: absolute;
+            left: 5%;
         }
     }
 
@@ -439,9 +461,68 @@ h1{
         margin-top: 94px;
     }
 
+    .principal-jogos{
+        position: relative;
+        width: 100%;
+        height: 580px;
+    }
 
+    .titulo_principal{
+        border-bottom: 2px dashed #008ADB;
+        text-align: left;
+        color: #008ADB;
+        position: relative;
+        white-space: nowrap;
+        margin-bottom:20px;
+    }
+    
+    .subtitulo_principal{
+        color: #008ADB;
+        position: absolute;
+        line-height: 35px;
+        left: 1360px;
+        bottom: 542px;
+    }
 
+    .jogo_ueda{
+        border: 3px #008ADB solid;
+        display: flex;
+        justify-content: center;
+    }
 
+    .principais-text-jogos2{
+        width: 100%;
+        height: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        position: relative;
+    }
+    
+    .descricao_titulo{
+        border-bottom: 2px dashed #008ADB;
+        text-align: left;
+        color: #008ADB;
+        position: relative;
+        white-space: nowrap;
+        margin-bottom:20px;
+    }
+    
+    .descricao{
+        color: #008ADB;
+        position: absolute;
+        font-size: 25px;
+        line-height: 35px;
+        top: 60px;
+    }
+
+    .num_jogado{
+        color: #008ADB;
+        position: absolute;
+        line-height: 35px;
+        margin-left: 1400px;
+        bottom: 50px;
+    }
 
 
 

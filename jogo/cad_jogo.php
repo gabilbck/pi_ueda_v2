@@ -54,7 +54,8 @@
 <head>
     <title>Cadastro de jogos | UEDA</title>
 </head>
-<?php require("../template/headerjogo.php");?>
+<?php //require("../template/headerjogo.php");?>
+<link rel="stylesheet" href="../css/style.css">
 <div class="margem-lados">
             <center>
                 <br><br>
