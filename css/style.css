@@ -249,22 +249,36 @@ h1{
         position: absolute;
         left: 1480px;
     }
-    
-    .obj-sobre{
-        margin: 25px;
-        height: 600px;
+
+    .obj-sobre {
+        max-width: 100%;
     }
-    
-    .obj-sobre h1{
-        font-size: 1.5rem;
-        position: absolute;
-        left: 480px;
-        top: 70%;
-        margin-right: 5%;
+
+    .obj-sobre::before, .obj-sobre::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .obj-sobre-txt, .logo-sobre {
+        padding: 0 10px;
+        float: left;
+    }
+
+    .obj-sobre-txt {
+        width: 70%;
+    }
+
+    .logo-sobre {
+        text-align: center;
+    }
+
+    .imgs-sobre{
+        width: 33.3%;
     }
 
     .imgs-sobre img{
-        width: 30%;
+        width: 150px;
     }
 
     .container_images_sobre{
@@ -274,7 +288,7 @@ h1{
         margin-left: 15%;
         margin-right: 15%;
     }
-
+    
     @media (max-width: 600px){
         .container_images_sobre{
             text-align: center;
@@ -282,129 +296,26 @@ h1{
             width: 100%;
             display:contents;
         }
+        .imgs-sobre{
+            width: 100%;
+        }
         .imgs-sobre img{
-            width: 25%;
+            width: 150px;
         }
     }
 
     @media (max-width: 1500px){
-        .obj-sobre h1{
-            top: 76%;
-        }
-    }
-
-    @media (max-width: 1400px){
-        .obj-sobre h1{
-            top: 70%;
-        }
-    }
-
-    @media (max-width: 1200px){
-        .obj-sobre h1{
-            top: 68%;
-        }
-    }
-
-    @media (max-width: 840px){
-        .obj-sobre h1{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 15px;
-            top: 110%;
-        }
-        .obj-sobre img{
-            position: absolute;
-            left: 25%;
-        }
-    }
-
-    @media (max-width: 450px){
-        .obj-sobre img{
-            position: absolute;
-            left: 10%;
-        }
-    }
-
-    @media (max-width: 755px){
-        .obj-sobre h1{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 15px;
-            top: 110%;
-        }
-    }
-
-    @media (max-width: 750px){
-        .obj-sobre img{
-            position: absolute;
-            left: 21%;
-        }
-    }
-
-    @media (max-width: 657px) and (min-width: 641px){
-        .obj-sobre h1{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 15px;
-            top: 115%;
-        }
-    }
-
-    @media (max-width: 640px){
-        .obj-sobre h1{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 15px;
-            top: 115%;
-        }
-    }
-
-    @media (max-width: 600px){
-        .obj-sobre h1{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 15px;
-            top: 155%;
-        }
-        .obj-sobre img{
-            position: absolute;
-            left: 20%;
+        .logo-sobre {
+            text-align: center;
+            margin: auto;
+            display: block;
+            width: 100%;
         }
     }
     
-
-    @media (max-width: 555px){
-        .obj-sobre h1{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 15px;
-            top: 150%;
-        }
-    }
-
-    @media (max-width: 426px){
-        .obj-sobre h1{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 15px;
-            top: 150%;
-        }
-        .obj-sobre img{
-            position: absolute;
-            left: 8%;
-        }
-    }
-
-    @media (max-width: 389px){
-        .obj-sobre h1{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 15px;
-            top: 150%;
-        }
-        .obj-sobre img{
-            position: absolute;
-            left: 5%;
+    @media (max-width: 1500px){
+        .obj-sobre-txt {
+            width: 100%;
         }
     }
 
