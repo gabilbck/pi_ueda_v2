@@ -427,14 +427,35 @@ h1{
         top: 60px;
     }
 
-    .num_jogado{
+    .obj-jogo{
         color: #008ADB;
         position: absolute;
         line-height: 35px;
-        margin-left: 1400px;
-        bottom: 50px;
+        margin-left: 1560px;
+        bottom: 52px;
     }
 
+    .obj-jogo2{
+        color: #008ADB;
+        left: 1200px;
+        position: absolute;
+        font-size: 25px;
+        line-height: 35px;
+        top: 60px;
+    }
+
+    /*.jogos{
+        display: block;
+        border: 2px black solid;
+        width: 50%;
+    }
+
+    .section-jogos{
+        display: block;
+        width: 100%;
+    }*/
+
+    
 
 
 /* Main - ADM */
