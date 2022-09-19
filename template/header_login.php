@@ -29,10 +29,16 @@ Header APENAS para as páginas que ESTÃO DENTRO de pastas! -->
     <?php if(array_key_exists("id_usu",$_SESSION) && $_SESSION['adm']){?>
         <a class="sair" href="../adm/adm.php">ADM</a>
     <?php }?>
-    <?php if(!array_key_exists("id_usu",$_SESSION)){?>
-        <a class="sair" href="cadastro.php">Cadastrar-se</a>
+     
+    <?php 
+        echo "aqui99: ".isset($_SESSION["id_usu"]);
+        if(isset($_SESSION["id_usu"])){?>
+            <a class="sair" href="../login/sair.php">Sair</a>
+        
     <?php } else{
-        echo '<a class="sair" href=sair.php">Sair</a>';
+    ?>    
+        <a class="sair" href="../login/cadastro.php">Cadastrar-se</a>
+    <?php       
     }
     ?>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">

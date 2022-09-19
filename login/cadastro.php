@@ -51,6 +51,7 @@
             $msgErr = "Dados não informados!"; 
         }
     }
+
 ?>
 <head>
     <title>Cadastre-se | UEDA</title>
