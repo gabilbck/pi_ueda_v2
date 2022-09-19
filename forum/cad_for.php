@@ -3,7 +3,7 @@
     include "../include/MySql.php";
     include "../include/functions.php";
 
-    $id_publica = $id_usu = $text_publica = $img_publica = $curtida_publica = $imgContent = "";
+    $id_publica = $id_usu = $text_publica = $img_publi = $curtida_publica = $imgContent = "";
     $text_publiErr = $msgErr = "";
     $id_usu = $_SESSION['id_usu'];
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
@@ -22,8 +22,8 @@
             $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
             if (in_array($fileType, $allowTypes)){
-                $img_publica = $_FILES['image']['tmp_name'];
-                $imgContent = file_get_contents($img_publica);
+                $img_publi = $_FILES['image']['tmp_name'];
+                $imgContent = file_get_contents($img_publi);
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
@@ -36,7 +36,7 @@
         
         $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publi, id_usu, text_publi, img_publi, curtida_publi)
                             VALUES (null, ?, ?, ?, ?)");
-        if ($sql->execute(array($id_usu, $text_publica, $imgContent, $curtida_publica))){
+        if ($sql->execute(array($id_usu, $text_publica, base64_encode($imgContent), $curtida_publica))){
             $msgErr = "Dados cadastrados com sucesso!";
             header("location: ../index.php");
         } else {
@@ -62,7 +62,7 @@
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
                     <br><br>
                     <label for="image">Inserir imagem da sua escolha:</label><br>
-                    <input type="file" id="image" name="image" value="<?php echo base64_encode($img_publica)?>"/><br><br>
+                    <input type="file" id="image" name="image" value="<?php echo base64_encode($img_publi)?>"/><br><br>
                     
                    
                     <div class="clear"></div>

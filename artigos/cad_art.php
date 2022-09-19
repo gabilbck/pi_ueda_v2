@@ -5,6 +5,7 @@
 
     $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $data_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = "";
     $titulo_artErr = $id_etiErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr ="";
+    $id_usu = $_SESSION['id_usu'];
    
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
@@ -45,7 +46,7 @@
                     //Inserir dados
                     $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, data_art, img_art, intro_art, des_art, con_art, ref_art)
                                         VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                    if ($sql->execute(array($id_art,$titulo_art, $id_eti, $link_art, $resumo_art, $data_art, $img_art, $intro_art, $des_art, $con_art, $ref_art))){
+                    if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, $data_art, $img_art, $intro_art, $des_art, $con_art, $ref_art))){
                         $msgErr = "Dados cadastrados com sucesso!";
                         header("location: ../index.php");
                     } else {
