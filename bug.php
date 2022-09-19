@@ -5,6 +5,7 @@
     
     $email_bug = $desc_bug = $cod_bug =  "";
     $email_bugErr = $desc_bugErr = $msgErr = "";
+    $id_usu = $_SESSION['id_usu'];
 
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
@@ -22,9 +23,9 @@
         //Verificar se o usuário existe
         if ($email_bug && $desc_bug) {
                     //Inserir no banco de dados
-            $sql = $pdo->prepare("INSERT INTO bug (cod_bug, email_bug, desc_bug)
-                                VALUES (null, ?, ?)");
-            if ($sql->execute(array($email_bug, $desc_bug))){
+            $sql = $pdo->prepare("INSERT INTO bug (cod_bug, email_bug, desc_bug, id_usu)
+                                VALUES (null, ?, ?, ?)");
+            if ($sql->execute(array($email_bug, $desc_bug, $id_usu))){
                 $msgErr = "Erro reportado com sucesso!";  
                 header("location: bug.php");
             } else {
