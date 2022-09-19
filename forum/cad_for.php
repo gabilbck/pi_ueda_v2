@@ -52,7 +52,6 @@
     <main>
     
         <div class="margem-lados">
-            <fieldset class="margem-cad">
             <center>
                 <br><br>
                 <h1>PUBLICAR FORUM</h1>
@@ -60,10 +59,12 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <textarea name="text_publi" type="text" placeholder="Texto para publicação"></textarea>
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
-            </center>
                     <br><br>
-                    <label for="image">Inserir imagem da sua escolha:</label><br>
-                    <input type="file" id="image" name="image"/><br><br>
+            </center>
+                    <div class="margem-cad">
+                        <label for="image">Inserir imagem da sua escolha:</label><br>
+                        <input type="file" id="image" name="image"/><br><br>
+                    </div>
             <center>   
                     <div class="clear"></div>
                     <br>
@@ -71,7 +72,6 @@
                 </form>
                 <br><br>
             </center>
-            </fieldset>
         </div>
     </main>
 <?php require("../template/footer2.php");?>
