@@ -1,8 +1,5 @@
 <!-- ATENÇÃO!!!!!!!!!!
 Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
-<?php 
-var_dump($_SESSION);
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

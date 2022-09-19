@@ -4,10 +4,11 @@
     include "../include/functions.php";
     
     session_start();
-    $_SESSION['nome_usu'] = "";
-    $_SESSION['adm'] = "";
-    $_SESSION['id_usu'] = "";
+    $_SESSION['nome_usu'] = NULL;
+    $_SESSION['adm'] = NULL;
+    $_SESSION['id_usu'] = NULL;
 
+    
     $email_usu = $senha_usu = "";
     $email_usuErr = $senha_usuErr = "";
 
