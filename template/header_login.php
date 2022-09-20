@@ -31,7 +31,7 @@ Header APENAS para as páginas que ESTÃO DENTRO de pastas! -->
     <?php }?>
      
     <?php 
-        echo "aqui99: ".isset($_SESSION["id_usu"]);
+        echo isset($_SESSION["id_usu"]);
         if(isset($_SESSION["id_usu"])){?>
             <a class="sair" href="../login/sair.php">Sair</a>
         
