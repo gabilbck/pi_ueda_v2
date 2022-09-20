@@ -50,8 +50,8 @@
 </head>
 <?php require("../template/header2.php");?>
     <style>
-        .margem-cad{
-            right
+        .margem-cad-label{
+            text-align: right 24px;
         }
     </style>
     <main>
