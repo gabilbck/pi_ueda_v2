@@ -49,8 +49,12 @@
     <title>Cadastre Forum| UEDA</title>
 </head>
 <?php require("../template/header2.php");?>
+    <style>
+        .margem-cad{
+            right
+        }
+    </style>
     <main>
-    
         <div class="margem-lados">
             <center>
                 <br><br>
