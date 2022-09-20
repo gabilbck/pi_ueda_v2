@@ -17,7 +17,7 @@
             <div class="principal-jogos">
                 <div class="principais-text-jogos">
                     <h1 class="titulo_principal">Jogo do dino</h1>
-                    <h1 class="subtitulo_principal">Desenvolvido por: 🤣</h1>
+                    <h1 class="subtitulo_principal">Desenvolvido por: Equipe UEDA</h1>
                 </div>
                 <div class="jogo_ueda">
                     <img src="./images/temp_image_jogos.png" alt="">    
@@ -35,15 +35,23 @@
             if ($sql->execute()){
                 $info = $sql->fetchAll(PDO::FETCH_ASSOC);}
 
-                foreach($info as $key => $values){
-                    echo "<div class='jogos'>";
+                echo "<div class='jogos'>";
+                foreach($info as $key => $values){       
+                    echo "<div class='section-jogos'>";         
                     $image_jogo = $values['image_jogo'];
-                    echo '<img style="width: 350px;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>';
-                    echo $values['nome_jogo'];
-                    echo $values['desc_jogo'];
-                    echo $values['link_jogo'];
+                    echo '<img style="max-width:300px; max-height:200px; width: auto; height: auto;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>';
+                        echo "<div class='nome-jogos'>";    
+                            echo '<p>'.$values['nome_jogo'].'</p>';
+                        echo "</div>";
+                        echo "<div class='desc-jogos'>";  
+                            echo '<p>'.$values['desc_jogo'].'</p>';
+                        echo "</div>";
+                        echo "<div class='link-jogos'>";  
+                            echo '</p>'.$values['link_jogo'].'</p>';
+                        echo "</div>";
                     echo "</div>";
-                }
+                }   
+                echo "</div>";
 
             /*echo "<div class='section-jogos'>";
                 foreach($info as $key => $values){
