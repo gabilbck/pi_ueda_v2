@@ -26,7 +26,7 @@
                 <p>Breve descrição do artigo</p>
                 <div class="margem-art"></div>
                 <a href="#">Ver Agora</a>
-                <hr>
+                <hr> 
             </div>
             <br>
             <div class="artigo">

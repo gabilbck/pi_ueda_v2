@@ -394,7 +394,7 @@ h1{
         color: #008ADB;
         position: absolute;
         line-height: 35px;
-        left: 1360px;
+        left: 1200px;
         bottom: 542px;
     }
 
@@ -447,18 +447,32 @@ h1{
         top: 60px;
     }
 
-    /*.jogos{
-        display: block;
-        border: 2px black solid;
+    .nome-jogos p{
+        
+    }
+
+    .desc-jogos p{
+        
+    }
+
+    .link-jogos p{
+        
+    }
+
+    .jogos{
+        display: flex;
+        flex-direction: column;
         width: 50%;
+        margin: auto;
     }
 
     .section-jogos{
-        display: block;
+        margin-top: 30px;
         width: 100%;
-    }*/
+        border: 2px black solid;
+    }
 
-    
+
 /* Main - ADM */
     .link-branco{
         color: white;

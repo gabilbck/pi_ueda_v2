@@ -9,6 +9,7 @@
     $_SESSION['id_usu'] = NULL;
 
     
+    
     $email_usu = $senha_usu = "";
     $email_usuErr = $senha_usuErr = "";
 
