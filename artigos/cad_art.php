@@ -80,7 +80,7 @@
                 <h1>PUBLICAR ARTIGO</h1>
                 <br>
                 <form action="" method="post">
-                    <input name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                    <input class="input-text"  name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     <span class="obrigatorio">* <?php  echo '<br>'.$titulo_artErr ?></span>
                     <br><br>
                     <textarea name="resumo_art" value="<?php  echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
