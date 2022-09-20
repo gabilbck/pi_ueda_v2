@@ -37,7 +37,7 @@
                                     </a>
                                 </td>
                                 <td class="redes">
-                                    <a class="f-menor" href="#">Twitter</a>
+                                    <a class="f-menor" href="https://twitter.com/UEDA_PI">Twitter</a>
                                 </td>
                             </tr>
                         </table>
