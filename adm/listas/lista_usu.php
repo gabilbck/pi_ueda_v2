@@ -8,16 +8,7 @@
 </head>
 <?php require("../../template/header3.php");?>
     <main>
-        <style>
-        tr:nth-child(even) {
-            background:lightgray;
-        }
-
-        table{
-            background: #f2f2f2;
-        }
-        </style>
-        <table>
+        <table class="listagens-table">
             <tr>
                 <th>abc</th>
                 <th>abc</th>
