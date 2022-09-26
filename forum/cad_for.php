@@ -49,11 +49,6 @@
     <title>Cadastre Forum| UEDA</title>
 </head>
 <?php require("../template/header2.php");?>
-    <style>
-        .margem-cad-label{
-            text-align: right 24px;
-        }
-    </style>
     <main>
         <div class="margem-lados">
             <center>
@@ -64,12 +59,8 @@
                     <textarea name="text_publi" type="text" placeholder="Texto para publicação"></textarea>
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
                     <br><br>
-            </center>
-                    <div class="margem-cad">
-                        <label for="image">Inserir imagem da sua escolha:</label><br>
-                        <input type="file" id="image" name="image"/><br><br>
-                    </div>
-            <center>   
+                    <label for="image">Inserir imagem da sua escolha:</label>
+                    <input type="file" id="image" name="image"/><br><br>  
                     <div class="clear"></div>
                     <br>
                     <button type="submit" name="cadastro">ENVIAR</button>

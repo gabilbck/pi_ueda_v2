@@ -16,6 +16,8 @@
             <h2>Cadastros</h2>
             <button><a class="link-branco" href="../artigos/cad_art.php">Artigos</a></button>
             <button><a class="link-branco" href="../jogo/cad_jogo.php">Jogos</a></button>
+            <button><a class="link-branco" href="../forum/cad_for.php">Fórum</a></button>
+            <button><a class="link-branco" href="../bug.php">Reporte de Bugs</a></button>
             <br><br><hr><br>
             <h2>Listagens</h2>
             <button><a class="link-branco" href="listas/lista_usu.php">Usuários</a></button>
