@@ -1,4 +1,6 @@
 <?php
+    include "../../include/MySql.php";
+    include "../../include/functions.php";
     session_start();
 ?>
 <head>
