@@ -47,27 +47,5 @@
                 }
             ?>
         </div>
-        <!-- <table class="listagens-table">
-            <tr>
-                <th>abc</th>
-                <th>abc</th>
-                <th>abc</th>
-            </tr>
-            <tr>
-                <td>abc</td>
-                <td>abc</td>
-                <td>abc</td>
-            </tr>
-            <tr>
-                <td>abc</td>
-                <td>abc</td>
-                <td>abc</td>
-            </tr>
-            <tr>
-                <td>abc</td>
-                <td>abc</td>
-                <td>abc</td>
-            </tr>
-        </table> -->
     </main>
 <?php require("../../template/footer3.php");?>
