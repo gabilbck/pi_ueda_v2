@@ -452,31 +452,12 @@ h1{
         top: 60px;
     }
 
-    .nome-jogos p{
-        
-    }
-
-    .desc-jogos p{
-        
-    }
-
-    .link-jogos p{
-        
-    }
-
-    .jogos{
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        margin: auto;
-    }
-
-    .section-jogos{
-        margin-top: 30px;
-        width: 100%;
+    .jogos-agua{
         border: 2px black solid;
+        margin: auto;
+        text-align: center;
+        width: 50%;
     }
-
 
 /* Main - ADM */
     .link-branco{
