@@ -10,7 +10,7 @@
                     <td>
                         <table>
                             <tr>
-                                <td><img src="images/slogan_branco.png" alt="UEDA" title="Logo UEDA" width="80"></td>
+                                <td><img src="images/logo_branco.png" alt="UEDA" title="Logo UEDA" width="80"></td>
                             </tr>
                         </table>
                     </td>
