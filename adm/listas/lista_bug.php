@@ -25,11 +25,8 @@
                     echo "<table class='listagens-table'";
                     echo "<tr>";
                     echo "<th>ID</th>";
-                    echo "<th>Nome</th>";
                     echo "<th>E-mail</th>";
-                    echo "<th>Senha</th>";
-                    echo "<th>Nome Completo</th>";
-                    echo "<th>Administrador</th>";
+                    echo "<th>Descrição</th>";
                     echo "<th>Alterar</th>";
                     echo "<th>Excluir</th>";
                     echo "</tr>";
