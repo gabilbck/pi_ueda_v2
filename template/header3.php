@@ -21,7 +21,7 @@ dentro de OUTRA pasta, ou seja: ../../ ! -->
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-    <a class="logo" href="../../index.php" title="UEDA"><img src="../../images/logo_branco.png" width="70" alt="UEDA Logo"></a>  
+    <a class="logo" href="../../index.php" title="UEDA"><img src="../../images/logo.png" width="70" alt="UEDA Logo"></a>  
     <a href="../../index.php">Home</a>
     <a href="../../artigos.php">Artigos</a>
     <a href="../../forum.php">Fórum</a>
