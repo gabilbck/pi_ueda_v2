@@ -4,7 +4,7 @@
     include "../../include/functions.php";
 ?>
 <head>
-    <title>Listagem de Bugs | UEDA</title>
+    <title>Listagem de Etiquetas | UEDA</title>
 </head>
 <body>
 <?php require("../../template/header3.php");?>
@@ -12,31 +12,29 @@
     <main>
         <div class="margem-lados">
             <?php
-                $sql = $pdo->prepare('SELECT * FROM bug');
+                $sql = $pdo->prepare('SELECT * FROM etiqueta_art');
                 if ($sql->execute()){
                     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
             
                     echo "<center>";
-                    echo "<h1>LISTAGEM DE REPORTES</h1><br>";
+                    echo "<h1>LISTAGEM DE ETIQUETAS</h1><br>";
                     echo "<table class='listagens-table'";
                     echo "<tr>";
                     echo "<th>ID</th>";
-                    echo "<th>E-mail</th>";
-                    echo "<th>Descrição</th>";
+                    echo "<th>Nome</th>";
                     echo "<th>Alterar</th>";
                     echo "<th>Excluir</th>";
                     echo "</tr>";
                     foreach($info as $key => $value){
                         echo "<tr>";
-                        echo "<td>".$value['cod_bug']."</td>";
-                        echo "<td>".$value['email_bug']."</td>";
-                        echo "<td>".$value['desc_bug']."</td>";
-                        echo "<td><center><a class='alt' href='../alt/alt_bug.php?cod_bug=".$value['cod_bug']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../del/del_bug.php?cod_bug=".$value['cod_bug']."'>(-)</a></center></td>";
+                        echo "<td>".$value['id_eti']."</td>";
+                        echo "<td>".$value['nome_eti']."</td>";
+                        echo "<td><center><a class='alt' href='../alt/alt_eti.php?id_eti=".$value['id_eti']."'>(+)</a></center></td>";
+                        echo "<td><center><a class='del' href='../del/del_eti.php?id_eti=".$value['id_eti']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";
-                    echo "<br><button><a class='link-branco' href='../../bug.php'>Reportar Bugs</a></button>";
+                    echo "<br><button><a class='link-branco' href='../../etiquetas/cad_eti.php'>Cadastrar Etiqueta</a></button>";
                     echo "</center>";
                 }
             ?>

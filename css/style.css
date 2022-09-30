@@ -8,6 +8,25 @@ h1{
     font-weight: bold;
 }
 
+/* scroll */
+    ::-webkit-scrollbar {
+        width: 0.7em;
+        height: 0.5em;
+        background-color: white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #87B6D5;
+        border-radius: 5rem;
+        border: solid 0.15rem white;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: white;
+        border: solid 0.3rem transparent;
+    }
+
+
 /* Obrigatório */
     .obrigatorio{
         color: red;
@@ -16,6 +35,7 @@ h1{
 /* Cadastros */
     input{
         padding: 10px;
+        width: 70%;
     }
     textarea{
         padding: 10px;
@@ -72,7 +92,12 @@ h1{
         margin-bottom: 12px;
     }
     .margem-cad{
-        right:50px;
+        right: 50px;
+    }
+    .margem-form{
+        width: 70%;
+        border: #000000 solid 2px;
+        position: center;
     }
 
 /* Etiquetas */
@@ -103,6 +128,7 @@ h1{
         color: #f2f2f2;
         text-align: center;
         padding: 1px 1px;
+        margin: 15px;
         text-decoration: none;
     }
     .topnav a {
@@ -381,16 +407,16 @@ h1{
     }
 
     .titulo_principal{
-        border-bottom: 2px dashed #008ADB;
+        border-bottom: 2px dashed #000000;
         text-align: left;
-        color: #008ADB;
+        color: #000000;
         position: relative;
         white-space: nowrap;
         margin-bottom:20px;
     }
     
     .subtitulo_principal{
-        color: #008ADB;
+        color: #000000;
         position: absolute;
         line-height: 35px;
         left: 1200px;
@@ -398,7 +424,7 @@ h1{
     }
 
     .jogo_ueda{
-        border: 3px #008ADB solid;
+        border: 3px #000000 solid;
         display: flex;
         justify-content: center;
     }
@@ -413,16 +439,16 @@ h1{
     }
     
     .descricao_titulo{
-        border-bottom: 2px dashed #008ADB;
+        border-bottom: 2px dashed #000000;
         text-align: left;
-        color: #008ADB;
+        color: #000000;
         position: relative;
         white-space: nowrap;
         margin-bottom:20px;
     }
     
     .descricao{
-        color: #008ADB;
+        color: #000000;
         position: absolute;
         font-size: 25px;
         line-height: 35px;
@@ -430,7 +456,7 @@ h1{
     }
 
     .obj-jogo{
-        color: #008ADB;
+        color: #000000;
         position: absolute;
         line-height: 35px;
         margin-left: 1560px;
@@ -438,7 +464,7 @@ h1{
     }
 
     .obj-jogo2{
-        color: #008ADB;
+        color: #000000;
         left: 1200px;
         position: absolute;
         font-size: 25px;
@@ -446,23 +472,12 @@ h1{
         top: 60px;
     }
 
-    .jogos{
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        margin: auto;
-    }
-
-    .section-jogos{
-        margin-top: 30px;
-        width: 100%;
+    .jogos-agua{
         border: 2px black solid;
+        margin: auto;
+        text-align: center;
+        width: 50%;
     }
-
-    .nome-jogos{
-        margin-left: 36%;
-    }
-
 
 /* Main - ADM */
     .link-branco{
@@ -473,4 +488,18 @@ h1{
         color: white;
         text-decoration: none;
         font-weight: bolder;
+    }
+
+/* Listagens */
+    .listagens-table{
+        background: #f2f2f2;
+    }
+    .listagens-table tr:nth-child(even) {
+        background:lightgray;
+    }
+    .listagens-table td{
+        padding: 10px;
+    }
+    .listagens-table th{
+        padding: 10px;
     }

@@ -17,26 +17,24 @@ dentro de OUTRA pasta, ou seja: ../../ ! -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Poppins:wght@200;300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     
     <link href="../../css/style.css" rel="stylesheet">
-    <link rel="shortcut icon" type="imagem/x-icon" href="../../images/slogan_azul.png"/>
+    <link rel="shortcut icon" type="imagem/x-icon" href="../../images/logo.png"/>
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-    <a class="logo" href="../../index.php" title="UEDA"><img src="../../images/slogan_branco.png" width="70" alt="UEDA Logo"></a>  
+    <a class="logo" href="../../index.php" title="UEDA"><img src="../../images/logo.png" width="70" alt="UEDA Logo"></a>  
     <a href="../../index.php">Home</a>
     <a href="../../artigos.php">Artigos</a>
     <a href="../../forum.php">Fórum</a>
     <a href="../../jogos.php">Jogos</a>
     <a href="../../sobre.php">Sobre</a>
-    <?php if(array_key_exists("adm",$_SESSION) && $_SESSION['adm']){?>
-        <a class="sair" href="../../adm/adm.php">ADM</a>
+    <?php if(array_key_exists("id_usu",$_SESSION) && $_SESSION['adm']){?>
+        <a class="sair" href="../adm.php">ADM</a>
     <?php }?>
-    <?php if(!array_key_exists("adm",$_SESSION)){?>
+    <?php if(!array_key_exists("id_usu",$_SESSION) && $_SESSION['id_usu'] == ""){?>
         <a class="sair" href="../../login/cadastro.php">Cadastrar-se</a>
     <?php } else{
         echo '<a class="sair" href="../../login/sair3.php">Sair</a>';
-    }
-    ?>
-    <a class="sair" href="../../#">Cadastrar-se</a>
+    }?>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"><img src="../../images/hamburguer.png"></i>
     </a>

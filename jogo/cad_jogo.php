@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "../include/functions.php";
     include "../include/MySql.php";
 
@@ -34,7 +35,7 @@
                 }
 
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO jogos (codJogo, nome_jogo, desc_jogo, link_jogo, image_jogo)
+                $sql = $pdo->prepare("INSERT INTO jogos (cod_Jogo, nome_jogo, desc_jogo, link_jogo, image_jogo)
                                       VALUES (null, ?,?,?,?)");
                 if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, $imgContent))){
                     $msgErro = "Dados cadastrados com sucesso!";
@@ -54,8 +55,8 @@
 <head>
     <title>Cadastro de jogos | UEDA</title>
 </head>
-<?php //require("../template/headerjogo.php");?>
 <link rel="stylesheet" href="../css/style.css">
+<?php require("../template/header2.php");?>
 <div class="margem-lados">
             <center>
                 <br><br>

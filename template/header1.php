@@ -17,11 +17,11 @@ Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
     
     <link href="css/style.css" rel="stylesheet">
 
-    <link rel="shortcut icon" type="imagem/x-icon" href="images/slogan_azul.png"/>
+    <link rel="shortcut icon" type="imagem/x-icon" href="images/logo.png"/>
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-    <a class="logo" href="index.php" title="UEDA"><img src="images/slogan_branco.png" width="70" alt="UEDA Logo"></a>  
+    <a class="logo" href="index.php" title="UEDA"><img src="images/logo.png" width="70" alt="UEDA Logo"></a>  
     <a href="index.php">Home</a>
     <a href="artigos.php">Artigos</a>
     <a href="forum.php">Fórum</a>

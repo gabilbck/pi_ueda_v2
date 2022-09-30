@@ -1,13 +1,15 @@
 <?php 
     include "../../include/MySql.php";
     include "../../include/functions.php";
-    session_start();
+    if (isset($_GET['id_com'])){
+        $id_com = $_GET['id_com'];
+        $sql = $pdo->prepare("DELETE FROM comentario WHERE id_com=?");
+        if ($sql->execute(array($id_com))){
+            echo "Comentário excluido com sucesso!";
+            header('location:../listas/lista_com.php');
+        } else{
+            echo "Erro: dados não foram excluídos.<br>";
+            echo "comando: $sql. <br>";
+        }
+    }
 ?>
-<head>
-    <title>Deletar Comentário do Fórum</title>
-</head>
-<?php require("../../template/header3.php");?>
-    <main>
-
-    </main>
-<?php require("../../template/footer3.php");?>

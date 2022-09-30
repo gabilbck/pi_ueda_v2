@@ -10,7 +10,7 @@
                     <td>
                         <table>
                             <tr>
-                                <td><img src="../../images/slogan_branco.png" alt="UEDA" title="Logo UEDA" width="80"></td>
+                                <td><a href="../../index.php"><img src="../../images/logo.png" alt="UEDA" title="Logo UEDA" width="80"></a></td>
                             </tr>
                         </table>
                     </td>
@@ -37,7 +37,7 @@
                                     </a>
                                 </td>
                                 <td class="redes">
-                                    <a class="f-menor" href="#">Twitter</a>
+                                    <a class="f-menor" href="https://twitter.com/UEDA_PI">Twitter</a>
                                 </td>
                             </tr>
                         </table>

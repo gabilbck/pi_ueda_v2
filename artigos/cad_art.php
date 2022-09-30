@@ -3,9 +3,11 @@
     include "../include/MySql.php";
     include "../include/functions.php";
 
-    $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $data_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = "";
+    $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $data_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
     $titulo_artErr = $id_etiErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr ="";
+    $msgErr = "";
     $id_usu = $_SESSION['id_usu'];
+
    
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
@@ -39,8 +41,12 @@
         } else {
             $ref_art = test_input($_POST["ref_art"]);
         }
-        // falta a a etiqueta de arte
-
+        if (($_POST['id_eti']) == 1){
+            $id_etiErr = "Etiqueta é obrigatória!";
+        } else {
+            $id_eti = test_input($_POST["id_eti"]);
+        }    
+        
         if (!empty($_FILES["image"]["name"])){
             //Pegar informações
             $fileName = basename($_FILES["image"]["name"]);
@@ -51,23 +57,24 @@
             if (in_array($fileType, $allowTypes)){
                 $image = $_FILES['image']['tmp_name'];
                 $imgContent = file_get_contents($image);
+        
+                //Inserir dados
+                $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, data_art, img_art, intro_art, des_art, con_art, ref_art)
+                                    VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, $data_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
+                    $msgErr = "Dados cadastrados com sucesso!";
+                    header("location: ../index.php");
                 } else {
-                    $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
+                    $msgErr = "Dados não cadastrados!";
                 }
             } else {
-                $msgErr = "Informações incorretas";
+                $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
-        
-                    //Inserir dados
-                    $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, data_art, img_art, intro_art, des_art, con_art, ref_art)
-                                        VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                    if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, $data_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
-                        $msgErr = "Dados cadastrados com sucesso!";
-                        header("location: ../index.php");
-                    } else {
-                        $msgErr = "Dados não cadastrados!";
-                    }
-    }
+        } else {
+            $msgErr = "Informações incorretas";
+        }            
+}
+echo "Mensagem: ".$msgErr;
 ?>
 <head>
     <title>Publicar artigo| UEDA</title>
@@ -79,8 +86,8 @@
                 <br><br>
                 <h1>PUBLICAR ARTIGO</h1>
                 <br>
-                <form action="" method="post">
-                    <input name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <input class="input-text"  name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     <span class="obrigatorio">* <?php  echo '<br>'.$titulo_artErr ?></span>
                     <br><br>
                     <textarea name="resumo_art" value="<?php  echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
@@ -98,13 +105,21 @@
                     <textarea name="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$ref_artErr ?></span>
                     <br><br>
+                    <label>Etiquetas:</label>
+                    <select name="id_eti" value="<?php echo $id_eti?>">
+                            <option value="">>>Selecione</option>
+                            <option value="1">Notícia</option>
+                            <option value="2">Art. Científico</option>
+                            <option value="3">Art. de site </option>
+                        </select>
+                    <span class="obrigatorio">* <?php  echo '<br>'.$id_etiErr ?></span>
                     <br><br>
                     <label for="image">Inserir imagem da sua escolha:</label><br>
                     <input type="file" id="image" name="image"/><br><br>
                     <br><br>
                     <div class="clear"></div>
                     <br>
-                    <button type="submit" name="cadastro">ENVIAR</button>
+                    <button type="submit" name="cadastro" value="cadastro">ENVIAR</button>
                 </form>
                 <br><br>
             </center>
