@@ -1,7 +1,7 @@
 <?php
+    session_start();
     include "../../include/MySql.php";
     include "../../include/functions.php";
-    session_start();
 ?>
 <head>
     <title>Listagem de Bugs | UEDA</title>
@@ -9,10 +9,6 @@
 <body>
 <?php require("../../template/header3.php");?>
     <br><br>
-    <center>
-        <h1 class="h1_título_topo">COMENTÁRIOS DOS BUGS</h1>
-    </center>
-    <br>
     <main>
         <div class="margem-lados">
             <?php
@@ -21,7 +17,7 @@
                     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
             
                     echo "<center>";
-                    echo "<h1>Listagem de Bugs</h1>";
+                    echo "<h1>LISTAGEM DE REPORTES</h1><br>";
                     echo "<table class='listagens-table'";
                     echo "<tr>";
                     echo "<th>ID</th>";
@@ -40,10 +36,11 @@
                         echo "</tr>";
                     }
                     echo "</table>";
-                    echo "<br><button><a href='../../bug.php'>Reportar Bugs</a></button>";
+                    echo "<br><button><a class='link-branco' href='../../bug.php'>Reportar Bugs</a></button>";
                     echo "</center>";
                 }
             ?>
+            <br>
         </div>
     </main>
 <?php require("../../template/footer3.php");?>

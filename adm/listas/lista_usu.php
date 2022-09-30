@@ -1,7 +1,7 @@
 <?php 
+    session_start();
     include "../../include/MySql.php";
     include "../../include/functions.php";
-    session_start();
 ?>
 <head>
     <title>Listagem de Usuários</title>
@@ -9,13 +9,14 @@
 <?php require("../../template/header3.php");?>
     <main>
         <div class="margem-lados">
+        <br><br>
             <?php
                 $sql = $pdo->prepare('SELECT * FROM usuario');
                 if ($sql->execute()){
                     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
             
                     echo "<center>";
-                    echo "<h1>Listagem de Usuários</h1>";
+                    echo "<h1>LISTAGENS DE USUÁRIOS</h1><br>";
                     echo "<table class='listagens-table'";
                     echo "<tr>";
                     echo "<th>ID</th>";
@@ -42,10 +43,11 @@
                     }
             
                     echo "</table>";
-                    echo "<br><button><a href='../../login/cadastro.php'>Cadastrar novo usuário</a></button>";
+                    echo "<br><button><a class='link-branco' href='../../login/cadastro.php'>Cadastrar novo usuário</a></button>";
                     echo "</center>";
                 }
             ?>
+            <br>
         </div>
     </main>
 <?php require("../../template/footer3.php");?>

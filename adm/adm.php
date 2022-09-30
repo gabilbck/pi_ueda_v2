@@ -4,7 +4,7 @@
     include "../include/functions.php";
 ?>
 <head>
-    <title>Cadastre Forum| UEDA</title>
+    <title>Cadastre Forum | UEDA</title>
 </head>
 <?php require("../template/header2.php");?>
     <main>

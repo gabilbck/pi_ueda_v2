@@ -497,3 +497,9 @@ h1{
     .listagens-table tr:nth-child(even) {
         background:lightgray;
     }
+    .listagens-table td{
+        padding: 10px;
+    }
+    .listagens-table th{
+        padding: 10px;
+    }
