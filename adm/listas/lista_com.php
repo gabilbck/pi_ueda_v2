@@ -24,7 +24,6 @@
                     //echo "<th>ID (Fórum)</th>";
                     echo "<th>ID</th>";
                     echo "<th>Texto</th>";
-                    echo "<th>Curtida*</th>";
                     echo "<th>ID (Usuário)</th>";
                     echo "<th>Comentários</th>";
                     echo "<th>Alterar</th>";
@@ -35,7 +34,6 @@
                         //echo "<td>".$value['id_publi']."</td>";
                         echo "<td>".$value['id_cmt']."</td>";
                         echo "<td>".$value['text_cmt']."</td>";
-                        echo "<td>".$value['curtida_cmt']."</td>";
                         echo "<td>".$value['id_usu']."</td>";
                         echo "<td><center><a class='alt' href='../alt/alt_com.php?id_com=".$value['id_com']."'>(+)</a></center></td>";
                         echo "<td><center><a class='del' href='../del/del_com.php?id_com=".$value['id_com']."'>(-)</a></center></td>";

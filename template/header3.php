@@ -33,7 +33,7 @@ dentro de OUTRA pasta, ou seja: ../../ ! -->
     <?php if(!array_key_exists("id_usu",$_SESSION) && $_SESSION['id_usu'] == ""){?>
         <a class="sair" href="../../login/cadastro.php">Cadastrar-se</a>
     <?php } else{
-        echo '<a class="sair" href="../../login/sair3.php">Sair</a>';
+        echo '<a class="sair" href="../../login/sair.php">Sair</a>';
     }?>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"><img src="../../images/hamburguer.png"></i>

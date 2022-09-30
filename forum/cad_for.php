@@ -3,7 +3,7 @@
     include "../include/MySql.php";
     include "../include/functions.php";
 
-    $id_publica = $id_usu = $text_publica = $img_publi = $curtida_publica = $imgContent = "";
+    $id_publica = $id_usu = $text_publica = $img_publi = $imgContent = "";
     $text_publiErr = $msgErr = "";
     $id_usu = $_SESSION['id_usu'];
 
@@ -33,9 +33,9 @@
         }
         
         //Inserir dados
-        $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publi, id_usu, text_publi, img_publi, curtida_publi)
+        $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publi, id_usu, text_publi, img_publi)
                             VALUES (null, ?, ?, ?, ?)");
-        if ($sql->execute(array($id_usu, $text_publica, base64_encode($imgContent), $curtida_publica))){
+        if ($sql->execute(array($id_usu, $text_publica, base64_encode($imgContent)))){
             $msgErr = "Dados cadastrados com sucesso!";
             header("location: ../index.php");
         } else {
