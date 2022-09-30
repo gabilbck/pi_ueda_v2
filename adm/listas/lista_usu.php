@@ -37,8 +37,8 @@
                         echo "<td>".$value['senha_usu']."</td>";
                         echo "<td>".$value['nome_real_usu']."</td>";
                         echo "<td>".$value['adm']."</td>";
-                        echo "<td><center><a class='alt' href='../del/del_usu.php?id_usu=".$value['id_usu']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../alt/alt_usu.php?id_usu=".$value['id_usu']."'>(-)</a></center></td>";
+                        echo "<td><center><a class='alt' href='../alt/alt_usu.php?id_usu=".$value['id_usu']."'>(+)</a></center></td>";
+                        echo "<td><center><a class='del' href='../del/del_usu.php?id_usu=".$value['id_usu']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
             

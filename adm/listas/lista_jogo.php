@@ -35,8 +35,8 @@
                         echo "<td>".$value['desc_jogo']."</td>";
                         echo "<td>".$value['image_jogo']."</td>";
                         echo "<td>".$value['link_jogo']."</td>";
-                        echo "<td><center><a class='alt' href='../del/del_jogo.php?cod_jogo=".$value['cod_jogo']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../alt/alt_jogo.php?cod_jogo=".$value['cod_jogo']."'>(-)</a></center></td>";
+                        echo "<td><center><a class='alt' href='../alt/alt_jogo.php?cod_jogo=".$value['cod_jogo']."'>(+)</a></center></td>";
+                        echo "<td><center><a class='del' href='../del/del_jogo.php?cod_jogo=".$value['cod_jogo']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
             

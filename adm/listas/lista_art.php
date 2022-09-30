@@ -47,8 +47,8 @@
                         echo "<td>".$value['des_art']."</td>";
                         echo "<td>".$value['con_art']."</td>";
                         echo "<td>".$value['ref_art']."</td>";
-                        echo "<td><center><a class='alt' href='../del/del_art.php?id_art=".$value['id_art']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../alt/alt_art.php?id_art=".$value['id_art']."'>(-)</a></center></td>";
+                        echo "<td><center><a class='alt' href='../alt/alt_art.php?id_art=".$value['id_art']."'>(+)</a></center></td>";
+                        echo "<td><center><a class='del' href='../del/del_art.php?id_art=".$value['id_art']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

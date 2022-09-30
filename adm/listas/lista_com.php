@@ -37,8 +37,8 @@
                         echo "<td>".$value['text_cmt']."</td>";
                         echo "<td>".$value['curtida_cmt']."</td>";
                         echo "<td>".$value['id_usu']."</td>";
-                        echo "<td><center><a class='alt' href='../del/del_com.php?id_com=".$value['id_com']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../alt/alt_com.php?id_com=".$value['id_com']."'>(-)</a></center></td>";
+                        echo "<td><center><a class='alt' href='../alt/alt_com.php?id_com=".$value['id_com']."'>(+)</a></center></td>";
+                        echo "<td><center><a class='del' href='../del/del_com.php?id_com=".$value['id_com']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

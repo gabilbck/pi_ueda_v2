@@ -39,8 +39,8 @@
                         echo "<td>".$value['img_publi']."</td>";
                         echo "<td>".$value['curtida_publi']."</td>";
                         echo "<td><center><a class='alt' href='lista_com.php?id_publi=".$value['id_publi']."'>Comentários</a></center></td>";
-                        echo "<td><center><a class='alt' href='../del/del_forum.php?id_publi=".$value['id_publi']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../alt/alt_forum.php?id_publi=".$value['id_publi']."'>(-)</a></center></td>";
+                        echo "<td><center><a class='alt' href='../alt/alt_forum.php?id_publi=".$value['id_publi']."'>(+)</a></center></td>";
+                        echo "<td><center><a class='del' href='../del/del_forum.php?id_publi=".$value['id_publi']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

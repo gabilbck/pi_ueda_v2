@@ -29,8 +29,8 @@
                         echo "<tr>";
                         echo "<td>".$value['id_eti']."</td>";
                         echo "<td>".$value['nome_eti']."</td>";
-                        echo "<td><center><a class='alt' href='../del/del_eti.php?id_eti=".$value['id_eti']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../alt/alt_eti.php?id_eti=".$value['id_eti']."'>(-)</a></center></td>";
+                        echo "<td><center><a class='alt' href='../alt/alt_eti.php?id_eti=".$value['id_eti']."'>(+)</a></center></td>";
+                        echo "<td><center><a class='del' href='../del/del_eti.php?id_eti=".$value['id_eti']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";
