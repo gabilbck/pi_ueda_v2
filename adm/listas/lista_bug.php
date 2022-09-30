@@ -31,8 +31,8 @@
                         echo "<td>".$value['cod_bug']."</td>";
                         echo "<td>".$value['email_bug']."</td>";
                         echo "<td>".$value['desc_bug']."</td>";
-                        echo "<td><center><a class='alt' href='../del/del_usu.php?id_usu=".$value['cod_bug']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../alt/alt_usu.php?id_usu=".$value['cod_bug']."'>(-)</a></center></td>";
+                        echo "<td><center><a class='alt' href='../del/del_bug.php?cod_bug=".$value['cod_bug']."'>(+)</a></center></td>";
+                        echo "<td><center><a class='del' href='../alt/alt_bug.php?cod_bug=".$value['cod_bug']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";
