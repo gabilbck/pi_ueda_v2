@@ -12,6 +12,7 @@
         <center>
             <h1>PÁGINA DE ADMNISTRAÇÃO</h1>
         </center>
+        <br>
         <div class="margem-lados">
             <h2>Cadastros</h2>
             <button><a class="link-branco" href="../login/cadastro.php">Usuários</a></button>
