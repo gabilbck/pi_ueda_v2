@@ -1,13 +1,15 @@
 <?php 
     include "../../include/MySql.php";
     include "../../include/functions.php";
-    session_start();
+    if (isset($_GET['cod_jogo'])){
+        $cod_jogo = $_GET['cod_jogo'];
+        $sql = $pdo->prepare("DELETE FROM jogos WHERE cod_jogo=?");
+        if ($sql->execute(array($cod_jogo))){
+            echo "Jogo excluido com sucesso!";
+            header('location:../listas/lista_jogo.php');
+        } else{
+            echo "Erro: dados não foram excluídos <br>";
+            echo "comando: $sql. <br>";
+        }
+    }
 ?>
-<head>
-    <title>Deletar Registro de Jogo</title>
-</head>
-<?php require("../../template/header3.php");?>
-    <main>
-
-    </main>
-<?php require("../../template/footer3.php");?>

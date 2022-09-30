@@ -1,13 +1,15 @@
 <?php 
     include "../../include/MySql.php";
     include "../../include/functions.php";
-    session_start();
+    if (isset($_GET['id_publi'])){
+        $id_publi = $_GET['id_publi'];
+        $sql = $pdo->prepare("DELETE FROM publica_forum WHERE id_publi=?");
+        if ($sql->execute(array($id_publi))){
+            echo "Publicação excluida com sucesso!";
+            header('location:../listas/lista_forum.php');
+        } else{
+            echo "Erro: dados não foram excluídos.<br>";
+            echo "comando: $sql. <br>";
+        }
+    }
 ?>
-<head>
-    <title>Deletar Publicação do Fórum</title>
-</head>
-<?php require("../../template/header3.php");?>
-    <main>
-
-    </main>
-<?php require("../../template/footer3.php");?>

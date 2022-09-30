@@ -1,13 +1,15 @@
 <?php 
     include "../../include/MySql.php";
     include "../../include/functions.php";
-    session_start();
+    if (isset($_GET['cod_bug'])){
+        $cod_bug = $_GET['cod_bug'];
+        $sql = $pdo->prepare("DELETE FROM bug WHERE cod_bug=?");
+        if ($sql->execute(array($cod_bug))){
+            echo "Reporte excluido com sucesso!";
+            header('location:../listas/lista_bug.php');
+        } else{
+            echo "Erro: dados não foram excluídos.<br>";
+            echo "comando: $sql. <br>";
+        }
+    }
 ?>
-<head>
-    <title>Deletar Reporte de Bug</title>
-</head>
-<?php require("../../template/header3.php");?>
-    <main>
-
-    </main>
-<?php require("../../template/footer3.php");?>
