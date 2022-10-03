@@ -29,10 +29,9 @@
                     <h1 class="descricao">Um simples jogo onde você controla uma <br>gota de água e desvia de obstáculos.</h1>
                     <h1 class="obj-jogo">Objetivo</h1>
                     <h1 class="obj-jogo2">O objetivo do jogo é alcançar a maior pontuação evitando os obstáculos, que são os lixos no oceano.
-                </div> 
+                </div>
             </div>
             <?php
-            
             $sql = $pdo->prepare("SELECT * FROM jogos");
             if ($sql->execute()){
                 $info = $sql->fetchAll(PDO::FETCH_ASSOC);}
@@ -40,31 +39,29 @@
                 echo "<div class='jogos-agua'>";
                 foreach($info as $key => $values){
                         $image_jogo = $values['image_jogo']; 
-                        echo '<img style="max-width:400px; max-height:200px; width: auto; height: auto;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>'; 
-                        echo $values['nome_jogo'];
-                        echo $values['desc_jogo'];
-                        echo $values['link_jogo']; 
+                        echo "<div class='container-jogos'>";
+                            echo "<div class='jogo-image'>";
+                                echo '<img style="width:400px; max-height:200px; width: auto; height: auto;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>'; 
+                            echo "</div>";
+                            echo "<div class='jogo-info'>";
+                                echo "<div class='nome-jogos'>";
+                                    echo $values['nome_jogo']."<br>";
+                                echo "</div>";
+                                echo "<div class='desc-info'>";
+                                    echo $values['desc_jogo']."<br>";
+                                echo "</div>";
+                                echo "<br>";
+                                echo "<br>";
+                                echo "<br>";
+                                echo "<br>";
+                                echo "<div class='link-info'>";
+                                    echo '<button href="$values["link_jogo"]"';echo'Jogue';echo'</button>'."<br>";
+                                echo "</div>";
+                            echo "</div>";
+                        echo "</div>";
                     }
                 echo "</div>";
                 
-                
-                /*foreach($info as $key => $values){
-                    echo "<div class='jogos-agua'>";
-                    echo "<table>";
-                            echo "<tr>";
-                            echo "<th>";
-                        echo "<tr>";  
-                    echo "<tr>"; 
-                        $image_jogo = $values['image_jogo']; 
-                        echo "<td>".'<img style="max-width:400px; max-height:200px; width: auto; height: auto;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>'."</td>";  
-                        echo "<td style='font-size: 35px; position: absolute;'>".$values['nome_jogo']."</td>";
-                        echo "<td>".$values['desc_jogo']."</td>";
-                        echo "<td>".$values['link_jogo']."</td>";
-                    echo "</tr>";
-                    echo "</table>";
-                    echo "</div>";
-                    echo "<br>";
-                } */
             ?> 
         </div>
         <br><br>
