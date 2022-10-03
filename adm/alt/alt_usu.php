@@ -53,7 +53,7 @@
         }
 
         //Verificar se existe um usuario
-        if ($email_usu && $senha_usu && $nome_usu && $nome_real_usu){
+        if ($email_usu && $nome_usu && $nome_real_usu){
             $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email_usu = ? AND id_usu <> ?");
             if ($sql->execute(array($email_usu, $id_usu))){
                 if ($sql->rowCount() > 0){
@@ -62,7 +62,7 @@
                     $sql = $pdo->prepare("UPDATE usuario SET nome_usu=?, email_usu=?, senha_usu=?, nome_real_usu=?, adm=? WHERE id_usu=?");
                     if ($sql->execute(array($nome_usu, $email_usu, MD5($senha_usu), $nome_real_usu, $adm, $id_usu))){
                         $msgErr = "Dados alterados com sucesso!";
-                        header('location: ../lista_usu.php');
+                        header('location: ../listas/lista_usu.php');
                     } else{
                         $msgErr = "dados não alterados.";
                     }
@@ -86,20 +86,31 @@
                 <br>
                 <form action="" method="post">
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
-                    <span class="obrigatorio" hidden>*</span>
+                    <span class="n-obrigatorio">*</span>
                     <br><br>
                     <input name="nome_real_usu" value="<?php echo $nome_real_usu?>" type="text" placeholder="Nome Completo">
                     <span class="obrigatorio">* <?php  echo '<br>'.$nome_real_usuErr ?></span>
-                    <br><br>
+                    <br>
                     <input name="nome_usu" value="<?php echo $nome_usu?>" type="text" placeholder="Nome de Usuário">
                     <span class="obrigatorio">* <?php  echo '<br>'.$nome_usuErr ?></span>
-                    <br><br>
+                    <br>
                     <input name="email_usu" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
                     <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
+                    <br>
+                    <input name="senha_usu" value="<?php echo MD5($senha_usu)?>" type="password" placeholder="Senha">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$senha_usuErr ?></span>
                     <br><br>
-                    <input class="adm-c" type="checkbox" name="adm" <?php if ($adm==1){?> checked="checked"<?php } ?>/> ADM
+                    <table>
+                        <tr>
+                            <td><input class="adm-c" type="checkbox" name="adm" <?php if ($adm==1){?> checked="checked"<?php } ?>/></td>
+                            <td>ADM</td>
+                        </tr>
+                    </table>
                     <br><br>
-                    <button type="submit" name="cadastro">ALTERAR</button>
+                    <div class="botoes-alt">
+                        <button type="submit" name="cadastro">ALTERAR</button>
+                        <button><a class="link-branco" href="../listas/lista_usu.php">VOLTAR</a></button>
+                    </div>
                 </form>
                 <br><br>
             </center>

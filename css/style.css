@@ -31,6 +31,9 @@ h1{
     .obrigatorio{
         color: red;
     }
+    .n-obrigatorio{
+        color: white;
+    }
 
 /* Cadastros */
     input{
@@ -98,6 +101,9 @@ h1{
         width: 70%;
         border: #000000 solid 2px;
         position: center;
+    }
+    .margem-botoes-alt{
+        width: 10%;
     }
 
 /* Etiquetas */
@@ -528,4 +534,14 @@ h1{
     }
     .listagens-table th{
         padding: 10px;
+    }
+
+/*Alterações*/
+    .adm-c{
+        margin: 0;
+        padding: 0;
+        width: 1rem;
+    }
+    .botoes-alt button{
+        margin: 15px;
     }

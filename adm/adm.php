@@ -2,6 +2,7 @@
     session_start();
     include "../include/MySql.php";
     include "../include/functions.php";
+    // include "../include/adm_verifica.php";
 ?>
 <head>
     <title>Cadastre Forum | UEDA</title>
