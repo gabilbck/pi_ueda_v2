@@ -50,7 +50,7 @@
         <br>
             <form method="post" action="">
                 <h2>Encontrou algum erro?</h2>
-                <h4>Preencha seu E-mail e reporte preenchendo às informações abaixo:</h4>
+                <h4>Reporte preenchendo às informações abaixo:</h4>
                 <br>
                 <input name="email_bug" type="email" placeholder="E-mail">
                 <span class="obrigatorio">* <?php echo '<br>'.$email_bugErr ?></span>
