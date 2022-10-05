@@ -105,7 +105,7 @@ echo "Mensagem: ".$msgErr;
                     <br><br>
                     <label>Etiquetas:</label>
                     <select name="id_eti" value="<?php echo $id_eti?>">
-                            <option value="">>>Selecione</option>
+                            <option value="">Selecione</option>
                             <option value="1">Notícia</option>
                             <option value="2">Art. Científico</option>
                             <option value="3">Art. de site </option>
