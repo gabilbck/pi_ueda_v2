@@ -1,6 +1,9 @@
 <?php require("../template/header.php");?>
 <?php
-    // include "../include/adm_verifica.php";
+    if($_SESSION['adm'] != 1){
+        header("location:n_adm_msg.php");
+        die;
+    }
 ?>
 <head>
     <title>Cadastre Forum | UEDA</title>

@@ -1,4 +1,10 @@
 <?php require("../template/header.php");?>
+<?php
+    if($_SESSION['adm'] != 1){
+        header("location:n_adm_msg.php");
+        die;
+    }
+?>
 <head>
     <title>Listagem de Artigos | UEDA</title>
 </head>
@@ -20,7 +26,6 @@
                     echo "<th>ID (Etiqueta)</th>";
                     echo "<th>Link</th>";
                     echo "<th>Resumo</th>";
-                    echo "<th>Data</th>";
                     echo "<th>Imagem</th>";
                     echo "<th>Introdução</th>";
                     echo "<th>Desenvolvimento</th>";
@@ -36,8 +41,8 @@
                         echo "<td>".$value['id_eti']."</td>";
                         echo "<td>".$value['link_art']."</td>";
                         echo "<td>".$value['resumo_art']."</td>";
-                        echo "<td>".$value['data_art']."</td>";
-                        echo "<td>".$value['img_art']."</td>";
+                        $imagem = $value['img_art'];
+                        echo '<td><img width="150" src="data:image/jpg;charset=utf8;base64,'.($imagem).'"/></td>';
                         echo "<td>".$value['intro_art']."</td>";
                         echo "<td>".$value['des_art']."</td>";
                         echo "<td>".$value['con_art']."</td>";

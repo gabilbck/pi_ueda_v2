@@ -1,7 +1,9 @@
 <?php require("../template/header.php");?>
 <?php
-    // Contagem das curtidas
-    // Implementação dos comentários
+    if($_SESSION['adm'] != 1){
+        header("location:n_adm_msg.php");
+        die;
+    }
 ?>
 <head>
     <title>Listagem de Publicações do Fórums | UEDA</title>

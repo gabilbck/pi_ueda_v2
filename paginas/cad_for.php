@@ -2,7 +2,6 @@
 <?php
     $id_publica = $id_usu = $text_publica = $img_publi = $imgContent = "";
     $text_publiErr = $msgErr = "";
-    $id_usu = $_SESSION['id_usu'];
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
         

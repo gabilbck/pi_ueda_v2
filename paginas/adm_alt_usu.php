@@ -1,4 +1,10 @@
 <?php require("../template/header.php");?>
+<?php
+    if($_SESSION['adm'] != 1){
+        header("location:n_adm_msg.php");
+        die;
+    }
+?>
 <?php 
     $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
     $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";

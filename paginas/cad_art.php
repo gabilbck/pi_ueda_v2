@@ -1,7 +1,13 @@
 <?php require("../template/header.php");?>
 <?php
-    $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $data_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
-    $titulo_artErr = $id_etiErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr ="";
+    if($_SESSION['adm'] != 1){
+        header("location:n_adm_msg.php");
+        die;
+    }
+?>
+<?php
+    $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
+    $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr ="";
     $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
@@ -14,6 +20,11 @@
             $resumo_artErr = "Resumo é obrigatório!";
         } else {
             $resumo_art = test_input($_POST["resumo_art"]);
+        }
+        if (empty($_POST['link_art'])){
+            $link_artErr = "Resumo é obrigatório!";
+        } else {
+            $link_art = test_input($_POST["link_art"]);
         }
         if (empty($_POST['intro_art'])){
             $intro_artErr = " Intridução é obrigatória!";
@@ -53,9 +64,9 @@
                 $imgContent = file_get_contents($image);
         
                 //Inserir dados
-                $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, data_art, img_art, intro_art, des_art, con_art, ref_art)
-                                    VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, $data_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
+                $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
+                                    VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
                     $msgErr = "Dados cadastrados com sucesso!";
                     header("location: home.php");
                 } else {
@@ -79,8 +90,11 @@
                 <h1>PUBLICAR ARTIGO</h1>
                 <br>
                 <form action="" method="POST" enctype="multipart/form-data">
-                    <input class="input-text"  name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                    <input class="input-text" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     <span class="obrigatorio">* <?php  echo '<br>'.$titulo_artErr ?></span>
+                    <br><br>
+                    <input class="input-text" name="link_art" value="<?php  echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
+                    <span class="obrigatorio">* <?php  echo '<br>'.$link_artErr ?></span>
                     <br><br>
                     <textarea name="resumo_art" value="<?php  echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$resumo_artErr ?></span>

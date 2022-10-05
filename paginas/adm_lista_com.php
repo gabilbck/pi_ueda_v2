@@ -1,6 +1,9 @@
 <?php require("../template/header.php");?>
 <?php
-    // falta id_publi
+    if($_SESSION['adm'] != 1){
+        header("location:n_adm_msg.php");
+        die;
+    }
 ?>
 <head>
     <title>Listagem de Comentários Em Publicações do Fórums | UEDA</title>
