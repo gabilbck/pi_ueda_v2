@@ -1,7 +1,5 @@
-<?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-    
+<?php require("../template/header.php");?>
+<?php  
     $_SESSION['id_usu'] = "";
     $_SESSION['nome_usu'] = "";
     $_SESSION['adm'] = "";
@@ -26,6 +24,7 @@
             $sql = $pdo->prepare("SELECT * FROM usuario WHERE email_usu = ? AND senha_usu = ?");
             if ($sql->execute(array($email_usu, MD5($senha_usu)))){
                 $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                
                 if (count($info) > 0){
                     foreach($info as $key => $values){
                         $_SESSION['id_usu'] = $values['id_usu'];
@@ -43,7 +42,6 @@
 <head>
     <title>Login | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <div class="margem-lados">
             <center>

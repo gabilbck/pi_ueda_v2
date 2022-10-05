@@ -1,13 +1,11 @@
+<?php require("../template/header.php");?>
 <?php
     // falta id_publi
-    include "../include/MySql.php";
-    include "../include/functions.php";
 ?>
 <head>
     <title>Listagem de Comentários Em Publicações do Fórums | UEDA</title>
 </head>
 <body>
-<?php require("../template/header.php");?>
     <br><br>
     <main>
         <div class="margem-lados">

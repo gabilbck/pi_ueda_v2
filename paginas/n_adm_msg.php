@@ -1,11 +1,7 @@
-<?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-?>
+<?php require("../template/header.php");?>
 <head>
     <title>VOCÊ NÃO POSSUI ACESSO À PÁGINA! | UEDA</title>
 </head>
-<?php require("../template/footer.php");?>
     <main>
         <div class="margem-lados">
             <center>

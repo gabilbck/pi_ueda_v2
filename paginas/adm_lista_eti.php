@@ -1,12 +1,8 @@
-<?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-?>
+<?php require("../template/header.php");?>
 <head>
     <title>Listagem de Etiquetas | UEDA</title>
 </head>
 <body>
-<?php require("../template/header.php");?>
     <br><br>
     <main>
         <div class="margem-lados">

@@ -1,12 +1,10 @@
+<?php require("../template/header.php");?>
 <?php
     // Fazer php!!!
-    include "../include/MySql.php";
-    include "../include/functions.php";
 ?>
 <head>
     <title>Esqueci Minha Senha</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
     <div class="margem-lados">
             <center>

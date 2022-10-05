@@ -1,7 +1,5 @@
+<?php require("../template/header.php");?>
 <?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-    
     $email_bug = $desc_bug = $cod_bug =  "";
     $email_bugErr = $desc_bugErr = $msgErr = "";
 
@@ -40,7 +38,6 @@
 <head>
     <title>Reportar Erros | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <div class="margem-lados">
         <br><br>

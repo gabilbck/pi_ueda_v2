@@ -1,7 +1,5 @@
+<?php require("../template/header.php");?>
 <?php 
-    include "../include/MySql.php";
-    include "../include/functions.php";
-
     $id_eti = $nome_eti = "";
     $id_etiErr = $nome_etiErr = $msgErr = "";
 
@@ -51,7 +49,6 @@
 <head>
     <title>Alterar Informações do Usuário</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
     <div class="margem-lados">
             <center>

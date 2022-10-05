@@ -1,11 +1,7 @@
-<?php 
-    include "../include/MySql.php";
-    include "../include/functions.php";
-?>
+<?php require("../template/header.php");?>
 <head>
     <title>Alterar informações do Erro</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
 
     </main>

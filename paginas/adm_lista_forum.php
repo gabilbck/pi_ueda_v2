@@ -1,8 +1,7 @@
+<?php require("../template/header.php");?>
 <?php
     // Contagem das curtidas
     // Implementação dos comentários
-    include "../include/MySql.php";
-    include "../include/functions.php";
 ?>
 <head>
     <title>Listagem de Publicações do Fórums | UEDA</title>

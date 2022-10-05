@@ -1,11 +1,8 @@
+<?php require("../template/header.php");?>
 <?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-
     $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $data_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
     $titulo_artErr = $id_etiErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr ="";
     $msgErr = "";
-    $id_usu = $_SESSION['id_usu'];
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
         if (empty ($_POST['titulo_art'])){
@@ -75,7 +72,6 @@
 <head>
     <title>Publicar artigo | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <div class="margem-lados">
             <center>

@@ -1,12 +1,10 @@
+<?php require("../template/header.php");?>
 <?php
     // Implementação futura
-    include "../include/MySql.php";
-    include "../include/functions.php";
 ?>
 <head>
     <title>Cadastrar Etiqueta | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <div class="margem-lados">
             <center>

@@ -1,11 +1,7 @@
-<?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-?>
+<?php require("../template/header.php");?>
 <head>
     <title>Home | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <div class="banner-home">
             <img src="../images/ueda_banner.png">

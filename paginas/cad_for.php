@@ -1,7 +1,5 @@
+<?php require("../template/header.php");?>
 <?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-
     $id_publica = $id_usu = $text_publica = $img_publi = $imgContent = "";
     $text_publiErr = $msgErr = "";
     $id_usu = $_SESSION['id_usu'];
@@ -47,7 +45,6 @@
 <head>
     <title>Publicação No Fórum | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <div class="margem-lados">
             <center>
