@@ -1,7 +1,5 @@
+<?php require("../template/header.php");?>
 <?php 
-    include "../include/MySql.php";
-    include "../include/functions.php";
-
     $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
     $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
 
@@ -35,11 +33,7 @@
         } else {
             $email_usu = test_input($_POST["email_usu"]);
         }
-        if (empty($_POST['senha_usu'])){
-            $senha_usuErr = "Senha é obrigatório!";
-        } else {
-            $senha_usu = test_input($_POST["senha_usu"]);
-        }
+        $senha_usu = test_input($_POST["senha_usu"]);
         if (empty($_POST['nome_real_usu'])){
             $nome_real_usuErr = "Telefone é obrigatório!";
         } else {
@@ -58,8 +52,12 @@
                 if ($sql->rowCount() > 0){
                     $msgErr = "E-mail já cadastrado para outro usuário";
                 } else {
-                    $sql = $pdo->prepare("UPDATE usuario SET nome_usu=?, email_usu=?, senha_usu=?, nome_real_usu=?, adm=? WHERE id_usu=?");
-                    if ($sql->execute(array($nome_usu, $email_usu, MD5($senha_usu), $nome_real_usu, $adm, $id_usu))){
+                    $sql = $pdo->prepare("UPDATE usuario SET nome_usu=?, email_usu=?, nome_real_usu=?, adm=? WHERE id_usu=?");
+                    if ($sql->execute(array($nome_usu, $email_usu, $nome_real_usu, $adm, $id_usu))){
+                        if(!empty($senha_usu)){
+                            $sql = $pdo->prepare("UPDATE usuario SET senha_usu=? WHERE id_usu=?");
+                            $sql->execute(array(md5($senha_usu), $id_usu));
+                        }
                         $msgErr = "Dados alterados com sucesso!";
                         header('location: adm_lista_usu.php');
                     } else{
@@ -76,7 +74,6 @@
 <head>
     <title>Alterar Informações do Usuário</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
     <div class="margem-lados">
             <center>
@@ -96,7 +93,7 @@
                     <input name="email_usu" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
                     <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
                     <br>
-                    <input name="senha_usu" value="<?php echo MD5($senha_usu)?>" type="password" placeholder="Senha">
+                    <input name="senha_usu" type="password" placeholder="Senha">
                     <span class="obrigatorio">* <?php  echo '<br>'.$senha_usuErr ?></span>
                     <br><br>
                     <table>

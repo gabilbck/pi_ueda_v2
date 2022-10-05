@@ -2,6 +2,8 @@
 Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
 <?php
     session_start();
+    include "../include/MySql.php";
+    include "../include/functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

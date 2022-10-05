@@ -1,7 +1,5 @@
+<?php require("../template/header.php");?>
 <?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-
     $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
     $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
 
@@ -54,7 +52,6 @@
 <head>
     <title>Cadastre-se | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <div class="margem-lados">
             <center>

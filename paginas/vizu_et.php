@@ -1,5 +1,5 @@
+<?php require("../template/header.php");?>
 <?php
     /* Artigos relaionados a etiqueta selecionada pelo usuário */
-    include "../include/MySql.php";
-    include "../include/functions.php";
 ?>
+<?php require("../template/footer.php");?>

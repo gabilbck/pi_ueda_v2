@@ -1,6 +1,5 @@
+<?php require("../template/header.php");?>
 <?php
     /* Visualização do artigo selecionado */
-
-    include "../include/MySql.php";
-    include "../include/functions.php";
 ?>
+<?php require("../template/footer.php");?>

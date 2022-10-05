@@ -1,14 +1,12 @@
+<?php require("../template/header.php");?>
 <?php 
     /* Deve ser feito o php da página, para que mostre esses artigos
     registrados ao usuário, tendo a mesma função que as listagens,
     no entanto, NÃO POSSUEM funções como exclusão o alteração dos artigos */
-    include "../include/MySql.php";
-    include "../include/functions.php";
 ?>
 <head>
     <title>Artigos | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <div class="margem-lados">
             <br><Br>

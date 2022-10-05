@@ -1,13 +1,11 @@
+<?php require("../template/header.php");?>
 <?php
     /* Essa página de "listagem" do fórum só pode ser utilizada se o
     usuário for cadastrado */
-    include "../include/MySql.php";
-    include "../include/functions.php";
 ?>
 <head>
     <title>Fórum | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <br><br>
         <center>

@@ -1,12 +1,10 @@
+<?php require("../template/header.php");?>
 <?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
     // include "../include/adm_verifica.php";
 ?>
 <head>
     <title>Cadastre Forum | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
     <main>
         <br><br>
         <center>

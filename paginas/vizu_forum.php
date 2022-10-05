@@ -1,4 +1,2 @@
-<?php
-    include "../include/MySql.php";
-    include "../include/functions.php";
-?>
+<?php require("../template/header.php");?>
+<?php require("../template/footer.php");?>

@@ -1,7 +1,5 @@
+<?php require("../template/header.php");?>
 <?php
-    include "../include/functions.php";
-    include "../include/MySql.php";
-
     $msgErro = "";
     $nome_jogo = $desc_jogo = $link_jogo = "";
 
@@ -54,7 +52,6 @@
 <head>
     <title>Cadastro de jogos | UEDA</title>
 </head>
-<?php require("../template/header.php");?>
 <div class="margem-lados">
             <center>
                 <br><br>
