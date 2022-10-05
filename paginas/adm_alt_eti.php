@@ -1,7 +1,6 @@
 <?php 
     include "../include/MySql.php";
     include "../include/functions.php";
-    session_start();
 
     $id_eti = $nome_eti = "";
     $id_etiErr = $nome_etiErr = $msgErr = "";

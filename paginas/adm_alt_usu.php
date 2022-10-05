@@ -1,7 +1,6 @@
 <?php 
     include "../include/MySql.php";
     include "../include/functions.php";
-    session_start();
 
     $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
     $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";

@@ -1,7 +1,7 @@
 <!-- ATENÇÃO!!!!!!!!!!
 Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
 <?php
-    // session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

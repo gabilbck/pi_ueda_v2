@@ -1,7 +1,6 @@
 <?php
     // Contagem das curtidas
     // Implementação dos comentários
-    session_start();
     include "../include/MySql.php";
     include "../include/functions.php";
 ?>
