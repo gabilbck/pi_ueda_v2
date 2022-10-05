@@ -103,7 +103,7 @@
                     <span class="obrigatorio">* <?php  echo '<br>'.$ref_artErr ?></span>
                     <br><br>
                     <label>Etiquetas:</label>
-                    <select name="id_eti">
+                    <select name="id_eti"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
                             <option value="">Selecione</option>
                             <option value="1">Notícia</option>
                             <option value="2">Art. Científico</option>
