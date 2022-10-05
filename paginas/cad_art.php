@@ -111,8 +111,6 @@
                         </select>
                     <span class="obrigatorio">* <?php echo '<br>'.$id_etiErr ?></span>
                     <br><br>
-                    <!-- <label for="image">Inserir imagem da sua escolha:</label><br>
-                    <input type="file" id="image" name="image"/><br><br> -->
                     <div class="escolha-imagem">
                         <label for="image">Selecione uma imagem</label>
                         <input type="file" id='image' name="image"/><br>
