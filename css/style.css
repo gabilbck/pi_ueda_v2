@@ -479,21 +479,53 @@ h1{
     }
 
     .jogos-agua{
-        margin-top: 350px;
+        margin-top: 50px;
         background-color: #439DD6;
         width: 50%;
         margin-left: auto;
         margin-right: auto;
+        border-right: 10px solid #36586D;
+        border-bottom: 10px solid #36586D;
     }
     
     .container-jogos{
         width: 100%;
-        height: 250px;
+        height: 210px;
+        max-height: 210px;
         display: flex;
+    }
+
+    .link-info{
+        font-size:20px;
+        padding-left: 0 100 0;
+        border: 2px white solid;
+        border-radius: 7px;
+        margin-top: 90px;
+        background-color: #009CFF;
+        margin-left: 35px;   
+    }
+
+    .link-info a{
+        color: white;
+        padding: 0 250 0;
+    }
+
+    .nome-jogos{
+        font-size: 35px;
+        margin-left: 35px;
+        text-align: left;
+    }
+
+    .desc-info{
+        margin-left: 35px;
+        text-align: left;
+    }
+
+    .jogos{
+        margin-top: 300px;
     }
     
     .jogo-image{
-        width: 400px;
         max-width: 400px;
         margin-top: 5px;
         margin-left : 5px;
@@ -509,6 +541,17 @@ h1{
         border: white 2px solid;
         cursor: pointer;
         padding-right: 100%;
+    }
+
+    .background-jogos{
+        position: relative;
+        width: 100%;
+        padding: 140px 0 100px 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        background-image: url(../images/bg-developers1.png)
     }
 
 /* Main - ADM */
