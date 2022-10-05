@@ -33,7 +33,7 @@ Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
     <?php if(array_key_exists("id_usu",$_SESSION) && $_SESSION['adm']){?>
         <a class="sair" href="adm.php">ADM</a>
     <?php }?>
-    <?php if(!array_key_exists("id_usu",$_SESSION)){?>
+    <?php if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){?>
         <a class="sair" href="cad_usu.php">Cadastrar-se</a>
     <?php } else{
         echo '<a class="sair" href="menu_sair.php">Sair</a>';
