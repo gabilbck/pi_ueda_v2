@@ -59,7 +59,7 @@
 <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>PUBLIQUE SEU JOGO:</h1>
+                <h1>PUBLIQUE SEU JOGO</h1>
                 <br>
                 <form method="post" enctype="multipart/form-data">
                     <div class="form-jogo">
