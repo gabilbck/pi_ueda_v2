@@ -3,6 +3,7 @@
     include "../include/MySql.php";
     include "../include/functions.php";
     
+    $_SESSION['id_usu'] = "";
     $_SESSION['nome_usu'] = "";
     $_SESSION['adm'] = "";
     
@@ -28,6 +29,7 @@
                 $info = $sql->fetchAll(PDO::FETCH_ASSOC);
                 if (count($info) > 0){
                     foreach($info as $key => $values){
+                        $_SESSION['id_usu'] = $values['id_usu'];
                         $_SESSION['nome_usu'] = $values['nome_usu'];
                         $_SESSION['adm'] = $values['adm'];
                     }
