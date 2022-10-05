@@ -39,7 +39,7 @@
         } else {
             $ref_art = test_input($_POST["ref_art"]);
         }
-        if (($_POST['id_eti']) == 1){
+        if (($_POST['id_eti']) == ""){
             $id_etiErr = "Etiqueta é obrigatória!";
         } else {
             $id_eti = test_input($_POST["id_eti"]);
@@ -71,11 +71,10 @@
         } else {
             $msgErr = "Informações incorretas";
         }            
-}
-echo "Mensagem: ".$msgErr;
+    }
 ?>
 <head>
-    <title>Publicar artigo| UEDA</title>
+    <title>Publicar artigo | UEDA</title>
 </head>
 <?php require("../template/header.php");?>
     <main>
@@ -104,13 +103,13 @@ echo "Mensagem: ".$msgErr;
                     <span class="obrigatorio">* <?php  echo '<br>'.$ref_artErr ?></span>
                     <br><br>
                     <label>Etiquetas:</label>
-                    <select name="id_eti" value="<?php echo $id_eti?>">
+                    <select name="id_eti">
                             <option value="">Selecione</option>
                             <option value="1">Notícia</option>
                             <option value="2">Art. Científico</option>
                             <option value="3">Art. de site </option>
                         </select>
-                    <span class="obrigatorio">* <?php  echo '<br>'.$id_etiErr ?></span>
+                    <span class="obrigatorio">* <?php echo '<br>'.$id_etiErr ?></span>
                     <br><br>
                     <label for="image">Inserir imagem da sua escolha:</label><br>
                     <input type="file" id="image" name="image"/><br><br>
