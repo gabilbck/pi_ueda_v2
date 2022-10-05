@@ -15,7 +15,7 @@
             $text_publica = test_input($_POST["text_publi"]);
         }
 
-        if (!empty($_FILES["image"]["name"])){
+        if ($_FILES["image"]["name"]){
             //Pegar informações
             $fileName = basename($_FILES["image"]["name"]);
             $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
@@ -34,7 +34,7 @@
         
         //Inserir dados
         $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publi, id_usu, text_publi, img_publi)
-                            VALUES (null, ?, ?, ?, ?)");
+                            VALUES (null, ?, ?, ?)");
         if ($sql->execute(array($id_usu, $text_publica, base64_encode($imgContent)))){
             $msgErr = "Dados cadastrados com sucesso!";
             header("location: menu_forum.php");
@@ -59,8 +59,10 @@
                     <textarea name="text_publi" type="text" placeholder="Texto para publicação"></textarea>
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
                     <br><br>
-                    <label for="image">Inserir imagem da sua escolha:</label>
-                    <input type="file" id="image" name="image"/><br><br>  
+                    <div class="escolha-imagem">
+                        <label for="image">Selecione uma imagem (Opcional)</label>
+                        <input type="file" id='image' name="image"/><br><br>
+                    </div>
                     <div class="clear"></div>
                     <br>
                     <button type="submit" name="cadastro">ENVIAR</button>
