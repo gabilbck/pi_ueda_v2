@@ -55,7 +55,7 @@
                                 echo "<br>";
                                 echo "<br>";
                                 echo "<div class='link-info'>";
-                                    echo '<button href="$values["link_jogo"]"';echo'Jogue';echo'</button>'."<br>";
+                                echo "<a href=".$values['link_jogo'].">Jogue</a>";
                                 echo "</div>";
                             echo "</div>";
                         echo "</div>";
