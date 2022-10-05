@@ -1,5 +1,8 @@
 <!-- ATENÇÃO!!!!!!!!!!
 Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
+<?php
+    // session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,10 +30,10 @@ Header APENAS para as páginas que NÃO estão DENTRO de pastas! -->
     <a href="menu_forum.php">Fórum</a>
     <a href="menu_jogos.php">Jogos</a>
     <a href="menu_sobre.php">Sobre</a>
-    <?php if(array_key_exists("id_usu",$_SESSION) && $_SESSION['adm']){?>
+    <?php if(array_key_exists("nome_usu",$_SESSION) && $_SESSION['adm']){?>
         <a class="sair" href="adm.php">ADM</a>
     <?php }?>
-    <?php if(!array_key_exists("id_usu",$_SESSION)){?>
+    <?php if(!array_key_exists("nome_usu",$_SESSION)){?>
         <a class="sair" href="cad_usu.php">Cadastrar-se</a>
     <?php } else{
         echo '<a class="sair" href="menu_sair.php">Sair</a>';
