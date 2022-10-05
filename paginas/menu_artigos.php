@@ -17,7 +17,51 @@
                 <h1>ARTIGOS</h1>
             </center>
             <div class="margem-titulo"></div>
-            <div class="artigo">
+
+            <?php 
+                include '../include/MySql.php';
+
+
+                $sql = $pdo->prepare("SELECT * FROM `artigo`");
+                if($sql->execute()){
+                    $row = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach($row as $key => $i){
+                        $id = $i['id_art'];
+                        $tituloart = $i['titulo_art'];
+                        $etiqueta = $i['id_eti'];
+                        $desc = $i['des_art'];
+
+                        if($etiqueta == 2){
+                            $str = 'Art. Cientifico';
+                            $class = 'artc';
+                        }else if($etiqueta == 1){
+                            $str = 'Noticia';
+                            $class = 'not';
+                        }else  if($etiqueta == 3){
+                            $str = 'Art. de Site';
+                            $class = 'site';
+                        }else{
+                            $str = 'Null';
+                            $class = 'artc';
+                        };
+
+                        echo '<div class="artigo">';
+                        echo '<a href="#"><h2>'.$tituloart.'</h2></a>';
+                        echo '<div class="margem-art"></div>';
+                        echo '<a class="et-'.$class.'" href="#">'.$str.'</a>';
+                        echo '<div class="margem-art"></div>';
+                        echo '<p>'.$desc.'</p>';
+                        echo '<div class="margem-art"></div>';
+                        echo '<a href="#">Ver Agora</a>';
+                        echo '<hr>';
+                        echo '</div>';
+                        echo '<br>';
+                    };
+                };
+            ?>
+
+            <!-- <div class="artigo">
                 <a href="#"><h2>Título do Artigo</h2></a>
                 <div class="margem-art"></div>
                 <a class="et-artc" href="#">Art. Científico</a>
@@ -49,7 +93,7 @@
                 <a href="#">Ver Agora</a>
                 <hr>
             </div>
-            <br>
+            <br> -->
         </div>
         <br>
     </main>
