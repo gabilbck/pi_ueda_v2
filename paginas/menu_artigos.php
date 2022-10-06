@@ -28,6 +28,7 @@
                         $tituloart = $i['titulo_art'];
                         $etiqueta = $i['id_eti'];
                         $desc = $i['des_art'];
+                        $link_arts = $i['link_art'];
 
                         if($etiqueta == 2){
                             $str = 'Art. Cientifico';
@@ -50,7 +51,7 @@
                         echo '<div class="margem-art"></div>';
                         echo '<p>'.$desc.'</p>';
                         echo '<div class="margem-art"></div>';
-                        echo '<a href="#">Ver Agora</a>';
+                        echo "<a target='_blank' href=".$link_arts.">Ver Agora</a>";
                         echo '<hr>';
                         echo '</div>';
                         echo '<br>';
