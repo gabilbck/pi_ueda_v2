@@ -68,7 +68,7 @@
                                     VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                 if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
                     $msgErr = "Dados cadastrados com sucesso!";
-                    header("location: home.php");
+                    header("location: menu_art.php");
                 } else {
                     $msgErr = "Dados não cadastrados!";
                 }
