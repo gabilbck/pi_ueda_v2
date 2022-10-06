@@ -36,7 +36,7 @@
                                         VALUES (null, ?, ?, ?, ?, 0)");
                     if ($sql->execute(array($nome_usu, $email_usu, MD5($senha_usu), $nome_real_usu))){
                         $msgErr = "Dados cadastrados com sucesso!";
-                        header("location: login_usu.php");
+                        header("location: sus_cad_usu.php");
                     } else {
                         $msgErr = "Dados não cadastrados!";
                     }

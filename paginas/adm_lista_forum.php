@@ -9,7 +9,6 @@
     <title>Listagem de Publicações do Fórums | UEDA</title>
 </head>
 <body>
-<?php require("../template/header.php");?>
     <br><br>
     <main>
         <div class="margem-lados">

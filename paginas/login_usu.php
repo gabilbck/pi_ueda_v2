@@ -31,7 +31,7 @@
                         $_SESSION['nome_usu'] = $values['nome_usu'];
                         $_SESSION['adm'] = $values['adm'];
                     }
-                    header('location:home.php');
+                    header('location:sus_log_usu.php');
                 } else {
                     echo '<h6>Email de usuário não cadastrado</h6>';
                 }
