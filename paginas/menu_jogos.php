@@ -27,38 +27,43 @@
                 </div>
             </div>
             </div>
-            <div class="background-jogos">
-            <?php
-            $sql = $pdo->prepare("SELECT * FROM jogos");
-            if ($sql->execute()){
-                $info = $sql->fetchAll(PDO::FETCH_ASSOC);}
-
-                echo "<div class='jogos'>";
-                foreach($info as $key => $values){
-                        $image_jogo = $values['image_jogo']; 
-                        echo "<div class='jogos-agua'>";
-                        echo "<div class='container-jogos'>";
-                            echo "<div class='jogo-image'>";
-                                echo '<img style="width:400px; max-height:200px; width: auto; height: auto;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>'; 
-                            echo "</div>";
-                            echo "<div class='jogo-info'>";
-                                echo "<div class='nome-jogos'>";
-                                    echo $values['nome_jogo']."<br>";
-                                echo "</div>";
-                                echo "<div class='desc-info'>";
-                                    echo $values['desc_jogo']."<br>";
-                                echo "</div>";
-                                echo "<div class='link-info'>";
-                                    echo "<a target='_blank' href=".$values['link_jogo'].">Jogue</a>";
-                                echo "</div>";
-                            echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                    }
-                echo "</div>";
-                
-            ?> 
+            <div class="separacao-jogos">
+                <img src="../images/bg-developers1.png" alt="">
             </div>
+            <div class="background-jogos">
+                <?php
+                    $sql = $pdo->prepare("SELECT * FROM jogos");
+                    if ($sql->execute()){
+                        $info = $sql->fetchAll(PDO::FETCH_ASSOC);}
+
+                        echo "<div class='jogos'>";
+                        foreach($info as $key => $values){
+                                $image_jogo = $values['image_jogo']; 
+                                echo "<div class='jogos-agua'>";
+                                echo "<div class='container-jogos'>";
+                                    echo "<div class='jogo-image'>";
+                                        echo '<img style="width:400px; max-height:200px; width: auto; height: auto;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>'; 
+                                    echo "</div>";
+                                    echo "<div class='jogo-info'>";
+                                        echo "<div class='nome-jogos'>";
+                                            echo $values['nome_jogo']."<br>";
+                                        echo "</div>";
+                                        echo "<div class='desc-info'>";
+                                            echo $values['desc_jogo']."<br>";
+                                        echo "</div>";
+                                        echo "<div class='link-info'>";
+                                            echo "<a target='_blank' href=".$values['link_jogo'].">Jogue</a>";
+                                        echo "</div>";
+                                    echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "<div class='fundo-jogos'>"."</div>";
+                            }
+                        echo "</div>";
+                ?> 
+            </div>
+            
+            
         
     </main>
 <?php require("../template/footer.php");?>
