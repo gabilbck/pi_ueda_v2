@@ -1,5 +1,7 @@
 <?php require("../template/header.php");?>
 <?php
+    // $_SESSION['id_usu'];
+    
     $id_publica = $id_usu = $text_publica = $img_publi = $imgContent = "";
     $text_publiErr = $msgErr = "";
 

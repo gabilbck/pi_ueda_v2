@@ -1,16 +1,16 @@
 <?php require("../template/header.php");?>
 <head>
-    <title>CADASTRADO COM SUCESSO! | UEDA</title>
+    <title>PUBLICADO COM SUCESSO! | UEDA</title>
 </head>
     <main>
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ITEM CADASTRADO COM SUCESSO!</h1>
+                <h1>PUBLICADO COM SUCESSO!</h1>
                 <br>
-                <h2>Voltar à página principal:</h2>
+                <h2>Volte à página de fóruns e veja sua publicação:</h2>
                 <br>
-                <a href="home.php"><button>PÁGINA PRINCIPAL</button></a>
+                <a href="menu_for.php"><button>FÓRUNS</button></a>
                 <br><br>
             </center>
         </div>
