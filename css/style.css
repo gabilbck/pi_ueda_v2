@@ -419,14 +419,16 @@ h1{
         position: relative;
         white-space: nowrap;
         margin-bottom:20px;
+        font-weight: 300;
     }
     
     .subtitulo_principal{
         color: #000000;
         position: absolute;
         line-height: 35px;
-        left: 1200px;
+        left: 1261px;
         bottom: 542px;
+        font-weight: 300;
     }
 
     .jogo_ueda{
@@ -442,6 +444,7 @@ h1{
         margin-right: auto;
         margin-top: 10px;
         position: relative;
+        font-weight: 300;
     }
     
     .descricao_titulo{
@@ -451,6 +454,7 @@ h1{
         position: relative;
         white-space: nowrap;
         margin-bottom:20px;
+        font-weight: 300;
     }
     
     .descricao{
@@ -459,14 +463,16 @@ h1{
         font-size: 25px;
         line-height: 35px;
         top: 60px;
+        font-weight: 300;
     }
 
     .obj-jogo{
         color: #000000;
         position: absolute;
         line-height: 35px;
-        margin-left: 1560px;
+        margin-left: 1196px;
         bottom: 52px;
+        font-weight: 300;
     }
 
     .obj-jogo2{
@@ -476,22 +482,22 @@ h1{
         font-size: 25px;
         line-height: 35px;
         top: 60px;
+        font-weight: 300;
     }
 
     .jogos-agua{
         margin-top: 50px;
-        background-color: #439DD6;
+        background-color: #0075BD;
         width: 50%;
         margin-left: auto;
         margin-right: auto;
-        border-right: 10px solid #36586D;
-        border-bottom: 10px solid #36586D;
+        border-right: 10px solid #1e3f53;
+        border-bottom: 10px solid #1e3f53;
     }
     
     .container-jogos{
         width: 100%;
-        height: 210px;
-        max-height: 210px;
+        max-height: 350px;
         display: flex;
     }
 
@@ -500,29 +506,30 @@ h1{
         padding-left: 0 100 0;
         border: 2px white solid;
         border-radius: 7px;
-        margin-top: 90px;
+        margin-top: 15px;
         background-color: #009CFF;
-        margin-left: 35px;   
+        margin-left: 65px;  
     }
 
     .link-info a{
         color: white;
-        padding: 0 250 0;
+        padding-right: 150px; 
+        padding-left: 150px;
     }
 
     .nome-jogos{
         font-size: 35px;
-        margin-left: 35px;
+        margin-left: 65px;  
         text-align: left;
     }
 
     .desc-info{
-        margin-left: 35px;
+        margin-left: 65px;  
         text-align: left;
     }
 
     .jogos{
-        margin-top: 300px;
+        text-align: center;
     }
     
     .jogo-image{
@@ -543,7 +550,7 @@ h1{
         padding-right: 100%;
     }
 
-    .background-jogos{
+    /*.background-jogos{
         position: relative;
         width: 100%;
         padding: 140px 0 100px 0;
@@ -552,6 +559,14 @@ h1{
         background-size: cover;
         text-align: center;
         background-image: url(../images/bg-developers1.png)
+    }*/
+
+    .background-jogos{
+        background-color: #597d95;
+    }
+
+    .fundo-jogos{
+        background: #597d95;
     }
 
 /* Main - ADM */

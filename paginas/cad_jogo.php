@@ -68,7 +68,7 @@
                         <input name="nome_jogo" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
                         <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
                         <br><br>
-                        <input name="desc_jogo" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo">
+                        <textarea name="desc_jogo" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo"></textarea>
                         <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
                         <br><br>
                         <input name="link_jogo" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">
