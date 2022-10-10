@@ -11,7 +11,7 @@
         <div class="margem-lados">
             <div class="principal-jogos">
                 <div class="principais-text-jogos">
-                    <h1 class="titulo_principal">Jogo da gota</h1>
+                    <h1 class="titulo_principal">Jogo da gotinha</h1>
                     <h1 class="subtitulo_principal">Desenvolvido por: Equipe UEDA</h1>
                 </div>
                 <a target='_blank' href="../jogo/jogo-ueda/index.html">
@@ -35,7 +35,7 @@
                     $sql = $pdo->prepare("SELECT * FROM jogos");
                     if ($sql->execute()){
                         $info = $sql->fetchAll(PDO::FETCH_ASSOC);}
-
+                        
                         echo "<div class='jogos'>";
                         foreach($info as $key => $values){
                                 $image_jogo = $values['image_jogo']; 
@@ -60,6 +60,7 @@
                                 echo "<div class='fundo-jogos'>"."</div>";
                             }
                         echo "</div>";
+                        echo "<br>";
                 ?> 
             </div>
             

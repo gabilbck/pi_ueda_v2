@@ -1,16 +1,21 @@
 <?php require("../template/header.php");?>
+<?php 
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
+        header("location:n_adm_msg.php");
+        die;
+    }
+?>
 <?php
-    // $_SESSION['id_usu'];
-    
-    $id_publica = $id_usu = $text_publica = $img_publi = $imgContent = "";
+
+    $id_publi = $id_usu = $text_publi = $img_publi = $imgContent = "";
     $text_publiErr = $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
         
         if (empty ($_POST['text_publi'])){
-            $text_publiErr = "Texto para pblicação é obrigatória!";
+            $text_publiErr = "Texto para publicação é obrigatória!";
         } else {
-            $text_publica = test_input($_POST["text_publi"]);
+            $text_publi = test_input($_POST["text_publi"]);
         }
 
         if ($_FILES["image"]["name"]){
@@ -31,9 +36,8 @@
         }
         
         //Inserir dados
-        $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publi, id_usu, text_publi, img_publi)
-                            VALUES (null, ?, ?, ?)");
-        if ($sql->execute(array($id_usu, $text_publica, base64_encode($imgContent)))){
+        $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publi, id_usu, text_publi, img_publi) VALUES (null, ?, ?, ?)");
+        if ($sql->execute(array($id_usu, $text_publi, base64_encode($imgContent)))){
             $msgErr = "Dados cadastrados com sucesso!";
             header("location: menu_forum.php");
         } else {

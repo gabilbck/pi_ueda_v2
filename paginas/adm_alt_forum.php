@@ -46,17 +46,13 @@
         }
 
         //Gravar no banco
-        if ($nome && $descricao && $valor && $imgContent){
-            $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, text_publi=?, img_publi=? WHERE id_publi=?");
-            if ($sql->execute(array($id_usu, $text_publi, $imgContent, $id_publisss))){
-                $msgErr = "Dados alterados com sucesso!";
-                    header('location: adm_lista_for.php');
-            } else{
-                $msgErr = "dados não alterados."; 
-            }
-        } else {
-            $msgErr = "Informações incorretas, não preenchidas ou já cadastradas.";
-        }    
+        $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, text_publi=?, img_publi=? WHERE id_publi=?");
+        if ($sql->execute(array($id_usu, $text_publi, base64_encode($imgContent), $id_publi))){
+            $msgErr = "Dados alterados com sucesso!";
+                header('location: adm_lista_forum.php');
+        } else{
+            $msgErr = "dados não alterados."; 
+        }
     }
 ?>
 <head>
@@ -73,7 +69,7 @@
                     <br><br>
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
                     <br><br>
-                    <textarea name="text_publi" type="text" placeholder="Texto para publicação" value="<?php echo $text_publi?>"></textarea>
+                    <textarea type="text" name="text_publi" value="<?php echo $text_publi?>" placeholder="Texto para publicação"></textarea>
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
                     <br><br>
                     <div class="escolha-imagem">
