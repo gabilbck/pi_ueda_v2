@@ -192,6 +192,7 @@ h1{
         color: white;
         padding: 20px;
         font-size: 15px;
+        position: relative;
     }
     .hr-footer{
         margin: 20px;
@@ -574,6 +575,28 @@ h1{
         width: 100%;
         margin-bottom: -50px;
     }
+
+    @media (max-width: 1630px){
+        .jogos-agua{
+            height: 300px;
+        }
+        .link-info{
+            font-size:20px;
+            padding-left: 0 100 0;
+            padding-bottom: 0px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 35px;
+            background-color: #009CFF;
+            margin-left: -200px;  
+        }
+        .link-info a{
+            color: white;
+            padding-left: 45%;
+            padding-right: 45%;
+        }
+    }
+
 
 /* Main - ADM */
     .link-branco{
