@@ -1,6 +1,11 @@
 <?php require("../template/header.php");?>
+<?php 
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
+        header("location:n_adm_msg.php");
+        die;
+    }
+?>
 <?php
-    $_SESSION['id_usu'];
 
     $id_publi = $id_usu = $text_publi = $img_publi = $imgContent = "";
     $text_publiErr = $msgErr = "";

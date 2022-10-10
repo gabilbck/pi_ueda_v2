@@ -7,12 +7,16 @@
     <title>Fórum | UEDA</title>
 </head>
     <main>
-        <br><br>
-        <center>
-            <h1>FÓRUM</h1>
-        </center>
         <div class="margem-lados">
+            <center>
+                <br><br>
+                <h1>FÓRUM</h1>
+                <br>
+                <h2>Você também gostaria de compartilhar algo em nosso fórum? Publique agora!</h2>
+                <br><br>
+                <a class="link-branco" href="cad_for.php"><button>PUBLICAR NO FÓRUM</button></a>
+                <br><br>
+            </center>
         </div>
-        <br><br>
     </main>
 <?php require("../template/footer.php");?>

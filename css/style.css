@@ -105,6 +105,10 @@ h1{
     .margem-botoes-alt{
         width: 10%;
     }
+    .margizinha{
+        margin-right: 7.5px;
+        margin-left: 7.5px;
+    }
 
 /* Etiquetas */
     .et-artc{
