@@ -32,6 +32,9 @@ h1{
         color: red;
     }
     .n-obrigatorio{
+        /* Gambiarra para não ficar
+        com erros no espaçamento dos 
+        inputs sem 'obrigatório' */
         color: white;
     }
 
@@ -104,6 +107,10 @@ h1{
     }
     .margem-botoes-alt{
         width: 10%;
+    }
+    .margizinha{
+        margin-right: 7.5px;
+        margin-left: 7.5px;
     }
 
 /* Etiquetas */
@@ -372,6 +379,7 @@ h1{
         margin-top: 0px;
     }
 
+/* JOGOS */
     .escolha-imagem label{
         padding: 15px;
         color: rgb(0, 0, 0);
