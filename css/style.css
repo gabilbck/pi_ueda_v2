@@ -502,7 +502,7 @@ h1{
         margin-right: auto;
         border-right: 10px solid #1e3f53;
         border-bottom: 10px solid #1e3f53;
-        height: auto;
+        height: 220px;
     }
     
     .container-jogos{
@@ -515,7 +515,7 @@ h1{
         padding-left: 0 100 0;
         border: 2px white solid;
         border-radius: 7px;
-        margin-top: 15px;
+        margin-top: 0px;
         background-color: #009CFF;
         margin-left: 65px;  
     }
@@ -528,12 +528,12 @@ h1{
 
     .nome-jogos{
         font-size: 35px;
-        margin-left: 65px;  
+        margin-left: 40px;  
         text-align: left;
     }
 
     .desc-info{
-        margin-left: 65px;  
+        margin-left: 40px;  
         text-align: left;
     }
 
@@ -559,17 +559,6 @@ h1{
         padding-right: 100%;
     }
 
-    /*.background-jogos{
-        position: relative;
-        width: 100%;
-        padding: 140px 0 100px 0;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: center;
-        background-image: url(../images/bg-developers1.png)
-    }*/
-
     .background-jogos{
         background-color: #597d95;
     }
@@ -586,7 +575,7 @@ h1{
 
     @media (max-width: 1630px){
         .jogos-agua{
-            height: 300px;
+            height: 280px;
         }
         .link-info{
             font-size:20px;
@@ -594,7 +583,7 @@ h1{
             padding-bottom: 0px;
             border: 2px white solid;
             border-radius: 7px;
-            margin-top: 35px;
+            margin-top: 30px;
             background-color: #009CFF;
             margin-left: -200px;  
         }
@@ -603,6 +592,74 @@ h1{
             padding-left: 45%;
             padding-right: 45%;
         }
+    }
+    @media (max-width: 1428px){
+        .jogos-agua{
+            height: 320px;
+        }
+    }
+    @media (max-width: 1281px){
+        .jogos-agua{
+            height: 320px;
+        }
+        .link-info{
+            font-size:20px;
+            padding-left: 0 100 0;
+            padding-bottom: 0px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 20px;
+            background-color: #009CFF;
+            margin-left: -200px;  
+        }
+        .link-info a{
+            color: white;
+            padding-left: 45%;
+            padding-right: 45%;
+        }
+
+    }
+    @media (max-width: 1164px){
+        .jogos-agua{
+            height: 380px;
+        }
+        .link-info{
+            font-size:20px;
+            padding-left: 0 100 0;
+            padding-bottom: 0px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 10px;
+            background-color: #009CFF;
+            margin-left: -200px;  
+        }
+        .link-info a{
+            color: white;
+            padding-left: 45%;
+            padding-right: 45%;
+        }
+
+    }
+    @media (max-width: 1049px){
+        .jogos-agua{
+            height: 410px;
+        }
+        .link-info{
+            font-size:20px;
+            padding-left: 0 100 0;
+            padding-bottom: 0px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 10px;
+            background-color: #009CFF;
+            margin-left: -200px;  
+        }
+        .link-info a{
+            color: white;
+            padding-left: 45%;
+            padding-right: 45%;
+        }
+
     }
 
 
