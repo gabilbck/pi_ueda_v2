@@ -15,10 +15,7 @@
             </center>
             <div class="margem-titulo"></div>
 
-            <?php 
-                include '../include/MySql.php';
-
-
+            <?php
                 $sql = $pdo->prepare("SELECT * FROM `artigo`");
                 if($sql->execute()){
                     $row = $sql->fetchAll(PDO::FETCH_ASSOC);

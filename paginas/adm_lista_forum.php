@@ -23,6 +23,7 @@
                     echo "<tr>";
                     echo "<th>ID</th>";
                     echo "<th>ID (Usuário)</th>";
+                    echo "<th>Título</th>";
                     echo "<th>Texto</th>";
                     echo "<th>Imagem</th>";
                     echo "<th>Comentários</th>";
@@ -33,6 +34,7 @@
                         echo "<tr>";
                         echo "<td>".$value['id_publi']."</td>";
                         echo "<td>".$value['id_usu']."</td>";
+                        echo "<td>".$value['titulo_publi']."</td>";
                         echo "<td>".$value['text_publi']."</td>";
                         $imagem = $value['img_publi'];
                         echo '<td><img width="150" src="data:image/jpg;charset=utf8;base64,'.($imagem).'"/></td>';
