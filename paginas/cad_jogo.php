@@ -38,7 +38,7 @@
                 }
 
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO jogos (cod_Jogo, nome_jogo, desc_jogo, link_jogo, image_jogo)
+                $sql = $pdo->prepare("INSERT INTO jogos (cod_jogo, nome_jogo, desc_jogo, link_jogo, image_jogo)
                                       VALUES (null, ?,?,?,?)");
                 if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, $imgContent))){
                     $msgErro = "Dados cadastrados com sucesso!";
