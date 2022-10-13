@@ -6,13 +6,14 @@
     }
 ?>
 <?php
-
-    $id_publi = $id_usu = $text_publi = $img_publi = $imgContent = "";
+    $id_usu = $_SESSION['id_usu'];
+    
+    $id_publi = $text_publi = $img_publi = $imgContent = "";
     $text_publiErr = $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
         
-        if (empty ($_POST['text_publi'])){
+        if (empty($_POST['text_publi'])){
             $text_publiErr = "Texto para publicação é obrigatória!";
         } else {
             $text_publi = test_input($_POST["text_publi"]);
@@ -36,7 +37,8 @@
         }
         
         //Inserir dados
-        $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publi, id_usu, text_publi, img_publi) VALUES (null, ?, ?, ?)");
+        $sql = $pdo->prepare("INSERT INTO publica_forum (id_publi, id_usu, text_publi, img_publi) 
+                            VALUES (null, ?, ?, ?)");
         if ($sql->execute(array($id_usu, $text_publi, base64_encode($imgContent)))){
             $msgErr = "Dados cadastrados com sucesso!";
             header("location: menu_forum.php");
