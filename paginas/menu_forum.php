@@ -25,11 +25,12 @@
                     foreach($row as $key => $value){
                         $id_publi = $value['id_publi'];
                         $id_usu = $value['id_usu'];
+                        $titulo_publi = $value['titulo_publi'];
                         $text_publi = $value['text_publi'];
                         $img_publi = $value['img_publi'];
 
-                        echo '<div class="artigo">';
-                        echo '<a href="#"><h2>'.$tituloart.'</h2></a>';
+                        echo '<div class="foruns">';
+                        echo '<a href="#"><h2>'.$text_publi.'</h2></a>';
                         echo '<div class="margem-art"></div>';
                         echo '<a class="et-'.$class.'" href="#">'.$str.'</a>';
                         echo '<div class="margem-art"></div>';
