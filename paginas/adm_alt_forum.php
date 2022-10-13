@@ -68,7 +68,7 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR PUBLICAÇÃO DO FORUM</h1>
+                <h1>ALTERAR</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_publi" value="<?php echo $id_publi?>" readonly>
