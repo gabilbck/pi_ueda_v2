@@ -6,8 +6,8 @@
     }
 ?>
 <?php
-    $id_publi = $id_usu = $text_publi = $img_publi = $imgContent = "";
-    $text_publiErr = $msgErr = "";
+    $id_publi = $id_usu = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
+    $titulo_publiErr = $text_publiErr = $msgErr = "";
 
     if (isset($_GET['id_publi'])){
         $id_publi = $_GET['id_publi'];
@@ -17,6 +17,7 @@
             foreach($info as $key => $value){
                 $id_publi = $value['id_publi'];
                 $id_usu = $value['id_usu'];
+                $titulo_publi = $value['titulo_publi'];
                 $text_publi = $value['text_publi'];
                 $imgContent = $value['img_publi'];
             }
@@ -39,6 +40,11 @@
             }
         }
             
+        if (empty($_POST['titulo_publi'])){
+            $titulo_publiErr = "Texto vazio";
+        } else {
+            $titulo_publi = $_POST['titulo_publi'];
+        }
         if (empty($_POST['text_publi'])){
             $text_publiErr = "Texto vazio";
         } else {
@@ -46,8 +52,8 @@
         }
 
         //Gravar no banco
-        $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, text_publi=?, img_publi=? WHERE id_publi=?");
-        if ($sql->execute(array($id_usu, $text_publi, base64_encode($imgContent), $id_publi))){
+        $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=?, img_publi=? WHERE id_publi=?");
+        if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent), $id_publi))){
             $msgErr = "Dados alterados com sucesso!";
                 header('location: adm_lista_forum.php');
         } else{
@@ -62,7 +68,7 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR PUBLICAÇÃO DO FORUM</h1>
+                <h1>ALTERAR</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_publi" value="<?php echo $id_publi?>" readonly>
@@ -70,6 +76,9 @@
                     <br><br>
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
                     <span class="n-obrigatorio">*
+                    <br><br>
+                    <input type="text" name="titulo_publi" value="<?php echo $titulo_publi?>">
+                    <span class="obrigatorio">* <?php echo '<br>'.$titulo_publiErr ?></span>
                     <br><br>
                     <textarea type="text" name="text_publi" value="<?php echo $text_publi?>" placeholder="Texto para publicação"><?php echo $text_publi?></textarea>
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
