@@ -6,16 +6,16 @@
     }
 ?>
 <?php 
-    $cod_Jogo = $nome_jogo = $desc_jogo = $image_jogo = $link_jogo = $imgContent = "";
+    $cod_jogo = $nome_jogo = $desc_jogo = $image_jogo = $link_jogo = $imgContent = "";
     $nome_jogoErr = $desc_jogoErr = $image_jogoErr = $link_jogoErr = $msgErr = "";
 
-    if (isset($_GET['cod_Jogo'])){
-        $codigo = $_GET['cod_Jogo'];
-        $sql = $pdo->prepare('SELECT * FROM jogos WHERE cod_Jogo = ?');
+    if (isset($_GET['cod_jogo'])){
+        $codigo = $_GET['cod_jogo'];
+        $sql = $pdo->prepare('SELECT * FROM jogos WHERE cod_jogo = ?');
         if ($sql->execute(array($codigo))){
             $info = $sql->fetchAll(PDO::FETCH_ASSOC);
             foreach($info as $key => $value){
-                $cod_Jogo = $value['cod_Jogo'];
+                $cod_Jogo = $value['cod_jogo'];
                 $nome_jogo = $value['nome_jogo'];
                 $desc_jogo = $value['desc_jogo'];
                 $image_jogo = $value['image_jogo'];
@@ -52,7 +52,7 @@
                     $link_jogo = "";
                 }
 
-                $sql = $pdo->prepare("UPDATE jogos SET nome_jogo=?, desc_jogo=?, link_jogo=?, image_jogo=? WHERE cod_Jogo=?");
+                $sql = $pdo->prepare("UPDATE jogos SET nome_jogo=?, desc_jogo=?, link_jogo=?, image_jogo=? WHERE cod_jogo=?");
                 if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, base64_encode($imgContent)))){
                    $msgErr = "Dados alterados com sucesso!";
                     header('location: adm_lista_jogo.php');
@@ -79,7 +79,7 @@
                 <h1>ALTERAR</h1>
                 <br>
                 <form action="" method="post">
-                    <input type="text" name="cod_Jogo" value="<?php echo $cod_Jogo?>" readonly>
+                    <input type="text" name="cod_jogo" value="<?php echo $cod_jogo?>" readonly>
                     <span class="n-obrigatorio">*</span>
                     <br><br>
                     <input name="nome_jogo" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
