@@ -53,19 +53,19 @@
     }                    
 ?>
 <head>
-    <title>Alterar Informações do Usuário</title>
+    <title>Alterar Informações da Etiqueta</title>
 </head>
     <main>
     <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>CADASTRE-SE</h1>
+                <h1>ALTERAR</h1>
                 <br>
                 <form action="" method="post">
-                    <input type="text" name="id_usu" value="<?php echo $id_eti?>" readonly>
+                    <input type="text" name="id_eti" value="<?php echo $id_eti?>" readonly>
                     <span class="n-obrigatorio">*</span>
                     <br><br>
-                    <input name="nome_real_usu" value="<?php echo $nome_eti?>" type="text" placeholder="Nome Completo">
+                    <input name="nome_eti" value="<?php echo $nome_eti?>" type="text" placeholder="Nome da etiqueta">
                     <span class="obrigatorio">* <?php  echo '<br>'.$nome_etiErr ?></span>
                     <br><br>
                     <div class="botoes-alt">

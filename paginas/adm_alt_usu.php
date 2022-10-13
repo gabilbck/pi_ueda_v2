@@ -84,7 +84,7 @@
     <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>CADASTRE-SE</h1>
+                <h1>ALTERAR</h1>
                 <br>
                 <form action="" method="post">
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
