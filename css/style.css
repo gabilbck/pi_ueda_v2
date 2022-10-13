@@ -697,3 +697,7 @@ h1{
     .botoes-alt button{
         margin: 15px;
     }
+    .img-borda{
+        border-radius: 1rem;
+        width: 50%;
+    }

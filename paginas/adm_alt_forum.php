@@ -37,12 +37,12 @@
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
-        } 
+        }
             
-        if (isset($_POST['text_publi'])){
-            $text_publi = $_POST['text_publi'];
-        } else {
+        if (empty($_POST['text_publi'])){
             $text_publiErr = "Texto vazio";
+        } else {
+            $text_publi = $_POST['text_publi'];
         }
 
         //Gravar no banco
@@ -66,11 +66,17 @@
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_publi" value="<?php echo $id_publi?>" readonly>
+                    <span class="n-obrigatorio">*
                     <br><br>
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
+                    <span class="n-obrigatorio">*
                     <br><br>
-                    <textarea type="text" name="text_publi" value="<?php echo $text_publi?>" placeholder="Texto para publicação"></textarea>
+                    <textarea type="text" name="text_publi" value="<?php echo $text_publi?>" placeholder="Texto para publicação"><?php echo $text_publi?></textarea>
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
+                    <br>
+                    <a>Imagem Atual:</a>
+                    <br>
+                    <?php echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.$imgContent.'"/>'?>
                     <br><br>
                     <div class="escolha-imagem">
                         <label for="image">Selecione uma imagem (Opcional)</label>
