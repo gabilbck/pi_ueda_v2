@@ -1,3 +1,4 @@
+<?php // PERMITIR CADASTRAR SEM UMA NOVA IMAGEM OU MANTER A MESMA JÁ CADASTRADA?>
 <?php require("../template/header.php");?>
 <?php
     if($_SESSION['adm'] != 1){

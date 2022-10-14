@@ -38,12 +38,7 @@
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
-        } else {
-            $img_publi = "";
-            $image = "";
-            $imgContent = "";
-            $msgErr = "Informações incorretas";
-        }
+        } 
         
         //Inserir dados
         if ($titulo_publi && $text_publi){

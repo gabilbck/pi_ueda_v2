@@ -35,11 +35,13 @@
                         echo "<td>".$value['nome_jogo']."</td>";
                         echo "<td>".$value['desc_jogo']."</td>";
                         $imagem = $value['image_jogo'];
+                        echo '<td>';
                         if (!empty($imagem)){ 
                             echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.($imagem).'"/>';
                         } else{
                             echo '<center><i>(Não possui imagem)</i></center>';
                         }
+                        echo '</td>';
                         echo "<td>".$value['link_jogo']."</td>";
                         echo "<td><center><a class='alt' href='adm_alt_jogo.php?cod_jogo=".$value['cod_jogo']."'>(+)</a></center></td>";
                         echo "<td><center><a class='del' href='adm_del_jogo.php?cod_jogo=".$value['cod_jogo']."'>(-)</a></center></td>";
