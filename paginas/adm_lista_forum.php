@@ -37,7 +37,13 @@
                         echo "<td>".$value['titulo_publi']."</td>";
                         echo "<td>".$value['text_publi']."</td>";
                         $imagem = $value['img_publi'];
-                        echo '<td><img width="150" src="data:image/jpg;charset=utf8;base64,'.($imagem).'"/></td>';
+                        echo '<td>';
+                        if (!empty($imagem)){ 
+                            echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.($imagem).'"/>';
+                        } else{
+                            echo '<center><i>(Não possui imagem)</i></center>';
+                        }
+                        echo '</td>';
                         echo "<td><center><a class='alt' href='adm_lista_com.php?id_publi=".$value['id_publi']."'>Comentários</a></center></td>";
                         echo "<td><center><a class='alt' href='adm_alt_forum.php?id_publi=".$value['id_publi']."'>(+)</a></center></td>";
                         echo "<td><center><a class='del' href='adm_del_forum.php?id_publi=".$value['id_publi']."'>(-)</a></center></td>";

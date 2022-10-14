@@ -27,7 +27,7 @@ h1{
     }
 
 
-/* Obrigatório */
+/* Obrigatório/Mensagens/Atenção */
     .obrigatorio{
         color: red;
     }
@@ -36,6 +36,10 @@ h1{
         com erros no espaçamento dos 
         inputs sem 'obrigatório' */
         color: white;
+    }
+    .n-img{
+        color:#000000;
+        font-size: 2px;
     }
 
 /* Cadastros */
