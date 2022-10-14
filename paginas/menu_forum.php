@@ -21,21 +21,22 @@
                 $sql = $pdo->prepare("SELECT * FROM `publica_forum`");
                 if($sql->execute()){
                 $row = $sql->fetchAll(PDO::FETCH_ASSOC);
-
                     foreach($row as $key => $value){
                         $id_publi = $value['id_publi'];
                         $id_usu = $value['id_usu'];
+                        // $nome_usu = $value['nome_usu'];
+                        // ("SELECT usuario.nome_usu FROM usuario, publica_forum WHERE usuario.id_usu = publica_forum.id_usu");
+                        // $nome_usu = $value['nome_usu']
                         $titulo_publi = $value['titulo_publi'];
                         $text_publi = $value['text_publi'];
                         $img_publi = $value['img_publi'];
                         
                         echo '<div class="foruns">';
                         echo '<a href="vizu_forum.php?id_publi='.$value["id_publi"].'"><h2>'.$titulo_publi.'</h2></a>';
-                        // Não sei socorro
-                        $nome_usu = $pdo->prepare("SELECT usuario.nome_usu FROM usuario, publica_forum WHERE usuario.id_usu = publica_forum.id_usu");
-                        echo '<a>'.$nome_usu.'</a>';
+                        // echo '<a>'.$nome_usu.'</a>';
+                        echo '<b>Publicado por: <a>@'.$id_usu.'</a></b>';
                         echo '<p>'.$text_publi.'</p>';
-                        echo "<a target='_blank' href='#'>Ver Agora</a>";
+                        echo "<a target='_blank' href='vizu_forum.php?id_publi=".$value['id_publi']."'>Ver Agora</a>";
                         echo '<hr>';
                         echo '</div>';
                         echo '<br>';
