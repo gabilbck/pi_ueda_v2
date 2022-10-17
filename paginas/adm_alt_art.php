@@ -99,7 +99,7 @@
         }
 
         //Gravar no bancob    ta dando erro
-        $sql = $pdo->prepare("UPDATE artigo SET titulo_art=?, id_eti, link_art=?, resumo_art=?, img_art=?, intro_art=?, des_art=?, con_art=?, ref_art=? WHERE id_art=?");
+        $sql = $pdo->prepare("UPDATE artigo SET titulo_art=?, id_eti=?, link_art=?, resumo_art=?, img_art=?, intro_art=?, des_art=?, con_art=?, ref_art=? WHERE id_art=?");
         if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art, $id_art))){
             $msgErr = "Dados alterados com sucesso!";
             header('location: adm_lista_art.php');
