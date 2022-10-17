@@ -1,3 +1,4 @@
+<?php // ERRO NO SQL!!! ?>
 <?php require("../template/header.php");?>
 <?php
     if($_SESSION['adm'] != 1){
@@ -6,7 +7,7 @@
     }
 ?>
 <?php
-    $id_art  = $titulo_art = $id_eti  = $link_art = $resumo_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
+    $id_art  = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
     $id_artErr  = $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = $msgErr = "";
 
     if (isset($_GET['id_art'])){
@@ -52,7 +53,7 @@
         }
 
         if (empty($_POST['id_eti'])){
-            $id_etiErr = "Texto vazio";
+            $id_etiErr = "Etiqueta não selecionada vazio";
         } else {
             $id_eti = $_POST['id_eti'];
         }
@@ -119,7 +120,7 @@
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_art" value="<?php echo $id_art?>" readonly>
-                    <span class="n-obrigatorio">*
+                    <span class="n-obrigatorio">*</span>
                     <br><br>
                     <input class="input-text" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     <span class="obrigatorio">* <?php  echo '<br>'.$titulo_artErr ?></span>
@@ -142,7 +143,7 @@
                     <textarea name="ref_art" type="text" placeholder="Referências do Texto"><?php  echo $ref_art?></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$ref_artErr ?></span>
                     <br><br>
-                    <label>Etiquetas:</label>
+                    <label>Etiquetas: </label>
                     <select name="id_eti"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
                             <option value="">Selecione</option>
                             <option value="1" <?php if ($id_eti == 1){ ?> selected <?php } ?>>Notícia</option>
@@ -153,7 +154,13 @@
                     <br><br>
                     <a>Imagem Atual:</a>
                     <br>
-                    <?php echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.$imgContent.'"/>'?>
+                    <?php 
+                    if (!empty($imgContent)){ 
+                        echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.($imgContent).'"/>';
+                    } else{
+                        echo '<center><i>(Não possui imagem)</i></center>';
+                    } 
+                    ?>
                     <br><br>
                     <div class="escolha-imagem">
                         <label for="image">Selecione uma imagem (Opcional)</label>

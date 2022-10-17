@@ -27,7 +27,7 @@ h1{
     }
 
 
-/* Obrigatório */
+/* Obrigatório/Mensagens/Atenção */
     .obrigatorio{
         color: red;
     }
@@ -36,6 +36,10 @@ h1{
         com erros no espaçamento dos 
         inputs sem 'obrigatório' */
         color: white;
+    }
+    .n-img{
+        color:#000000;
+        font-size: 2px;
     }
 
 /* Cadastros */
@@ -517,7 +521,7 @@ h1{
         border-radius: 7px;
         margin-top: 0px;
         background-color: #009CFF;
-        margin-left: 65px;  
+        margin-left: 40px;  
     }
 
     .link-info a{
@@ -879,6 +883,37 @@ h1{
             color: white;
             padding-left: 45%;
             padding-right: 45%;
+        }
+
+    }
+    @media (max-width: 594px){
+        .jogos-agua{
+            height: 635px;
+        }
+        .nome-jogos{
+            font-size: 35px;
+            margin-top: 200px;
+            margin-left: -200px;  
+            text-align: left;
+        }
+        .link-info{
+            font-size:20px;
+            padding-left: 0 100 0;
+            padding-bottom: 0px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 10px;
+            background-color: #009CFF;
+            margin-left: -205px;  
+        }
+        .desc-info{
+            margin-left: -200px;  
+            text-align: left;
+        }
+        .link-info a{
+            color: white;
+            padding-left: 35%;
+            padding-right: 35%;
         }
 
     }

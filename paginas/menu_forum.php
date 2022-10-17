@@ -18,25 +18,35 @@
                 <br><br>
             </center>
                 <?php
-                $sql = $pdo->prepare("SELECT * FROM `artigo`");
+                $sql = $pdo->prepare("SELECT * FROM `publica_forum`");
                 if($sql->execute()){
-                    $row = $sql->fetchAll(PDO::FETCH_ASSOC);
-
+                $row = $sql->fetchAll(PDO::FETCH_ASSOC);
                     foreach($row as $key => $value){
                         $id_publi = $value['id_publi'];
                         $id_usu = $value['id_usu'];
+                        // $nome_usu = $value['nome_usu'];
+                        // ("SELECT usuario.nome_usu FROM usuario, publica_forum WHERE usuario.id_usu = publica_forum.id_usu");
+                        // $nome_usu = $value['nome_usu']
                         $titulo_publi = $value['titulo_publi'];
                         $text_publi = $value['text_publi'];
                         $img_publi = $value['img_publi'];
-
+                        
                         echo '<div class="foruns">';
-                        echo '<a href="#"><h2>'.$text_publi.'</h2></a>';
-                        echo '<div class="margem-art"></div>';
-                        echo '<a class="et-'.$class.'" href="#">'.$str.'</a>';
-                        echo '<div class="margem-art"></div>';
-                        echo '<p>'.$desc.'</p>';
-                        echo '<div class="margem-art"></div>';
-                        echo "<a target='_blank' href=".$link_arts.">Ver Agora</a>";
+                        echo '<a href="vizu_forum.php?id_publi='.$value["id_publi"].'"><h2>'.$titulo_publi.'</h2></a>';
+
+                        // $sql = $pdo->prepare("SELECT usuario.nome_usu FROM usuario, publica_forum WHERE usuario.id_usu = publica_forum.id_usu");
+                        // if($sql->execute()){
+                        // $row = $sql->fetchAll(PDO::FETCH_ASSOC);
+                        //     foreach($row as $key => $value){
+                        //         $nome_usu = $value['nome_usu'];
+                        //         echo '<b>Publicado por: <a>@'.$nome_usu.'</a></b>';
+                        //     }
+                        // }
+                        $nome_usu = $value['nome_usu'];
+                        echo '<b>Publicado por: <a>@'.$nome_usu.'</a></b>';
+                        
+                        echo '<p>'.$text_publi.'</p>';
+                        echo "<a href='vizu_forum.php?id_publi=".$id_publi."'>Ver Agora</a>";
                         echo '<hr>';
                         echo '</div>';
                         echo '<br>';

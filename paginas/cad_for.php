@@ -14,7 +14,7 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
 
         if (empty($_POST['titulo_publi'])){
-            $titulo_publiErr = "Texto para publicação é obrigatória!";
+            $titulo_publiErr = "Título para publicação é obrigatória!";
         } else {
             $titulo_publi = test_input($_POST["titulo_publi"]);
         }
@@ -38,18 +38,20 @@
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
-        } else {
-            $msgErr = "Informações incorretas";
-        }
+        } 
         
         //Inserir dados
-        $sql = $pdo->prepare("INSERT INTO publica_forum (id_publi, id_usu, titulo_publi, text_publi, img_publi) 
+        if ($titulo_publi && $text_publi){
+            $sql = $pdo->prepare("INSERT INTO publica_forum (id_publi, id_usu, titulo_publi, text_publi, img_publi) 
                             VALUES (null, ?, ?, ?, ?)");
-        if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent)))){
-            $msgErr = "Dados cadastrados com sucesso!";
-            header("location: menu_forum.php");
-        } else {
-            $msgErr = "Dados não cadastrados!";
+            if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent)))){
+                $msgErr = "Dados cadastrados com sucesso!";
+                header("location: menu_forum.php");
+            } else {
+                $msgErr = "Dados não cadastrados!";
+            }
+        } else{
+            $msgErr = "Dados faltando!";
         }
     } else {
         $msgErr = "Dados não informados!"; 
@@ -67,6 +69,7 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <input class="input-text" name="titulo_publi" value="<?php echo $titulo_publi?>" type="text" placeholder="Nome do Título">
                     <span class="obrigatorio">* <?php  echo '<br>'.$titulo_publiErr ?></span>
+                    <br><br>
                     <textarea name="text_publi" type="text" placeholder="Texto para publicação"></textarea>
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
                     <br><br>
