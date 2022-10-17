@@ -21,4 +21,3 @@
             </center>
         </div>
     </main>
-<?php require("../template/footer.php");?>

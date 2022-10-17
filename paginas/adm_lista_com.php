@@ -21,21 +21,21 @@
                     echo "<h1>LISTAGEM DE COMENTÁRIOS DO FÓRUM</h1><br>";
                     echo "<table class='listagens-table'";
                     echo "<tr>";
-                    //echo "<th>ID (Fórum)</th>";
+                    echo "<th>ID (Fórum)</th>";
                     echo "<th>ID</th>";
                     echo "<th>Texto</th>";
                     echo "<th>ID (Usuário)</th>";
                     echo "<th>Comentários</th>";
-                    echo "<th>Alterar</th>";
+                    // echo "<th>Alterar</th>";
                     echo "<th>Excluir</th>";
                     echo "</tr>";
                     foreach($info as $key => $value){
                         echo "<tr>";
-                        //echo "<td>".$value['id_publi']."</td>";
+                        echo "<td>".$value['id_publi']."</td>";
                         echo "<td>".$value['id_cmt']."</td>";
                         echo "<td>".$value['text_cmt']."</td>";
                         echo "<td>".$value['id_usu']."</td>";
-                        echo "<td><center><a class='alt' href='adm_alt_com.php?id_com=".$value['id_com']."'>(+)</a></center></td>";
+                        // echo "<td><center><a class='alt' href='adm_alt_com.php?id_com=".$value['id_com']."'>(+)</a></center></td>";
                         echo "<td><center><a class='del' href='adm_del_com.php?id_com=".$value['id_com']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
