@@ -33,10 +33,20 @@
                         
                         echo '<div class="foruns">';
                         echo '<a href="vizu_forum.php?id_publi='.$value["id_publi"].'"><h2>'.$titulo_publi.'</h2></a>';
-                        // echo '<a>'.$nome_usu.'</a>';
-                        echo '<b>Publicado por: <a>@'.$id_usu.'</a></b>';
+
+                        // $sql = $pdo->prepare("SELECT usuario.nome_usu FROM usuario, publica_forum WHERE usuario.id_usu = publica_forum.id_usu");
+                        // if($sql->execute()){
+                        // $row = $sql->fetchAll(PDO::FETCH_ASSOC);
+                        //     foreach($row as $key => $value){
+                        //         $nome_usu = $value['nome_usu'];
+                        //         echo '<b>Publicado por: <a>@'.$nome_usu.'</a></b>';
+                        //     }
+                        // }
+                        $nome_usu = $value['nome_usu'];
+                        echo '<b>Publicado por: <a>@'.$nome_usu.'</a></b>';
+                        
                         echo '<p>'.$text_publi.'</p>';
-                        echo "<a target='_blank' href='vizu_forum.php?id_publi=".$value['id_publi']."'>Ver Agora</a>";
+                        echo "<a href='vizu_forum.php?id_publi=".$id_publi."'>Ver Agora</a>";
                         echo '<hr>';
                         echo '</div>';
                         echo '<br>';
