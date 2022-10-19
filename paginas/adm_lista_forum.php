@@ -6,7 +6,7 @@
     }
 ?>
 <head>
-    <title>Listagem de Publicações do Fórums | UEDA</title>
+    <title>Listagem de Publicações do Fórum | UEDA</title>
 </head>
 <body>
     <br><br>

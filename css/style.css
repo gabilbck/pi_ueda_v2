@@ -603,7 +603,7 @@ h1{
         padding: 10px;
     }
 
-/*Alterações*/
+/*Página de Alterações*/
     .adm-c{
         margin: 0;
         padding: 0;
@@ -616,3 +616,8 @@ h1{
         border-radius: 1rem;
         width: 50%;
     }
+
+/*Vizu Fórum*/
+.titulo-caixa-alta{
+    text-transform: uppercase;
+}
