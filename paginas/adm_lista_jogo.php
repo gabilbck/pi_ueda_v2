@@ -37,7 +37,7 @@
                         $imagem = $value['image_jogo'];
                         echo '<td>';
                         if (!empty($imagem)){ 
-                            echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.($imagem).'"/>';
+                            echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.base64_encode($imagem).'"/>';
                         } else{
                             echo '<center><i>(Não possui imagem)</i></center>';
                         }

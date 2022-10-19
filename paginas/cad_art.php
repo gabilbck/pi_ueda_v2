@@ -107,11 +107,11 @@
                     <textarea name="con_art" value="<?php  echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$con_artErr ?></span>
                     <br><br>
-                    <textarea name="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
+                    <textarea name="ref_art" id="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$ref_artErr ?></span>
                     <br><br>
                     <label>Etiquetas:</label>
-                    <select name="id_eti"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
+                    <select name="id_eti" onchange="altera_form(this)"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
                             <option value="">Selecione</option>
                             <option value="1">Notícia</option>
                             <option value="2">Art. Científico</option>
@@ -132,4 +132,15 @@
             </center>
         </div>
     </main>
+    <script>
+        const altera_form = function(element){
+            const valor = element.value;
+            console.log(valor);
+                if(valor==1){
+                    document.getElementById('ref_art').style.display='none';
+            } else{
+                document.getElementById('ref_art').style.display='block';
+            }
+        };
+    </script>
 <?php require("../template/footer.php");?>
