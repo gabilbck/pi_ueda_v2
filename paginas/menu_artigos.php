@@ -19,16 +19,22 @@
                 include '../include/MySql.php';
 
 
-                $sql = $pdo->prepare("SELECT * FROM `artigo`");
+                $sql = $pdo->prepare("SELECT * FROM artigo");
                 if($sql->execute()){
                     $row = $sql->fetchAll(PDO::FETCH_ASSOC);
 
                     foreach($row as $key => $i){
+
                         $id = $i['id_art'];
+                        $img = $i['img_art'];
                         $tituloart = $i['titulo_art'];
+                        $intro_art = $i['intro_art'];
+                        $des_art = $i['des_art'];
+                        $con_art = $i['con_art'];   
+                        $ref_art = $i['ref_art'];
+
                         $etiqueta = $i['id_eti'];
-                        $desc = $i['des_art'];
-                        $link_arts = $i['link_art'];
+                        $resumo_art = $i['resumo_art'];
 
                         if($etiqueta == 2){
                             $str = 'Art. Cientifico';
@@ -44,54 +50,28 @@
                             $class = 'artc';
                         };
 
+                        if($etiqueta == 2 || $etiqueta == 3){
+                            $_SESSION['titulo'] = $tituloart;
+                            $link = 'vizu_art.php?titulo='.$tituloart.'&img='.$img_art.'&id='.$id.'&intro='.$intro_art.'&desc='.$des_art.'&concl='.$con_art.'&ref='.$ref_art;
+                        }else{
+                            unset($_SESSION['titulo']);
+                            $link = $i['link_art'];
+                        };
+
                         echo '<div class="artigo">';
                         echo '<a href="#"><h2>'.$tituloart.'</h2></a>';
                         echo '<div class="margem-art"></div>';
                         echo '<a class="et-'.$class.'" href="#">'.$str.'</a>';
                         echo '<div class="margem-art"></div>';
-                        echo '<p>'.$desc.'</p>';
+                        echo '<p>'.$resumo_art .'</p>';
                         echo '<div class="margem-art"></div>';
-                        echo "<a target='_blank' href=".$link_arts.">Ver Agora</a>";
+                        echo "<a target='_blank' href=".$link.">Ver Agora</a>";
                         echo '<hr>';
                         echo '</div>';
                         echo '<br>';
                     };
                 };
             ?>
-
-            <!-- <div class="artigo">
-                <a href="#"><h2>Título do Artigo</h2></a>
-                <div class="margem-art"></div>
-                <a class="et-artc" href="#">Art. Científico</a>
-                <div class="margem-art"></div>
-                <p>Breve descrição do artigo</p>
-                <div class="margem-art"></div>
-                <a href="#">Ver Agora</a>
-                <hr> 
-            </div>
-            <br>
-            <div class="artigo">
-                <a href="#"><h2>Título do Artigo</h2></a>
-                <div class="margem-art"></div>
-                <a class="et-not" href="#">Notícia</a>
-                <div class="margem-art"></div>
-                <p>Breve descrição do artigo</p>
-                <div class="margem-art"></div>
-                <a href="#">Ver Agora</a>
-                <hr>
-            </div>
-            <br>
-            <div class="artigo">
-                <a href="#"><h2>Título do Artigo</h2></a>
-                <div class="margem-art"></div>
-                <a class="et-site" href="#">Art. de Site</a>
-                <div class="margem-art"></div>
-                <p>Breve descrição do artigo</p>
-                <div class="margem-art"></div>
-                <a href="#">Ver Agora</a>
-                <hr>
-            </div>
-            <br> -->
         </div>
         <br>
     </main>

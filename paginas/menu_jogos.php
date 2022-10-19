@@ -51,7 +51,7 @@
                                         echo "<div class='desc-info'>";
                                             echo $values['desc_jogo']."<br>";
                                         echo "</div>";
-                                        echo "<div class='link-info'>";
+                                        echo "<div class>";   
                                             echo "<a target='_blank' href=".$values['link_jogo'].">Jogue</a>";
                                         echo "</div>";
                                     echo "</div>";
