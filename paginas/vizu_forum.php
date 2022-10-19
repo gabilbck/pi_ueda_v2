@@ -48,21 +48,21 @@
             <br><br><br>
             <h2>Comentários</h2>
             <?php 
-            // NADA FUNCIONA
-            $sql = $pdo->prepare("SELECT * FROM `comentario`");
-                if($sql->execute()){
+            // Mostrar comentários
+            $sql = $pdo->prepare("SELECT * FROM `comentario` WHERE id_publi=?");
+                if($sql->execute(array($_GET['id_publi']))){
                 $row = $sql->fetchAll(PDO::FETCH_ASSOC);
                     foreach($row as $key => $value){
-                        $text_cmt = $text_cmt['text_cmt'];
-                        $id_usu = $id_usu['id_usu'];
+                        $text_cmt = $value['text_cmt'];
+                        $id_usu = $value['id_usu'];
 
-                        echo '<p>'.$text_cmt['text_cmt'].'</p>';
+                        echo '<p>'.$text_cmt.'</p>';
                     }
                 }
             ?>
-
             <?php
-            // comentario não funciona
+            // Enviar novo comentário
+            // NÃO FUNCIONA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             $id_usu = $_SESSION['id_usu'];
             $id_publi = $value['id_publi'];
             $id_cmt = $text_cmt = "";
@@ -78,11 +78,12 @@
                 
                 //Inserir dados
                 if ($text_cmt){
-                    $sql = $pdo->prepare("INSERT INTO comentario (id_cmt, text_cmt, id_usu, id_publi)
-                                    VALUES (null, ?, ?, ?)");
-                    if ($sql->execute(array($id_cmt, $text_cmt, $id_usu, $id_publi))){
+                    $sql = $pdo->prepare("INSERT INTO comentario (text_cmt, id_usu, id_publi)
+                                    VALUES (?, ?, ?)");
+                    if ($sql->execute(array($text_cmt, $id_usu, $id_publi))){
                         $msgErr = "Mensagem não enviada!";
-                        header("location: vizu_forum.php?id_publi=$id_publi");
+                        $actual_link = $_SERVER['HTTP_REFERER'];
+                        header("Location:$actual_link");
                     } else {
                         $msgErr = "Dados não cadastrados!";
                     }

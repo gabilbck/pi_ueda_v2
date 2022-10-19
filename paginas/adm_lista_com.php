@@ -16,17 +16,15 @@
                 $sql = $pdo->prepare('SELECT * FROM comentario');
                 if ($sql->execute()){
                     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-            
                     echo "<center>";
                     echo "<h1>LISTAGEM DE COMENTÁRIOS DO FÓRUM</h1><br>";
                     echo "<table class='listagens-table'";
                     echo "<tr>";
                     echo "<th>ID (Fórum)</th>";
-                    echo "<th>ID</th>";
+                    echo "<th>ID (Comentário)</th>";
                     echo "<th>Texto</th>";
                     echo "<th>ID (Usuário)</th>";
-                    echo "<th>Comentários</th>";
-                    // echo "<th>Alterar</th>";
+                    echo "<th>Nome (Usuário)</th>";
                     echo "<th>Excluir</th>";
                     echo "</tr>";
                     foreach($info as $key => $value){
@@ -35,8 +33,13 @@
                         echo "<td>".$value['id_cmt']."</td>";
                         echo "<td>".$value['text_cmt']."</td>";
                         echo "<td>".$value['id_usu']."</td>";
-                        // echo "<td><center><a class='alt' href='adm_alt_com.php?id_com=".$value['id_com']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='adm_del_com.php?id_com=".$value['id_com']."'>(-)</a></center></td>";
+                        $sql = $pdo->prepare('SELECT nome_usu FROM usuario WHERE id_usu =?');
+                        if($sql->execute(array($value['id_usu']))){
+                            $usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
+                            $nome_usu = $usuario[0]['nome_usu'];
+                            echo "<td>".$nome_usu."</td>";
+                        }
+                        echo "<td><center><a class='del' href='adm_del_com.php?id_com=".$value['id_cmt']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

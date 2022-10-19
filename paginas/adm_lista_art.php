@@ -19,7 +19,7 @@
             
                     echo "<center>";
                     echo "<h1>LISTAGEM DE ARTIGOS</h1><br>";
-                    echo "<table class='listagens-table'";
+                    echo "<table class='listagens-table'>";
                     echo "<tr>";
                     echo "<th>ID</th>";
                     echo "<th>Título</th>";
@@ -39,7 +39,7 @@
                         echo "<td>".$value['id_art']."</td>";
                         echo "<td>".$value['titulo_art']."</td>";
                         echo "<td>".$value['id_eti']."</td>";
-                        echo "<td>".$value['link_art']."</td>";
+                        echo "<td><a href='".$value['link_art']."'>ACESSE</a></td>";
                         echo "<td>".$value['resumo_art']."</td>";
                         $imagem = $value['img_art'];
                         echo '<td><img width="150" src="data:image/jpg;charset=utf8;base64,'.($imagem).'"/></td>';

@@ -30,21 +30,14 @@
                         $titulo_publi = $value['titulo_publi'];
                         $text_publi = $value['text_publi'];
                         $img_publi = $value['img_publi'];
-                        
+                        $sql = $pdo->prepare('SELECT nome_usu FROM usuario WHERE id_usu =?');
+                        if($sql->execute(array($id_usu))){
+                            $usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
+                            $nome_usu = $usuario[0]['nome_usu'];
+                        }
                         echo '<div class="foruns">';
                         echo '<a href="vizu_forum.php?id_publi='.$value["id_publi"].'"><h2>'.$titulo_publi.'</h2></a>';
-
-                        // $sql = $pdo->prepare("SELECT usuario.nome_usu FROM usuario, publica_forum WHERE usuario.id_usu = publica_forum.id_usu");
-                        // if($sql->execute()){
-                        // $row = $sql->fetchAll(PDO::FETCH_ASSOC);
-                        //     foreach($row as $key => $value){
-                        //         $nome_usu = $value['nome_usu'];
-                        //         echo '<b>Publicado por: <a>@'.$nome_usu.'</a></b>';
-                        //     }
-                        // }
-                        $nome_usu = $value['nome_usu'];
                         echo '<b>Publicado por: <a>@'.$nome_usu.'</a></b>';
-                        
                         echo '<p>'.$text_publi.'</p>';
                         echo "<a href='vizu_forum.php?id_publi=".$id_publi."'>Ver Agora</a>";
                         echo '<hr>';

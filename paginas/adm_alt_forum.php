@@ -1,4 +1,4 @@
-<?php // MANTER A MESMA JÁ CADASTRADA ?>
+<?php // ARRUMAR IGUAL NAS OUTRAS?>
 <?php require("../template/header.php");?>
 <?php
     if($_SESSION['adm'] != 1){
@@ -26,7 +26,7 @@
     }
     
     if (isset($_POST["submit"])){
-
+        $tem_arquivo = false;
         if (!empty($_FILES["image"]["name"])){
             //Pegar informações
             $fileName = basename($_FILES["image"]["name"]);
@@ -36,6 +36,7 @@
             if (in_array($fileType, $allowTypes)){
                 $image = $_FILES['image']['tmp_name'];
                 $imgContent = file_get_contents($image);
+                $tem_arquivo = true;
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
@@ -52,13 +53,23 @@
             $text_publi = $_POST['text_publi'];
         }
 
+        if ($tem_arquivo){
         //Gravar no banco
-        $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=?, img_publi=? WHERE id_publi=?");
-        if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent), $id_publi))){
-            $msgErr = "Dados alterados com sucesso!";
-                header('location: adm_lista_forum.php');
+            $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=?, img_publi=? WHERE id_publi=?");
+            if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent), $id_publi))){
+                $msgErr = "Dados alterados com sucesso!";
+                    header('location: adm_lista_forum.php');
+            } else{
+                $msgErr = "dados não alterados."; 
+            }
         } else{
-            $msgErr = "dados não alterados."; 
+            $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=? WHERE id_publi=?");
+            if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, $id_publi))){
+                $msgErr = "Dados alterados com sucesso!";
+                    header('location: adm_lista_forum.php');
+            } else{
+                $msgErr = "dados não alterados."; 
+            }
         }
     }
 ?>
