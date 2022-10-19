@@ -42,7 +42,7 @@
                                 echo "<div class='jogos-agua'>";
                                     echo "<div class='container-jogos'>";
                                         echo "<div class='jogo-image'>";
-                                            echo '<img style="width:400px; max-height:200px; width: 250px; height: 200px;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>'; 
+                                            echo '<img style="width:400px; max-height:200px; width: auto; height: auto;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($image_jogo).'"/>'; 
                                         echo "</div>";
                                         echo "<div class='jogo-info'>";
                                             echo "<div class='nome-jogos'>";
