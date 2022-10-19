@@ -1,13 +1,25 @@
 <?php require("../template/header.php");?>
+<?php 
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
+        header("location:n_adm_msg.php");
+        die;
+    }
+?>
 <?php
-    $_SESSION['id_usu'];
-
-    $id_publi = $id_usu = $text_publi = $img_publi = $imgContent = "";
-    $text_publiErr = $msgErr = "";
+    $id_usu = $_SESSION['id_usu'];
+    
+    $id_publi = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
+    $titulo_publiErr = $text_publiErr = $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
-        
-        if (empty ($_POST['text_publi'])){
+
+        if (empty($_POST['titulo_publi'])){
+            $titulo_publiErr = "Título para publicação é obrigatória!";
+        } else {
+            $titulo_publi = test_input($_POST["titulo_publi"]);
+        }
+
+        if (empty($_POST['text_publi'])){
             $text_publiErr = "Texto para publicação é obrigatória!";
         } else {
             $text_publi = test_input($_POST["text_publi"]);
@@ -26,17 +38,20 @@
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
-        } else {
-            $msgErr = "Informações incorretas";
-        }
+        } 
         
         //Inserir dados
-        $sql = $pdo->prepare("INSERT INTO PUBLICA_FORUM (id_publi, id_usu, text_publi, img_publi) VALUES (null, ?, ?, ?)");
-        if ($sql->execute(array($id_usu, $text_publi, base64_encode($imgContent)))){
-            $msgErr = "Dados cadastrados com sucesso!";
-            header("location: menu_forum.php");
-        } else {
-            $msgErr = "Dados não cadastrados!";
+        if ($titulo_publi && $text_publi){
+            $sql = $pdo->prepare("INSERT INTO publica_forum (id_publi, id_usu, titulo_publi, text_publi, img_publi) 
+                            VALUES (null, ?, ?, ?, ?)");
+            if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent)))){
+                $msgErr = "Dados cadastrados com sucesso!";
+                header("location: menu_forum.php");
+            } else {
+                $msgErr = "Dados não cadastrados!";
+            }
+        } else{
+            $msgErr = "Dados faltando!";
         }
     } else {
         $msgErr = "Dados não informados!"; 
@@ -52,6 +67,9 @@
                 <h1>PUBLICAR FORUM</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
+                    <input class="input-text" name="titulo_publi" value="<?php echo $titulo_publi?>" type="text" placeholder="Nome do Título">
+                    <span class="obrigatorio">* <?php  echo '<br>'.$titulo_publiErr ?></span>
+                    <br><br>
                     <textarea name="text_publi" type="text" placeholder="Texto para publicação"></textarea>
                     <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
                     <br><br>

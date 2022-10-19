@@ -6,7 +6,7 @@
     <div class="margem-lados">
         <br><br>
         <center>
-            <h1 style="font-text: 17px;" class="h1_título_topo">SOBRE</h1>
+            <h1>SOBRE</h1>
         </center>
         <br>
         <div class="subtitulo-sobre">
@@ -18,8 +18,9 @@
         <br><br><br>
         <center>
         <div class="titulo-img-sobre">
-            <p style="font-size: 17px;">Esta unidade curricular é obrigatória nos cursos de:</p>
-        </div>    
+            <h2>Esta unidade curricular é obrigatória nos cursos de:</h2>
+        </div>
+        <br> 
         </center>
         <br>
         <div class="container_images_sobre"> 
@@ -36,7 +37,7 @@
                 <p style="text-align: center; font-size: 17px;">Cursos Técnicos</p>
             </div>
         </div>
-        <br><br>
+        <br><br><br><br><br>
         <div class="obj-sobre">
             <div class="logo-sobre">
                 <img style="width: 350px;" src="../images/logo.png" alt="">

@@ -38,9 +38,9 @@
                 }
 
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO jogos (cod_Jogo, nome_jogo, desc_jogo, link_jogo, image_jogo)
+                $sql = $pdo->prepare("INSERT INTO jogos (cod_jogo, nome_jogo, desc_jogo, link_jogo, image_jogo)
                                       VALUES (null, ?,?,?,?)");
-                if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, $imgContent))){
+                if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, base64_encode($imgContent)))){
                     $msgErro = "Dados cadastrados com sucesso!";
                     header('location: menu_jogos.php');
                 } else {
@@ -68,7 +68,7 @@
                         <input name="nome_jogo" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
                         <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
                         <br><br>
-                        <textarea name="desc_jogo" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo"></textarea>
+                        <textarea name="desc_jogo" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo (max 255 caracteres)"></textarea>
                         <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
                         <br><br>
                         <input name="link_jogo" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">

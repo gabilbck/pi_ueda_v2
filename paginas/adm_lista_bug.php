@@ -24,7 +24,6 @@
                     echo "<th>ID</th>";
                     echo "<th>E-mail</th>";
                     echo "<th>Descrição</th>";
-                    echo "<th>Alterar</th>";
                     echo "<th>Excluir</th>";
                     echo "</tr>";
                     foreach($info as $key => $value){
@@ -32,8 +31,7 @@
                         echo "<td>".$value['cod_bug']."</td>";
                         echo "<td>".$value['email_bug']."</td>";
                         echo "<td>".$value['desc_bug']."</td>";
-                        echo "<td><center><a class='alt' href='../alt/alt_bug.php?cod_bug=".$value['cod_bug']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='../del/del_bug.php?cod_bug=".$value['cod_bug']."'>(-)</a></center></td>";
+                        echo "<td><center><a class='del' href='adm_del_bug.php?cod_bug=".$value['cod_bug']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

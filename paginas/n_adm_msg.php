@@ -8,12 +8,16 @@
                 <br><br>
                 <h1>VOCÊ NÃO POSSUI ACESSO À PÁGINA!</h1>
                 <br>
-                <h2>Volte à página principal ou inicie uma nova sessão:</h2>
+                <h2>Volte à página principal <?php 
+                if (!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
+                    echo 'ou inicie uma nova sessão:'; }
+                ?></h2>
                 <br>
-                <a href="home.php"><button>PÁGINA PRINCIPAL</button></a>
-                <a href="login_usu.php"><button>LOGIN</button></a>
+                <a class="link-branco" href="home.php"><button>PÁGINA PRINCIPAL</button></a>
+                <?php if (!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
+                    echo '<br><br><a class="link-branco" href="login_usu.php"><button>LOGIN</button></a><div class="margizinha">ou</div><a class="link-branco" href="cad_usu.php"><button>CADASTRE-SE</button></a>';}
+                ?>
                 <br><br>
             </center>
         </div>
     </main>
-<?php require("../template/footer.php");?>
