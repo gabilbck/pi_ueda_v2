@@ -62,23 +62,22 @@
             if (in_array($fileType, $allowTypes)){
                 $image = $_FILES['image']['tmp_name'];
                 $imgContent = file_get_contents($image);
-        
-                //Inserir dados
-                $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
-                                    VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
-                    $msgErr = "Dados cadastrados com sucesso!";
-                    header("location: menu_artigos.php");
-                } else {
-                    $msgErr = "Dados não cadastrados!";
-                }
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
+        }
+        //Inserir dados
+        $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
+                            VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
+            $msgErr = "Dados cadastrados com sucesso!";
+            header("location: menu_artigos.php");
         } else {
-            $msgErr = "Informações incorretas";
-        }            
-    }
+            $msgErr = "Dados não cadastrados!";
+        }
+    } else {
+        $msgErr = "Informações incorretas";
+    }            
 ?>
 <head>
     <title>Publicar artigo | UEDA</title>
@@ -121,7 +120,7 @@
                     <span class="obrigatorio">* <?php echo '<br>'.$id_etiErr ?></span>
                     <br><br>
                     <div class="escolha-imagem">
-                        <label for="image">Selecione uma imagem</label>
+                        <label for="image">Selecione uma imagem (Opcional)</label>
                         <input type="file" id='image' name="image"/><br>
                     </div>
                     <br><br>
