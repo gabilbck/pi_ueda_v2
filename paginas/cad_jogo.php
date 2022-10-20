@@ -94,7 +94,7 @@
                         <div class="clear"></div>    
                     </div>
                 </form>
-                <br>
+                <br><br>
             </center>
         </div>
 <?php require("../template/footer.php");?>
