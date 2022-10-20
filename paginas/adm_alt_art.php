@@ -31,7 +31,7 @@
     }
     
     if (isset($_POST["submit"])){
-
+        $tem_arquivo = false;
         if (!empty($_FILES["image"]["name"])){
             //Pegar informações
             $fileName = basename($_FILES["image"]["name"]);
@@ -41,6 +41,7 @@
             if (in_array($fileType, $allowTypes)){
                 $image = $_FILES['image']['tmp_name'];
                 $imgContent = file_get_contents($image);
+                $tem_arquivo = true;
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
@@ -99,14 +100,25 @@
             $ref_art = $_POST['ref_art'];
         }
 
-        //Gravar no bancob    ta dando erro
-        $sql = $pdo->prepare("UPDATE artigo SET titulo_art=?, id_eti=?, link_art=?, resumo_art=?, img_art=?, intro_art=?, des_art=?, con_art=?, ref_art=? WHERE id_art=?");
-        if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art, $id_art))){
-            $msgErr = "Dados alterados com sucesso!";
-            header('location: adm_lista_art.php');
+        if ($tem_arquivo){
+            $sql = $pdo->prepare("UPDATE artigo SET titulo_art=?, id_eti=?, link_art=?, resumo_art=?, img_art=?, intro_art=?, des_art=?, con_art=?, ref_art=? WHERE id_art=?");
+            if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art, $id_art))){
+                $msgErr = "Dados alterados com sucesso!";
+                header('location: adm_lista_art.php');
+            } else{
+                $msgErr = "dados não alterados."; 
+            }
         } else{
-            $msgErr = "dados não alterados."; 
+            $sql = $pdo->prepare("UPDATE artigo SET titulo_art=?, id_eti=?, link_art=?, resumo_art=?, intro_art=?, des_art=?, con_art=?, ref_art=? WHERE id_art=?");
+            if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, $intro_art, $des_art, $con_art, $ref_art, $id_art))){
+                $msgErr = "Dados alterados com sucesso!";
+                header('location: adm_lista_art.php');
+            } else{
+                $msgErr = "dados não alterados."; 
+            }
         }
+        //Gravar no bancob    ta dando erro
+        
     }
 ?>
 <head>
