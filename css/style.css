@@ -511,7 +511,7 @@ h1{
         margin-right: auto;
         border-right: 10px solid #1e3f53;
         border-bottom: 10px solid #1e3f53;
-        padding-bottom: 220px;
+        padding-bottom: 10px;
     }
 
     @media (max-width: 1300px){
@@ -523,11 +523,11 @@ h1{
             margin-right: auto;
             border-right: 10px solid #1e3f53;
             border-bottom: 10px solid #1e3f53;
-            height: 260px;
+            padding-bottom: 60px;
         }
         .desc-info{
             margin-left: 40px;  
-            margin-right: 5px;
+            margin-right: 105px;
             margin-bottom: 45px;
             text-align: left;
             height: 100px;
@@ -538,7 +538,6 @@ h1{
             border: 2px white solid;
             border-radius: 7px;
             margin-top: 0px;
-            right: 340px;
             background-color: #009CFF;
         }
     }
