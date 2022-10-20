@@ -33,4 +33,5 @@
             <br><br><hr><br>
         </div> 
     </main>
+<br><br><br><br><br><br><br><br><br><br>
 <?php require("../template/footer.php");?>
