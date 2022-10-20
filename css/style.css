@@ -88,6 +88,11 @@ h1{
     }
 
 /* Margens */
+    .margem-lados2{
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-bottom: 228px;
+    }
     .margem-lados{
         margin-left: 5%;
         margin-right: 5%;

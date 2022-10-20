@@ -14,7 +14,7 @@
             <h1>PÁGINA DE ADMNISTRAÇÃO</h1>
         </center>
         <br>
-        <div class="margem-lados">
+        <div class="margem-lados2">
             <h2>Cadastros</h2>
             <button><a class="link-branco" href="cad_usu.php">Usuários</a></button>
             <button><a class="link-branco" href="cad_art.php">Artigos</a></button>
@@ -33,5 +33,5 @@
             <br><br><hr><br>
         </div> 
     </main>
-<br><br><br><br><br><br><br><br><br><br>
+
 <?php require("../template/footer.php");?>
