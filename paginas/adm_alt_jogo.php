@@ -19,7 +19,7 @@
                 $cod_jogo = $value['cod_jogo'];
                 $nome_jogo = $value['nome_jogo'];
                 $desc_jogo = $value['desc_jogo'];
-                $image_jogo = $value['image_jogo'];
+                $imgContent = $value['image_jogo'];
                 $link_jogo = $value['link_jogo'];
             }
         }
@@ -67,7 +67,7 @@
                 $msgErr = "Dados não alterados.";
             }
         } else{
-            $sql = $pdo->prepare("UPDATE jogos SET nome_jogo=?, desc_jogo=?, link_jogo=?, WHERE cod_jogo=?");
+            $sql = $pdo->prepare("UPDATE jogos SET nome_jogo=?, desc_jogo=?, link_jogo=? WHERE cod_jogo=?");
             if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, $cod_jogo))){
                 $msgErr = "Dados alterados com sucesso!";
                 header('location: adm_lista_jogo.php');
