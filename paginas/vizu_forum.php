@@ -20,6 +20,11 @@
                 $titulo_publi = $value['titulo_publi'];
                 $text_publi = $value['text_publi'];
                 $imgContent = $value['img_publi'];
+                $sql = $pdo->prepare('SELECT nome_usu FROM usuario WHERE id_usu =?');
+                if($sql->execute(array($id_usu))){
+                    $usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    $nome_usu = $usuario[0]['nome_usu'];
+                }
             }
         }
     }
@@ -34,8 +39,8 @@
         <div class="margem-lados">
             <center><h1 style="text-transform: uppercase;"><?php echo $titulo_publi?></h1></center>
             <br>
-            <b>@<?php echo $id_usu //$nome_usu?></b>
-            <br><br>
+            <h3>Publicado por: @<?php echo $nome_usu ?></h3>
+            <br>
             <p><?php echo $text_publi?></p>
             <br>
             <?php 
@@ -43,9 +48,9 @@
                 echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.$imgContent.'"/>';
             }
             ?>
-            <br>
+            <br><br>
             <hr>
-            <br><br><br>
+            <br>
             <h2>Comentários</h2>
             <?php 
             // Mostrar comentários
@@ -55,7 +60,6 @@
                     foreach($row as $key => $value){
                         $text_cmt = $value['text_cmt'];
                         $id_usu = $value['id_usu'];
-
                         echo '<p>'.$text_cmt.'</p>';
                     }
                 }
@@ -95,6 +99,7 @@
             }
             ?>
             <form action="" method="post">
+                <br>
                 <input type="text" name="text_cmt" placeholder="Deixe aqui seu comentário..." value="<?php echo $text_cmt ?>">
                 <span class="obrigatorio"><?php echo $text_cmtErr ?></span>
                 <br><br>
