@@ -672,6 +672,6 @@ h1{
     }
 
 /*Vizu Fórum*/
-.titulo-caixa-alta{
-    text-transform: uppercase;
-}
+    .titulo-caixa-alta{
+        text-transform: uppercase;
+    }

@@ -5,6 +5,16 @@
 ?>
 <head>
     <title>Fórum | UEDA</title>
+    <style>
+        .nome-de-usu{
+            background-color: #597d95;
+            color: white;
+            padding: 5px;
+        }
+        .nome-de-usu a{
+            color: white;
+        }
+    </style>
 </head>
     <main>
         <div class="margem-lados">
@@ -37,10 +47,10 @@
                         }
                         echo '<div class="foruns">';
                         echo '<a href="vizu_forum.php?id_publi='.$value["id_publi"].'"><h2>'.$titulo_publi.'</h2></a>';
-                        echo '<b>Publicado por: <a>@'.$nome_usu.'</a></b>';
+                        echo '<div class="nome-de-usu"><b>Publicado por: <a>@'.$nome_usu.'</a></b></div>';
                         echo '<p>'.$text_publi.'</p>';
-                        echo "<a href='vizu_forum.php?id_publi=".$id_publi."'>Ver Agora</a>";
-                        echo '<hr>';
+                        echo "<br><a href='vizu_forum.php?id_publi=".$id_publi."'>Ver Agora</a>";
+                        echo '<br><hr>';
                         echo '</div>';
                         echo '<br>';
                     };
