@@ -10,7 +10,7 @@
     $ref = $_GET['ref'];
 ?> 
     <head>
-        <title>Document</title>
+        <title>ARTIGO | UEDA</title>
     </head>
     <body>
         <?php 
