@@ -62,17 +62,15 @@
             <center>
                 <br><br>
                 <h1>PUBLIQUE SEU JOGO</h1>
-                <br>
                 <form method="post" enctype="multipart/form-data">
-                    <div class="form-jogo">
-                        <input name="nome_jogo" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
-                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
+                    <div><br><br>
+                        <input name="nome_jogo" required maxlength="255" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
                         <br><br>
-                        <textarea name="desc_jogo" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo (max 255 caracteres)"></textarea>
-                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
+                        <textarea name="desc_jogo" required maxlength="1000" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo (max 255 caracteres)"></textarea>
                         <br><br>
-                        <input name="link_jogo" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">
-                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
+                        <encurtador>Antes de mandar seu link encurte-o <a  class="obrigatorio" target="_blank" href="https://9h.fit/?gclid=EAIaIQobChMIqueOoebu-gIVAuFcCh2YegCVEAAYAiAAEgI0BvD_BwE">aqui!</encurtador></a>
+                        <br>
+                        <input name="link_jogo" required maxlength="1000" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">
                         <br><br>
                         <div class="escolha-imagem">
                             <label for="file">Selecione uma imagem</label>
@@ -88,7 +86,7 @@
                         <div class="clear"></div>    
                     </div>
                 </form>
-                <br>
+                <br><br>
             </center>
         </div>
 <?php require("../template/footer.php");?>
