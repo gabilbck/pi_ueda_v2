@@ -26,7 +26,7 @@
                     foreach($row as $key => $i){
 
                         $id = $i['id_art'];
-                        $img = $i['img_art'];
+                        $img_art = $i['img_art'];
                         $tituloart = $i['titulo_art'];
                         $intro_art = $i['intro_art'];
                         $des_art = $i['des_art'];

@@ -500,7 +500,8 @@ h1{
 
     .jogos-agua{
         margin-top: 40px;
-        background-color: #0064AB;
+        background-color: #87B6D5;
+        padding: 15px;
         width: 50%;
         margin-left: auto;
         margin-right: auto;
@@ -550,7 +551,7 @@ h1{
         border: 2px white solid;
         border-radius: 7px;
         margin-top: 0px;
-        background-color: #009CFF;
+        background-color: #567D96;
         margin-left: 40px;
     }
 
@@ -565,7 +566,7 @@ h1{
     }
 
     .link-info a{
-        color: white;
+        color: rgb(255, 255, 255);
         padding-left: 45%;
         padding-right: 45%;
         padding-top: 5px;
@@ -581,11 +582,13 @@ h1{
     .nome-jogos{
         font-size: 35px;
         margin-left: 40px;  
+        color: rgb(255, 255, 255);
         text-align: left;
     }
 
     .desc-info{
         margin-left: 40px;  
+        color: rgb(255, 255, 255);
         margin-right: 5px;
         text-align: left;
         height: 100px;
