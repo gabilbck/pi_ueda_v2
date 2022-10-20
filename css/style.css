@@ -532,7 +532,10 @@ h1{
             font-size:20px;
             border: 2px white solid;
             border-radius: 7px;
+            width: 540px;
+            position: absolute;
             margin-top: 0px;
+            right: 340px;
             background-color: #009CFF;
         }
     }
