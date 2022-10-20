@@ -12,7 +12,7 @@
 
     if (isset($_GET['cod_jogo'])){
         $codigo = $_GET['cod_jogo'];
-        $sql = $pdo->prepare('SELECT * FROM jogos WHERE cod_jogo = ?');
+        $sql = $pdo->prepare('SELECT * FROM jogos WHERE cod_jogo =?');
         if ($sql->execute(array($codigo))){
             $info = $sql->fetchAll(PDO::FETCH_ASSOC);
             foreach($info as $key => $value){
@@ -26,7 +26,7 @@
     }
 
     if (isset($_POST["submit"])){
-
+        $tem_arquivo = false;
         if (!empty($_FILES["image"]["name"])){
             //Pegar informações
             $fileName = basename($_FILES["image"]["name"]);
@@ -36,6 +36,7 @@
             if (in_array($fileType, $allowTypes)){
                 $image = $_FILES['image']['tmp_name'];
                 $imgContent = file_get_contents($image);
+                $tem_arquivo = true;
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
@@ -57,14 +58,24 @@
             $link_jogoErr = "Erro no link do jogo";
         }
 
-        $sql = $pdo->prepare("UPDATE jogos SET nome_jogo=?, desc_jogo=?, link_jogo=?, image_jogo=? WHERE cod_jogo=?");
-        if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, base64_encode($imgContent), $cod_jogo))){
-            $msgErr = "Dados alterados com sucesso!";
-            header('location: adm_lista_jogo.php');
+        if ($tem_arquivo){
+            $sql = $pdo->prepare("UPDATE jogos SET nome_jogo=?, desc_jogo=?, link_jogo=?, image_jogo=? WHERE cod_jogo=?");
+            if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, base64_encode($imgContent), $cod_jogo))){
+                $msgErr = "Dados alterados com sucesso!";
+                header('location: adm_lista_jogo.php');
+            } else{
+                $msgErr = "Dados não alterados.";
+            }
         } else{
-            $msgErr = "Dados não alterados.";
-            
+            $sql = $pdo->prepare("UPDATE jogos SET nome_jogo=?, desc_jogo=?, link_jogo=?, WHERE cod_jogo=?");
+            if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, $cod_jogo))){
+                $msgErr = "Dados alterados com sucesso!";
+                header('location: adm_lista_jogo.php');
+            } else{
+                $msgErr = "Dados não alterados.";
+            }
         }
+        
 
     } else {
         $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
@@ -77,9 +88,9 @@
     <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR</h1>
+                <h1>ALTERAR JOGO</h1>
                 <br>
-                <form action="" method="post"  enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="cod_jogo" value="<?php echo $cod_jogo?>" readonly>
                     <span class="n-obrigatorio">*</span>
                     <br><br>
@@ -91,6 +102,14 @@
                     <br><br>
                     <input name="link_jogo" value="<?php echo $link_jogo?>" type="text" placeholder="Link do jogo">
                     <span class="obrigatorio">* <?php echo '<br>'.$link_jogoErr ?></span>
+                    <br>
+                    <?php 
+                    if (!empty($imgContent)){ 
+                        echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.$imgContent.'"/>';
+                    } else{
+                        echo '<br><i>(Não possui imagem)</i><br>';
+                    }    
+                    ?>
                     <br><br>
                     <div class="escolha-imagem">
                         <label for="image">Selecione uma imagem (Opcional)</label>
