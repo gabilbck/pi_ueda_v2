@@ -52,9 +52,11 @@
                                                 echo $values['desc_jogo']."<br>";
                                             echo "</div>";
                                             echo "<br>";
-                                                echo "<div class='link-info'>";
-                                                    echo "<a target='_blank' href=".$values['link_jogo'].">Jogue</a>";
-                                                echo "</div>";   
+                                                echo "<div class='warpper'>";
+                                                    echo "<div class='link-info'>";
+                                                        echo "<a target='_blank' href=".$values['link_jogo'].">Jogue</a>";
+                                                    echo "</div>"; 
+                                                echo "</div>";  
                                             echo "</div>";
                                         echo "</div>";
                                     echo "</div>";
