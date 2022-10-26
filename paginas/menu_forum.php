@@ -10,6 +10,8 @@
             background-color: #597d95;
             color: white;
             padding: 5px;
+            width: 20rem;
+            border-radius: 0.5rem;
         }
         .nome-de-usu a{
             color: white;

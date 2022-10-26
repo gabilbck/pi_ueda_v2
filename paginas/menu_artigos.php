@@ -52,9 +52,21 @@
 
                         if($etiqueta == 2 || $etiqueta == 3){
                             $_SESSION['titulo'] = $tituloart;
-                            $link = 'vizu_art.php?titulo='.$tituloart.'&img='.$img_art.'&id='.$id.'&intro='.$intro_art.'&desc='.$des_art.'&concl='.$con_art.'&ref='.$ref_art;
+                            $_SESSION['img'] = $img_art;
+                            $_SESSION['id'] = $id;
+                            $_SESSION['intro'] = $intro_art;
+                            $_SESSION['desc'] = $des_art;
+                            $_SESSION['concl'] = $con_art;
+                            $_SESSION['ref'] = $ref_art;
+                            $link = 'vizu_art.php';
                         }else{
+                            unset($_SESSION['img']);
                             unset($_SESSION['titulo']);
+                            unset($_SESSION['id']);
+                            unset($_SESSION['intro']);
+                            unset($_SESSION['desc']);
+                            unset($_SESSION['concl']);
+                            unset($_SESSION['ref']);
                             $link = $i['link_art'];
                         };
 
