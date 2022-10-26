@@ -26,10 +26,11 @@
         }
 
         if ($nome_usu && $email_usu && $senha_usu && $nome_real_usu){
-            $sql = $pdo->prepare("SELECT * FROM usuario WHERE email_usu = ?");
-            if ($sql->execute(array($email_usu))){
+            $sql = $pdo->prepare("SELECT * FROM usuario WHERE email_usu = ?--, nome_usu = ?--");
+            if ($sql->execute(array($email_usu/*, $nome_usu*/))){
                 if ($sql->rowCount() > 0){
-                    $msgErr = "E-mail já cadastrado";
+                    //$nome_usuErr = "Nome de usuário já cadastrado";
+                    $email_usuErr = "E-mail já cadastrado";
                 } else {
                     //Inserir dados
                     $sql = $pdo->prepare("INSERT INTO USUARIO (id_usu, nome_usu, email_usu, senha_usu, nome_real_usu, adm)
