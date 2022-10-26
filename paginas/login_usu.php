@@ -33,7 +33,7 @@
                     }
                     header('location:sus_log_usu.php');
                 } else {
-                    $msgErr = 'Credenciais incorretas ou não informadas.';
+                    $msgErr = '* Credenciais incorretas ou não informadas.';
                 }
             }
         }
@@ -52,8 +52,8 @@
                     <input name="email_usu" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
                     <br><br>
                     <input name="senha_usu" value="<?php echo $senha_usu?>" type="password" placeholder="Senha">
-                    <br><br>
-                    <span class="obrigatorio"><?php echo "* ".$msgErr ?></span>
+                    <br>
+                    <span class="obrigatorio"><?php echo $msgErr ?></span>
                     <br><br>
                     <div class="final-cad">
                         <div class="final-cad-1">

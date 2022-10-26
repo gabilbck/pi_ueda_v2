@@ -66,7 +66,7 @@
                     <span class="n-obrigatorio">*</span>
                     <br><br>
                     <input name="nome_eti" value="<?php echo $nome_eti?>" type="text" placeholder="Nome da etiqueta">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_etiErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$nome_etiErr ?></span>
                     <br><br>
                     <div class="botoes-alt">
                         <button><a class="link-branco" href="adm_lista_eti.php">VOLTAR</a></button>

@@ -90,10 +90,10 @@
                     <span class="n-obrigatorio">*</span>
                     <br><br>
                     <input type="text" name="titulo_publi" maxlength="30" value="<?php echo $titulo_publi?>">
-                    <span class="obrigatorio">* <?php echo '<br>'.$titulo_publiErr ?></span>
+                    <span class="obrigatorio"><?php echo '<br>'.$titulo_publiErr ?></span>
                     <br><br>
                     <textarea type="text" name="text_publi" maxlength="1000" placeholder="Texto para publicação"><?php echo $text_publi?></textarea>
-                    <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
+                    <span class="obrigatorio"><?php echo '<br>'.$text_publiErr ?></span>
                     <div class="clear"></div>
                     <br>
                     <a>Imagem Atual:</a>
