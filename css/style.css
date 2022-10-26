@@ -34,6 +34,7 @@ h1{
 /* Obrigatório/Mensagens/Atenção */
     .obrigatorio{
         color: red;
+        font-weight: bold;
     }
     .n-obrigatorio{
         /* Gambiarra para não ficar

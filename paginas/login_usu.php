@@ -4,17 +4,17 @@
     $_SESSION['nome_usu'] = "";
     $_SESSION['adm'] = "";
     
-    $email_usu = $senha_usu = "";
+    $email_usu = $senha_usu = $msgErr = "";
     $email_usuErr = $senha_usuErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
         if (empty($_POST['email_usu'])){
-            $email_usuErr = "Email é obrigatório!";
+            $email_usuErr = "Email está incorreto.";
         } else {
             $email_usu = test_input($_POST["email_usu"]);
         }
         if (empty($_POST['senha_usu'])){
-            $senha_usuErr = "Senha é obrigatória!";
+            $senha_usuErr = "Senha está incorreta.!";
         } else {
             $senha_usu = test_input($_POST["senha_usu"]);
         }
@@ -33,7 +33,7 @@
                     }
                     header('location:sus_log_usu.php');
                 } else {
-                    echo '<h6>Email de usuário não cadastrado</h6>';
+                    $msgErr = 'Credenciais incorretas ou não informadas.';
                 }
             }
         }
@@ -50,10 +50,10 @@
                 <br>
                 <form action="" method="post">
                     <input name="email_usu" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
-                    <span class="obrigatorio">* <?php echo $email_usuErr ?></span>
                     <br><br>
                     <input name="senha_usu" value="<?php echo $senha_usu?>" type="password" placeholder="Senha">
-                    <span class="obrigatorio">* <?php echo $email_usuErr ?></span>
+                    <br><br>
+                    <span class="obrigatorio"><?php echo "* ".$msgErr ?></span>
                     <br><br>
                     <div class="final-cad">
                         <div class="final-cad-1">
