@@ -128,31 +128,31 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR</h1>
+                <h1>ALTERAR ARTIGO</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_art" value="<?php echo $id_art?>" readonly>
                     <span class="n-obrigatorio">*</span>
                     <br><br>
-                    <input class="input-text" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                    <input class="input-text" name="titulo_art" maxlength="30" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     <span class="obrigatorio">* <?php  echo '<br>'.$titulo_artErr ?></span>
                     <br><br>
                     <input class="input-text" name="link_art" value="<?php  echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$link_artErr ?></span>
                     <br><br>
-                    <textarea name="resumo_art" type="text" placeholder="Resumo do Texto"><?php  echo $resumo_art?></textarea>
+                    <textarea name="resumo_art" maxlength="2000" type="text" placeholder="Resumo do Texto"><?php  echo $resumo_art?></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$resumo_artErr ?></span>
                     <br><br>
-                    <textarea name="intro_art" type="text" placeholder="Introdução do Texto"><?php  echo $intro_art?></textarea>
+                    <textarea name="intro_art" maxlength="2000" type="text" placeholder="Introdução do Texto"><?php  echo $intro_art?></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$intro_artErr ?></span>
                     <br><br>
-                    <textarea name="des_art" type="text" placeholder="Desenvolvimento do Texto"><?php  echo $des_art?></textarea>
+                    <textarea name="des_art" maxlength="2000" type="text" placeholder="Desenvolvimento do Texto"><?php  echo $des_art?></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$des_artErr ?></span>
                     <br><br>
-                    <textarea name="con_art" type="text" placeholder="Conclusão do Texto"><?php  echo $con_art?></textarea>
+                    <textarea name="con_art" maxlength="2000" type="text" placeholder="Conclusão do Texto"><?php  echo $con_art?></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$con_artErr ?></span>
                     <br><br>
-                    <textarea name="ref_art" type="text" placeholder="Referências do Texto"><?php  echo $ref_art?></textarea>
+                    <textarea name="ref_art" maxlength="1000" type="text" placeholder="Referências do Texto"><?php  echo $ref_art?></textarea>
                     <span class="obrigatorio">* <?php  echo '<br>'.$ref_artErr ?></span>
                     <br><br>
                     <label>Etiquetas: </label>
@@ -180,7 +180,10 @@
                     </div>
                     <div class="clear"></div>
                     <br>
-                    <button type="submit" name="submit">ENVIAR</button>
+                    <div class="botoes-alt">
+                    <button><a class="link-branco" href="adm_lista_art.php">VOLTAR</a></button>
+                    <button type="submit" name="submit">ALTERAR</button>
+                    </div>
                 </form>
                 <br><br>
             </center>
