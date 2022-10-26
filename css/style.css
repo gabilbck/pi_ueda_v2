@@ -832,7 +832,6 @@ h1{
         background-color: #567D96;
         transition:  all 300ms ease-in-out;
         margin-left: 40px;
-        text-align: center;
     }
 
     .link-info:hover{
@@ -842,7 +841,6 @@ h1{
         margin-top: 0px;
         background-color: #ffffff;
         margin-left: 40px;  
-        text-align: center;
     }
 
     .link-info a{
@@ -851,14 +849,12 @@ h1{
         padding-right: 45%;
         padding-top: 5px;
         padding-bottom: 5px;
-        text-align: center;
     }
 
     .link-info a:hover{
         color: #87B6D5;
         padding-left: 45%;
         padding-right: 45%;
-        text-align: center;
     }
 
     .nome-jogos{
