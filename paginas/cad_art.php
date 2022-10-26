@@ -57,7 +57,7 @@
             $fileName = basename($_FILES["image"]["name"]);
             $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
             //Permitir somente alguns formatos
-            $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'jfif');
 
             if (in_array($fileType, $allowTypes)){
                 $image = $_FILES['image']['tmp_name'];
@@ -121,7 +121,7 @@
                    
                     <br><br><br>
                     <div class="escolha-imagem">
-                        <label for="image">Selecione uma imagem (Opcional)</label>
+                        <label style="width: 300px;" id="img_art" for="image">Selecione uma imagem (Opcional)</label>
                         <input type="file" id='image' name="image"/><br>
                     </div>
                     <br><br>
@@ -142,11 +142,13 @@
                     document.getElementById('con_art').style.display='none';
                     document.getElementById('desc_art').style.display='none';
                     document.getElementById('intro_art').style.display='none';
+                    document.getElementById('img_art').style.display='none';
             } else{
                 document.getElementById('ref_art').style.display='block';
                 document.getElementById('con_art').style.display='block';
                 document.getElementById('desc_art').style.display='block';
                 document.getElementById('intro_art').style.display='block';
+                document.getElementById('img_art').style.display='block';
             }
             if(valor==2 || valor==3 ){
                     document.getElementById('link_art').style.display='none';
