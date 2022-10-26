@@ -2,26 +2,44 @@
 <?php
     /* Visualização do artigo selecionado */
 
-    $titulo = $_GET['titulo'];
-    $intro = $_GET['intro'];
-    $desc = $_GET['desc'];
-    $img = $_GET['img'];
-    $concl = $_GET['concl'];
-    $ref = $_GET['ref'];
+    $titulo = $_SESSION['titulo'];
+    $intro = $_SESSION['intro'];
+    $desc = $_SESSION['desc'];
+    $img = $_SESSION['img'];
+    $concl = $_SESSION['concl'];
+    $ref = $_SESSION['ref'];
 ?> 
     <head>
         <title>ARTIGO | UEDA</title>
+        <link href="../css/style.css" rel="stylesheet">
     </head>
     <body>
+    <div class="margem-lados">
         <?php 
-
-        echo '<h1>'.$titulo.'</h1><br>';
-        echo '<p>'.$intro.'</p><br>';
-        echo '<p>'.$desc.'</p><br>';
-        echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($img).'"/>';
-        echo '<p>'.$concl.'</p><br>';
-        echo '<p>'.$ref.'</p><br>';
+        echo "<div class='container_art'>";
+            echo "<div class='titulo_art'>";
+                echo $titulo.'<br>';
+            echo "</div>";
+            echo "<div class='intro_art'>";
+                echo '<p>'.$intro.'</p><br>';
+            echo "</div>";
+            echo "<div class='desc_art'>";
+                echo '<p>'.$desc.'</p><br>';
+            echo "</div>";
+            echo "<div class='image_art'>";
+                echo '<img src="data:image/jfifi;base64,'.$img.'"/>';
+            echo "</div>";
+            echo "<div class='conclusao_art'>";
+                echo '<p>'.$concl.'</p><br>';
+            echo '</div>';
+            echo '<hr>';
+            echo '<br>';
+            echo "<div class='referencia'>";
+                echo '<p>'.$ref.'</p><br>';
+            echo "</div>";
+        echo '</div>';
         ?>
+       </div> 
     </body>     
 </html>
 <?php require("../template/footer.php")?>
