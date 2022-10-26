@@ -63,49 +63,25 @@
                         echo '<p>'.$text_cmt.'</p>';
                     }
                 }
-            ?>
-            <?php
-            // Enviar novo comentário
-            // NÃO FUNCIONA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             $id_usu = $_SESSION['id_usu'];
             $id_publi = $value['id_publi'];
             $id_cmt = $text_cmt = "";
             $id_cmtErr = $text_cmtErr = $msgErr = "";
-        
-            if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
-        
-                if (empty($_POST['text_cmt'])){
-                    $text_cmtErr = "Você não pode fazer um comentário vazio!";
-                } else {
-                    $text_cmt = test_input($_POST["text_cmt"]);
-                }
-                
-                //Inserir dados
-                if ($text_cmt){
-                    $sql = $pdo->prepare("INSERT INTO comentario (text_cmt, id_usu, id_publi)
-                                    VALUES (?, ?, ?)");
-                    if ($sql->execute(array($text_cmt, $id_usu, $id_publi))){
-                        $msgErr = "Mensagem não enviada!";
-                        $actual_link = $_SERVER['HTTP_REFERER'];
-                        header("Location:$actual_link");
-                    } else {
-                        $msgErr = "Dados não cadastrados!";
-                    }
-                } else{
-                    $msgErr = "Dados faltando!";
-                }
-            } else {
-                $msgErr = "Dados não informados!"; 
-            }
             ?>
-            <form action="" method="post">
+            
+            <form action="vizu_forum_controler.php" method="post">
                 <br>
+                <input type="hidden" name="id_publi" value="<?php echo $id_publi ?>">
                 <input type="text" name="text_cmt" placeholder="Deixe aqui seu comentário..." value="<?php echo $text_cmt ?>">
                 <span class="obrigatorio"><?php echo $text_cmtErr ?></span>
                 <br><br>
                 <button type="submit" name="cadastro">ENVIAR</button>
             </form>
             <br><br>
+            <?php if(isset($_GET['erro'])){
+                echo $_GET['erro'];
+                }
+            ?>
         </div>
     </main>
 <?php require("../template/footer.php");?>

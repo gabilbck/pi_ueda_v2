@@ -1,7 +1,7 @@
 <?php
     session_start();
-    include "../include/MySql.php";
-    include "../include/functions.php";
+    include_once "../include/MySql.php";
+    include_once "../include/functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
