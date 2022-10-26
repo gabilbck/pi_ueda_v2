@@ -59,7 +59,7 @@
     <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR</h1>
+                <h1>ALTERAR ETIQUETA</h1>
                 <br>
                 <form action="" method="post">
                     <input type="text" name="id_eti" value="<?php echo $id_eti?>" readonly>
@@ -69,8 +69,8 @@
                     <span class="obrigatorio">* <?php  echo '<br>'.$nome_etiErr ?></span>
                     <br><br>
                     <div class="botoes-alt">
-                        <button type="submit" name="cadastro">ALTERAR</button>
                         <button><a class="link-branco" href="adm_lista_eti.php">VOLTAR</a></button>
+                        <button type="submit" name="cadastro">ALTERAR</button>
                     </div>
                 </form>
                 <br><br>

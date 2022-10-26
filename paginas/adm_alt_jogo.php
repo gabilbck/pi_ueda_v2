@@ -116,8 +116,8 @@
                         <input type="file" id='image' name="image"/><br><br>
                     </div>
                     <div class="botoes-alt">
-                        <button type="submit" name="submit">ALTERAR</button>
                         <button><a class="link-branco" href="adm_lista_jogo.php">VOLTAR</a></button>
+                        <button type="submit" name="submit">ALTERAR</button>
                     </div>
                 </form>
                 <br><br>

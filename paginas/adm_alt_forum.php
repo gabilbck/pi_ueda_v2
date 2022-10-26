@@ -80,7 +80,7 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR</h1>
+                <h1>ALTERAR PUBLICAÇÃO DO FÓRUM</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_publi" value="<?php echo $id_publi?>" readonly>
@@ -112,7 +112,10 @@
                     </div>
                     <div class="clear"></div>
                     <br>
-                    <button type="submit" name="submit">ENVIAR</button>
+                    <div class="botoes-alt">
+                    <button><a class="link-branco" href="adm_lista_forum.php">VOLTAR</a></button>
+                    <button type="submit" name="submit">ALTERAR</button>
+                    </div>
                 </form>
                 <br><br>
             </center>

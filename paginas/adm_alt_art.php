@@ -128,7 +128,7 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR</h1>
+                <h1>ALTERAR ARTIGO</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_art" value="<?php echo $id_art?>" readonly>
@@ -180,7 +180,10 @@
                     </div>
                     <div class="clear"></div>
                     <br>
-                    <button type="submit" name="submit">ENVIAR</button>
+                    <div class="botoes-alt">
+                    <button><a class="link-branco" href="adm_lista_art.php">VOLTAR</a></button>
+                    <button type="submit" name="submit">ALTERAR</button>
+                    </div>
                 </form>
                 <br><br>
             </center>

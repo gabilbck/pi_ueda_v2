@@ -84,7 +84,7 @@
     <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR</h1>
+                <h1>ALTERAR USUÁRIO</h1>
                 <br>
                 <form action="" method="post">
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
@@ -110,8 +110,8 @@
                     </table>
                     <br><br>
                     <div class="botoes-alt">
-                        <button type="submit" name="cadastro">ALTERAR</button>
                         <button><a class="link-branco" href="adm_lista_usu.php">VOLTAR</a></button>
+                        <button type="submit" name="cadastro">ALTERAR</button>
                     </div>
                 </form>
                 <br><br>
