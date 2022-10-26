@@ -502,6 +502,97 @@ h1{
         font-weight: 300;
     }
 
+    @media (max-width: 1700px){
+        .principal-jogos h1.subtitulo_principal{
+            position: absolute;
+            top: 8%;
+            left: 0%;
+            height: 580px;
+        }
+        .jogo_ueda{
+            border: 3px #000000 solid;
+            display: flex;
+            margin-top: 50px;
+            justify-content: center;
+        }
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 155%;
+            right: 92.3%;
+        }
+        .principais-text-jogos2 h1.descricao{
+            border-bottom: 2px dashed #000000;
+            padding-bottom: 5px;
+        }
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            width: 480px;
+            top: 195%;
+            left: 0%;
+        }
+        .separacao-jogos{
+            margin-top: 105px;
+        }
+    }
+
+    @media (max-width: 1300px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 155%;
+            right: 90%;
+        }
+    }
+
+    @media (max-width: 1100px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 155%;
+            right: 87%;
+        }
+    }
+
+    @media (max-width: 1000px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 155%;
+            right: 85%;
+        }
+    }
+    @media (max-width: 900px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 155%;
+            right: 82%;
+        }
+    }
+    @media (max-width: 800px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 155%;
+            right: 79%;
+        }
+    }
+    @media (max-width: 700px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 155%;
+            right: 76%;
+        }
+    }
+    @media (max-width: 600px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 195%;
+            right: 73%;
+        }
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            width: 480px;
+            top: 235%;
+            left: 0%;
+        }
+    }
+
     .jogos-agua{
         margin-top: 40px;
         background-color: #87B6D5;
@@ -550,6 +641,182 @@ h1{
             background-color: #009CFF;
         }
     }
+
+    @media (max-width: 1117px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 340px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -3%;
+            top: 85%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: 40px;  
+            margin-right: 105px;
+            margin-bottom: 45px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 0px;
+            background-color: #009CFF;
+        }
+    }
+
+    @media (max-width: 930px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 430px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -3%;
+            top: 85%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: 40px;  
+            margin-right: 105px;
+            margin-bottom: 45px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 0px;
+            background-color: #009CFF;
+        }
+    }
+
+    @media (max-width: 830px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 480px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -3%;
+            top: 92%;
+            width: 100%;
+            height: 100%;
+        }
+        .warpper-desc{
+            position: absolute;
+            left: -3%;
+            top: 55%;
+            width: 100%;
+            height: 100%;
+        }
+        .warpper-nome{
+            position: absolute;
+            left: -3%;
+            top: 45%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: -400px;
+            margin-right: 105px;
+            margin-bottom: 0px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 0px;
+            background-color: #009CFF;
+        }
+    }
+
+    @media (max-width: 630px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 570px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -3%;
+            top: 92%;
+            width: 100%;
+            height: 100%;
+        }
+        .warpper-desc{
+            position: absolute;
+            left: -3%;
+            top: 48%;
+            width: 100%;
+            height: 100%;
+        }
+        .warpper-nome{
+            position: absolute;
+            left: -3%;
+            top: 38%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: -400px;
+            margin-right: 105px;
+            margin-bottom: 0px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 0px;
+            background-color: #009CFF;
+        }
+    }
     
     .container-jogos{
         width: 100%;    
@@ -564,6 +831,7 @@ h1{
         background-color: #567D96;
         transition:  all 300ms ease-in-out;
         margin-left: 40px;
+        text-align: center;
     }
 
     .link-info:hover{
@@ -573,6 +841,7 @@ h1{
         margin-top: 0px;
         background-color: #ffffff;
         margin-left: 40px;  
+        text-align: center;
     }
 
     .link-info a{
@@ -581,12 +850,14 @@ h1{
         padding-right: 45%;
         padding-top: 5px;
         padding-bottom: 5px;
+        text-align: center;
     }
 
     .link-info a:hover{
         color: #87B6D5;
         padding-left: 45%;
         padding-right: 45%;
+        text-align: center;
     }
 
     .nome-jogos{
