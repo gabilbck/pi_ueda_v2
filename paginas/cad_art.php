@@ -114,7 +114,7 @@
                     <br><br>
                     <textarea name="con_art" id="con_art" value="<?php  echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
                     
-                    <br><br>
+                    <br name="ref_art"><br name="ref_art">
                     <textarea name="ref_art" id="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
                     
 

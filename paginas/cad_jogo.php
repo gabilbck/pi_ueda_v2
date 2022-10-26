@@ -6,53 +6,58 @@
     }
 ?>
 <?php
-    $msgErro = "";
-    $nome_jogo = $desc_jogo = $link_jogo = "";
+    $cod_jogo = $nome_jogo = $desc_jogo = $image_jogo = $imgContent = $link_jogo = $msgErr = "";
+    $cod_jogoErr = $nome_jogoErr = $desc_jogoErr = $image_jogoErr = $link_jogoErr = "";
 
-    if (isset($_POST["submit"])){
-        if (!empty($_FILES["image_jogo"]["name"])){
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
+        if (empty ($_POST['nome_jogo'])){
+            $nome_jogoErr = "Nome do jogo é obrigatório!";
+        } else {
+            $nome_jogo = test_input($_POST["nome_jogo"]);
+        }
+        if (empty($_POST['desc_jogo'])){
+            $desc_jogoErr = "Descrição é obrigatório!";
+        } else {
+            $desc_jogo = test_input($_POST["desc_jogo"]);
+        }
+        if (empty($_POST['link_jogo'])){
+            $link_jogoErr = "Link é obrigatório!";
+        } else {
+            $link_jogo = test_input($_POST["link_jogo"]);
+        }
+        
+        if (!empty($_FILES["image"]["name"])){
             //Pegar informações
-            $fileName = basename($_FILES["image_jogo"]["name"]);
+            $fileName = basename($_FILES["image"]["name"]);
             $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
             //Permitir somente alguns formatos
             $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
             if (in_array($fileType, $allowTypes)){
-                $image_jogo = $_FILES['image_jogo']['tmp_name'];
-                $imgContent = file_get_contents($image_jogo);
-
-                if (isset($_POST['nome_jogo'])){
-                    $nome_jogo = $_POST['nome_jogo'];
-                } else {
-                    $nome_jogo = "";
-                }
-                if (isset($_POST['desc_jogo'])){
-                    $desc_jogo = $_POST['desc_jogo'];
-                } else {
-                    $desc_jogo = "";
-                }
-                if (isset($_POST['link_jogo'])){
-                    $link_jogo = $_POST['link_jogo'];
-                } else {
-                    $link_jogo = "";
-                }
-
-                //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO jogos (cod_jogo, nome_jogo, desc_jogo, link_jogo, image_jogo)
-                                      VALUES (null, ?,?,?,?)");
-                if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, base64_encode($imgContent)))){
-                    $msgErro = "Dados cadastrados com sucesso!";
-                    header('location: menu_jogos.php');
-                } else {
-                    $msgErro = "Dados não cadastrados!";
-                }
-
+                $image = $_FILES['image']['tmp_name'];
+                $imgContent = file_get_contents($image);
             } else {
-                $msgErro = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
+                $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
+            }
+        } else{
+            $image_jogoErr = "Não foi enviada a imagem";
+        }
+        //Inserir dados
+        if ($nome_jogo && $desc_jogo && $link_jogo && $imgContent){
+            $sql = $pdo->prepare("INSERT INTO jogos (cod_jogo, nome_jogo, desc_jogo, link_jogo, image_jogo)
+                            VALUES (null, ?,?,?,?)");
+            if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, base64_encode($imgContent)))){
+                $msgErr = "Dados cadastrados com sucesso!";
+                header("location: menu_jogos.php");
+            } else {
+                $msgErr = "Dados não cadastrados!";
             }
         } else {
-            $msgErro = "Selecione uma imagem para upload";
+            $msgErr = "Algum erro";
         }
+    } else {
+        $msgErr = "Informações incorretas";
     }
 ?>
 <head>
@@ -62,33 +67,34 @@
             <center>
                 <br><br>
                 <h1>PUBLIQUE SEU JOGO</h1>
-                <br>
                 <form method="post" enctype="multipart/form-data">
-                    <div class="form-jogo">
-                        <input name="nome_jogo" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
-                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
+                    <div><br><br>
+                        <input name="nome_jogo" maxlength="255" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
+                        <span class="obrigatorio">* <?php  echo '<br>'.$nome_jogoErr ?></span>
                         <br><br>
-                        <textarea name="desc_jogo" value="<?php  echo $desc_jogo?>" type="text" placeholder="Descrição do jogo (max 255 caracteres)"></textarea>
-                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
-                        <br><br>
-                        <input name="link_jogo" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">
-                        <span class="obrigatorio">* <?php  echo '<br>'.$msgErro ?></span>
+                        <textarea name="desc_jogo" maxlength="1000" type="text" placeholder="Descrição do jogo (max 255 caracteres)"><?php echo $desc_jogo?></textarea>
+                        <span class="obrigatorio">* <?php  echo '<br>'.$desc_jogoErr ?></span>
+                        <br>
+                        <encurtador>Antes de mandar seu link encurte-o <a  class="obrigatorio" target="_blank" href="https://9h.fit/?gclid=EAIaIQobChMIqueOoebu-gIVAuFcCh2YegCVEAAYAiAAEgI0BvD_BwE">aqui!</encurtador></a>
+                        <br>
+                        <input name="link_jogo" maxlength="1000" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">
+                        <span class="obrigatorio">* <?php  echo '<br>'.$link_jogoErr ?></span>
                         <br><br>
                         <div class="escolha-imagem">
                             <label for="file">Selecione uma imagem</label>
-                            <input type="file" id='file' name="image_jogo"/><br> <br>
-                            <span class="obrigatorio">* <?php echo $msgErro ?></span> <br>   
+                            <input type="file" id='file' name="image"/><br> <br>
+                            <span class="obrigatorio">* <?php echo $image_jogoErr ?></span> <br>   
                         </div>
                         
                         <div class="final-cad">
                             <div class="final-cad-jogo">
-                                <button type="submit" name="submit">Salvar</button>
+                                <button type="submit" name="cadastro">Salvar</button>
                             </div>
                         </div>
                         <div class="clear"></div>    
                     </div>
                 </form>
-                <br>
+                <br><br>
             </center>
         </div>
 <?php require("../template/footer.php");?>
