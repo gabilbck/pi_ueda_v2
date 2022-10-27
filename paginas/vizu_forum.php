@@ -77,7 +77,7 @@
             <form action="vizu_forum_controler.php" method="post">
                 <br>
                 <input type="hidden" name="id_publi" value="<?php echo $id_publi ?>">
-                <input type="text" name="text_cmt" placeholder="Deixe aqui seu comentário..." value="<?php echo $text_cmt ?>">
+                <input type="text" name="text_cmt" maxlength="200" placeholder="Deixe aqui seu comentário..." value="<?php echo $text_cmt ?>">
                 <span class="obrigatorio"><?php echo $text_cmtErr ?></span>
                 <br><br>
                 <button type="submit" name="cadastro">ENVIAR</button>
