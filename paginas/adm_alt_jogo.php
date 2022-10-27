@@ -95,13 +95,13 @@
                     <span class="n-obrigatorio">*</span>
                     <br><br>
                     <input name="nome_jogo" maxlength="255" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
-                    <span class="obrigatorio">* <?php echo '<br>'.$nome_jogoErr ?></span>
+                    <span class="obrigatorio"><?php echo '<br>'.$nome_jogoErr ?></span>
                     <br><br>
                     <input name="desc_jogo" maxlength="1000" value="<?php echo $desc_jogo?>" type="text" placeholder="Descrição do jogo">
-                    <span class="obrigatorio">* <?php echo '<br>'.$desc_jogoErr ?></span>
+                    <span class="obrigatorio"><?php echo '<br>'.$desc_jogoErr ?></span>
                     <br><br>
                     <input name="link_jogo" maxlength="1000" value="<?php echo $link_jogo?>" type="text" placeholder="Link do jogo">
-                    <span class="obrigatorio">* <?php echo '<br>'.$link_jogoErr ?></span>
+                    <span class="obrigatorio"><?php echo '<br>'.$link_jogoErr ?></span>
                     <br>
                     <?php 
                     if (!empty($imgContent)){ 
@@ -116,8 +116,8 @@
                         <input type="file" id='image' name="image"/><br><br>
                     </div>
                     <div class="botoes-alt">
-                        <button type="submit" name="submit">ALTERAR</button>
                         <button><a class="link-branco" href="adm_lista_jogo.php">VOLTAR</a></button>
+                        <button type="submit" name="submit">ALTERAR</button>
                     </div>
                 </form>
                 <br><br>

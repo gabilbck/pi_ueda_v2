@@ -84,23 +84,23 @@
     <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR</h1>
+                <h1>ALTERAR USUÁRIO</h1>
                 <br>
                 <form action="" method="post">
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
                     <span class="n-obrigatorio">*</span>
                     <br><br>
                     <input name="nome_real_usu" maxlength="200" value="<?php echo $nome_real_usu?>" type="text" placeholder="Nome Completo">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_real_usuErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$nome_real_usuErr ?></span>
                     <br>
                     <input name="nome_usu" maxlength="20" value="<?php echo $nome_usu?>" type="text" placeholder="Nome de Usuário">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$nome_usuErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$nome_usuErr ?></span>
                     <br>
                     <input name="email_usu" maxlength="255" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$email_usuErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$email_usuErr ?></span>
                     <br>
                     <input name="senha_usu" maxlength="40" type="password" placeholder="Senha">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$senha_usuErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$senha_usuErr ?></span>
                     <br><br>
                     <table>
                         <tr>
@@ -110,8 +110,8 @@
                     </table>
                     <br><br>
                     <div class="botoes-alt">
-                        <button type="submit" name="cadastro">ALTERAR</button>
                         <button><a class="link-branco" href="adm_lista_usu.php">VOLTAR</a></button>
+                        <button type="submit" name="cadastro">ALTERAR</button>
                     </div>
                 </form>
                 <br><br>

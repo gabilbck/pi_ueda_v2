@@ -109,7 +109,7 @@
                     <textarea maxlength="2000" name="intro_art" id="intro_art" value="<?php  echo $intro_art?>" type="text" placeholder="Introdução do Texto"></textarea>
                     
                     <br><br>
-                    <textarea maxlength="2000" maxlength="30" name="des_art" id="desc_art" value="<?php  echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
+                    <textarea maxlength="2000" name="des_art" id="desc_art" value="<?php  echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
                     
                     <br><br>
                     <textarea maxlength="2000" name="con_art" id="con_art" value="<?php  echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
