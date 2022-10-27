@@ -10,6 +10,7 @@ html{
 h1{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* scroll */
@@ -1048,38 +1049,41 @@ h1{
     }
 
 /*Vizu Fórum*/
-.titulo-caixa-alta{
-    text-transform: uppercase;
-}
-.titulo_art{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    font-size: 32px;
-    text-align: center;
-}
-.intro_art{
-    text-align: center;
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-top: 3%;
-}
-.desc_art{
-    text-align: center;
-    margin-right: 10%;
-    margin-left: 10%;
-}
-.image_art{
-    text-align: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-.conclusao_art{
-    text-align: center;
-    margin-right: 10%;
-    margin-left: 10%;
-}
-.referencia{
-    text-align: center;
-    margin-right: 10%;
-    margin-left: 10%;
-}
+    .titulo-caixa-alta{
+        text-transform: uppercase;
+    }
+
+/* Artigo Vizu */
+    .titulo_art{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 32px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .intro_art{
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-top: 3%;
+    }
+    .desc_art{
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    .image_art{
+        text-align: center;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    .conclusao_art{
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    .referencia{
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
