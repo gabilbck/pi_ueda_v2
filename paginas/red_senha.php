@@ -17,7 +17,7 @@
                     <input name="email_usu" maxlength="255" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
                     <span class="obrigatorio"><?php echo $email_usuErr ?></span>
                     <br><br>
-                    <input name="senha_usu" maxlength="20" value="<?php echo $senha_usu?>" type="password" placeholder="Nova Senha">
+                    <input name="senha_usu" maxlength="40" value="<?php echo $senha_usu?>" type="password" placeholder="Nova Senha">
                     <span class="obrigatorio"><?php echo $senha_usuErr ?></span>
                     <br><br>
                     <div class="final-cad">
