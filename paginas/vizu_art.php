@@ -18,7 +18,7 @@
         <?php 
         echo "<div class='container_art'>";
             echo "<div class='titulo_art'>";
-                echo $titulo.'<br>';
+                echo '<br><br>'.$titulo.'<br>';
             echo "</div>";
             echo "<div class='intro_art'>";
                 echo '<p>'.$intro.'</p><br>';
@@ -27,7 +27,7 @@
                 echo '<p>'.$desc.'</p><br>';
             echo "</div>";
             echo "<div class='image_art'>";
-                echo '<img src="data:image/jfifi;base64,'.$img.'"/>';
+                echo '<img width="300" src="data:image/jfifi;base64,'.$img.'"/>';
             echo "</div>";
             echo "<div class='conclusao_art'>";
                 echo '<p>'.$concl.'</p><br>';
