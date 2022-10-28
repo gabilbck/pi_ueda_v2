@@ -440,6 +440,7 @@ h1{
         white-space: nowrap;
         margin-bottom:20px;
         font-weight: 300;
+        text-transform:none;
     }
     
     .subtitulo_principal{
@@ -449,6 +450,7 @@ h1{
         left: 1261px;
         bottom: 542px;
         font-weight: 300;
+        text-transform:none;
     }
 
     .jogo_ueda{
@@ -465,6 +467,7 @@ h1{
         margin-top: 10px;
         position: relative;
         font-weight: 300;
+        text-transform:none;
     }
     
     .descricao_titulo{
@@ -475,6 +478,7 @@ h1{
         white-space: nowrap;
         margin-bottom:20px;
         font-weight: 300;
+        text-transform:none;
     }
     
     .descricao{
@@ -485,6 +489,7 @@ h1{
         top: 60px;
         font-weight: 300;
         width: 480px;
+        text-transform:none;
     }
 
     .obj-jogo{
@@ -496,6 +501,7 @@ h1{
         top: 0px;
         font-weight: 300;
         font-size: 35px;
+        text-transform:none;
     }
 
     .obj-jogo2{
@@ -507,6 +513,7 @@ h1{
         top: 60px;
         font-weight: 300;
         width: 480px;
+        text-transform:none;
     }
 
     @media (max-width: 1800px){
@@ -554,7 +561,7 @@ h1{
         }
         .principais-text-jogos2 h1.obj-jogo2{
             position: absolute;
-            width: 480px;
+            width: 400px;
             top: 60%;
             left: 55%;
         }
@@ -595,7 +602,7 @@ h1{
         }
         .principais-text-jogos2 h1.obj-jogo{
             position: absolute;
-            top: 155%;
+            top: 175%;
             width: 200px;
             left: 0%;
         }
@@ -603,7 +610,7 @@ h1{
             border-top: 2px dashed #000000;
             padding-bottom: 5px;
             top: 45px;
-            width: 480px;
+            width: 400px;
         }
         .descricao_titulo{
             border-bottom: 2px dashed #ffffff;
@@ -612,12 +619,13 @@ h1{
             position: relative;
             white-space: nowrap;
             font-weight: 300;
+            width: 200px;
         }
         .principais-text-jogos2 h1.obj-jogo2{
             position: absolute;
             border-top: 2px dashed #000000;
             width: 480px;
-            top: 180%;
+            top: 220%;
             left: 0%;
         }
         .separacao-jogos{
