@@ -58,7 +58,7 @@
                                             echo "<br>";
                                                 echo "<div class='warpper'>";
                                                     echo "<div class='link-info'>";
-                                                        echo "<a target='_blank' href=".$values['link_jogo'].">Jogue</a>";
+                                                        echo "<a target='_blank' href=".$values['link_jogo'].">"."<input type='button' value='Jogue' id='bttn-jogo'>"."</a>";
                                                     echo "</div>"; 
                                                 echo "</div>";  
                                             echo "</div>";
