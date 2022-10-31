@@ -18,7 +18,7 @@
         <?php 
         echo "<div class='container_art'>";
             echo "<div class='titulo_art'>";
-                echo $titulo.'<br>';
+                echo '<h1>'. $titulo. '</h1>'.'<br>';
             echo "</div>";
             echo "<div class='intro_art'>";
                 echo '<p>'.$intro.'</p><br>';
@@ -34,6 +34,7 @@
             echo '</div>';
             echo '<hr>';
             echo '<br>';
+            echo '<b> Referências: </b>';
             echo "<div class='referencia'>";
                 echo '<p>'.$ref.'</p><br>';
             echo "</div>";
