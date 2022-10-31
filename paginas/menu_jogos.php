@@ -2,7 +2,7 @@
 <head>
     <title>Jogos | UEDA</title>
 </head>
-    <main>
+    <main style="width:100%;">
         <br><br>
         <center>
             <h1>JOGOS</h1>
@@ -21,7 +21,7 @@
                 </a>
                 <div class="principais-text-jogos2">
                     <h1 class="descricao_titulo">Descrição</h1>
-                    <h1 class="descricao">Um simples jogo onde você controla uma <br>gota de água e desvia de obstáculos.</h1>
+                    <h1 class="descricao">Um simples jogo onde você controla uma gota de água e desvia de obstáculos.</h1>
                     <h1 class="obj-jogo">Objetivo</h1>
                     <h1 class="obj-jogo2">O objetivo do jogo é alcançar a maior pontuação evitando os obstáculos, que são os lixos no oceano.</h1>
                 </div>
@@ -58,7 +58,7 @@
                                             echo "<br>";
                                                 echo "<div class='warpper'>";
                                                     echo "<div class='link-info'>";
-                                                        echo "<a target='_blank' href=".$values['link_jogo'].">Jogue</a>";
+                                                        echo "<a target='_blank' href=".$values['link_jogo'].">"."<input type='button' value='Jogue' id='bttn-jogo'>"."</a>";
                                                     echo "</div>"; 
                                                 echo "</div>";  
                                             echo "</div>";

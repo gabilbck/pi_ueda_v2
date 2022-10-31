@@ -440,6 +440,7 @@ h1{
         white-space: nowrap;
         margin-bottom:20px;
         font-weight: 300;
+        text-transform:none;
     }
     
     .subtitulo_principal{
@@ -449,6 +450,7 @@ h1{
         left: 1261px;
         bottom: 542px;
         font-weight: 300;
+        text-transform:none;
     }
 
     .jogo_ueda{
@@ -465,6 +467,7 @@ h1{
         margin-top: 10px;
         position: relative;
         font-weight: 300;
+        text-transform:none;
     }
     
     .descricao_titulo{
@@ -475,6 +478,7 @@ h1{
         white-space: nowrap;
         margin-bottom:20px;
         font-weight: 300;
+        text-transform:none;
     }
     
     .descricao{
@@ -484,22 +488,20 @@ h1{
         line-height: 35px;
         top: 60px;
         font-weight: 300;
+        width: 480px;
+        text-transform:none;
     }
 
     .obj-jogo{
-        /*color: #000000;
-        position: absolute;
-        left: 1px;
-        line-height: 35px;
-        margin-left: 1196px;
-        bottom: 52px;
-        font-weight: 300;*/
         color: #000000;
         left: 1200px;
         position: absolute;
+        font-size: 25px;
         line-height: 35px;
         top: 0px;
         font-weight: 300;
+        font-size: 35px;
+        text-transform:none;
     }
 
     .obj-jogo2{
@@ -510,6 +512,15 @@ h1{
         line-height: 35px;
         top: 60px;
         font-weight: 300;
+        width: 480px;
+        text-transform:none;
+    }
+
+    @media (max-width: 1800px){
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            width: 400px;
+        }
     }
 
     @media (max-width: 1800px){
@@ -550,7 +561,7 @@ h1{
         }
         .principais-text-jogos2 h1.obj-jogo2{
             position: absolute;
-            width: 480px;
+            width: 400px;
             top: 60%;
             left: 55%;
         }
@@ -591,16 +602,15 @@ h1{
         }
         .principais-text-jogos2 h1.obj-jogo{
             position: absolute;
-            top: 140%;
+            top: 175%;
+            width: 200px;
             left: 0%;
-            right: 80%;
-            width: 400px;
         }
         .principais-text-jogos2 h1.descricao{
             border-top: 2px dashed #000000;
             padding-bottom: 5px;
             top: 45px;
-            width: 480px;
+            width: 400px;
         }
         .descricao_titulo{
             border-bottom: 2px dashed #ffffff;
@@ -609,12 +619,13 @@ h1{
             position: relative;
             white-space: nowrap;
             font-weight: 300;
+            width: 200px;
         }
         .principais-text-jogos2 h1.obj-jogo2{
             position: absolute;
             border-top: 2px dashed #000000;
             width: 480px;
-            top: 180%;
+            top: 220%;
             left: 0%;
         }
         .separacao-jogos{
@@ -622,17 +633,46 @@ h1{
         }
     }
 
+    @media (max-width: 600px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 195%;
+            right: 60%;
+        }
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            width: 420px;
+            top: 235%;
+            left: 0%;
+        }
+        .descricao{
+            color: #000000;
+            position: absolute;
+            font-size: 25px;
+            line-height: 35px;
+            top: 60px;
+            font-weight: 300;
+            width: 400px;
+        }
+        .jogo_ueda{
+            border: 3px #000000 solid;
+            display: flex;
+            margin-top: 75px;
+            justify-content: center;
+        }
+    }
+
     .jogos-agua{
         margin-top: 40px;
         background-color: #87B6D5;
-        padding: 15px;
         width: 50%;
         height: 0;
         margin-left: auto;
         margin-right: auto;
         border-right: 10px solid #1e3f53;
         border-bottom: 10px solid #1e3f53;
-        padding-bottom: 235px;
+        padding-bottom: 280px;
+        position: relative;
     }
 
     @media (max-width: 1400px){
@@ -645,43 +685,7 @@ h1{
             margin-right: auto;
             border-right: 10px solid #1e3f53;
             border-bottom: 10px solid #1e3f53;
-            padding-bottom: 270px;
-            position: relative;
-        }
-        .warpper{
-            position: absolute;
-            left: -3%;
-            width: 100%;
-            height: 100%;
-        }
-        .desc-info{
-            margin-left: 40px;  
-            margin-right: 105px;
-            margin-bottom: 45px;
-            text-align: left;
-            height: 100px;
-            width: 90%;
-        }
-        .link-info{
-            font-size:20px;
-            border: 2px white solid;
-            border-radius: 7px;
-            margin-top: 0px;
-            background-color: #009CFF;
-        }
-    }
-
-    @media (max-width: 1250px){
-        .jogos-agua{
-            margin-top: 40px;
-            background-color: #87B6D5;
-            width: 50%;
-            height: 0;
-            margin-left: auto;
-            margin-right: auto;
-            border-right: 10px solid #1e3f53;
-            border-bottom: 10px solid #1e3f53;
-            padding-bottom: 320px;
+            padding-bottom: 300px;
             position: relative;
         }
         .warpper{
@@ -703,10 +707,11 @@ h1{
             font-size:20px;
             border: 2px white solid;
             border-radius: 7px;
-            margin-top: 0px;
+            margin-top: -20px;
             background-color: #009CFF;
         }
     }
+
 
     @media (max-width: 1117px){
         .jogos-agua{
@@ -718,13 +723,13 @@ h1{
             margin-right: auto;
             border-right: 10px solid #1e3f53;
             border-bottom: 10px solid #1e3f53;
-            padding-bottom: 340px;
+            padding-bottom: 380px;
             position: relative;
         }
         .warpper{
             position: absolute;
             left: -3%;
-            top: 85%;
+            top: 87%;
             width: 100%;
             height: 100%;
         }
@@ -740,7 +745,7 @@ h1{
             font-size:20px;
             border: 2px white solid;
             border-radius: 7px;
-            margin-top: 0px;
+            margin-top: -20px;
             background-color: #009CFF;
         }
     }
@@ -755,7 +760,7 @@ h1{
             margin-right: auto;
             border-right: 10px solid #1e3f53;
             border-bottom: 10px solid #1e3f53;
-            padding-bottom: 370px;
+            padding-bottom: 420px;
             position: relative;
         }
         .warpper{
@@ -792,13 +797,13 @@ h1{
             margin-right: auto;
             border-right: 10px solid #1e3f53;
             border-bottom: 10px solid #1e3f53;
-            padding-bottom: 480px;
+            padding-bottom: 550px;
             position: relative;
         }
         .warpper{
             position: absolute;
             left: -3%;
-            top: 85%;
+            top: 92%;
             width: 100%;
             height: 100%;
         }
@@ -814,7 +819,7 @@ h1{
             font-size:20px;
             border: 2px white solid;
             border-radius: 7px;
-            margin-top: 0px;
+            margin-top: -20px;
             background-color: #009CFF;
         }
     }
@@ -829,12 +834,12 @@ h1{
             margin-right: auto;
             border-right: 10px solid #1e3f53;
             border-bottom: 10px solid #1e3f53;
-            padding-bottom: 480px;
+            padding-bottom: 570px;
             position: relative;
         }
         .warpper{
             position: absolute;
-            left: -3%;
+            left: -2%;
             top: 92%;
             width: 100%;
             height: 100%;
@@ -842,14 +847,14 @@ h1{
         .warpper-desc{
             position: absolute;
             left: -3%;
-            top: 55%;
+            top: 47%;
             width: 100%;
             height: 100%;
         }
         .warpper-nome{
             position: absolute;
             left: -3%;
-            top: 45%;
+            top: 37%;
             width: 100%;
             height: 100%;
         }
@@ -865,7 +870,7 @@ h1{
             font-size:20px;
             border: 2px white solid;
             border-radius: 7px;
-            margin-top: 0px;
+            margin-top: -10px;
             background-color: #009CFF;
         }
     }
@@ -880,12 +885,12 @@ h1{
             margin-right: auto;
             border-right: 10px solid #1e3f53;
             border-bottom: 10px solid #1e3f53;
-            padding-bottom: 570px;
+            padding-bottom: 700px;
             position: relative;
         }
         .warpper{
             position: absolute;
-            left: -3%;
+            left: -1%;
             top: 92%;
             width: 100%;
             height: 100%;
@@ -893,21 +898,21 @@ h1{
         .warpper-desc{
             position: absolute;
             left: -3%;
-            top: 48%;
+            top: 52%;
             width: 100%;
             height: 100%;
         }
         .warpper-nome{
             position: absolute;
             left: -3%;
-            top: 38%;
+            top: 30%;
             width: 100%;
             height: 100%;
         }
         .desc-info{
             margin-left: -400px;
             margin-right: 105px;
-            margin-bottom: 0px;
+            margin-top: -40px;
             text-align: left;
             height: 100px;
             width: 90%;
@@ -919,11 +924,25 @@ h1{
             margin-top: 0px;
             background-color: #009CFF;
         }
+        .link-info input{
+            color: rgb(255, 255, 255);
+            background: transparent;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
     }
     
     .container-jogos{
         width: 100%;    
         display: flex;
+    }
+
+    .warpper{
+        position: absolute;
+        left: -3%;
+        width: 102%;
+        height: 100%;
     }
 
     .link-info{
@@ -943,18 +962,16 @@ h1{
         margin-left: 40px;  
     }
 
-    .link-info a{
+    .link-info input{
         color: rgb(255, 255, 255);
-        padding-top: 5px;
-        padding-left: 35%;
-        padding-right: 35%;
-        padding-bottom: 5px;
+        background: transparent;
+        width: 100%;
+        border: none;
+        cursor: pointer;
     }
 
-    .link-info a:hover{
-        color: #87B6D5;
-        padding-left: 35%;
-        padding-right: 35%;
+    .link-info input:hover{
+        color: #567D96;
     }
 
     .nome-jogos{
@@ -970,7 +987,9 @@ h1{
         margin-right: 5px;
         text-align: left;
         height: 100px;
-        width: 90%;
+        width: 85%;
+        margin-right: 105px;
+        margin-bottom: 45px;
     }
 
     .jogos{
