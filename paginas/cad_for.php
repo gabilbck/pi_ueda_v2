@@ -64,7 +64,7 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>PUBLICAR FORUM</h1>
+                <h1>PUBLICAR FÓRUM</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input class="input-text" maxlength="30" name="titulo_publi" value="<?php echo $titulo_publi?>" type="text" placeholder="Nome do Título">

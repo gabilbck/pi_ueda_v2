@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Poppins:wght@200;300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style1.css" rel="stylesheet">
 
     <link rel="shortcut icon" type="imagem/x-icon" href="../images/logo.png"/>
 </head>
