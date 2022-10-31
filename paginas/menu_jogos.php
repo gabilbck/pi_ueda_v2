@@ -2,7 +2,7 @@
 <head>
     <title>Jogos | UEDA</title>
 </head>
-    <main style="width:100%;">
+    <main style="width:100%; height: 100%;">
         <br><br>
         <center>
             <h1>JOGOS</h1>
