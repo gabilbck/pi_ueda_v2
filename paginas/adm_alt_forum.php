@@ -80,7 +80,7 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>ALTERAR</h1>
+                <h1>ALTERAR PUBLICAÇÃO DO FÓRUM</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_publi" value="<?php echo $id_publi?>" readonly>
@@ -89,11 +89,11 @@
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
                     <span class="n-obrigatorio">*</span>
                     <br><br>
-                    <input type="text" name="titulo_publi" value="<?php echo $titulo_publi?>">
-                    <span class="obrigatorio">* <?php echo '<br>'.$titulo_publiErr ?></span>
+                    <input type="text" name="titulo_publi" maxlength="30" value="<?php echo $titulo_publi?>">
+                    <span class="obrigatorio"><?php echo '<br>'.$titulo_publiErr ?></span>
                     <br><br>
-                    <textarea type="text" name="text_publi" placeholder="Texto para publicação"><?php echo $text_publi?></textarea>
-                    <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
+                    <textarea type="text" name="text_publi" maxlength="1000" placeholder="Texto para publicação"><?php echo $text_publi?></textarea>
+                    <span class="obrigatorio"><?php echo '<br>'.$text_publiErr ?></span>
                     <div class="clear"></div>
                     <br>
                     <a>Imagem Atual:</a>
@@ -112,7 +112,10 @@
                     </div>
                     <div class="clear"></div>
                     <br>
-                    <button type="submit" name="submit">ENVIAR</button>
+                    <div class="botoes-alt">
+                    <button><a class="link-branco" href="adm_lista_forum.php">VOLTAR</a></button>
+                    <button type="submit" name="submit">ALTERAR</button>
+                    </div>
                 </form>
                 <br><br>
             </center>

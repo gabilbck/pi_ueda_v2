@@ -64,14 +64,14 @@
         <div class="margem-lados">
             <center>
                 <br><br>
-                <h1>PUBLICAR FORUM</h1>
+                <h1>PUBLICAR FÓRUM</h1>
                 <br>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <input class="input-text" name="titulo_publi" value="<?php echo $titulo_publi?>" type="text" placeholder="Nome do Título">
-                    <span class="obrigatorio">* <?php  echo '<br>'.$titulo_publiErr ?></span>
+                    <input class="input-text" maxlength="30" name="titulo_publi" value="<?php echo $titulo_publi?>" type="text" placeholder="Nome do Título">
+                    <span class="obrigatorio"><?php  echo '<br>'.$titulo_publiErr ?></span>
                     <br><br>
-                    <textarea name="text_publi" type="text" placeholder="Texto para publicação"></textarea>
-                    <span class="obrigatorio">* <?php echo '<br>'.$text_publiErr ?></span>
+                    <textarea name="text_publi" maxlength="1000" type="text" placeholder="Texto para publicação"></textarea>
+                    <span class="obrigatorio"><?php echo '<br>'.$text_publiErr ?></span>
                     <br><br>
                     <div class="escolha-imagem">
                         <label for="image">Selecione uma imagem (Opcional)</label>

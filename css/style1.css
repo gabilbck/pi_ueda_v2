@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    word-break: break-word;
 }
 html{
     width: 100%;
@@ -9,6 +10,7 @@ html{
 h1{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* scroll */
@@ -33,6 +35,7 @@ h1{
 /* Obrigatório/Mensagens/Atenção */
     .obrigatorio{
         color: red;
+        font-weight: bold;
     }
     .n-obrigatorio{
         /* Gambiarra para não ficar
@@ -437,6 +440,7 @@ h1{
         white-space: nowrap;
         margin-bottom:20px;
         font-weight: 300;
+        text-transform:none;
     }
     
     .subtitulo_principal{
@@ -446,6 +450,7 @@ h1{
         left: 1261px;
         bottom: 542px;
         font-weight: 300;
+        text-transform:none;
     }
 
     .jogo_ueda{
@@ -462,6 +467,7 @@ h1{
         margin-top: 10px;
         position: relative;
         font-weight: 300;
+        text-transform:none;
     }
     
     .descricao_titulo{
@@ -472,6 +478,7 @@ h1{
         white-space: nowrap;
         margin-bottom:20px;
         font-weight: 300;
+        text-transform:none;
     }
     
     .descricao{
@@ -481,15 +488,20 @@ h1{
         line-height: 35px;
         top: 60px;
         font-weight: 300;
+        width: 480px;
+        text-transform:none;
     }
 
     .obj-jogo{
         color: #000000;
+        left: 1200px;
         position: absolute;
+        font-size: 25px;
         line-height: 35px;
-        margin-left: 1196px;
-        bottom: 52px;
+        top: 0px;
         font-weight: 300;
+        font-size: 35px;
+        text-transform:none;
     }
 
     .obj-jogo2{
@@ -500,22 +512,170 @@ h1{
         line-height: 35px;
         top: 60px;
         font-weight: 300;
+        width: 480px;
+        text-transform:none;
+    }
+
+    @media (max-width: 1800px){
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            width: 400px;
+        }
+    }
+
+    @media (max-width: 1800px){
+        .principal-jogos h1.subtitulo_principal{
+            position: absolute;
+            top: 1%;
+            left: 67%;
+            height: 580px;
+        }
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 0%;
+            left: 60%;
+            right: 80%;
+            width: 400px;
+        }
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            width: 480px;
+            top: 60%;
+            left: 60%;
+        }
+    }
+
+    @media (max-width: 1600px){
+        .principal-jogos h1.subtitulo_principal{
+            position: absolute;
+            top: 1%;
+            left: 60%;
+            height: 580px;
+        }
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 0%;
+            left: 55%;
+            right: 80%;
+            width: 400px;
+        }
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            width: 400px;
+            top: 60%;
+            left: 55%;
+        }
+    }
+
+    @media (max-width: 1300px){
+        .principal-jogos h1.subtitulo_principal{
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            height: 580px;
+        }
+        
+    }
+
+    @media (max-width: 1200px){
+        .principal-jogos h1.subtitulo_principal{
+            position: absolute;
+            top: 1%;
+            left: 45%;
+            height: 580px;
+        }
+    }
+    
+    @media (max-width: 1000px){
+        .principal-jogos h1.subtitulo_principal{
+            position: absolute;
+            top: 8%;
+            left: 0%;
+            height: 580px;
+        }
+        .jogo_ueda{
+            border: 3px #000000 solid;
+            display: flex;
+            margin-top: 50px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 175%;
+            width: 200px;
+            left: 0%;
+        }
+        .principais-text-jogos2 h1.descricao{
+            border-top: 2px dashed #000000;
+            padding-bottom: 5px;
+            top: 45px;
+            width: 400px;
+        }
+        .descricao_titulo{
+            border-bottom: 2px dashed #ffffff;
+            text-align: left;
+            color: #000000;
+            position: relative;
+            white-space: nowrap;
+            font-weight: 300;
+            width: 200px;
+        }
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            border-top: 2px dashed #000000;
+            width: 480px;
+            top: 220%;
+            left: 0%;
+        }
+        .separacao-jogos{
+            margin-top: 105px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .principais-text-jogos2 h1.obj-jogo{
+            position: absolute;
+            top: 195%;
+            right: 60%;
+        }
+        .principais-text-jogos2 h1.obj-jogo2{
+            position: absolute;
+            width: 420px;
+            top: 235%;
+            left: 0%;
+        }
+        .descricao{
+            color: #000000;
+            position: absolute;
+            font-size: 25px;
+            line-height: 35px;
+            top: 60px;
+            font-weight: 300;
+            width: 400px;
+        }
+        .jogo_ueda{
+            border: 3px #000000 solid;
+            display: flex;
+            margin-top: 75px;
+            justify-content: center;
+        }
     }
 
     .jogos-agua{
         margin-top: 40px;
         background-color: #87B6D5;
-        padding: 15px;
         width: 50%;
         height: 0;
         margin-left: auto;
         margin-right: auto;
         border-right: 10px solid #1e3f53;
         border-bottom: 10px solid #1e3f53;
-        padding-bottom: 235px;
+        padding-bottom: 280px;
+        position: relative;
     }
 
-    @media (max-width: 1300px){
+    @media (max-width: 1400px){
         .jogos-agua{
             margin-top: 40px;
             background-color: #87B6D5;
@@ -525,12 +685,88 @@ h1{
             margin-right: auto;
             border-right: 10px solid #1e3f53;
             border-bottom: 10px solid #1e3f53;
-            padding-bottom: 270px;
+            padding-bottom: 300px;
             position: relative;
         }
         .warpper{
             position: absolute;
             left: -3%;
+            top: 85%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: 40px;  
+            margin-right: 105px;
+            margin-bottom: 45px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: -20px;
+            background-color: #009CFF;
+        }
+    }
+
+
+    @media (max-width: 1117px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 380px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -3%;
+            top: 87%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: 40px;  
+            margin-right: 105px;
+            margin-bottom: 45px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: -20px;
+            background-color: #009CFF;
+        }
+    }
+
+    @media (max-width: 1050px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 420px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -3%;
+            top: 85%;
             width: 100%;
             height: 100%;
         }
@@ -550,17 +786,169 @@ h1{
             background-color: #009CFF;
         }
     }
+
+    @media (max-width: 930px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 550px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -3%;
+            top: 92%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: 40px;  
+            margin-right: 105px;
+            margin-bottom: 45px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: -20px;
+            background-color: #009CFF;
+        }
+    }
+
+    @media (max-width: 830px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 590px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -2%;
+            top: 92%;
+            width: 100%;
+            height: 100%;
+        }
+        .warpper-desc{
+            position: absolute;
+            left: -3%;
+            top: 50%;
+            width: 100%;
+            height: 100%;
+        }
+        .warpper-nome{
+            position: absolute;
+            left: -3%;
+            top: 36%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: -400px;
+            margin-right: 105px;
+            margin-bottom: 0px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: -10px;
+            background-color: #009CFF;
+        }
+    }
+
+    @media (max-width: 630px){
+        .jogos-agua{
+            margin-top: 40px;
+            background-color: #87B6D5;
+            width: 50%;
+            height: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-right: 10px solid #1e3f53;
+            border-bottom: 10px solid #1e3f53;
+            padding-bottom: 700px;
+            position: relative;
+        }
+        .warpper{
+            position: absolute;
+            left: -1%;
+            top: 92%;
+            width: 100%;
+            height: 100%;
+        }
+        .warpper-desc{
+            position: absolute;
+            left: -3%;
+            top: 52%;
+            width: 100%;
+            height: 100%;
+        }
+        .warpper-nome{
+            position: absolute;
+            left: -3%;
+            top: 30%;
+            width: 100%;
+            height: 100%;
+        }
+        .desc-info{
+            margin-left: -400px;
+            margin-right: 105px;
+            margin-top: -40px;
+            text-align: left;
+            height: 100px;
+            width: 90%;
+        }
+        .link-info{
+            font-size:20px;
+            border: 2px white solid;
+            border-radius: 7px;
+            margin-top: 0px;
+            background-color: #009CFF;
+        }
+        .link-info input{
+            color: rgb(255, 255, 255);
+            background: transparent;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+    }
     
     .container-jogos{
         width: 100%;    
         display: flex;
     }
 
+    .warpper{
+        position: absolute;
+        left: -3%;
+        width: 102%;
+        height: 100%;
+    }
+
     .link-info{
         font-size:20px;
         border: 2px white solid;
         border-radius: 7px;
-        margin-top: 0px;
         background-color: #567D96;
         transition:  all 300ms ease-in-out;
         margin-left: 40px;
@@ -570,23 +958,20 @@ h1{
         font-size:20px;
         border: 2px white solid;
         border-radius: 7px;
-        margin-top: 0px;
         background-color: #ffffff;
         margin-left: 40px;  
     }
 
-    .link-info a{
+    .link-info input{
         color: rgb(255, 255, 255);
-        padding-left: 45%;
-        padding-right: 45%;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        background: transparent;
+        width: 100%;
+        border: none;
+        cursor: pointer;
     }
 
-    .link-info a:hover{
-        color: #87B6D5;
-        padding-left: 45%;
-        padding-right: 45%;
+    .link-info input:hover{
+        color: #567D96;
     }
 
     .nome-jogos{
@@ -602,7 +987,9 @@ h1{
         margin-right: 5px;
         text-align: left;
         height: 100px;
-        width: 90%;
+        width: 85%;
+        margin-right: 105px;
+        margin-bottom: 45px;
     }
 
     .jogos{
@@ -641,12 +1028,12 @@ h1{
     }
 
 
-/* Main - ADM */
+ /*Main - ADM */
     .link-branco{
         color: white;
         text-decoration: none;
     }
-    .link-branco :hover{
+  .link-branco :hover{
         color: white;
         text-decoration: none;
         font-weight: bolder;
@@ -681,6 +1068,7 @@ h1{
     }
 
 /*Vizu Fórum*/
+<<<<<<< HEAD:css/style.css
 .titulo-caixa-alta{
     text-transform: uppercase;
 }
@@ -700,3 +1088,43 @@ h1{
     margin-bottom: 2%;
 }
 
+=======
+    .titulo-caixa-alta{
+        text-transform: uppercase;
+    }
+
+/* Artigo Vizu */
+    .titulo_art{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 32px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .intro_art{
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-top: 3%;
+    }
+    .desc_art{
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    .image_art{
+        text-align: center;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    .conclusao_art{
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    .referencia{
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+>>>>>>> 4241ac6d0a8cd9719f00c9df341aa771fb651657:css/style1.css

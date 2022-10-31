@@ -97,25 +97,25 @@
                             <option value="2">Art. Científico</option>
                             <option value="3">Art. de site </option>
                         </select> <br> <br>
-                    <input class="input-text" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                    <input class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     
                     <br><br>
                     <input class="input-text" id="link_art" name="link_art" value="<?php  echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
                     
                     <br><br>
-                    <textarea name="resumo_art" value="<?php  echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
+                    <textarea maxlength="2000" name="resumo_art" value="<?php  echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
                     
                     <br><br>
-                    <textarea name="intro_art" id="intro_art" value="<?php  echo $intro_art?>" type="text" placeholder="Introdução do Texto"></textarea>
+                    <textarea maxlength="2000" name="intro_art" id="intro_art" value="<?php  echo $intro_art?>" type="text" placeholder="Introdução do Texto"></textarea>
                     
                     <br><br>
-                    <textarea name="des_art" id="desc_art" value="<?php  echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
+                    <textarea maxlength="2000" name="des_art" id="desc_art" value="<?php  echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
                     
                     <br><br>
-                    <textarea name="con_art" id="con_art" value="<?php  echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
+                    <textarea maxlength="2000" name="con_art" id="con_art" value="<?php  echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
                     
                     <br name="ref_art"><br name="ref_art">
-                    <textarea name="ref_art" id="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
+                    <textarea maxlength="1000" name="ref_art" id="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
                     
 
                    

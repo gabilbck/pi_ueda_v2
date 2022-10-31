@@ -70,20 +70,20 @@
                 <form method="post" enctype="multipart/form-data">
                     <div><br><br>
                         <input name="nome_jogo" maxlength="255" value="<?php echo $nome_jogo?>" type="text" placeholder="Nome do jogo">
-                        <span class="obrigatorio">* <?php  echo '<br>'.$nome_jogoErr ?></span>
+                        <span class="obrigatorio"><?php  echo '<br>'.$nome_jogoErr ?></span>
                         <br><br>
                         <textarea name="desc_jogo" maxlength="1000" type="text" placeholder="Descrição do jogo (max 255 caracteres)"><?php echo $desc_jogo?></textarea>
-                        <span class="obrigatorio">* <?php  echo '<br>'.$desc_jogoErr ?></span>
+                        <span class="obrigatorio"><?php  echo '<br>'.$desc_jogoErr ?></span>
                         <br>
                         <encurtador>Antes de mandar seu link encurte-o <a  class="obrigatorio" target="_blank" href="https://9h.fit/?gclid=EAIaIQobChMIqueOoebu-gIVAuFcCh2YegCVEAAYAiAAEgI0BvD_BwE">aqui!</encurtador></a>
                         <br>
                         <input name="link_jogo" maxlength="1000" value="<?php  echo $link_jogo?>" type="text" placeholder="Link do jogo">
-                        <span class="obrigatorio">* <?php  echo '<br>'.$link_jogoErr ?></span>
+                        <span class="obrigatorio"><?php  echo '<br>'.$link_jogoErr ?></span>
                         <br><br>
                         <div class="escolha-imagem">
                             <label for="file">Selecione uma imagem</label>
                             <input type="file" id='file' name="image"/><br> <br>
-                            <span class="obrigatorio">* <?php echo $image_jogoErr ?></span> <br>   
+                            <span class="obrigatorio"><?php echo $image_jogoErr ?></span> <br>   
                         </div>
                         
                         <div class="final-cad">

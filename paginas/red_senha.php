@@ -1,6 +1,8 @@
 <?php require("../template/header.php");?>
 <?php
     // Fazer php!!!
+    $email_usu = $senha_usu = "";
+    $email_usuErr = $senha_usuErr = $msgErr = "";
 ?>
 <head>
     <title>Esqueci Minha Senha</title>
@@ -12,11 +14,11 @@
                 <h1>RECUPERAR SENHA</h1>
                 <br>
                 <form action="" method="post">
-                    <input name="email_usu" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
-                    <span class="obrigatorio">* <?php echo $email_usuErr ?></span>
+                    <input name="email_usu" maxlength="255" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
+                    <span class="obrigatorio"><?php echo $email_usuErr ?></span>
                     <br><br>
-                    <input name="senha_usu" value="<?php echo $senha_usu?>" type="password" placeholder="Nova Senha">
-                    <span class="obrigatorio">* <?php echo $email_usuErr ?></span>
+                    <input name="senha_usu" maxlength="40" value="<?php echo $senha_usu?>" type="password" placeholder="Nova Senha">
+                    <span class="obrigatorio"><?php echo $senha_usuErr ?></span>
                     <br><br>
                     <div class="final-cad">
                         <div class="final-cad-1">
