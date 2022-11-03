@@ -1068,27 +1068,6 @@ h1{
     }
 
 /*Vizu Fórum*/
-<<<<<<< HEAD:css/style.css
-.titulo-caixa-alta{
-    text-transform: uppercase;
-}
-/*Vizu Art*/
-.titulo_art{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-}
-.intro_art{
-    margin-top: 3%;
-}
-.image_art{
-    text-align: center;
-    margin-top: 1%;
-    margin-bottom: 2%;
-}
-
-=======
     .titulo-caixa-alta{
         text-transform: uppercase;
     }
@@ -1097,7 +1076,6 @@ h1{
     .titulo_art{
         font-family: 'Open Sans', sans-serif;
         font-weight: bold;
-        font-size: 32px;
         text-align: center;
         text-transform: uppercase;
     }
@@ -1127,4 +1105,3 @@ h1{
         margin-right: 10%;
         margin-left: 10%;
     }
->>>>>>> 4241ac6d0a8cd9719f00c9df341aa771fb651657:css/style1.css
