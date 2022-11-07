@@ -47,6 +47,11 @@ h1{
         color:#000000;
         font-size: 2px;
     }
+    .atencao{
+        background-color: #f40000;
+        color: white;
+        padding: 0.5rem;
+    }
 
 /* Cadastros */
     input{
