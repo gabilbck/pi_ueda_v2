@@ -75,7 +75,7 @@
                     <span class="obrigatorio"><?php  echo '<br>'.$email_usuErr ?></span>
                     <br><br>
                     <input name="senha_usu" maxlength="40" value="<?php  echo $senha_usu?>" type="password" placeholder="Senha">
-                    <span class="obrigatorio"><?php  echo '<br>'.$email_usuErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$senha_usuErr ?></span>
                     <br><br>
                     <div class="final-cad">
                         <div class="final-cad-1">
