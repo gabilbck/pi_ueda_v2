@@ -5,12 +5,12 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
         if (empty($_POST['email_bug'])){
-            $email_bugErr = "Email é obrigatório!";
+            $email_bugErr = "O E-mail é obrigatório!";
         } else {
             $email_bug = test_input($_POST["email_bug"]);
         }
         if (empty($_POST['desc_bug'])){
-            $desc_bugErr = "Ter uma descrição é obrigatório!";
+            $desc_bugErr = "Você não pode enviar um texto vazio!";
         } else {
             $desc_bug = test_input($_POST["desc_bug"]);
         }
