@@ -35,5 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             }
         }
     }
+} else{
+    header("Location:n_adm_msg.php");
 }
 ?>
