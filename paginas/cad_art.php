@@ -27,22 +27,22 @@
             $link_art = test_input($_POST["link_art"]);
         }
         if (empty($_POST['intro_art'])){
-            $intro_artErr = " Intridução é obrigatória!";
+            $intro_artErr = "Introdução é obrigatória!";
         } else {
             $intro_art = test_input($_POST["intro_art"]);
         }
         if (empty($_POST['des_art'])){
-            $des_artErr = " Desenvolvimento é obrigatório!";
+            $des_artErr = "Desenvolvimento é obrigatório!";
         } else {
             $des_art = test_input($_POST["des_art"]);
         }
         if (empty($_POST['con_art'])){
-            $con_artErr = " Conclusão é obrigatório!";
+            $con_artErr = "Conclusão é obrigatório!";
         } else {
             $con_art = test_input($_POST["con_art"]);
         }
         if (empty($_POST['ref_art'])){
-            $ref_artErr = " Referências é obrigatório!";
+            $ref_artErr = "Referências é obrigatório!";
         } else {
             $ref_art = test_input($_POST["ref_art"]);
         }
@@ -92,38 +92,38 @@
                 <br><br>
                     <label>Etiquetas:</label>
                     <select name="id_eti" onchange="altera_form(this)"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
-                            <option value="">Selecione</option>
+                            <option value="">Sel ecione</option>
                             <option value="1">Notícia</option>
                             <option value="2">Art. Científico</option>
                             <option value="3">Art. de site </option>
                         </select> <br> <br>
                     <input class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
-                    <span class="titulo_artErr"><?php  echo '<br>'.$titulo_artErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$titulo_artErr ?></span>
                     
                     <br><br>
                     <input class="input-text" id="link_art" name="link_art" value="<?php  echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
-                    <span class="link_artErr"><?php  echo '<br>'.$link_artErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$link_artErr ?></span>
                     
                     <br><br>
                     <textarea maxlength="2000" name="resumo_art" value="<?php  echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
-                    <span class="resumo_artErr"><?php  echo '<br>'.$resumo_artErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$resumo_artErr ?></span>
                     
                     <br><br>
                     <textarea maxlength="2000" name="intro_art" id="intro_art" value="<?php  echo $intro_art?>" type="text" placeholder="Introdução do Texto"></textarea>
-                    <span class="intro_artErr"><?php  echo '<br>'.$intro_artErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$intro_artErr ?></span>
                     
                     <br><br>
                     <textarea maxlength="2000" name="des_art" id="desc_art" value="<?php  echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
-                    <span class="des_artErr"><?php  echo '<br>'.$des_artErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$des_artErr ?></span>
                     
                     <br><br>
                     <textarea maxlength="2000" name="con_art" id="con_art" value="<?php  echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
-                    <span class="con_artErr"><?php  echo '<br>'.$con_artErr ?></span>
+                    <span class="obrigatorio"><?php  echo '<br>'.$con_artErr ?></span>
                     
                     <br name="ref_art"><br name="ref_art">
                     <textarea maxlength="1000" name="ref_art" id="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
-                    <span class="ref_artErr"><?php  echo '<br>'.$ref_artErr ?></span>
-                    
+                    <span class="obrigatorio"><?php  echo '<br>'.$ref_artErr ?></span>        
+     
                     <br><br><br>
                     <div class="escolha-imagem">
                         <label style="width: 300px;" id="img_art" for="image">Selecione uma imagem (Opcional)</label>

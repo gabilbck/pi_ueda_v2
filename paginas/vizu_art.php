@@ -2,12 +2,12 @@
 <?php
     /* Visualização do artigo selecionado */
 
-    $titulo = $_SESSION['titulo'];
-    $intro = $_SESSION['intro'];
-    $desc = $_SESSION['desc'];
-    $img = $_SESSION['img'];
-    $concl = $_SESSION['concl'];
-    $ref = $_SESSION['ref'];
+    $titulo = $_SESSION['titulo_vizu'] ?? NULL;
+    $intro = $_SESSION['intro_vizu'] ?? NULL;
+    $desc = $_SESSION['desc_vizu'] ?? NULL;
+    $img = $_SESSION['img_vizu'] ?? NULL;
+    $concl = $_SESSION['concl_vizu'] ?? NULL;
+    $ref = $_SESSION['ref_vizu'] ?? NULL;
 ?> 
     <head>
         <title><?php echo $titulo ?> | UEDA</title>

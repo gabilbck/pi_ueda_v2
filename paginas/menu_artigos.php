@@ -50,16 +50,8 @@
                             $class = 'artc';
                         };
 
-                        if($etiqueta == 2 || $etiqueta == 3){
-                            $_SESSION['titulo'] = $tituloart;
-                            $_SESSION['img'] = $img_art;
-                            $_SESSION['id'] = $id;
-                            $_SESSION['intro'] = $intro_art;
-                            $_SESSION['desc'] = $des_art;
-                            $_SESSION['concl'] = $con_art;
-                            $_SESSION['ref'] = $ref_art;
-                            $link = 'vizu_art.php';
-                        }else{
+                        if($etiqueta == 1){
+                            $link = $i['link_art'];
                             unset($_SESSION['img']);
                             unset($_SESSION['titulo']);
                             unset($_SESSION['id']);
@@ -67,7 +59,15 @@
                             unset($_SESSION['desc']);
                             unset($_SESSION['concl']);
                             unset($_SESSION['ref']);
-                            $link = $i['link_art'];
+                        }else if($etiqueta === 2 || $etiqueta === 3){
+                            $_SESSION['titulo_vizu'] = $tituloart;
+                            $_SESSION['img_vizu'] = $img_art;
+                            $_SESSION['id_vizu'] = $id;
+                            $_SESSION['intro_vizu'] = $intro_art;
+                            $_SESSION['desc_vizu'] = $des_art;
+                            $_SESSION['concl_vizu'] = $con_art;
+                            $_SESSION['ref_vizu'] = $ref_art;
+                            $link = 'vizu_art.php';
                         };
 
                         echo '<div class="artigo">';
