@@ -34,8 +34,11 @@
     </title>
 </head>
 <body>
-    <br><br>
     <main>
+        <div class="atencao">
+            <center><h4>ATENÇÃO: Você NÃO poderá apagar NENHUMA publicação/comentário enviado no fórum do site!</h4></center>
+        </div>
+        <br><br>
         <div class="margem-lados">
             <center><h1 style="text-transform: uppercase;"><?php echo $titulo_publi?></h1></center>
             <br>

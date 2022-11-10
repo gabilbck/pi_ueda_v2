@@ -22,22 +22,22 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="https://www.instagram.com/projeto_ueda/">
+                                    <a href="https://www.instagram.com/projeto_ueda/" target="blank">
                                         <img src="../images/insta.png" alt="Instagram">
                                     </a>
                                 </td>
                                 <td class="redes">
-                                    <a class="f-menor" href="https://www.instagram.com/projeto_ueda/">Instagram</a>
+                                    <a class="f-menor" href="https://www.instagram.com/projeto_ueda/" target="blank">Instagram</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="#">
+                                    <a href="https://twitter.com/UEDA_PI" target="blank">
                                         <img src="../images/twitter.png" alt="Twitter">
                                     </a>
                                 </td>
                                 <td class="redes">
-                                    <a class="f-menor" href="https://twitter.com/UEDA_PI">Twitter</a>
+                                    <a class="f-menor" href="https://twitter.com/UEDA_PI" target="blank">Twitter</a>
                                 </td>
                             </tr>
                         </table>

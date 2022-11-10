@@ -61,6 +61,9 @@
     <title>Publicação No Fórum | UEDA</title>
 </head>
     <main>
+        <div class="atencao">
+            <center><h4>ATENÇÃO: Você NÃO poderá apagar NENHUMA publicação/comentário enviado no fórum do site!</h4></center>
+        </div>
         <div class="margem-lados">
             <center>
                 <br><br>

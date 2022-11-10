@@ -7,7 +7,7 @@
 ?>
 <?php
     $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
-    $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr ="";
+    $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = "";
     $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
@@ -22,7 +22,7 @@
             $resumo_art = test_input($_POST["resumo_art"]);
         }
         if (empty($_POST['link_art'])){
-            $link_artErr = "Resumo é obrigatório!";
+            $link_artErr = "Link é obrigatório!";
         } else {
             $link_art = test_input($_POST["link_art"]);
         }
@@ -67,13 +67,15 @@
             }
         }
         //Inserir dados
-        $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
-                            VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
-            $msgErr = "Dados cadastrados com sucesso!";
-            header("location: menu_artigos.php");
-        } else {
-            $msgErr = "Dados não cadastrados!";
+        if ($titulo_art && $id_eti && $link_art && $resumo_art && $imgContent && $intro_art && $des_art && $con_art && $ref_art){
+            $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
+                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
+                $msgErr = "Dados cadastrados com sucesso!";
+                header("location: menu_artigos.php");
+            } else {
+                $msgErr = "Dados não cadastrados!";
+            }
         }
     } else {
         $msgErr = "Informações incorretas";
@@ -96,7 +98,9 @@
                             <option value="1">Notícia</option>
                             <option value="2">Art. Científico</option>
                             <option value="3">Art. de site </option>
-                        </select> <br> <br>
+                    </select> 
+                    <span id="id_etiErr" class="id_etiErr"><?php  echo '<br>'.$id_etiErr ?></span>
+                    <br> <br>
                     <input class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     <span class="obrigatorio"><?php  echo '<br>'.$titulo_artErr ?></span>
                     
@@ -148,12 +152,20 @@
                     document.getElementById('desc_art').style.display='none';
                     document.getElementById('intro_art').style.display='none';
                     document.getElementById('img_art').style.display='none';
+                    document.getElementById('ref_artErr').style.display='none';
+                    document.getElementById('con_artErr').style.display='none';
+                    document.getElementById('des_artErr').style.display='none';
+                    document.getElementById('intro_artErr').style.display='none';
             } else{
                 document.getElementById('ref_art').style.display='block';
                 document.getElementById('con_art').style.display='block';
                 document.getElementById('desc_art').style.display='block';
                 document.getElementById('intro_art').style.display='block';
                 document.getElementById('img_art').style.display='block';
+                document.getElementById('ref_artErr').style.display='block';
+                document.getElementById('con_artErr').style.display='block';
+                document.getElementById('des_artErr').style.display='block';
+                document.getElementById('intro_artErr').style.display='block';
             }
             if(valor==2 || valor==3 ){
                     document.getElementById('link_art').style.display='none';

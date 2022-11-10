@@ -2,38 +2,13 @@
 <?php
     $email_bug = $desc_bug = $cod_bug =  "";
     $email_bugErr = $desc_bugErr = $msgErr = "";
-
-    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
-        if (empty($_POST['email_bug'])){
-            $email_bugErr = "Email é obrigatório!";
-        } else {
-            $email_bug = test_input($_POST["email_bug"]);
-        }
-        if (empty($_POST['desc_bug'])){
-            $desc_bugErr = "Ter uma descrição é obrigatório!";
-        } else {
-            $desc_bug = test_input($_POST["desc_bug"]);
-        }
-
-        //Verificar se o usuário existe
-        if ($email_bug && $desc_bug) {
-                    //Inserir no banco de dados
-            $sql = $pdo->prepare("INSERT INTO bug (cod_bug, email_bug, desc_bug)
-                                VALUES (null, ?, ?)");
-            if ($sql->execute(array($email_bug, $desc_bug))){
-                $msgErr = "Erro reportado com sucesso!";  
-                header('location:home.php');
-            } else {
-                $msgErr = "Erro não reportado!";
-            }
-        }else {
-            $msgErr = "Erro no comando Select";
-        }
-    } else{
-        echo $msgErr;
-    }
- 
     
+    if(isset($_GET['email_bugErr'])){
+        $email_bugErr = $_GET['email_bugErr'];
+    }
+    if(isset($_GET['desc_bugErr'])){
+        $desc_bugErr = $_GET['desc_bugErr'];
+    }
 ?>
 <head>
     <title>Reportar Erros | UEDA</title>
@@ -44,7 +19,7 @@
         <center>
             <h1>REPORTAR ERRO</h1>
         <br>
-            <form method="post" action="">
+            <form method="post" action="bug_usu_controler.php">
                 <h2>Encontrou algum erro?</h2>
                 <h4>Reporte preenchendo às informações abaixo:</h4>
                 <br>
