@@ -53,7 +53,7 @@
 
         //Verificar se existe um usuario
         if ($email_usu && $nome_usu && $nome_real_usu){
-            $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email_usu = ? AND id_usu <> ?");
+            $sql = $pdo->prepare("SELECT * FROM usuario WHERE email_usu = ? AND id_usu <> ?");
             if ($sql->execute(array($email_usu, $id_usu))){
                 if ($sql->rowCount() > 0){
                     $msgErr = "E-mail já cadastrado para outro usuário";

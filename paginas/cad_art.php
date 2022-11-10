@@ -7,7 +7,7 @@
 ?>
 <?php
     $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
-    $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = "";
+    $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $image_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = "";
     $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
@@ -65,16 +65,31 @@
             } else {
                 $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
             }
+        } else if(!$id_eti == 1){
+            $image_artErr = "Não foi enviada a imagem";
         }
         //Inserir dados
-        if ($titulo_art && $id_eti && $link_art && $resumo_art && $imgContent && $intro_art && $des_art && $con_art && $ref_art){
-            $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
-                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
-                $msgErr = "Dados cadastrados com sucesso!";
-                header("location: menu_artigos.php");
-            } else {
-                $msgErr = "Dados não cadastrados!";
+        if ($id_eti == 1){
+            if ($titulo_art && $id_eti && $link_art && $resumo_art){
+                $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
+                                    VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
+                    $msgErr = "Dados cadastrados com sucesso!";
+                    header("location: menu_artigos.php");
+                } else {
+                    $msgErr = "Dados não cadastrados!";
+                }
+            }
+        } else{
+            if ($titulo_art && $id_eti && $link_art && $resumo_art && $imgContent && $intro_art && $des_art && $con_art && $ref_art){
+                $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
+                                    VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
+                    $msgErr = "Dados cadastrados com sucesso!";
+                    header("location: menu_artigos.php");
+                } else {
+                    $msgErr = "Dados não cadastrados!";
+                }
             }
         }
     } else {
@@ -94,13 +109,13 @@
                 <br><br>
                     <label>Etiquetas:</label>
                     <select name="id_eti" onchange="altera_form(this)"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
-                            <option value="">Sel ecione</option>
+                            <option value="">Selecione</option>
                             <option value="1">Notícia</option>
                             <option value="2">Art. Científico</option>
                             <option value="3">Art. de site </option>
                     </select> 
                     <span id="id_etiErr" class="id_etiErr"><?php  echo '<br>'.$id_etiErr ?></span>
-                    <br> <br>
+                    <br><br>
                     <input class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     <span class="obrigatorio"><?php  echo '<br>'.$titulo_artErr ?></span>
                     
@@ -130,8 +145,9 @@
      
                     <br><br><br>
                     <div class="escolha-imagem">
-                        <label style="width: 300px;" id="img_art" for="image">Selecione uma imagem (Opcional)</label>
+                        <label style="width: 300px;" id="img_art" for="image">Selecione uma imagem</label>
                         <input type="file" id='image' name="image"/><br>
+                        <span class="obrigatorio"><?php echo $image_artErr ?></span> <br> 
                     </div>
                     <br><br>
                     <div class="clear"></div>
