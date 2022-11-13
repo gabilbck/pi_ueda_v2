@@ -438,7 +438,7 @@ h1{
     }
 
     .titulo_principal{
-        border-bottom: 2px dashed #000000;
+        border-bottom: 1px solid #000000;
         text-align: left;
         color: #000000;
         position: relative;
@@ -476,7 +476,7 @@ h1{
     }
     
     .descricao_titulo{
-        border-bottom: 2px dashed #000000;
+        border-bottom: 1px solid #000000;
         text-align: left;
         color: #000000;
         position: relative;
