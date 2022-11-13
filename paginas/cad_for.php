@@ -30,7 +30,7 @@
                 <h1>PUBLICAR FÓRUM</h1>
                 <br>
                 <form action="cad_for_controler.php" method="post" enctype="multipart/form-data">
-                    <input class="input-text" maxlength="30" name="titulo_publi" value="<?php echo $titulo_publi?>" type="text" placeholder="Nome do Título">
+                    <input class="input-text" maxlength="30" name="titulo_publi" value="<?php echo $titulo_publi?>" type="text" placeholder="Título para publicação">
                     <span class="obrigatorio"><?php echo '<br>'.$titulo_publiErr ?></span>
                     <br><br>
                     <textarea name="text_publi" maxlength="1000" type="text" placeholder="Texto para publicação"></textarea>

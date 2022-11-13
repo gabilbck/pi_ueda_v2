@@ -2,7 +2,9 @@
     session_start();
     include_once "../include/MySql.php";
     include_once "../include/functions.php";
-
+?>
+<?php
+    $id_usu = $_SESSION['id_usu'];
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
 
         if (empty($_POST['titulo_publi'])){
