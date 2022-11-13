@@ -130,7 +130,25 @@
                 document.getElementById('con_artErr').style.display='block';
                 document.getElementById('ref_artErr').style.display='block';
                 document.getElementById('image_artErr').style.display='block';
-            }   
+            } else{
+                document.getElementById('titulo_art').style.display='block'; // aparece -> block
+                document.getElementById('link_art').style.display='block';
+                document.getElementById('resumo_art').style.display='block';
+                document.getElementById('intro_art').style.display='block';
+                document.getElementById('desc_art').style.display='block';
+                document.getElementById('con_art').style.display='block';
+                document.getElementById('ref_art').style.display='block';
+                document.getElementById('image_art').style.display='block';
+
+                document.getElementById('titulo_artErr').style.display='block'; // aparece -> block
+                document.getElementById('link_artErr').style.display='block';
+                document.getElementById('resumo_art').style.display='block';
+                document.getElementById('intro_artErr').style.display='block';
+                document.getElementById('des_artErr').style.display='block';
+                document.getElementById('con_artErr').style.display='block';
+                document.getElementById('ref_artErr').style.display='block';
+                document.getElementById('image_artErr').style.display='block';
+            }
         };
     </script>
 <?php require("../template/footer.php");?>
