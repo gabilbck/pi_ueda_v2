@@ -36,6 +36,7 @@ h1{
     .obrigatorio{
         color: red;
         font-weight: bold;
+        font-size: 10px;
     }
     .n-obrigatorio{
         /* Gambiarra para não ficar

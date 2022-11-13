@@ -44,25 +44,29 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
         $ref_art = test_input($_POST["ref_art"]);
     }
     if (($_POST['id_eti']) == ""){
-        $id_etiErr = "Etiqueta é obrigatória!";
+        $id_etiErr = "Selecione uma das etiquetas antes de cadastrar um artigo!";
     } else {
         $id_eti = test_input($_POST["id_eti"]);
-    }    
-    if (!empty($_FILES["image"]["name"])){
-        //Pegar informações
-        $fileName = basename($_FILES["image"]["name"]);
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-        //Permitir somente alguns formatos
-        $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'jfif');
-
-        if (in_array($fileType, $allowTypes)){
-            $image = $_FILES['image']['tmp_name'];
-            $imgContent = file_get_contents($image);
-        } else {
-            $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
+    }
+    if ($id_art != 1){
+        if (!empty($_FILES["image"]["name"])){
+            //Pegar informações
+            $fileName = basename($_FILES["image"]["name"]);
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+            //Permitir somente alguns formatos
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'jfif');
+    
+            if (in_array($fileType, $allowTypes)){
+                $image = $_FILES['image']['tmp_name'];
+                $imgContent = file_get_contents($image);
+            } else {
+                $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
+            }
+        } else{
+            $image_artErr = "Não foi selecionada nenhuma imagem!";
         }
-    } else if(!$id_eti == 1){
-        $image_artErr = "Não foi enviada a imagem";
+    } else{
+        $image_artErr = "Artigos do tipo <i>notícia</i> não precisam de imagem.";
     }
 
     //Inserir dados
@@ -75,14 +79,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
                 header("location: menu_artigos.php");
             } else {
                 $msgErr = "Dados não cadastrados!";
-                header('location: cad_art.php?titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&link_artErr='.$link_artErr.'&resumo_artErr='.$resumo_artErr);
+                header('location: cad_art.php?msgErr='.$msgErr);
             }
         } else {
             $msgErr = "Faltam dados. Informações não cadastradas!";
             header('location: cad_art.php?titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&link_artErr='.$link_artErr.'&resumo_artErr='.$resumo_artErr);
         }
-    } else{
-        if ($titulo_art && $id_eti && $link_art && $resumo_art && $imgContent && $intro_art && $des_art && $con_art && $ref_art){
+    } else if (($id_eti == 2) || ($id_eti == 3)){
+        if ($titulo_art && $id_eti && $resumo_art && $imgContent && $intro_art && $des_art && $con_art && $ref_art){
             $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
                                 VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
@@ -90,12 +94,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
                 header("location: menu_artigos.php");
             } else {
                 $msgErr = "Dados não cadastrados!";
-                header('location:cad_art.php?titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&resumo_artErr='.$resumo_artErr.'&image_artErr='.$image_artErr.'&intro_artErr='.$intro_artErr.'&des_artErr='.$des_artErr.'&con_artErr='.$con_artErr.'&ref_artErr='.$ref_artErr);
+                header('location:cad_art.php?msgErr='.$msgErr);
             }
         } else {
             $msgErr = "Dados não cadastrados!";
             header('location:cad_art.php?titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&resumo_artErr='.$resumo_artErr.'&image_artErr='.$image_artErr.'&intro_artErr='.$intro_artErr.'&des_artErr='.$des_artErr.'&con_artErr='.$con_artErr.'&ref_artErr='.$ref_artErr);
         }
+    } else{
+        $msgErr = "O valor da etiqueta não é válido!";
+        header('location:cad_art.php?msgErr='.$msgErr.'&id_etiErr='.$id_etiErr);
     }
 } else {
     header("location: n_adm_msg.php");

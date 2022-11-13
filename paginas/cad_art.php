@@ -54,40 +54,33 @@
                             <option value="2">Art. Científico</option>
                             <option value="3">Art. de site </option>
                     </select> 
-                    <span id="id_etiErr" class="obrigatorio"><?php  echo '<br>'.$id_etiErr ?></span>
-                    <br id="id_etiErr"><br>
-                    <input class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
-                    <span class="obrigatorio" id="titulo_artErr"><?php  echo '<br>'.$titulo_artErr ?></span>
-                    <br>
-                    <br id="titulo_art">
-                    <input class="input-text" id="link_art" name="link_art" value="<?php echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
-                    <span class="obrigatorio" id="link_artErr"><?php  echo '<br>'.$link_artErr ?></span>
-                    <br>
-                    <br id="link_art">
-                    <textarea maxlength="2000" name="resumo_art" value="<?php echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
-                    <span class="obrigatorio" id="resumo_artErr"><?php  echo '<br>'.$resumo_artErr ?></span>
-                    <br>
-                    <br id="resumo_art">
-                    <textarea maxlength="2000" name="intro_art" id="intro_art" value="<?php echo $intro_art?>" type="text" placeholder="Introdução do Texto"></textarea>
-                    <span class="obrigatorio" id="intro_artErr"><?php  echo '<br>'.$intro_artErr ?></span>
-                    <br>
-                    <br id="intro_art">
-                    <textarea maxlength="2000" name="des_art" id="desc_art" value="<?php echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
-                    <span class="obrigatorio" id="des_artErr"><?php  echo '<br>'.$des_artErr ?></span>
-                    <br>
-                    <br id="desc_art">
-                    <textarea maxlength="2000" name="con_art" id="con_art" value="<?php echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
-                    <span class="obrigatorio" id="con_artErr"><?php  echo '<br>'.$con_artErr ?></span>
-                    <br>
-                    <br id="con_art">
-                    <textarea maxlength="1000" name="ref_art" id="ref_art" value="<?php echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
-                    <span class="obrigatorio" id="ref_artErr"><?php  echo '<br>'.$ref_artErr ?></span>        
-                    <br>
-                    <br id="ref_art"><br id="ref_art">
-                    <div class="escolha-imagem" id="image_art">
+                    <span id="id_etiErr" class="obrigatorio"><?php echo '<br>'.$id_etiErr ?></span>
+                    <br><br>
+                    <input id="titulo_art" class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                    <span id="titulo_artErr" class="obrigatorio"><?php echo '<br>'.$titulo_artErr ?></span>
+                    <br><br>
+                    <input id="link_art" class="input-text" name="link_art" value="<?php echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
+                    <span id="link_artErr" class="obrigatorio"><?php echo '<br>'.$link_artErr ?></span>
+                    <br><br>
+                    <textarea id="resumo_art" maxlength="2000" name="resumo_art" value="<?php echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
+                    <span id="resumo_artErr" class="obrigatorio"><?php echo '<br>'.$resumo_artErr ?></span>
+                    <br><br>
+                    <textarea id="intro_art" maxlength="2000" name="intro_art" value="<?php echo $intro_art?>" type="text" placeholder="Introdução do Texto"></textarea>
+                    <span id="intro_artErr" class="obrigatorio"><?php echo '<br>'.$intro_artErr ?></span>
+                    <br><br>
+                    <textarea id="desc_art" maxlength="2000" name="des_art"value="<?php echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
+                    <span id="des_artErr" class="obrigatorio"><?php echo '<br>'.$des_artErr ?></span>
+                    <br><br>
+                    <textarea id="con_art" maxlength="2000" name="con_art" value="<?php echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
+                    <span id="con_artErr" class="obrigatorio"><?php echo '<br>'.$con_artErr ?></span>
+                    <br><br>
+                    <textarea id="ref_art" maxlength="1000" name="ref_art" value="<?php echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
+                    <span id="ref_artErr" class="obrigatorio"><?php echo '<br>'.$ref_artErr ?></span>        
+                    <br><br><br>
+                    <div id="image_art" class="escolha-imagem">
                         <label style="width: 300px;" for="image">Selecione uma imagem</label>
-                        <input type="file" id='image' name="image"/><br><br>
-                        <span class="obrigatorio" id="image_artErr"><?php echo $image_artErr ?></span> <br> 
+                        <input id='image' type="file" name="image"/><br><br>
+                        <span id="image_artErr" class="obrigatorio"><?php echo $image_artErr ?></span> <br> 
                     </div>
                     <br><br>
                     <div class="clear"></div>
@@ -102,31 +95,41 @@
             const valor = element.value;
             console.log(valor);
             if(valor=='1'){
-                document.getElementById('ref_art').style.display='none'; // não aparece
-                document.getElementById('con_art').style.display='none';
+                document.getElementById('titulo_art').style.display='block'; // aparece -> block
+                document.getElementById('link_art').style.display='block';
+                document.getElementById('resumo_art').style.display='block';
+                document.getElementById('intro_art').style.display='none'; //   não aparece -> none
                 document.getElementById('desc_art').style.display='none';
-                document.getElementById('intro_art').style.display='none';
+                document.getElementById('con_art').style.display='none';
+                document.getElementById('ref_art').style.display='none'; 
                 document.getElementById('image_art').style.display='none';
 
-                document.getElementById('ref_artErr').style.display='none';
+                document.getElementById('titulo_artErr').style.display='block'; // aparece -> block
+                document.getElementById('link_artErr').style.display='block';
+                document.getElementById('resumo_artErr').style.display='block';
+                document.getElementById('ref_artErr').style.display='none'; //     não aparece -> none
                 document.getElementById('con_artErr').style.display='none';
                 document.getElementById('des_artErr').style.display='none';
                 document.getElementById('intro_artErr').style.display='none';
                 document.getElementById('image_artErr').style.display='none';
-            } else if (valor=='2' || valor=='3'){
-                document.getElementById('ref_art').style.display='block'; //bloqueia codigo acima ? e aparece
-                document.getElementById('con_art').style.display='block';
-                document.getElementById('desc_art').style.display='block';
+            } else if ((valor=='2') || (valor=='3')){
+                document.getElementById('titulo_art').style.display='block'; // aparece -> block
+                document.getElementById('link_art').style.display='none'; //    não aparece -> none
+                document.getElementById('resumo_art').style.display='block';
                 document.getElementById('intro_art').style.display='block';
+                document.getElementById('desc_art').style.display='block';
+                document.getElementById('con_art').style.display='block';
+                document.getElementById('ref_art').style.display='block';
                 document.getElementById('image_art').style.display='block';
-                document.getElementById('link_art').style.display='none';
 
-                document.getElementById('ref_artErr').style.display='block';
-                document.getElementById('con_artErr').style.display='block';
-                document.getElementById('des_artErr').style.display='block';
+                document.getElementById('titulo_artErr').style.display='block'; // aparece -> block
+                document.getElementById('link_artErr').style.display='none'; //    não aparece -> none
+                document.getElementById('resumo_art').style.display='block';
                 document.getElementById('intro_artErr').style.display='block';
+                document.getElementById('des_artErr').style.display='block';
+                document.getElementById('con_artErr').style.display='block';
+                document.getElementById('ref_artErr').style.display='block';
                 document.getElementById('image_artErr').style.display='block';
-                document.getElementById('link_artErr').style.display='none'
             }   
         };
     </script>
