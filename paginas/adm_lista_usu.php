@@ -44,7 +44,7 @@
                     }
             
                     echo "</table>";
-                    echo "<br><button><a class='link-branco' href='cad_usu'>Cadastrar novo usuário</a></button>";
+                    echo "<br><button><a class='link-branco' href='cad_usu.php'>Cadastrar novo usuário</a></button>";
                     echo "</center>";
                 }
             ?>
