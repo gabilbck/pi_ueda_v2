@@ -3,27 +3,26 @@
     if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
-    }
-?>
-<?php
-    $id_publi = $id_usu = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
-    $titulo_publiErr = $text_publiErr = $msgErr = "";
-
-    if (isset($_GET['id_publi'])){
+    } else{
         $id_publi = $_GET['id_publi'];
-        $sql = $pdo->prepare('SELECT * FROM publica_forum WHERE id_publi =?');
-        if ($sql->execute(array($id_publi))){
-            $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-            foreach($info as $key => $value){
-                $id_publi = $value['id_publi'];
-                $id_usu = $value['id_usu'];
-                $titulo_publi = $value['titulo_publi'];
-                $text_publi = $value['text_publi'];
-                $imgContent = $value['img_publi'];
-                $sql = $pdo->prepare('SELECT nome_usu FROM usuario WHERE id_usu =?');
-                if($sql->execute(array($id_usu))){
-                    $usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
-                    $nome_usu = $usuario[0]['nome_usu'];
+        $id_usu = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
+        $titulo_publiErr = $text_publiErr = $msgErr = "";
+        if (isset($_GET['id_publi'])){
+            $id_publi = $_GET['id_publi'];
+            $sql = $pdo->prepare('SELECT * FROM publica_forum WHERE id_publi =?');
+            if ($sql->execute(array($id_publi))){
+                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($info as $key => $value){
+                    $id_publi = $value['id_publi'];
+                    $id_usu = $value['id_usu'];
+                    $titulo_publi = $value['titulo_publi'];
+                    $text_publi = $value['text_publi'];
+                    $imgContent = $value['img_publi'];
+                    $sql = $pdo->prepare('SELECT nome_usu FROM usuario WHERE id_usu =?');
+                    if($sql->execute(array($id_usu))){
+                        $usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
+                        $nome_usu = $usuario[0]['nome_usu'];
+                    }
                 }
             }
         }
@@ -51,9 +50,7 @@
                 echo '<img width="150" src="data:image/jpg;charset=utf8;base64,'.$imgContent.'"/>';
             }
             ?>
-            <br>
-            <hr>
-            <br>
+            <br><hr><br>
             <h2>Comentários</h2>
             <?php 
             // Mostrar comentários
@@ -76,7 +73,6 @@
             $id_cmt = $text_cmt = "";
             $id_cmtErr = $text_cmtErr = $msgErr = "";
             ?>
-            
             <form action="vizu_forum_controler.php" method="post">
                 <br>
                 <input type="hidden" name="id_publi" value="<?php echo $id_publi ?>">
