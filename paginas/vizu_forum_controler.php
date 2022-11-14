@@ -23,7 +23,7 @@ if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
             $sql = $pdo->prepare("INSERT INTO comentario (text_cmt, id_usu, id_publi)
                             VALUES (?, ?, ?)");
             if ($sql->execute(array($text_cmt, $id_usu, $id_publi))){
-                $msgErr = "Mensagem não enviada!";
+                $msgErr = "Mensagem enviada!";
                 $actual_link = $_SERVER['HTTP_REFERER'];
                 header("Location:$actual_link");
             } else {

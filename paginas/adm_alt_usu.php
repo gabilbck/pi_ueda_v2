@@ -3,32 +3,35 @@
     if($_SESSION['adm'] != 1){
         header("location:n_adm_msg.php");
         die;
-    }
-?>
-<?php 
-    $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
-    $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
+    } else {
+        $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
+        $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
 
-    if (isset($_GET['id_usu'])){
-        $id_usu = $_GET['id_usu'];
-        $sql = $pdo->prepare('SELECT * FROM usuario WHERE id_usu =?');
-        if ($sql->execute(array($id_usu))){
-            $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-            foreach($info as $key => $value){
-                $id_usu = $value['id_usu'];
-                $nome_usu = $value['nome_usu'];
-                $email_usu = $value['email_usu'];
-                $senha_usu = "";//$value['senha_usu'];
-                $nome_real_usu = $value['nome_real_usu'];
-                $adm = $value['adm'];
+        if (isset($_GET['id_usu'])){
+            $id_usu = $_GET['id_usu'];
+            $sql = $pdo->prepare('SELECT * FROM usuario WHERE id_usu =?');
+            if ($sql->execute(array($id_usu))){
+                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($info as $key => $value){
+                    $id_usu = $value['id_usu'];
+                    $nome_usu = $value['nome_usu'];
+                    $email_usu = $value['email_usu'];
+                    $senha_usu = "";//$value['senha_usu'];
+                    $nome_real_usu = $value['nome_real_usu'];
+                    $adm = $value['adm'];
+                }
             }
         }
-    }                  
+    }             
 ?>
 <head>
     <title>Alterar Informações do Usuário</title>
 </head>
     <main>
+    <div class="atencao">
+        <center><h4>ATENÇÃO: Se você deixar algum input vazio e clicar em 'ALTERAR', o dado permanecerá como antes de ser enviado vazio.</h4></center>
+    </div>
+    <br><br>
     <div class="margem-lados">
             <center>
                 <br><br>

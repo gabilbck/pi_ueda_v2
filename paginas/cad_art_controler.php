@@ -9,7 +9,7 @@ $msgErr = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
     if (empty ($_POST['titulo_art'])){
-        $titulo_artErr = "Nome do título é obrigatório!";
+        $titulo_artErr = "Título é obrigatório!";
     } else {
         $titulo_art = test_input($_POST["titulo_art"]);
     }
