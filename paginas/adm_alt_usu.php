@@ -24,30 +24,18 @@
                 }
             }
         }
-        if(isset($_GET['nome_usu'])){
-            $nome_usu = $_GET['nome_usu'];
-        }
-        if(isset($_GET['email_usu'])){
-            $email_usu = $_GET['email_usu'];
-        }
-        if(isset($_GET['senha_usu'])){
-            $senha_usu = $_GET['senha_usu'];
-        }
-        if(isset($_GET['nome_real_usu'])){
-            $nome_real_usu = $_GET['nome_real_usu'];
-        }
         //Erros
         if(isset($_GET['nome_usuErr'])){
             $nome_usuErr = $_GET['nome_usuErr'];
+            $nome_usu = "";
         }
         if(isset($_GET['email_usuErr'])){
             $email_usuErr = $_GET['email_usuErr'];
-        }
-        if(isset($_GET['senha_usuErr'])){
-            $senha_usuErr = $_GET['senha_usuErr'];
+            $email_usu = "";
         }
         if(isset($_GET['nome_real_usuErr'])){
             $nome_real_usuErr = $_GET['nome_real_usuErr'];
+            $nome_real_usu = "";
         }
     }             
 ?>

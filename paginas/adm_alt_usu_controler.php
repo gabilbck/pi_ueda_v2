@@ -53,19 +53,19 @@
                             $msgErr = "Dados alterados com sucesso!";
                             header('location: adm_lista_usu.php');
                         } else{
-                            $id_usu = $_GET['id_usu'];
+                            $id_usu = $_POST['id_usu'];
                             $msgErr = "dados não alterados.";
                             header('location: adm_alt_usu.php?id_usu='.$id_usu.'&msgErr='.$msgErr);
                         }
                     }
                 } else{
-                    $id_usu = $_GET['id_usu'];
+                    $id_usu = $_POST['id_usu'];
                     header('location: adm_alt_usu.php?id_usu='.$id_usu.'&email_usuErr='.$email_usuErr.'&nome_usuErr='.$nome_usuErr.'&nome_real_usuErr='.$nome_real_usuErr);
                 }
             } else {
-                $id_usu = $_GET['id_usu'];
+                $id_usu = $_POST['id_usu'];
                 $msgErr = "Dados não informados!";
-                header('location: adm_alt_usu.php?id_usu='.$id_usu.'email_usuErr='.$email_usuErr.'&nome_usuErr='.$nome_usuErr.'&nome_real_usuErr='.$nome_real_usuErr);
+                header('location: adm_alt_usu.php?id_usu='.$id_usu.'&email_usuErr='.$email_usuErr.'&nome_usuErr='.$nome_usuErr.'&nome_real_usuErr='.$nome_real_usuErr);
             }
         } else{
             header('location: n_adm_msg.php');
