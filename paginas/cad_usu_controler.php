@@ -4,6 +4,8 @@
     include_once "../include/functions.php";
 ?>
 <?php
+    $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
+    $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
         if (empty ($_POST['nome_usu'])){
             $nome_usuErr = "Nome Completo é obrigatório!";

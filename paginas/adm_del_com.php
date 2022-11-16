@@ -1,10 +1,10 @@
 <?php 
     include "../include/MySql.php";
     include "../include/functions.php";
-    if (isset($_GET['id_com'])){
-        $id_com = $_GET['id_com'];
-        $sql = $pdo->prepare("DELETE FROM comentario WHERE id_com=?");
-        if ($sql->execute(array($id_com))){
+    if (isset($_GET['id_cmt'])){
+        $id_cmt = $_GET['id_cmt'];
+        $sql = $pdo->prepare("DELETE FROM comentario WHERE id_cmt=?");
+        if ($sql->execute(array($id_cmt))){
             header('location:adm_lista_com.php');
         } else{
             echo "Erro: dados não foram excluídos.<br>";

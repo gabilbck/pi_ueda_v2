@@ -4,6 +4,11 @@
     include_once "../include/functions.php";
 ?>
 <?php
+$_SESSION['id_usu'] = "";
+$_SESSION['nome_usu'] = "";
+$_SESSION['adm'] = "";
+$email_usu = $senha_usu = $msgErr = "";
+$email_usuErr = $senha_usuErr = "";
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     if (empty($_POST['email_usu'])){
         $email_usuErr = "Email está incorreto.";
@@ -33,7 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                 $msgErr = '* Credenciais incorretas ou não informadas.';
                 header('location:login_usu.php?msgErr='.$msgErr);
             }
+        } else{
+            $msgErr = '* Credenciais incorretas ou não informadas.';
+            header('location:login_usu.php?msgErr='.$msgErr);
         }
+    } else{
+        $msgErr = '* Credenciais incorretas ou não informadas.';
+        header('location:login_usu.php?msgErr='.$msgErr);
     }
 } else{
     header("Location:n_adm_msg.php");
