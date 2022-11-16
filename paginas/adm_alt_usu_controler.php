@@ -1,4 +1,5 @@
 <?php
+    //Quando vazio, não funciona bem, mas altera se estiver tudo preenchido
     session_start();
     include_once "../include/MySql.php";
     include_once "../include/functions.php";
@@ -6,23 +7,27 @@
         header("location:n_adm_msg.php");
         die;
     } else{
+        $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
+        $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
         if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
             if (isset($_POST['id_usu'])){
                 $id_usu = $_POST['id_usu'];
             } 
             if (empty($_POST['nome_usu'])){
-                $nome_usuErr = "Nome é obrigatório!";
+                $nome_usuErr = "Nome não pode estar vazio!";
             } else {
                 $nome_usu = test_input($_POST["nome_usu"]);
             }
             if (empty($_POST['email_usu'])){
-                $email_usuErr = "Email é obrigatório!";
+                $email_usuErr = "E-mail não pode estar vazio!";
             } else {
                 $email_usu = test_input($_POST["email_usu"]);
             }
+
             $senha_usu = test_input($_POST["senha_usu"]);
+
             if (empty($_POST['nome_real_usu'])){
-                $nome_real_usuErr = "Telefone é obrigatório!";
+                $nome_real_usuErr = "Nome Completo não pode estar vazio!";
             } else {
                 $nome_real_usu = test_input($_POST["nome_real_usu"]);
             }
@@ -48,16 +53,19 @@
                             $msgErr = "Dados alterados com sucesso!";
                             header('location: adm_lista_usu.php');
                         } else{
+                            $id_usu = $_GET['id_usu'];
                             $msgErr = "dados não alterados.";
-                            header('location: adm_lista_usu.php?msgErr='.$msgErr);
+                            header('location: adm_alt_usu.php?id_usu='.$id_usu.'&msgErr='.$msgErr);
                         }
                     }
                 } else{
-                    header('location: adm_lista_usu.php?email_usuErr='.$email_usuErr.'&nome_usuErr='.$nome_usuErr.'&nome_real_usuErr='.$nome_real_usuErr);
+                    $id_usu = $_GET['id_usu'];
+                    header('location: adm_alt_usu.php?id_usu='.$id_usu.'&email_usuErr='.$email_usuErr.'&nome_usuErr='.$nome_usuErr.'&nome_real_usuErr='.$nome_real_usuErr);
                 }
             } else {
+                $id_usu = $_GET['id_usu'];
                 $msgErr = "Dados não informados!";
-                header('location: adm_lista_usu.php?email_usuErr='.$email_usuErr.'&nome_usuErr='.$nome_usuErr.'&nome_real_usuErr='.$nome_real_usuErr);
+                header('location: adm_alt_usu.php?id_usu='.$id_usu.'email_usuErr='.$email_usuErr.'&nome_usuErr='.$nome_usuErr.'&nome_real_usuErr='.$nome_real_usuErr);
             }
         } else{
             header('location: n_adm_msg.php');
