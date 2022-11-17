@@ -1,7 +1,5 @@
 <?php require("../template/header.php");?>
 <?php
-    //Quando vazio, não funciona bem, mas altera se estiver tudo preenchido
-
     if($_SESSION['adm'] != 1){
         header("location:n_adm_msg.php");
         die;
