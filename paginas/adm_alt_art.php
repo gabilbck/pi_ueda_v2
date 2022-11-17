@@ -94,7 +94,7 @@
                     <br><br>
                     <input id="id_art" type="text" name="id_art" value="<?php echo $id_art?>" readonly>
                     <br><br>
-                    <input id="titulo_art" class="input-text" name="titulo_art" maxlength="30" value="<?php echo $titulo_art?>" type="text" placeholder="Título do Artigo">
+                    <input id="titulo_art" class="input-text" name="titulo_art" maxlength="255" value="<?php echo $titulo_art?>" type="text" placeholder="Título do Artigo">
                     <span id="titulo_artErr" class="obrigatorio"><?php echo '<br>'.$titulo_artErr ?></span>
                     <br><br>
                     <?php if ($id_eti == 1){ ?>

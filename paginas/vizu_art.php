@@ -14,7 +14,7 @@
     </head>
     <body>
     <div class="margem-lados">
-        <br>
+        <br><br>
         <?php 
         echo "<div class='container_art'>";
             echo "<div class='titulo_art'>";
@@ -34,10 +34,8 @@
             echo '</div>';
             echo '<hr>';
             echo '<br>';
-            echo '<b> Referências: </b>';
-            echo "<div class='referencia'>";
-                echo '<p>'.$ref.'</p><br>';
-            echo "</div>";
+            echo '<b> Referências: '.$ref.'</b>';
+            echo '<br><br>';
         echo '</div>';
         ?>
        </div> 
