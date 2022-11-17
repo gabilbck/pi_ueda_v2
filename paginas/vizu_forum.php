@@ -1,5 +1,4 @@
-<?php require("../template/header.php");?>
-<?php 
+<?php require("../template/header.php");
     if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;

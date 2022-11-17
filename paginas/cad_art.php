@@ -56,7 +56,7 @@
                     </select> 
                     <span id="id_etiErr" class="obrigatorio"><?php echo '<br>'.$id_etiErr ?></span>
                     <br><br>
-                    <input id="titulo_art" class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                    <input id="titulo_art" class="input-text" maxlength="255" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
                     <span id="titulo_artErr" class="obrigatorio"><?php echo '<br>'.$titulo_artErr ?></span>
                     <br><br>
                     <input id="link_art" class="input-text" name="link_art" value="<?php echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
