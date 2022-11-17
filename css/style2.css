@@ -400,6 +400,24 @@ h1{
         margin-top: 0px;
     }
 
+    .devs a{
+        color: white;
+        transition: all 200ms ease-in-out;
+    }
+
+    .devs li{
+        color: white;
+        transition: all 200ms ease-in-out;
+    }
+
+    .devs a:hover{
+        color: #009CFF;
+    }
+
+    .devs li:hover{
+        color: #009CFF;
+    }
+
 /* JOGOS */
     .escolha-imagem label{
         padding: 15px;
