@@ -33,30 +33,39 @@
         }
         if(isset($_GET['titulo_artErr'])){
             $titulo_artErr = $_GET['titulo_artErr'];
+            $titulo_art = "";
         }
         if(isset($_GET['id_etiErr'])){
             $id_etiErr = $_GET['id_etiErr'];
+            $id_eti = "";
         }
         if(isset($_GET['link_artErr'])){
             $link_artErr = $_GET['link_artErr'];
+            $link_art = "";
         }
         if(isset($_GET['resumo_artErr'])){
             $resumo_artErr = $_GET['resumo_artErr'];
+            $resumo_art = "";
         }
         if(isset($_GET['image_artErr'])){
             $image_artErr = $_GET['image_artErr'];
+            $image_art = "";
         }
         if(isset($_GET['intro_artErr'])){
             $intro_artErr = $_GET['intro_artErr'];
+            $intro_art = "";
         }
         if(isset($_GET['des_artErr'])){
             $des_artErr = $_GET['des_artErr'];
+            $des_art = "";
         }
         if(isset($_GET['con_artErr'])){
             $con_artErr = $_GET['con_artErr'];
+            $con_art = "";
         }
         if(isset($_GET['ref_artErr'])){
             $ref_artErr = $_GET['ref_artErr'];
+            $ref_art = "";
         }
     }
 ?>
