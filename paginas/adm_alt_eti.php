@@ -18,7 +18,11 @@
                 }
             }
         }
-        
+        //Erros
+        if(isset($_GET['nome_etiErr'])){
+            $nome_etiErr = $_GET['nome_etiErr'];
+            $nome_eti = "";
+        }
     }               
 ?>
 <head>
