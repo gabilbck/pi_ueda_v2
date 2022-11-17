@@ -18,15 +18,14 @@
                 <div class="margem-titulo"></div>
                 <p>Conscientizar a população para fazerem o uso eficiente da água, através de artigos e fóruns em que a população possa compartilhar suas próprias formas de utilizar a água eficientemente, seus projetos e notificações sobre algum problema envolvendo o uso da água na cidade. </p>
                 <br><br><br>
+                <img src="../images/banner_2.png" width="100%">
                 <center>
                     <table>
                         <tr>
-                            <td class="td-home"><center><h1>ORIGEM</h1><br><p>O Projeto UEDA (Uso Eficiente da água ) foi baseado no objetivo 6 do ODS (Objetivo de Desenvolvimento Sustentável). Os Objetivos foram estabelecidos em 2015, pela ONU, visando a implementação de políticas públicas sustentáveis para conduzir a humanidade até 2030.</p></center></td>
-                            <td class="td-home"><img src="../images/home_1.png" width="450px" height="450px"></td>
+                            <td width="50%" ><center><h1>ORIGEM</h1><br><p style="margin: 5%;">O Projeto UEDA (Uso Eficiente da água ) foi baseado no objetivo 6 do ODS (Objetivo de Desenvolvimento Sustentável). Os Objetivos foram estabelecidos em 2015, pela ONU, visando a implementação de políticas públicas sustentáveis para conduzir a humanidade até 2030.</p></center></td>
+                            <td class="td-home"><center><img src="../images/home_1.png" width="450px" height="450px"></center></td>
                         </tr>
                     </table>
-
-                    
                 </center>
 
                 <br><br>
