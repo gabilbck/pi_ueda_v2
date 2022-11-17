@@ -3,83 +3,39 @@
     if($_SESSION['adm'] != 1){
         header("location:n_adm_msg.php");
         die;
+    } else{
+        $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
+        $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $image_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = "";
+        $msgErr = "";    
+
+        if(isset($_GET['titulo_artErr'])){
+            $titulo_artErr = $_GET['titulo_artErr'];
+        }
+        if(isset($_GET['id_etiErr'])){
+            $id_etiErr = $_GET['id_etiErr'];
+        }
+        if(isset($_GET['link_artErr'])){
+            $link_artErr = $_GET['link_artErr'];
+        }
+        if(isset($_GET['resumo_artErr'])){
+            $resumo_artErr = $_GET['resumo_artErr'];
+        }
+        if(isset($_GET['image_artErr'])){
+            $image_artErr = $_GET['image_artErr'];
+        }
+        if(isset($_GET['intro_artErr'])){
+            $intro_artErr = $_GET['intro_artErr'];
+        }
+        if(isset($_GET['des_artErr'])){
+            $des_artErr = $_GET['des_artErr'];
+        }
+        if(isset($_GET['con_artErr'])){
+            $con_artErr = $_GET['con_artErr'];
+        }
+        if(isset($_GET['ref_artErr'])){
+            $ref_artErr = $_GET['ref_artErr'];
+        }
     }
-?>
-<?php
-    $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
-    $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = "";
-    $msgErr = "";
-
-    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
-        if (empty ($_POST['titulo_art'])){
-            $titulo_artErr = "Nome do título é obrigatório!";
-        } else {
-            $titulo_art = test_input($_POST["titulo_art"]);
-        }
-        if (empty($_POST['resumo_art'])){
-            $resumo_artErr = "Resumo é obrigatório!";
-        } else {
-            $resumo_art = test_input($_POST["resumo_art"]);
-        }
-        if (empty($_POST['link_art'])){
-            $link_artErr = "Link é obrigatório!";
-        } else {
-            $link_art = test_input($_POST["link_art"]);
-        }
-        if (empty($_POST['intro_art'])){
-            $intro_artErr = "Introdução é obrigatória!";
-        } else {
-            $intro_art = test_input($_POST["intro_art"]);
-        }
-        if (empty($_POST['des_art'])){
-            $des_artErr = " Desenvolvimento é obrigatório!";
-        } else {
-            $des_art = test_input($_POST["des_art"]);
-        }
-        if (empty($_POST['con_art'])){
-            $con_artErr = " Conclusão é obrigatório!";
-        } else {
-            $con_art = test_input($_POST["con_art"]);
-        }
-        if (empty($_POST['ref_art'])){
-            $ref_artErr = " Referências é obrigatório!";
-        } else {
-            $ref_art = test_input($_POST["ref_art"]);
-        }
-        if (($_POST['id_eti']) == ""){
-            $id_etiErr = "Etiqueta é obrigatória!";
-        } else {
-            $id_eti = test_input($_POST["id_eti"]);
-        }    
-        
-        if (!empty($_FILES["image"]["name"])){
-            //Pegar informações
-            $fileName = basename($_FILES["image"]["name"]);
-            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-            //Permitir somente alguns formatos
-            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'jfif');
-
-            if (in_array($fileType, $allowTypes)){
-                $image = $_FILES['image']['tmp_name'];
-                $imgContent = file_get_contents($image);
-            } else {
-                $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
-            }
-        }
-        //Inserir dados
-        if ($titulo_art && $id_eti && $link_art && $resumo_art && $imgContent && $intro_art && $des_art && $con_art && $ref_art){
-            $sql = $pdo->prepare("INSERT INTO ARTIGO (id_art, titulo_art, id_eti, link_art, resumo_art, img_art, intro_art, des_art, con_art, ref_art)
-                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            if ($sql->execute(array($titulo_art, $id_eti, $link_art, $resumo_art, base64_encode($imgContent), $intro_art, $des_art, $con_art, $ref_art))){
-                $msgErr = "Dados cadastrados com sucesso!";
-                header("location: menu_artigos.php");
-            } else {
-                $msgErr = "Dados não cadastrados!";
-            }
-        }
-    } else {
-        $msgErr = "Informações incorretas";
-    }            
 ?>
 <head>
     <title>Publicar artigo | UEDA</title>
@@ -89,9 +45,8 @@
             <center>
                 <br><br>
                 <h1>PUBLICAR ARTIGO</h1>
-                <br>
-                <form action="" method="POST" enctype="multipart/form-data">
                 <br><br>
+                <form action="cad_art_controler.php" method="POST" enctype="multipart/form-data">
                     <label>Etiquetas:</label>
                     <select name="id_eti" onchange="altera_form(this)"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
                             <option value="">Selecione</option>
@@ -99,44 +54,37 @@
                             <option value="2">Art. Científico</option>
                             <option value="3">Art. de site </option>
                     </select> 
-                    <span id="id_etiErr" class="id_etiErr"><?php  echo '<br>'.$id_etiErr ?></span>
-                    <br> <br>
-                    <input class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
-                    <span id="titulo_artErr" class="titulo_artErr"><?php  echo '<br>'.$titulo_artErr ?></span>
-                    
+                    <span id="id_etiErr" class="obrigatorio"><?php echo '<br>'.$id_etiErr ?></span>
                     <br><br>
-                    <input class="input-text" id="link_art" name="link_art" value="<?php  echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
-                    <span id="link_artErr" class="link_artErr"><?php  echo '<br>'.$link_artErr ?></span>
-                    
+                    <input id="titulo_art" class="input-text" maxlength="30" name="titulo_art" value="<?php echo $titulo_art?>" type="text" placeholder="Nome do Título">
+                    <span id="titulo_artErr" class="obrigatorio"><?php echo '<br>'.$titulo_artErr ?></span>
                     <br><br>
-                    <textarea maxlength="2000" name="resumo_art" value="<?php  echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
-                    <span id="resumo_artErr" class="resumo_artErr"><?php  echo '<br>'.$resumo_artErr ?></span>
-                    
+                    <input id="link_art" class="input-text" name="link_art" value="<?php echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
+                    <span id="link_artErr" class="obrigatorio"><?php echo '<br>'.$link_artErr ?></span>
                     <br><br>
-                    <textarea maxlength="2000" name="intro_art" id="intro_art" value="<?php  echo $intro_art?>" type="text" placeholder="Introdução do Texto"></textarea>
-                    <span id="intro_artErr" class="intro_artErr"><?php  echo '<br>'.$intro_artErr ?></span>
-                    
+                    <textarea id="resumo_art" maxlength="2000" name="resumo_art" value="<?php echo $resumo_art?>" type="text" placeholder="Resumo do Texto"></textarea>
+                    <span id="resumo_artErr" class="obrigatorio"><?php echo '<br>'.$resumo_artErr ?></span>
                     <br><br>
-                    <textarea maxlength="2000" name="des_art" id="desc_art" value="<?php  echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
-                    <span id="des_artErr" class="des_artErr"><?php  echo '<br>'.$des_artErr ?></span>
-                    
+                    <textarea id="intro_art" maxlength="2000" name="intro_art" value="<?php echo $intro_art?>" type="text" placeholder="Introdução do Texto"></textarea>
+                    <span id="intro_artErr" class="obrigatorio"><?php echo '<br>'.$intro_artErr ?></span>
                     <br><br>
-                    <textarea maxlength="2000" name="con_art" id="con_art" value="<?php  echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
-                    <span id="con_artErr" class="con_artErr"><?php  echo '<br>'.$con_artErr ?></span>
-                    
-                    <br name="ref_art"><br name="ref_art">
-                    <textarea maxlength="1000" name="ref_art" id="ref_art" value="<?php  echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
-                    <span id="ref_artErr" class="ref_artErr"><?php  echo '<br>'.$ref_artErr ?></span>
-                    
+                    <textarea id="desc_art" maxlength="2000" name="des_art"value="<?php echo $des_art?>" type="text" placeholder="Desenvolvimento do Texto"></textarea>
+                    <span id="des_artErr" class="obrigatorio"><?php echo '<br>'.$des_artErr ?></span>
+                    <br><br>
+                    <textarea id="con_art" maxlength="2000" name="con_art" value="<?php echo $con_art?>" type="text" placeholder="Conclusão do Texto"></textarea>
+                    <span id="con_artErr" class="obrigatorio"><?php echo '<br>'.$con_artErr ?></span>
+                    <br><br>
+                    <textarea id="ref_art" maxlength="1000" name="ref_art" value="<?php echo $ref_art?>" type="text" placeholder="Referências do Texto"></textarea>
+                    <span id="ref_artErr" class="obrigatorio"><?php echo '<br>'.$ref_artErr ?></span>        
                     <br><br><br>
-                    <div class="escolha-imagem">
-                        <label style="width: 300px;" id="img_art" for="image">Selecione uma imagem (Opcional)</label>
-                        <input type="file" id='image' name="image"/><br>
+                    <div id="image_art" class="escolha-imagem">
+                        <label style="width: 300px;" for="image">Selecione uma imagem</label>
+                        <input id='image' type="file" name="image"/><br><br>
+                        <span id="image_artErr" class="obrigatorio"><?php echo $image_artErr ?></span> <br> 
                     </div>
                     <br><br>
                     <div class="clear"></div>
-                    <br>
-                    <button type="submit" name="cadastro" value="cadastro">ENVIAR</button>
+                    <button type="submit" name="cadastro">ENVIAR</button>
                 </form>
                 <br><br>
             </center>
@@ -146,32 +94,61 @@
         const altera_form = function(element){
             const valor = element.value;
             console.log(valor);
-                if(valor==1){
-                    document.getElementById('ref_art').style.display='none';
-                    document.getElementById('con_art').style.display='none';
-                    document.getElementById('desc_art').style.display='none';
-                    document.getElementById('intro_art').style.display='none';
-                    document.getElementById('img_art').style.display='none';
-                    document.getElementById('ref_artErr').style.display='none';
-                    document.getElementById('con_artErr').style.display='none';
-                    document.getElementById('des_artErr').style.display='none';
-                    document.getElementById('intro_artErr').style.display='none';
-            } else{
-                document.getElementById('ref_art').style.display='block';
-                document.getElementById('con_art').style.display='block';
-                document.getElementById('desc_art').style.display='block';
-                document.getElementById('intro_art').style.display='block';
-                document.getElementById('img_art').style.display='block';
-                document.getElementById('ref_artErr').style.display='block';
-                document.getElementById('con_artErr').style.display='block';
-                document.getElementById('des_artErr').style.display='block';
-                document.getElementById('intro_artErr').style.display='block';
-            }
-            if(valor==2 || valor==3 ){
-                    document.getElementById('link_art').style.display='none';
-            } else{
+            if(valor=='1'){
+                document.getElementById('titulo_art').style.display='block'; // aparece -> block
                 document.getElementById('link_art').style.display='block';
-           }
+                document.getElementById('resumo_art').style.display='block';
+                document.getElementById('intro_art').style.display='none'; //   não aparece -> none
+                document.getElementById('desc_art').style.display='none';
+                document.getElementById('con_art').style.display='none';
+                document.getElementById('ref_art').style.display='none'; 
+                document.getElementById('image_art').style.display='none';
+
+                document.getElementById('titulo_artErr').style.display='block'; // aparece -> block
+                document.getElementById('link_artErr').style.display='block';
+                document.getElementById('resumo_artErr').style.display='block';
+                document.getElementById('ref_artErr').style.display='none'; //     não aparece -> none
+                document.getElementById('con_artErr').style.display='none';
+                document.getElementById('des_artErr').style.display='none';
+                document.getElementById('intro_artErr').style.display='none';
+                document.getElementById('image_artErr').style.display='none';
+            } else if ((valor=='2') || (valor=='3')){
+                document.getElementById('titulo_art').style.display='block'; // aparece -> block
+                document.getElementById('link_art').style.display='none'; //    não aparece -> none
+                document.getElementById('resumo_art').style.display='block';
+                document.getElementById('intro_art').style.display='block';
+                document.getElementById('desc_art').style.display='block';
+                document.getElementById('con_art').style.display='block';
+                document.getElementById('ref_art').style.display='block';
+                document.getElementById('image_art').style.display='block';
+
+                document.getElementById('titulo_artErr').style.display='block'; // aparece -> block
+                document.getElementById('link_artErr').style.display='none'; //    não aparece -> none
+                document.getElementById('resumo_art').style.display='block';
+                document.getElementById('intro_artErr').style.display='block';
+                document.getElementById('des_artErr').style.display='block';
+                document.getElementById('con_artErr').style.display='block';
+                document.getElementById('ref_artErr').style.display='block';
+                document.getElementById('image_artErr').style.display='block';
+            } else{
+                document.getElementById('titulo_art').style.display='block'; // aparece -> block
+                document.getElementById('link_art').style.display='block';
+                document.getElementById('resumo_art').style.display='block';
+                document.getElementById('intro_art').style.display='block';
+                document.getElementById('desc_art').style.display='block';
+                document.getElementById('con_art').style.display='block';
+                document.getElementById('ref_art').style.display='block';
+                document.getElementById('image_art').style.display='block';
+
+                document.getElementById('titulo_artErr').style.display='block'; // aparece -> block
+                document.getElementById('link_artErr').style.display='block';
+                document.getElementById('resumo_art').style.display='block';
+                document.getElementById('intro_artErr').style.display='block';
+                document.getElementById('des_artErr').style.display='block';
+                document.getElementById('con_artErr').style.display='block';
+                document.getElementById('ref_artErr').style.display='block';
+                document.getElementById('image_artErr').style.display='block';
+            }
         };
     </script>
 <?php require("../template/footer.php");?>

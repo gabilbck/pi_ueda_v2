@@ -36,6 +36,7 @@ h1{
     .obrigatorio{
         color: red;
         font-weight: bold;
+        font-size: 10px;
     }
     .n-obrigatorio{
         /* Gambiarra para não ficar
@@ -286,63 +287,50 @@ h1{
         font-size: 28px;
         font-weight: normal;
     }
-    
     .sobre-txtprincipal h1{
         font-size: 1.3rem;
         margin-left: 50px;
         margin-right: 50px;
     }
-    
     .titulo-img-sobre h1{
         font-size: 2rem;
     }
-    
     .colunas-sobre1{
         position: absolute;
         left: 150px;
     }
-    
     .colunas-sobre2{
         position: absolute;
         left: 800px;
     }
-    
     .colunas-sobre3{
         position: absolute;
         left: 1480px;
     }
-
     .obj-sobre {
         max-width: 100%;
     }
-
     .obj-sobre::before, .obj-sobre::after {
         content: '';
         display: table;
         clear: both;
     }
-
     .obj-sobre-txt, .logo-sobre {
         padding: 0 10px;
         float: left;
     }
-
     .obj-sobre-txt {
         width: 70%;
     }
-
     .logo-sobre {
         text-align: center;
     }
-
     .imgs-sobre{
         width: 33.3%;
     }
-
     .imgs-sobre img{
         width: 150px;
     }
-
     .container_images_sobre{
         text-align: center;
         display: flex;
@@ -350,7 +338,6 @@ h1{
         margin-left: 15%;
         margin-right: 15%;
     }
-    
     @media (max-width: 600px){
         .container_images_sobre{
             text-align: center;
@@ -365,7 +352,6 @@ h1{
             width: 150px;
         }
     }
-
     @media (max-width: 1500px){
         .logo-sobre {
             text-align: center;
@@ -374,13 +360,11 @@ h1{
             width: 100%;
         }
     }
-    
     @media (max-width: 1500px){
         .obj-sobre-txt {
             width: 100%;
         }
     }
-
     .container-devs{
         position: relative;
         width: 100%;
@@ -391,12 +375,29 @@ h1{
         text-align: center;
         background-image: url(../images/bg-sobre.png)
     }
-
     .devs{
         color: white;
         justify-items: center;
         align-items: center;
         margin-top: 0px;
+    }
+
+    .devs a{
+        color: white;
+        transition: all 200ms ease-in-out;
+    }
+
+    .devs li{
+        color: white;
+        transition: all 200ms ease-in-out;
+    }
+
+    .devs a:hover{
+        color: #009CFF;
+    }
+
+    .devs li:hover{
+        color: #009CFF;
     }
 
 /* JOGOS */
@@ -408,16 +409,13 @@ h1{
         cursor: pointer;
         border: 1px solid #000000;
     }
-
     .escolha-imagem label:hover{
         background-color: #567D96;
         color: #fff;
     }
-
     .escolha-imagem input[type = 'file']{
         display: none;
     }
-
     .final-cad-jogo button{
         color: rgb(255, 255, 255);
         border-radius: 5px;
@@ -425,20 +423,17 @@ h1{
         cursor: pointer;
         border: 1px solid #000000;
     }
-
     .final-cad-jogo button:hover{
         background-color: #ffffff;
         color: #000000;
     }
-
     .principal-jogos{
         position: relative;
         width: 100%;
         height: 580px;
     }
-
     .titulo_principal{
-        border-bottom: 2px dashed #000000;
+        border-bottom: 1px solid #000000;
         text-align: left;
         color: #000000;
         position: relative;
@@ -447,7 +442,6 @@ h1{
         font-weight: 300;
         text-transform:none;
     }
-    
     .subtitulo_principal{
         color: #000000;
         position: absolute;
@@ -457,13 +451,11 @@ h1{
         font-weight: 300;
         text-transform:none;
     }
-
     .jogo_ueda{
         border: 3px #000000 solid;
         display: flex;
         justify-content: center;
     }
-
     .principais-text-jogos2{
         width: 100%;
         height: 90px;
@@ -473,10 +465,9 @@ h1{
         position: relative;
         font-weight: 300;
         text-transform:none;
-    }
-    
+    } 
     .descricao_titulo{
-        border-bottom: 2px dashed #000000;
+        border-bottom: 1px solid #000000;
         text-align: left;
         color: #000000;
         position: relative;
@@ -485,7 +476,6 @@ h1{
         font-weight: 300;
         text-transform:none;
     }
-    
     .descricao{
         color: #000000;
         position: absolute;
@@ -496,7 +486,6 @@ h1{
         width: 480px;
         text-transform:none;
     }
-
     .obj-jogo{
         color: #000000;
         left: 1200px;
@@ -508,7 +497,6 @@ h1{
         font-size: 35px;
         text-transform:none;
     }
-
     .obj-jogo2{
         color: #000000;
         left: 1200px;
@@ -520,14 +508,12 @@ h1{
         width: 480px;
         text-transform:none;
     }
-
     @media (max-width: 1800px){
         .principais-text-jogos2 h1.obj-jogo2{
             position: absolute;
             width: 400px;
         }
     }
-
     @media (max-width: 1800px){
         .principal-jogos h1.subtitulo_principal{
             position: absolute;
@@ -549,7 +535,6 @@ h1{
             left: 60%;
         }
     }
-
     @media (max-width: 1600px){
         .principal-jogos h1.subtitulo_principal{
             position: absolute;
@@ -571,7 +556,6 @@ h1{
             left: 55%;
         }
     }
-
     @media (max-width: 1300px){
         .principal-jogos h1.subtitulo_principal{
             position: absolute;
@@ -581,7 +565,6 @@ h1{
         }
         
     }
-
     @media (max-width: 1200px){
         .principal-jogos h1.subtitulo_principal{
             position: absolute;
@@ -590,7 +573,6 @@ h1{
             height: 580px;
         }
     }
-    
     @media (max-width: 1000px){
         .principal-jogos h1.subtitulo_principal{
             position: absolute;
@@ -637,7 +619,6 @@ h1{
             margin-top: 105px;
         }
     }
-
     @media (max-width: 600px){
         .principais-text-jogos2 h1.obj-jogo{
             position: absolute;
@@ -666,7 +647,6 @@ h1{
             justify-content: center;
         }
     }
-
     .jogos-agua{
         margin-top: 40px;
         background-color: #87B6D5;
@@ -679,7 +659,6 @@ h1{
         padding-bottom: 280px;
         position: relative;
     }
-
     @media (max-width: 1400px){
         .jogos-agua{
             margin-top: 40px;
@@ -716,8 +695,6 @@ h1{
             background-color: #009CFF;
         }
     }
-
-
     @media (max-width: 1117px){
         .jogos-agua{
             margin-top: 40px;
@@ -754,7 +731,6 @@ h1{
             background-color: #009CFF;
         }
     }
-
     @media (max-width: 1050px){
         .jogos-agua{
             margin-top: 40px;
@@ -791,7 +767,6 @@ h1{
             background-color: #009CFF;
         }
     }
-
     @media (max-width: 930px){
         .jogos-agua{
             margin-top: 40px;
@@ -828,7 +803,6 @@ h1{
             background-color: #009CFF;
         }
     }
-
     @media (max-width: 830px){
         .jogos-agua{
             margin-top: 40px;
@@ -879,7 +853,6 @@ h1{
             background-color: #009CFF;
         }
     }
-
     @media (max-width: 630px){
         .jogos-agua{
             margin-top: 40px;
@@ -937,12 +910,10 @@ h1{
             cursor: pointer;
         }
     }
-    
     .container-jogos{
         width: 100%;    
         display: flex;
     }
-
     .warpper{
         position: absolute;
         left: -3%;
@@ -950,7 +921,6 @@ h1{
         height: 100%;
         max-height: 100px;
     }
-
     .link-info{
         font-size:20px;
         border: 2px white solid;
@@ -959,7 +929,6 @@ h1{
         transition:  all 300ms ease-in-out;
         margin-left: 40px;
     }
-
     .link-info:hover{
         font-size:20px;
         border: 2px white solid;
@@ -967,7 +936,6 @@ h1{
         background-color: #ffffff;
         margin-left: 40px;  
     }
-
     .link-info input{
         color: rgb(255, 255, 255);
         background: transparent;
@@ -975,18 +943,15 @@ h1{
         border: none;
         cursor: pointer;
     }
-
     .link-info input:hover{
         color: #567D96;
     }
-
     .nome-jogos{
         font-size: 35px;
         margin-left: 40px;  
         color: rgb(255, 255, 255);
         text-align: left;
     }
-
     .desc-info{
         margin-left: 40px;  
         color: rgb(255, 255, 255);
@@ -997,36 +962,29 @@ h1{
         margin-right: 105px;
         margin-bottom: 45px;
     }
-
     .jogos{
         text-align: center;
     }
-    
     .jogo-image{
         max-width: 400px;
         margin-top: 10px;
         margin-left: 10px;
     }
-
     .jogo-info{
         height: 80px;
         color: white;
     }
-
     .link-info button{
         background-color: #009CFF;
         border: white 2px solid;
         cursor: pointer;
     }
-
     .background-jogos{
         background-color: #597d95;
     }
-
     .fundo-jogos{
         background: #597d95;
     }
-
     .separacao-jogos img{
         margin-top: 15%;
         width: 100%;
@@ -1039,7 +997,7 @@ h1{
         color: white;
         text-decoration: none;
     }
-  .link-branco :hover{
+    .link-branco :hover{
         color: white;
         text-decoration: none;
         font-weight: bolder;
@@ -1071,6 +1029,18 @@ h1{
     .img-borda{
         border-radius: 1rem;
         width: 50%;
+    }
+
+/* Menu - Fórum */
+    .nome-de-usu{
+        background-color: #597d95;
+        color: white;
+        padding: 5px;
+        width: 20rem;
+        border-radius: 0.5rem;
+    }
+    .nome-de-usu a{
+        color: white;
     }
 
 /*Vizu Fórum*/

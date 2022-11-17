@@ -5,7 +5,6 @@
         $id_publi = $_GET['id_publi'];
         $sql = $pdo->prepare("DELETE FROM publica_forum WHERE id_publi=?");
         if ($sql->execute(array($id_publi))){
-            echo "Publicação excluida com sucesso!";
             header('location:adm_lista_forum.php');
         } else{
             echo "Erro: dados não foram excluídos.<br>";

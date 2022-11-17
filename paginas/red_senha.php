@@ -1,8 +1,12 @@
 <?php require("../template/header.php");?>
 <?php
-    // Fazer php!!!
-    $email_usu = $senha_usu = "";
-    $email_usuErr = $senha_usuErr = $msgErr = "";
+    // FAZER PHP E CONFIGURAÇÃO!!!
+    $email_usu = "";
+    $email_usuErr = $msgErr = "";
+
+    if(isset($_GET['email_usuErr'])){
+        $email_usuErr = $_GET['email_usuErr'];
+    }
 ?>
 <head>
     <title>Esqueci Minha Senha</title>
@@ -13,13 +17,12 @@
                 <br><br>
                 <h1>RECUPERAR SENHA</h1>
                 <br>
-                <form action="" method="post">
+                <form action="red_senha_controler.php" method="post">
                     <input name="email_usu" maxlength="255" value="<?php echo $email_usu?>" type="email" placeholder="E-mail">
                     <span class="obrigatorio"><?php echo $email_usuErr ?></span>
                     <br><br>
-                    <input name="senha_usu" maxlength="40" value="<?php echo $senha_usu?>" type="password" placeholder="Nova Senha">
-                    <span class="obrigatorio"><?php echo $senha_usuErr ?></span>
-                    <br><br>
+                    <button type="submit" name="submit">ENVIAR CÓDIGO DE VERIFICAÇÃO</button>
+                    <br><br>  
                     <div class="final-cad">
                         <div class="final-cad-1">
                             <a href="cad_usu.php">Cadastre-se</a>
@@ -28,10 +31,7 @@
                             <a href="login_usu.php">Entrar</a>
                         </div>
                     </div>
-                    <div class="clear"></div>
-                    <br>
-                    <button type="submit" name="submit">ENVIAR CÓDIGO DE VERIFICAÇÃO</button>
-                    <br>   
+                    <br><br>
                 </form>
                 <br><br>
             </center>

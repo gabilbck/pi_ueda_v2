@@ -1,75 +1,35 @@
-<?php // ARRUMAR IGUAL NAS OUTRAS?>
-<?php require("../template/header.php");?>
-<?php
+<?php    //Altera porém não aparece os spans
+
+    require("../template/header.php");
     if($_SESSION['adm'] != 1){
         header("location:n_adm_msg.php");
         die;
-    }
-?>
-<?php
-    $id_publi = $id_usu = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
-    $titulo_publiErr = $text_publiErr = $msgErr = "";
-
-    if (isset($_GET['id_publi'])){
-        $id_publi = $_GET['id_publi'];
-        $sql = $pdo->prepare('SELECT * FROM publica_forum WHERE id_publi =?');
-        if ($sql->execute(array($id_publi))){
-            $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-            foreach($info as $key => $value){
-                $id_publi = $value['id_publi'];
-                $id_usu = $value['id_usu'];
-                $titulo_publi = $value['titulo_publi'];
-                $text_publi = $value['text_publi'];
-                $imgContent = $value['img_publi'];
-            }
-        }
-    }
+    } else{
+        $id_publi = $id_usu = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
+        $titulo_publiErr = $text_publiErr = $msgErr = "";
     
-    if (isset($_POST["submit"])){
-        $tem_arquivo = false;
-        if (!empty($_FILES["image"]["name"])){
-            //Pegar informações
-            $fileName = basename($_FILES["image"]["name"]);
-            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-            //Permitir somente alguns formatos
-            $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-            if (in_array($fileType, $allowTypes)){
-                $image = $_FILES['image']['tmp_name'];
-                $imgContent = file_get_contents($image);
-                $tem_arquivo = true;
-            } else {
-                $msgErr = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
+        if (isset($_GET['id_publi'])){
+            $id_publi = $_GET['id_publi'];
+            $sql = $pdo->prepare('SELECT * FROM publica_forum WHERE id_publi =?');
+            if ($sql->execute(array($id_publi))){
+                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($info as $key => $value){
+                    $id_publi = $value['id_publi'];
+                    $id_usu = $value['id_usu'];
+                    $titulo_publi = $value['titulo_publi'];
+                    $text_publi = $value['text_publi'];
+                    $imgContent = $value['img_publi'];
+                }
             }
         }
-            
-        if (empty($_POST['titulo_publi'])){
-            $titulo_publiErr = "Texto vazio";
-        } else {
-            $titulo_publi = $_POST['titulo_publi'];
+        //Erros
+        if(isset($_GET['titulo_publiErr'])){
+            $titulo_publiErr = $_GET['titulo_publirr'];
+            $titulo_publi = "";
         }
-        if (empty($_POST['text_publi'])){
-            $text_publiErr = "Texto vazio";
-        } else {
-            $text_publi = $_POST['text_publi'];
-        }
-
-        if ($tem_arquivo){
-        //Gravar no banco
-            $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=?, img_publi=? WHERE id_publi=?");
-            if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent), $id_publi))){
-                $msgErr = "Dados alterados com sucesso!";
-                    header('location: adm_lista_forum.php');
-            } else{
-                $msgErr = "dados não alterados."; 
-            }
-        } else{
-            $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=? WHERE id_publi=?");
-            if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, $id_publi))){
-                $msgErr = "Dados alterados com sucesso!";
-                    header('location: adm_lista_forum.php');
-            } else{
-                $msgErr = "dados não alterados."; 
-            }
+        if(isset($_GET['email_usuErr'])){
+            $text_publiErr = $_GET['text_publiErr'];
+            $text_publi = "";
         }
     }
 ?>
@@ -82,12 +42,12 @@
                 <br><br>
                 <h1>ALTERAR PUBLICAÇÃO DO FÓRUM</h1>
                 <br>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="adm_alt_forum_controler.php" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_publi" value="<?php echo $id_publi?>" readonly>
-                    <span class="n-obrigatorio">*</span>
+                    <span class="obrigatorio"></span>
                     <br><br>
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
-                    <span class="n-obrigatorio">*</span>
+                    <span class="obrigatorio"></span>
                     <br><br>
                     <input type="text" name="titulo_publi" maxlength="30" value="<?php echo $titulo_publi?>">
                     <span class="obrigatorio"><?php echo '<br>'.$titulo_publiErr ?></span>
