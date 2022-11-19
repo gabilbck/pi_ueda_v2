@@ -52,10 +52,8 @@ include_once "../include/functions.php";
                 <br>
                 <form action="adm_alt_forum_controler.php" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_publi" value="<?php echo $id_publi?>" readonly>
-                    <span class="obrigatorio"></span>
                     <br><br>
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
-                    <span class="obrigatorio"></span>
                     <br><br>
                     <input type="text" name="titulo_publi" maxlength="30" value="<?php echo $titulo_publi?>">
                     <span class="obrigatorio"><?php echo '<br>'.$titulo_publiErr ?></span>
