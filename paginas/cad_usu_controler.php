@@ -41,7 +41,7 @@
                     }
                 } else {
                     //Inserir dados
-                    $sql = $pdo->prepare("INSERT INTO USUARIO (id_usu, nome_usu, email_usu, senha_usu, nome_real_usu, adm)
+                    $sql = $pdo->prepare("INSERT INTO usuario (id_usu, nome_usu, email_usu, senha_usu, nome_real_usu, adm)
                                         VALUES (null, ?, ?, ?, ?, 0)");
                     if ($sql->execute(array($nome_usu, $email_usu, MD5($senha_usu), $nome_real_usu))){
                         $msgErr = "Dados cadastrados com sucesso!";
