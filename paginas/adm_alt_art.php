@@ -1,73 +1,81 @@
-<?php require("../template/header.php");?>
 <?php
     /* 
     - NÃO ENVIA ALTERAÇÕES
     - SELEÇÃO NÃO FUNCIONA BEM
     */
+session_start();
+include_once "../include/MySql.php";
+include_once "../include/functions.php";
 
-    if($_SESSION['adm'] != 1){
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
-    } else {
-        $id_art  = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $image_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
-        $id_artErr  = $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $image_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = $msgErr = "";
+    } else{
+        if($_SESSION['adm'] != 1){
+            header("location:n_adm_msg.php");
+            die;
+        } else{
+            $id_art  = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $image_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
+            $id_artErr  = $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $image_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = $msgErr = "";
 
-        if (isset($_GET['id_art'])){
-            $id_art = $_GET['id_art'];
-            $sql = $pdo->prepare('SELECT * FROM artigo WHERE id_art =?');
-            if ($sql->execute(array($id_art))){
-                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-                foreach($info as $key => $value){
-                    $id_art = $value['id_art'];
-                    $titulo_art = $value['titulo_art'];
-                    $id_eti = $value['id_eti'];
-                    $link_art = $value['link_art'];
-                    $resumo_art = $value['resumo_art'];
-                    $intro_art = $value['intro_art'];
-                    $des_art = $value['des_art'];
-                    $con_art = $value['con_art'];
-                    $ref_art = $value['ref_art'];
-                    $imgContent = $value['img_art'];
+            if (isset($_GET['id_art'])){
+                $id_art = $_GET['id_art'];
+                $sql = $pdo->prepare('SELECT * FROM artigo WHERE id_art =?');
+                if ($sql->execute(array($id_art))){
+                    $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($info as $key => $value){
+                        $id_art = $value['id_art'];
+                        $titulo_art = $value['titulo_art'];
+                        $id_eti = $value['id_eti'];
+                        $link_art = $value['link_art'];
+                        $resumo_art = $value['resumo_art'];
+                        $intro_art = $value['intro_art'];
+                        $des_art = $value['des_art'];
+                        $con_art = $value['con_art'];
+                        $ref_art = $value['ref_art'];
+                        $imgContent = $value['img_art'];
+                    }
                 }
             }
+            if(isset($_GET['titulo_artErr'])){
+                $titulo_artErr = $_GET['titulo_artErr'];
+                $titulo_art = "";
+            }
+            if(isset($_GET['id_etiErr'])){
+                $id_etiErr = $_GET['id_etiErr'];
+                $id_eti = "";
+            }
+            if(isset($_GET['link_artErr'])){
+                $link_artErr = $_GET['link_artErr'];
+                $link_art = "";
+            }
+            if(isset($_GET['resumo_artErr'])){
+                $resumo_artErr = $_GET['resumo_artErr'];
+                $resumo_art = "";
+            }
+            if(isset($_GET['image_artErr'])){
+                $image_artErr = $_GET['image_artErr'];
+                $image_art = "";
+            }
+            if(isset($_GET['intro_artErr'])){
+                $intro_artErr = $_GET['intro_artErr'];
+                $intro_art = "";
+            }
+            if(isset($_GET['des_artErr'])){
+                $des_artErr = $_GET['des_artErr'];
+                $des_art = "";
+            }
+            if(isset($_GET['con_artErr'])){
+                $con_artErr = $_GET['con_artErr'];
+                $con_art = "";
+            }
+            if(isset($_GET['ref_artErr'])){
+                $ref_artErr = $_GET['ref_artErr'];
+                $ref_art = "";
+            }
+            require("../template/header_s_php.php");
         }
-        if(isset($_GET['titulo_artErr'])){
-            $titulo_artErr = $_GET['titulo_artErr'];
-            $titulo_art = "";
-        }
-        if(isset($_GET['id_etiErr'])){
-            $id_etiErr = $_GET['id_etiErr'];
-            $id_eti = "";
-        }
-        if(isset($_GET['link_artErr'])){
-            $link_artErr = $_GET['link_artErr'];
-            $link_art = "";
-        }
-        if(isset($_GET['resumo_artErr'])){
-            $resumo_artErr = $_GET['resumo_artErr'];
-            $resumo_art = "";
-        }
-        if(isset($_GET['image_artErr'])){
-            $image_artErr = $_GET['image_artErr'];
-            $image_art = "";
-        }
-        if(isset($_GET['intro_artErr'])){
-            $intro_artErr = $_GET['intro_artErr'];
-            $intro_art = "";
-        }
-        if(isset($_GET['des_artErr'])){
-            $des_artErr = $_GET['des_artErr'];
-            $des_art = "";
-        }
-        if(isset($_GET['con_artErr'])){
-            $con_artErr = $_GET['con_artErr'];
-            $con_art = "";
-        }
-        if(isset($_GET['ref_artErr'])){
-            $ref_artErr = $_GET['ref_artErr'];
-            $ref_art = "";
-        }
-    }
+    }  
 ?>
 <head>
     <title>Alterar Publicação do Artigo</title>

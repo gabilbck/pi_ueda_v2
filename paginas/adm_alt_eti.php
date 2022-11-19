@@ -1,29 +1,38 @@
-<?php require("../template/header.php");?>
 <?php
-    if($_SESSION['adm'] != 1){
+session_start();
+include_once "../include/MySql.php";
+include_once "../include/functions.php";
+
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
-    } else {
-        $id_eti = $nome_eti = "";
-        $id_etiErr = $nome_etiErr = $msgErr = "";
+    } else{
+        if($_SESSION['adm'] != 1){
+            header("location:n_adm_msg.php");
+            die;
+        } else{
+            $id_eti = $nome_eti = "";
+            $id_etiErr = $nome_etiErr = $msgErr = "";
 
-        if (isset($_GET['id_eti'])){
-            $id_eti = $_GET['id_eti'];
-            $sql = $pdo->prepare('SELECT * FROM etiqueta_art WHERE id_eti =?');
-            if ($sql->execute(array($id_eti))){
-                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-                foreach($info as $key => $value){
-                    $id_eti = $value['id_eti'];
-                    $nome_eti = $value['nome_eti'];
+            if (isset($_GET['id_eti'])){
+                $id_eti = $_GET['id_eti'];
+                $sql = $pdo->prepare('SELECT * FROM etiqueta_art WHERE id_eti =?');
+                if ($sql->execute(array($id_eti))){
+                    $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($info as $key => $value){
+                        $id_eti = $value['id_eti'];
+                        $nome_eti = $value['nome_eti'];
+                    }
                 }
             }
-        }
-        //Erros
-        if(isset($_GET['nome_etiErr'])){
-            $nome_etiErr = $_GET['nome_etiErr'];
-            $nome_eti = "";
-        }
-    }               
+            //Erros
+            if(isset($_GET['nome_etiErr'])){
+                $nome_etiErr = $_GET['nome_etiErr'];
+                $nome_eti = "";
+            }
+            require("../template/header_s_php.php");
+        }   
+    }            
 ?>
 <head>
     <title>Alterar Informações da Etiqueta</title>

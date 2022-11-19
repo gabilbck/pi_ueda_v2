@@ -1,41 +1,50 @@
-<?php require("../template/header.php");?>
 <?php
-    if($_SESSION['adm'] != 1){
+session_start();
+include_once "../include/MySql.php";
+include_once "../include/functions.php";
+
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
-    } else {
-        $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
-        $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
-
-        if (isset($_GET['id_usu'])){
-            $id_usu = $_GET['id_usu'];
-            $sql = $pdo->prepare('SELECT * FROM usuario WHERE id_usu =?');
-            if ($sql->execute(array($id_usu))){
-                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-                foreach($info as $key => $value){
-                    $id_usu = $value['id_usu'];
-                    $nome_usu = $value['nome_usu'];
-                    $email_usu = $value['email_usu'];
-                    $senha_usu = "";//$value['senha_usu'];
-                    $nome_real_usu = $value['nome_real_usu'];
-                    $adm = $value['adm'];
+    } else{
+        if($_SESSION['adm'] != 1){
+            header("location:n_adm_msg.php");
+            die;
+        } else{
+            $nome_usu = $email_usu = $senha_usu = $nome_real_usu = $adm = "";
+            $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
+    
+            if (isset($_GET['id_usu'])){
+                $id_usu = $_GET['id_usu'];
+                $sql = $pdo->prepare('SELECT * FROM usuario WHERE id_usu =?');
+                if ($sql->execute(array($id_usu))){
+                    $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($info as $key => $value){
+                        $id_usu = $value['id_usu'];
+                        $nome_usu = $value['nome_usu'];
+                        $email_usu = $value['email_usu'];
+                        $senha_usu = "";//$value['senha_usu'];
+                        $nome_real_usu = $value['nome_real_usu'];
+                        $adm = $value['adm'];
+                    }
                 }
             }
+            //Erros
+            if(isset($_GET['nome_usuErr'])){
+                $nome_usuErr = $_GET['nome_usuErr'];
+                $nome_usu = "";
+            }
+            if(isset($_GET['email_usuErr'])){
+                $email_usuErr = $_GET['email_usuErr'];
+                $email_usu = "";
+            }
+            if(isset($_GET['nome_real_usuErr'])){
+                $nome_real_usuErr = $_GET['nome_real_usuErr'];
+                $nome_real_usu = "";
+            }
+            require("../template/header_s_php.php");
         }
-        //Erros
-        if(isset($_GET['nome_usuErr'])){
-            $nome_usuErr = $_GET['nome_usuErr'];
-            $nome_usu = "";
-        }
-        if(isset($_GET['email_usuErr'])){
-            $email_usuErr = $_GET['email_usuErr'];
-            $email_usu = "";
-        }
-        if(isset($_GET['nome_real_usuErr'])){
-            $nome_real_usuErr = $_GET['nome_real_usuErr'];
-            $nome_real_usu = "";
-        }
-    }             
+    }
 ?>
 <head>
     <title>Alterar Informações do Usuário</title>
