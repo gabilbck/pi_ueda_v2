@@ -13,7 +13,8 @@
 </head>
     <main>
     <div class="margem-lados">
-            <center>
+        <!-- 
+<center>
                 <br><br>
                 <h1>RECUPERAR SENHA</h1>
                 <br>
@@ -35,6 +36,14 @@
                 </form>
                 <br><br>
             </center>
+         -->
+         <center>
+            <br><br>
+            <h1>RECUPERAR SENHA</h1>
+            <br>
+            <h2>Implementação futura...</h2>
+            <br><br>
+        </center>
         </div>
     </main>
 <?php require("../template/footer.php");?>
