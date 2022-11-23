@@ -48,8 +48,8 @@ include_once "../include/functions.php";
                         echo "<td>".$value['senha_usu']."</td>";
                         echo "<td>".$value['nome_real_usu']."</td>";
                         echo "<td>".$value['adm']."</td>";
-                        echo "<td><center><a class='alt' href='adm_alt_usu.php?id_usu=".$value['id_usu']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='adm_del_usu.php?id_usu=".$value['id_usu']."'>(-)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='alt' href='adm_alt_usu.php?id_usu=".$value['id_usu']."'>(+)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='del' href='adm_del_usu.php?id_usu=".$value['id_usu']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
             

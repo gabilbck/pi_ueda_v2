@@ -1016,6 +1016,9 @@ h1{
     .listagens-table th{
         padding: 10px;
     }
+    .exc-alt{
+        width: 55px;
+    }
 
 /*Página de Alterações*/
     .adm-c{

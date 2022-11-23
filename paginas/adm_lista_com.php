@@ -49,7 +49,7 @@ include_once "../include/functions.php";
                             $nome_usu = $usuario[0]['nome_usu'];
                             echo "<td>".$nome_usu."</td>";
                         }
-                        echo "<td><center><a class='del' href='adm_del_com.php?id_cmt=".$value['id_cmt']."'>(-)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='del' href='adm_del_com.php?id_cmt=".$value['id_cmt']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

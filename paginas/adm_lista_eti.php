@@ -40,8 +40,8 @@ include_once "../include/functions.php";
                         echo "<tr>";
                         echo "<td>".$value['id_eti']."</td>";
                         echo "<td>".$value['nome_eti']."</td>";
-                        echo "<td><center><a class='alt' href='adm_alt_eti.php?id_eti=".$value['id_eti']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='adm_del_eti.php?id_eti=".$value['id_eti']."'>(-)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='alt' href='adm_alt_eti.php?id_eti=".$value['id_eti']."'>(+)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='del' href='adm_del_eti.php?id_eti=".$value['id_eti']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

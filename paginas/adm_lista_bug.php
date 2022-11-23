@@ -41,7 +41,7 @@ include_once "../include/functions.php";
                         echo "<td>".$value['cod_bug']."</td>";
                         echo "<td>".$value['email_bug']."</td>";
                         echo "<td>".$value['desc_bug']."</td>";
-                        echo "<td><center><a class='del' href='adm_del_bug.php?cod_bug=".$value['cod_bug']."'>(-)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='del' href='adm_del_bug.php?cod_bug=".$value['cod_bug']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

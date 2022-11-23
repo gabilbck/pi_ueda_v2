@@ -53,8 +53,8 @@ include_once "../include/functions.php";
                         }
                         echo '</td>';
                         echo "<td>".$value['link_jogo']."</td>";
-                        echo "<td><center><a class='alt' href='adm_alt_jogo.php?cod_jogo=".$value['cod_jogo']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='adm_del_jogo.php?cod_jogo=".$value['cod_jogo']."'>(-)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='alt' href='adm_alt_jogo.php?cod_jogo=".$value['cod_jogo']."'>(+)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='del' href='adm_del_jogo.php?cod_jogo=".$value['cod_jogo']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
             
