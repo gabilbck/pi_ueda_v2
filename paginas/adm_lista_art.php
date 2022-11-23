@@ -1,12 +1,36 @@
-<?php require("../template/header.php");?>
 <?php
-    if($_SESSION['adm'] != 1){
+session_start();
+include_once "../include/MySql.php";
+include_once "../include/functions.php";
+
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
+    } else{
+        if($_SESSION['adm'] != 1){
+            header("location:n_adm_msg.php");
+            die;
+        } else{
+            require("../template/header_s_php.php");
+        }
     }
 ?>
 <head>
     <title>Listagem de Artigos | UEDA</title>
+    <style>
+        .tamanho-especifico-td{
+            width: 10rem;
+        }
+        .exc-alt{
+            width: 55px;
+        }
+        .link{
+            width: 60px;
+        }
+        .id-e{
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
     <br><br>
@@ -42,22 +66,22 @@
                         echo "<td>".$value['titulo_art']."</td>";
                         //Etiquetas
                         if (($value['id_eti']) == 1){
-                            echo "<td>".$value['id_eti']." (Notícia)</td>";
+                            echo "<td class='id-e'><center>".$value['id_eti']." (Notícia)</center></td>";
                         } else if (($value['id_eti']) == 2){
-                            echo "<td>".$value['id_eti']." (Art. Científico)</td>";
+                            echo "<td class='id-e'><center>".$value['id_eti']." (Art. Científico)</center></td>";
                         } else if (($value['id_eti']) == 3){
-                            echo "<td>".$value['id_eti']." (Art. de Site)</td>";
+                            echo "<td class='id-e'><center>".$value['id_eti']." (Art. de Site)</center></td>";
                         } else {
-                            echo "<td>".$value['id_eti']."</td>";
+                            echo "<td class='id-e'><center>".$value['id_eti']."</center></td>";
                         }
                         //Link
                         if (!empty($value['link_art'])){ 
-                            echo "<td><center><a href='".$value['link_art']."'>ACESSE</a></center></td>";
+                            echo "<td class='link'><center><a href='".$value['link_art']."'>ACESSE</a></center></td>";
                         } else{
-                            echo '<td><center><i>(Não possui)</i></center></td>';
+                            echo '<td class="link"><center><i>(Não possui)</i></center></td>';
                         }
                         //Resumo
-                        echo "<td>".$value['resumo_art']."</td>";
+                        echo "<td class='tamanho-especifico-td'>".$value['resumo_art']."</td>";
                         //Imagem
                         $imagem = $value['img_art'];
                         if (!empty($imagem)){ 
@@ -67,30 +91,30 @@
                         }
                         //Introdução
                         if (!empty($value['intro_art'])){ 
-                            echo "<td>".$value['intro_art']."</td>";
+                            echo "<td class='tamanho-especifico-td'>".$value['intro_art']."</td>";
                         } else{
                             echo '<td><center><i>(Não possui)</i></center></td>';
                         }
                         //Desenvolvimento
                         if (!empty($value['des_art'])){ 
-                            echo "<td>".$value['des_art']."</td>";
+                            echo "<td class='tamanho-especifico-td'>".$value['des_art']."</td>";
                         } else{
                             echo '<td><center><i>(Não possui)</i></center></td>';
                         }
                         //Conclusão
                         if (!empty($value['con_art'])){ 
-                            echo "<td>".$value['con_art']."</td>";
+                            echo "<td class='tamanho-especifico-td'>".$value['con_art']."</td>";
                         } else{
                             echo '<td><center><i>(Não possui)</i></center></td>';
                         }
                         //Referências
                         if (!empty($value['ref_art'])){ 
-                            echo "<td>".$value['ref_art']."</td>";
+                            echo "<td class='tamanho-especifico-td'>".$value['ref_art']."</td>";
                         } else{
                             echo '<td><center><i>(Não possui)</i></center></td>';
                         }
-                        echo "<td><center><a class='alt' href='adm_alt_art.php?id_art=".$value['id_art']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='adm_del_art.php?id_art=".$value['id_art']."'>(-)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='alt' href='adm_alt_art.php?id_art=".$value['id_art']."'>(+)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='del' href='adm_del_art.php?id_art=".$value['id_art']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

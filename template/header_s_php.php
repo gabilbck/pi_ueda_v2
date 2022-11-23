@@ -1,8 +1,3 @@
-<?php
-    session_start();
-    include_once "../include/MySql.php";
-    include_once "../include/functions.php";
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -1,35 +1,43 @@
-<?php    //Altera porém não aparece os spans
+<?php
+session_start();
+include_once "../include/MySql.php";
+include_once "../include/functions.php";
 
-    require("../template/header.php");
-    if($_SESSION['adm'] != 1){
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
     } else{
-        $id_publi = $id_usu = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
-        $titulo_publiErr = $text_publiErr = $msgErr = "";
-    
-        if (isset($_GET['id_publi'])){
-            $id_publi = $_GET['id_publi'];
-            $sql = $pdo->prepare('SELECT * FROM publica_forum WHERE id_publi =?');
-            if ($sql->execute(array($id_publi))){
-                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-                foreach($info as $key => $value){
-                    $id_publi = $value['id_publi'];
-                    $id_usu = $value['id_usu'];
-                    $titulo_publi = $value['titulo_publi'];
-                    $text_publi = $value['text_publi'];
-                    $imgContent = $value['img_publi'];
+        if($_SESSION['adm'] != 1){
+            header("location:n_adm_msg.php");
+            die;
+        } else{
+            $id_publi = $id_usu = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
+            $titulo_publiErr = $text_publiErr = $msgErr = "";
+        
+            if (isset($_GET['id_publi'])){
+                $id_publi = $_GET['id_publi'];
+                $sql = $pdo->prepare('SELECT * FROM publica_forum WHERE id_publi =?');
+                if ($sql->execute(array($id_publi))){
+                    $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($info as $key => $value){
+                        $id_publi = $value['id_publi'];
+                        $id_usu = $value['id_usu'];
+                        $titulo_publi = $value['titulo_publi'];
+                        $text_publi = $value['text_publi'];
+                        $imgContent = $value['img_publi'];
+                    }
                 }
             }
-        }
-        //Erros
-        if(isset($_GET['titulo_publiErr'])){
-            $titulo_publiErr = $_GET['titulo_publirr'];
-            $titulo_publi = "";
-        }
-        if(isset($_GET['email_usuErr'])){
-            $text_publiErr = $_GET['text_publiErr'];
-            $text_publi = "";
+            //Erros
+            if(isset($_GET['titulo_publiErr'])){
+                $titulo_publiErr = $_GET['titulo_publirr'];
+                $titulo_publi = "";
+            }
+            if(isset($_GET['email_usuErr'])){
+                $text_publiErr = $_GET['text_publiErr'];
+                $text_publi = "";
+            }
+            require("../template/header_s_php.php");
         }
     }
 ?>
@@ -44,10 +52,8 @@
                 <br>
                 <form action="adm_alt_forum_controler.php" method="post" enctype="multipart/form-data">
                     <input type="text" name="id_publi" value="<?php echo $id_publi?>" readonly>
-                    <span class="obrigatorio"></span>
                     <br><br>
                     <input type="text" name="id_usu" value="<?php echo $id_usu?>" readonly>
-                    <span class="obrigatorio"></span>
                     <br><br>
                     <input type="text" name="titulo_publi" maxlength="30" value="<?php echo $titulo_publi?>">
                     <span class="obrigatorio"><?php echo '<br>'.$titulo_publiErr ?></span>

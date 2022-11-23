@@ -31,10 +31,10 @@
             } else {
                 $nome_real_usu = test_input($_POST["nome_real_usu"]);
             }
-            if (empty($_POST['adm'])){
-                $adm = false;
-            } else {
+            if (($_POST['adm']) == 1){
                 $adm = true;
+            } else {
+                $adm = false;
             }
 
             //Verificar se existe um usuario

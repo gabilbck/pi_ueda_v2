@@ -1,45 +1,53 @@
-<?php //Altera porém não aparece os spans?>
-<?php require("../template/header.php");?>
 <?php
-    if($_SESSION['adm'] != 1){
+session_start();
+include_once "../include/MySql.php";
+include_once "../include/functions.php";
+
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
     } else{
-        $cod_jogo = $nome_jogo = $desc_jogo = $image_jogo = $link_jogo = $imgContent = "";
-        $nome_jogoErr = $desc_jogoErr = $image_jogoErr = $link_jogoErr = $msgErr = "";
-    
-        if (isset($_GET['cod_jogo'])){
-            $cod_jogo = $_GET['cod_jogo'];
-            $sql = $pdo->prepare('SELECT * FROM jogos WHERE cod_jogo =?');
-            if ($sql->execute(array($cod_jogo))){
-                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-                foreach($info as $key => $value){
-                    $cod_jogo = $value['cod_jogo'];
-                    $nome_jogo = $value['nome_jogo'];
-                    $desc_jogo = $value['desc_jogo'];
-                    $imgContent = $value['image_jogo'];
-                    $link_jogo = $value['link_jogo'];
+        if($_SESSION['adm'] != 1){
+            header("location:n_adm_msg.php");
+            die;
+        } else{
+            $cod_jogo = $nome_jogo = $desc_jogo = $image_jogo = $link_jogo = $imgContent = "";
+            $nome_jogoErr = $desc_jogoErr = $image_jogoErr = $link_jogoErr = $msgErr = "";
+        
+            if (isset($_GET['cod_jogo'])){
+                $cod_jogo = $_GET['cod_jogo'];
+                $sql = $pdo->prepare('SELECT * FROM jogos WHERE cod_jogo =?');
+                if ($sql->execute(array($cod_jogo))){
+                    $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($info as $key => $value){
+                        $cod_jogo = $value['cod_jogo'];
+                        $nome_jogo = $value['nome_jogo'];
+                        $desc_jogo = $value['desc_jogo'];
+                        $imgContent = $value['image_jogo'];
+                        $link_jogo = $value['link_jogo'];
+                    }
                 }
             }
-        }
 
-        if(isset($_GET['nome_jogoErr'])){
-            $nome_jogoErr = $_GET['nome_jogoErr'];
-            $nome_jogo = "";
+            if(isset($_GET['nome_jogoErr'])){
+                $nome_jogoErr = $_GET['nome_jogoErr'];
+                $nome_jogo = "";
+            }
+            if(isset($_GET['desc_jogoErr'])){
+                $desc_jogoErr = $_GET['desc_jogoErr'];
+                $desc_jogo = "";
+            }
+            if(isset($_GET['image_jogoErr'])){
+                $image_jogoErr = $_GET['image_jogoErr'];
+                $imgContent = "";
+            }
+            if(isset($_GET['link_jogoErr'])){
+                $link_jogoErr = $_GET['link_jogoErr'];
+                $link_jogo = "";
+            }
+            require("../template/header_s_php.php");
         }
-        if(isset($_GET['desc_jogoErr'])){
-            $desc_jogoErr = $_GET['desc_jogoErr'];
-            $desc_jogo = "";
-        }
-        if(isset($_GET['image_jogoErr'])){
-            $image_jogoErr = $_GET['image_jogoErr'];
-            $imgContent = "";
-        }
-        if(isset($_GET['link_jogoErr'])){
-            $link_jogoErr = $_GET['link_jogoErr'];
-            $link_jogo = "";
-        }
-    } 
+    }
 ?>
 <head>
     <title>Alterar Informações do Jogo</title>

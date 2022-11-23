@@ -1,8 +1,18 @@
-<?php require("../template/header.php");?>
 <?php
-    if($_SESSION['adm'] != 1){
+session_start();
+include_once "../include/MySql.php";
+include_once "../include/functions.php";
+
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
+    } else{
+        if($_SESSION['adm'] != 1){
+            header("location:n_adm_msg.php");
+            die;
+        } else{
+            require("../template/header_s_php.php");
+        }
     }
 ?>
 <head>
@@ -45,8 +55,8 @@
                         }
                         echo '</td>';
                         echo "<td><center><a class='alt' href='adm_lista_com.php?id_publi=".$value['id_publi']."'>Comentários</a></center></td>";
-                        echo "<td><center><a class='alt' href='adm_alt_forum.php?id_publi=".$value['id_publi']."'>(+)</a></center></td>";
-                        echo "<td><center><a class='del' href='adm_del_forum.php?id_publi=".$value['id_publi']."'>(-)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='alt' href='adm_alt_forum.php?id_publi=".$value['id_publi']."'>(+)</a></center></td>";
+                        echo "<td class='exc-alt'><center><a class='del' href='adm_del_forum.php?id_publi=".$value['id_publi']."'>(-)</a></center></td>";
                         echo "</tr>";
                     }
                     echo "</table>";

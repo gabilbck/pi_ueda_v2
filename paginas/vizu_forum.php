@@ -1,4 +1,8 @@
-<?php require("../template/header.php");
+<?php 
+session_start();
+include_once "../include/MySql.php";
+include_once "../include/functions.php";
+
     if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
@@ -26,6 +30,7 @@
             }
         }
     }
+    require("../template/header_s_php.php");
 ?>
 <head>
     <title><?php echo $titulo_publi?> | UEDA

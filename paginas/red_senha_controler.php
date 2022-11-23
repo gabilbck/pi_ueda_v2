@@ -1,12 +1,12 @@
 <?php
-/*FAZER PHP E CONFIGURAÇÃO*/
 session_start();
 include_once "../include/MySql.php";
 include_once "../include/functions.php";
-if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
-    header("location:n_adm_msg.php");
-    die;
-} else{
+header('location:n_adm_msg.php');
+/*FAZER PHP E CONFIGURAÇÃO*/
+/*
+    $email_usu = "";
+    $email_usuErr = $msgErr = "";
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
         if (empty($_POST['email_usu'])){
             $email_usuErr = "Email está incorreto.";
@@ -18,7 +18,6 @@ if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         $sql = $pdo->prepare("SELECT * FROM usuario WHERE email_usu = ?");
         if ($sql->execute(array($email_usu))){
             $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-            /*
             if (count($info) > 0){
                 foreach($info as $key => $values){
                     $_SESSION['id_usu'] = $values['id_usu'];
@@ -29,7 +28,7 @@ if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
             } else {
                 $msgErr = '* Credenciais incorretas ou não informadas.';
                 header('location:login_usu.php?msgErr='.$msgErr);
-            }*/
+            }
         }
-    }
+    }*/
 ?>

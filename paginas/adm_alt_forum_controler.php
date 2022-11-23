@@ -33,17 +33,17 @@ if($_SESSION['adm'] != 1){
         }
             
         if (empty($_POST['titulo_publi'])){
-            $titulo_publiErr = "Texto vazio";
+            $titulo_publiErr = "Título da Publicação é obrigatório";
         } else {
-            $titulo_publi = $_POST['titulo_publi'];
+            $titulo_publi = test_input($_POST['titulo_publi']);
         }
         if (empty($_POST['text_publi'])){
-            $text_publiErr = "Texto vazio";
+            $text_publiErr = "Texto da Publicação é obrigatório";
         } else {
-            $text_publi = $_POST['text_publi'];
+            $text_publi = test_input($_POST['text_publi']);
         }
 
-        if ($tem_arquivo){
+        if ($tem_arquivo == true){
         //Gravar no banco
             $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=?, img_publi=? WHERE id_publi=?");
             if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent), $id_publi))){
