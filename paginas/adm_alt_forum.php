@@ -29,11 +29,11 @@ include_once "../include/functions.php";
                 }
             }
             //Erros
-            if(isset($_GET['titulo_publiErr'])){
+            if(isset($_GET['titulo_publiErr']) && !empty($_GET['titulo_publiErr'])){
                 $titulo_publiErr = $_GET['titulo_publirr'];
                 $titulo_publi = "";
             }
-            if(isset($_GET['email_usuErr'])){
+            if(isset($_GET['text_publiErr']) && !empty($_GET['text_publiErr'])){
                 $text_publiErr = $_GET['text_publiErr'];
                 $text_publi = "";
             }

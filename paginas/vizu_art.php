@@ -1,13 +1,19 @@
 <?php require("../template/header.php");?>
 <?php
     /* Visualização do artigo selecionado */
-
-    $titulo = $_SESSION['titulo_vizu'] ?? NULL;
-    $intro = $_SESSION['intro_vizu'] ?? NULL;
-    $desc = $_SESSION['desc_vizu'] ?? NULL;
-    $img = $_SESSION['img_vizu'] ?? NULL;
-    $concl = $_SESSION['concl_vizu'] ?? NULL;
-    $ref = $_SESSION['ref_vizu'] ?? NULL;
+    $id_art = $_GET['id_art'];
+    $sql = $pdo->prepare('SELECT * FROM artigo WHERE id_art =?');
+    if ($sql->execute(array($id_art))){
+        $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+        foreach($info as $key => $value){
+            $titulo = $value['titulo_art'] ?? NULL;
+            $intro = $value['intro_art'] ?? NULL;
+            $des = $value['des_art'] ?? NULL;
+            $img = $value['img_art'] ?? NULL;
+            $con = $value['con_art'] ?? NULL;
+            $ref = $value['ref_art'] ?? NULL;
+        }
+    }
 ?> 
     <head>
         <title><?php echo $titulo ?> | UEDA</title>
@@ -24,13 +30,13 @@
                 echo '<p>'.$intro.'</p><br>';
             echo "</div>";
             echo "<div class='desc_art'>";
-                echo '<p>'.$desc.'</p><br>';
+                echo '<p>'.$des.'</p><br>';
             echo "</div>";
             echo "<div class='image_art'>";
                 echo '<img style="width: 500px;" src="data:image/jfifi;base64,'.$img.'"/>';
             echo "</div>";
             echo "<div class='conclusao_art'>";
-                echo '<p>'.$concl.'</p><br>';
+                echo '<p>'.$con.'</p><br>';
             echo '</div>';
             echo '<hr>';
             echo '<br>';

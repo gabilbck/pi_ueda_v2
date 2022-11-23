@@ -60,14 +60,7 @@
                             unset($_SESSION['concl']);
                             unset($_SESSION['ref']);
                         }else if($etiqueta == 2 || $etiqueta == 3){
-                            $_SESSION['titulo_vizu'] = $tituloart;
-                            $_SESSION['img_vizu'] = $img_art;
-                            $_SESSION['id_vizu'] = $id;
-                            $_SESSION['intro_vizu'] = $intro_art;
-                            $_SESSION['desc_vizu'] = $des_art;
-                            $_SESSION['concl_vizu'] = $con_art;
-                            $_SESSION['ref_vizu'] = $ref_art;
-                            $link = 'vizu_art.php?titulo_vizu='.$tituloart;
+                            $link = 'vizu_art.php?id_art='.$id;
                         };
 
                         echo '<div class="artigo">';

@@ -6,11 +6,13 @@ include_once "../include/functions.php";
         header("location:n_adm_msg.php");
         die;
     } else{
-        $id_art  = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $image_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
+        $id_art = $titulo_art = $id_eti = $link_art = $resumo_art = $img_art = $image_art = $intro_art = $des_art = $con_art = $ref_art = $imgContent = "";
         $id_artErr  = $titulo_artErr = $id_etiErr = $link_artErr = $resumo_artErr = $img_artErr = $image_artErr = $intro_artErr = $des_artErr = $con_artErr = $ref_artErr = $msgErr = "";
 
         if (isset($_POST["submit"])){
-            if ($id_art != 1){
+            $id_eti = $_POST['id_eti'] ?? 1;
+            $id_art = $_POST['id_art'] ?? 0;
+            if ($id_eti != 1){
                 if (!empty($_FILES["image"]["name"])){
                     //Pegar informações
                     $fileName = basename($_FILES["image"]["name"]);
@@ -93,7 +95,8 @@ include_once "../include/functions.php";
             } else {
                 $ref_art = $_POST['ref_art'];
             }
-    
+            // var_dump([$id_eti, $titulo_art, $id_eti, $link_art, $resumo_art, $id_art]);
+            // die;
             if ($id_eti == 1){
                 if ($titulo_art && $id_eti && $link_art && $resumo_art){
                     $sql = $pdo->prepare("UPDATE artigo SET titulo_art=?, id_eti=?, link_art=?, resumo_art=? WHERE id_art=?");
@@ -118,15 +121,15 @@ include_once "../include/functions.php";
                         header('location:adm_lista_art.php');
                     } else{
                         $msgErr = "erro na execução de dados";
-                        header('location:adm_alt_art?titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&resumo_artErr='.$resumo_artErr.'&image_artErr='.$image_artErr.'&intro_artErr='.$intro_artErr.'&des_artErr='.$des_artErr.'&con_artErr='.$con_artErr.'&ref+_artErr='.$ref_artErr);
+                        header('location:adm_alt_art.php?id_art='.$id_art.'&titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&resumo_artErr='.$resumo_artErr.'&image_artErr='.$image_artErr.'&intro_artErr='.$intro_artErr.'&des_artErr='.$des_artErr.'&con_artErr='.$con_artErr.'&ref+_artErr='.$ref_artErr);
                     }
                 } else{
                     $msgErr = "O valor da etiqueta não é válido!";
-                    header('location:adm_alt_art?titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&resumo_artErr='.$resumo_artErr.'&image_artErr='.$image_artErr.'&intro_artErr='.$intro_artErr.'&des_artErr='.$des_artErr.'&con_artErr='.$con_artErr.'&ref+_artErr='.$ref_artErr);
+                    header('location:adm_alt_art.php?id_art='.$id_art.'&titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&resumo_artErr='.$resumo_artErr.'&image_artErr='.$image_artErr.'&intro_artErr='.$intro_artErr.'&des_artErr='.$des_artErr.'&con_artErr='.$con_artErr.'&ref+_artErr='.$ref_artErr);
                 }   
             } else{
                 $msgErr = "Não foi selecionada nenhuma etiqueta!";
-                header('location:adm_alt_art?titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&resumo_artErr='.$resumo_artErr.'&image_artErr='.$image_artErr.'&intro_artErr='.$intro_artErr.'&des_artErr='.$des_artErr.'&con_artErr='.$con_artErr.'&ref+_artErr='.$ref_artErr);
+                header('location:adm_alt_art.php?id_art='.$id_art.'&titulo_artErr='.$titulo_artErr.'&id_etiErr='.$id_etiErr.'&resumo_artErr='.$resumo_artErr.'&image_artErr='.$image_artErr.'&intro_artErr='.$intro_artErr.'&des_artErr='.$des_artErr.'&con_artErr='.$con_artErr.'&ref+_artErr='.$ref_artErr);
             }
         } else{
             header('location: n_adm_msg.php');

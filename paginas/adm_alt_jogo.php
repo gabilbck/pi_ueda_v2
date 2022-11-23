@@ -29,19 +29,19 @@ include_once "../include/functions.php";
                 }
             }
 
-            if(isset($_GET['nome_jogoErr'])){
+            if(isset($_GET['nome_jogoErr']) && !empty($_GET['nome_jogoErr'])){
                 $nome_jogoErr = $_GET['nome_jogoErr'];
                 $nome_jogo = "";
             }
-            if(isset($_GET['desc_jogoErr'])){
+            if(isset($_GET['desc_jogoErr']) && !empty($_GET['desc_jogoErr'])){
                 $desc_jogoErr = $_GET['desc_jogoErr'];
                 $desc_jogo = "";
             }
-            if(isset($_GET['image_jogoErr'])){
+            if(isset($_GET['image_jogoErr']) && !empty($_GET['image_jogoErr'])){
                 $image_jogoErr = $_GET['image_jogoErr'];
                 $imgContent = "";
             }
-            if(isset($_GET['link_jogoErr'])){
+            if(isset($_GET['link_jogoErr']) && !empty($_GET['link_jogoErr'])){
                 $link_jogoErr = $_GET['link_jogoErr'];
                 $link_jogo = "";
             }

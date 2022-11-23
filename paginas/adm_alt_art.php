@@ -37,39 +37,49 @@ include_once "../include/functions.php";
                     }
                 }
             }
-            if(isset($_GET['titulo_artErr'])){
+
+            // echo "<pre>";
+            // var_dump([
+            //     "get" => $_GET,
+            //     "isset tituloErro" => isset($_GET['titulo_artErr']) && !empty($_GET['titulo_artErr']) 
+            // ]);
+            // echo "</pre>";
+
+            // die();
+
+            if(isset($_GET['titulo_artErr']) && !empty($_GET['titulo_artErr'])){
                 $titulo_artErr = $_GET['titulo_artErr'];
                 $titulo_art = "";
             }
-            if(isset($_GET['id_etiErr'])){
+            if(isset($_GET['id_etiErr']) && !empty($_GET['id_etiErr'])){
                 $id_etiErr = $_GET['id_etiErr'];
                 $id_eti = "";
             }
-            if(isset($_GET['link_artErr'])){
+            if(isset($_GET['link_artErr']) && !empty($_GET['link_artErr'])){
                 $link_artErr = $_GET['link_artErr'];
                 $link_art = "";
             }
-            if(isset($_GET['resumo_artErr'])){
+            if(isset($_GET['resumo_artErr']) && !empty($_GET['resumo_artErr'])){
                 $resumo_artErr = $_GET['resumo_artErr'];
                 $resumo_art = "";
             }
-            if(isset($_GET['image_artErr'])){
+            if(isset($_GET['image_artErr']) && !empty($_GET['image_artErr'])){
                 $image_artErr = $_GET['image_artErr'];
                 $image_art = "";
             }
-            if(isset($_GET['intro_artErr'])){
+            if(isset($_GET['intro_artErr']) && !empty($_GET['intro_artErr'])){
                 $intro_artErr = $_GET['intro_artErr'];
                 $intro_art = "";
             }
-            if(isset($_GET['des_artErr'])){
+            if(isset($_GET['des_artErr']) && !empty($_GET['des_artErr'])){
                 $des_artErr = $_GET['des_artErr'];
                 $des_art = "";
             }
-            if(isset($_GET['con_artErr'])){
+            if(isset($_GET['con_artErr']) && !empty($_GET['con_artErr'])){
                 $con_artErr = $_GET['con_artErr'];
                 $con_art = "";
             }
-            if(isset($_GET['ref_artErr'])){
+            if(isset($_GET['ref_artErr']) && !empty($_GET['ref_artErr'])){
                 $ref_artErr = $_GET['ref_artErr'];
                 $ref_art = "";
             }
@@ -92,7 +102,7 @@ include_once "../include/functions.php";
                 <br>
                 <form action="adm_alt_art_controler.php" method="post" enctype="multipart/form-data">
                     <label>Etiquetas: </label>
-                    <select name="id_eti" onchange="altera_form(this)"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
+                    <select name="id_eti" id="id_eti" onchange="altera_form(this)"> <!-- Implementação futura: Etiquetas em foreach atualizadas com o banco de dados para serem cadastradas -->
                         <option value="">Selecione</option>
                         <option value="1" <?php if ($id_eti == 1){ ?> selected <?php } ?>>Notícia</option>
                         <option value="2" <?php if ($id_eti == 2){ ?> selected <?php } ?>>Art. Científico</option>
@@ -105,15 +115,15 @@ include_once "../include/functions.php";
                     <input id="titulo_art" class="input-text" name="titulo_art" maxlength="255" value="<?php echo $titulo_art?>" type="text" placeholder="Título do Artigo">
                     <span id="titulo_artErr" class="obrigatorio"><?php echo '<br>'.$titulo_artErr ?></span>
                     <br><br>
-                    <?php if ($id_eti == 1){ ?>
-                        <input id="link_art" class="input-text" name="link_art" value="<?php echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)"></textarea>
-                        <span id="link_arterr" class="obrigatorio"><?php echo '<br>'.$link_artErr ?></span>
+                    
+                        <input id="link_art" class="input-text" name="link_art" value="<?php echo $link_art?>" type="text" placeholder="Link do Artigo (FORA DO SITE UEDA)" <?php echo in_array($id_eti, [3,2]) ? 'style="display:none;"':''; ?>></textarea>
+                        <span id="link_artErr" class="obrigatorio" <?php echo in_array($id_eti, [3,2]) ? 'style="display:none;"':''; ?>><?php echo '<br>'.$link_artErr ?></span>
                         <br><br>
-                    <?php } ?>
+   
                     <textarea id="resumo_art" name="resumo_art" maxlength="2000" type="text" placeholder="Resumo do Texto"><?php echo $resumo_art?></textarea>
                     <span id="resumo_artErr" class="obrigatorio"><?php echo '<br>'.$resumo_artErr ?></span>
                     <br><br>
-                    <?php if (($id_eti == 2) || ($id_eti == 3)){ ?>
+                  
                         <textarea id="intro_art" name="intro_art" maxlength="2000" type="text" placeholder="Introdução do Texto"><?php echo $intro_art?></textarea>
                         <span id="intro_artErr" class="obrigatorio"><?php echo '<br>'.$intro_artErr ?></span>
                         <br><br>
@@ -142,7 +152,7 @@ include_once "../include/functions.php";
                             <span id="image_artErr" class="obrigatorio"><?php echo $image_artErr ?></span> <br> 
                         </div>
                         <br>
-                    <?php } ?>
+        
                     <div class="botoes-alt">
                     <button><a class="link-branco" href="adm_lista_art.php">VOLTAR</a></button>
                     <button type="submit" name="submit">ALTERAR</button>
@@ -161,7 +171,7 @@ include_once "../include/functions.php";
             document.getElementById('link_art').style.display='block';
             document.getElementById('resumo_art').style.display='block';
             document.getElementById('intro_art').style.display='none'; //   não aparece -> none
-            document.getElementById('desc_art').style.display='none';
+            document.getElementById('des_art').style.display='none';
             document.getElementById('con_art').style.display='none';
             document.getElementById('ref_art').style.display='none'; 
             document.getElementById('image_art').style.display='none';
@@ -179,7 +189,7 @@ include_once "../include/functions.php";
             document.getElementById('link_art').style.display='none'; //    não aparece -> none
             document.getElementById('resumo_art').style.display='block';
             document.getElementById('intro_art').style.display='block';
-            document.getElementById('desc_art').style.display='block';
+            document.getElementById('des_art').style.display='block';
             document.getElementById('con_art').style.display='block';
             document.getElementById('ref_art').style.display='block';
             document.getElementById('image_art').style.display='block';
@@ -197,7 +207,7 @@ include_once "../include/functions.php";
             document.getElementById('link_art').style.display='block';
             document.getElementById('resumo_art').style.display='block';
             document.getElementById('intro_art').style.display='block';
-            document.getElementById('desc_art').style.display='block';
+            document.getElementById('des_art').style.display='block';
             document.getElementById('con_art').style.display='block';
             document.getElementById('ref_art').style.display='block';
             document.getElementById('image_art').style.display='block';
