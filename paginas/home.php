@@ -18,7 +18,7 @@
                 <div class="margem-titulo"></div>
                 <p>Conscientizar a população para fazerem o uso eficiente da água, através de artigos e fóruns em que a população possa compartilhar suas próprias formas de utilizar a água eficientemente, seus projetos e notificações sobre algum problema envolvendo o uso da água na cidade. </p>
                 <br><br><br>
-                <img src="../images/banner_2.png" width="100%">
+                <img src="../images/bolinha_4_3.jpg" width="100%">
                 <center>
                     <table>
                         <tr>
