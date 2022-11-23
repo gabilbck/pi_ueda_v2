@@ -75,7 +75,7 @@
                         echo '<div class="margem-art"></div>';
                         echo '<a class="et-'.$class.'" href="#">'.$str.'</a>';
                         echo '<div class="margem-art"></div>';
-                        echo '<p>'.$resumo_art .'</p>';
+                        echo '<p>'.$resumo_art.'</p>';
                         echo '<div class="margem-art"></div>';
                         echo "<a target='_blank' href=".$link.">Ver Agora</a>";
                         echo '<hr>';
