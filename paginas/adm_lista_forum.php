@@ -29,7 +29,7 @@ include_once "../include/functions.php";
             
                     echo "<center>";
                     echo "<h1>LISTAGEM DE PUBLICAÇÕES DO FÓRUM</h1><br>";
-                    echo "<table class='listagens-table'";
+                    echo "<table width=100%; class='listagens-table'";
                     echo "<tr>";
                     echo "<th>ID</th>";
                     echo "<th>ID (Usuário)</th>";
@@ -37,8 +37,8 @@ include_once "../include/functions.php";
                     echo "<th>Texto</th>";
                     echo "<th>Imagem</th>";
                     echo "<th>Comentários</th>";
-                    echo "<th>Alterar</th>";
-                    echo "<th>Excluir</th>";
+                    echo "<th>+</th>";
+                    echo "<th>-</th>";
                     echo "</tr>";
                     foreach($info as $key => $value){
                         echo "<tr>";

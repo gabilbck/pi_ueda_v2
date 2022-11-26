@@ -33,8 +33,8 @@ include_once "../include/functions.php";
                     echo "<tr>";
                     echo "<th>ID</th>";
                     echo "<th>Nome</th>";
-                    echo "<th>Alterar</th>";
-                    echo "<th>Excluir</th>";
+                    echo "<th>+</th>";
+                    echo "<th>-</th>";
                     echo "</tr>";
                     foreach($info as $key => $value){
                         echo "<tr>";

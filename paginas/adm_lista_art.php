@@ -21,14 +21,8 @@ include_once "../include/functions.php";
         .tamanho-especifico-td{
             width: 10rem;
         }
-        .exc-alt{
-            width: 55px;
-        }
-        .link{
-            width: 60px;
-        }
         .id-e{
-            width: 100px;
+            width: 10rem;
         }
     </style>
 </head>
@@ -43,7 +37,7 @@ include_once "../include/functions.php";
             
                     echo "<center>";
                     echo "<h1>LISTAGEM DE ARTIGOS</h1><br>";
-                    echo "<table class='listagens-table'>";
+                    echo "<table width=100%; class='listagens-table'>";
                     echo "<tr>";
                     echo "<th>ID</th>";
                     echo "<th>Título</th>";
@@ -55,15 +49,15 @@ include_once "../include/functions.php";
                     echo "<th>Desenvolvimento</th>";
                     echo "<th>Conclusão</th>";
                     echo "<th>Referências</th>";
-                    echo "<th>Alterar</th>";
-                    echo "<th>Excluir</th>";
+                    echo "<th>+</th>";
+                    echo "<th>-</th>";
                     echo "</tr>";
                     foreach($info as $key => $value){
                         echo "<tr>";
                         //ID do artigo
                         echo "<td>".$value['id_art']."</td>";
                         //Título
-                        echo "<td>".$value['titulo_art']."</td>";
+                        echo "<td class='tit-lista'>".$value['titulo_art']."</td>";
                         //Etiquetas
                         if (($value['id_eti']) == 1){
                             echo "<td class='id-e'><center>".$value['id_eti']." (Notícia)</center></td>";
@@ -76,9 +70,9 @@ include_once "../include/functions.php";
                         }
                         //Link
                         if (!empty($value['link_art'])){ 
-                            echo "<td class='link'><center><a href='".$value['link_art']."'>ACESSE</a></center></td>";
+                            echo "<td class='link-lista'><center><a href='".$value['link_art']."'>ACESSE</a></center></td>";
                         } else{
-                            echo '<td class="link"><center><i>(Não possui)</i></center></td>';
+                            echo '<td class="link-lista"><center><i>(Não possui)</i></center></td>';
                         }
                         //Resumo
                         echo "<td class='tamanho-especifico-td'>".$value['resumo_art']."</td>";

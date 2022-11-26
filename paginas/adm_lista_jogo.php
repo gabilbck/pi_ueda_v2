@@ -28,15 +28,15 @@ include_once "../include/functions.php";
             
                     echo "<center>";
                     echo "<h1>LISTAGEM DE JOGOS</h1><br>";
-                    echo "<table class='listagens-table'";
+                    echo "<table width=100%; class='listagens-table'";
                     echo "<tr>";
                     echo "<th>ID</th>";
                     echo "<th>Nome</th>";
                     echo "<th>Descrição</th></th>";
                     echo "<th>Imagem</th>";
                     echo "<th>Link</th>";
-                    echo "<th>Alterar</th>";
-                    echo "<th>Excluir</th>";
+                    echo "<th>+</th>";
+                    echo "<th>-</th>";
                     echo "</tr>";
             
                     foreach($info as $key => $value){
@@ -52,7 +52,7 @@ include_once "../include/functions.php";
                             echo '<center><i>(Não possui imagem)</i></center>';
                         }
                         echo '</td>';
-                        echo "<td class='link-jogo-lista'><a href='".$value['link_jogo']."'>ACESSE</a></td>";
+                        echo "<td class='link-lista'><a href='".$value['link_jogo']."'>ACESSE</a></td>";
                         echo "<td class='exc-alt'><center><a class='alt' href='adm_alt_jogo.php?cod_jogo=".$value['cod_jogo']."'>(+)</a></center></td>";
                         echo "<td class='exc-alt'><center><a class='del' href='adm_del_jogo.php?cod_jogo=".$value['cod_jogo']."'>(-)</a></center></td>";
                         echo "</tr>";

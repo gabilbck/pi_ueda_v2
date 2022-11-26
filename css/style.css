@@ -36,7 +36,6 @@ h1{
     .obrigatorio{
         color: red;
         font-weight: bold;
-        font-size: 10px;
     }
     .n-obrigatorio{
         /* Gambiarra para não ficar
@@ -1007,7 +1006,7 @@ h1{
     .listagens-table{
         background: #f2f2f2;
     }
-    .lsistagens-table tr:nth-child(even) {
+    .listagens-table tr:nth-child(even){
         background:lightgray;
     }
     .listagens-table td{
@@ -1017,13 +1016,16 @@ h1{
         padding: 10px;
     }
     .exc-alt{
-        width: 55px;
+        width: 60px;
     }
-    .link-jogo-lista{
-        width: 70px;
+    .tit-lista{
+        width: 90px;
+    }
+    .link-lista{
+        width: 7rem;
         text-align: center;
     }
-
+    
 /*Página de Alterações*/
     .adm-c{
         margin: 0;

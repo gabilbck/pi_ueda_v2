@@ -28,7 +28,7 @@ include_once "../include/functions.php";
             
                     echo "<center>";
                     echo "<h1>LISTAGENS DE USUÁRIOS</h1><br>";
-                    echo "<table class='listagens-table'";
+                    echo "<table width=100%; class='listagens-table'";
                     echo "<tr>";
                     echo "<th>ID</th>";
                     echo "<th>Nome</th>";
@@ -36,8 +36,8 @@ include_once "../include/functions.php";
                     echo "<th>Senha</th>";
                     echo "<th>Nome Completo</th>";
                     echo "<th>Administrador</th>";
-                    echo "<th>Alterar</th>";
-                    echo "<th>Excluir</th>";
+                    echo "<th>+</th>";
+                    echo "<th>-</th>";
                     echo "</tr>";
             
                     foreach($info as $key => $value){
