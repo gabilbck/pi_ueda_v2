@@ -9,7 +9,6 @@
         die;
     } else{
         $id_usu = $_SESSION['id_usu'];
-        
         $id_publi = $titulo_publi = $text_publi = $img_publi = $imgContent = "";
         $titulo_publiErr = $text_publiErr = $msgErr = "";
         if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
