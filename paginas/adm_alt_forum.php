@@ -28,9 +28,10 @@ include_once "../include/functions.php";
                     }
                 }
             }
+
             //Erros
             if(isset($_GET['titulo_publiErr']) && !empty($_GET['titulo_publiErr'])){
-                $titulo_publiErr = $_GET['titulo_publirr'];
+                $titulo_publiErr = $_GET['titulo_publiErr'];
                 $titulo_publi = "";
             }
             if(isset($_GET['text_publiErr']) && !empty($_GET['text_publiErr'])){
@@ -79,7 +80,6 @@ include_once "../include/functions.php";
                     <div class="clear"></div>
                     <br>
                     <div class="botoes-alt">
-                    <button><a class="link-branco" href="adm_lista_forum.php">VOLTAR</a></button>
                     <button type="submit" name="submit">ALTERAR</button>
                     </div>
                 </form>

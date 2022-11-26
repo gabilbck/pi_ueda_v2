@@ -373,7 +373,7 @@ h1{
         background-repeat: no-repeat;
         background-size: cover;
         text-align: center;
-        background-image: url(../images/bg-sobre.png)
+        background-image: url(../images/bg-sobre.png);
     }
     .devs{
         color: white;
@@ -393,11 +393,11 @@ h1{
     }
 
     .devs a:hover{
-        color: #009CFF;
+        font-weight: bold;
     }
 
     .devs li:hover{
-        color: #009CFF;
+        font-weight: bold;
     }
 
 /* JOGOS */
@@ -1007,7 +1007,7 @@ h1{
     .listagens-table{
         background: #f2f2f2;
     }
-    .listagens-table tr:nth-child(even) {
+    .lsistagens-table tr:nth-child(even) {
         background:lightgray;
     }
     .listagens-table td{
@@ -1018,6 +1018,10 @@ h1{
     }
     .exc-alt{
         width: 55px;
+    }
+    .link-jogo-lista{
+        width: 70px;
+        text-align: center;
     }
 
 /*Página de Alterações*/

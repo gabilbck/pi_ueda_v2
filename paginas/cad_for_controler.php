@@ -4,7 +4,7 @@
     include_once "../include/functions.php";
 ?>
 <?php
-    if($_SESSION['adm'] != 1){
+    if(!array_key_exists("id_usu",$_SESSION) || $_SESSION['id_usu'] == ""){
         header("location:n_adm_msg.php");
         die;
     } else{

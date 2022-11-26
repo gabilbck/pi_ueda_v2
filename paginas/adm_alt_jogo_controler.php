@@ -61,7 +61,7 @@
             } else{
                 $sql = $pdo->prepare("UPDATE jogos SET nome_jogo=?, desc_jogo=?, link_jogo=? WHERE cod_jogo=?");
                 if ($nome_jogo && $desc_jogo && $link_jogo && $cod_jogo){
-                        if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, $cod_jogo))){
+                    if ($sql->execute(array($nome_jogo, $desc_jogo, $link_jogo, $cod_jogo))){
                         $msgErr = "Dados alterados com sucesso!";
                         header('location: adm_lista_jogo.php');
                     } 

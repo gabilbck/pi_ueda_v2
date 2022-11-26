@@ -1,5 +1,4 @@
 <?php
-    //Altera porém não aparece os spans
 session_start();
 include_once "../include/MySql.php";
 include_once "../include/functions.php";
@@ -44,21 +43,26 @@ if($_SESSION['adm'] != 1){
         }
 
         if ($tem_arquivo == true){
-        //Gravar no banco
             $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=?, img_publi=? WHERE id_publi=?");
             if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, base64_encode($imgContent), $id_publi))){
                 $msgErr = "Dados alterados com sucesso!";
                 header('location: adm_lista_forum.php');
             } else{
-                $id_publi = $_POST["id_publi"];
+                $id_publi = $_POST['id_publi'];
                 $msgErr = "dados não alterados."; 
                 header('location: adm_alt_forum.php?id_publi='.$id_publi.'&titulo_publiErr='.$titulo_publiErr.'&text_publiErr='.$text_publiErr);
             }
         } else{
             $sql = $pdo->prepare("UPDATE publica_forum SET id_usu=?, titulo_publi=?, text_publi=? WHERE id_publi=?");
-            if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, $id_publi))){
-                $msgErr = "Dados alterados com sucesso!";
-                header('location: adm_lista_forum.php');
+            if ($titulo_publi && $text_publi){
+                if ($sql->execute(array($id_usu, $titulo_publi, $text_publi, $id_publi))){
+                    $msgErr = "Dados alterados com sucesso!";
+                    header('location: adm_lista_forum.php');
+                }  else{
+                    $id_publi = $_POST["id_publi"];
+                    $msgErr = "dados não alterados."; 
+                    header('location: adm_alt_forum.php?id_publi='.$id_publi.'&titulo_publiErr='.$titulo_publiErr.'&text_publiErr='.$text_publiErr);
+                }
             } else{
                 $id_publi = $_POST["id_publi"];
                 $msgErr = "dados não alterados."; 

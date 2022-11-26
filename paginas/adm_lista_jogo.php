@@ -52,7 +52,7 @@ include_once "../include/functions.php";
                             echo '<center><i>(Não possui imagem)</i></center>';
                         }
                         echo '</td>';
-                        echo "<td>".$value['link_jogo']."</td>";
+                        echo "<td class='link-jogo-lista'><a href='".$value['link_jogo']."'>ACESSE</a></td>";
                         echo "<td class='exc-alt'><center><a class='alt' href='adm_alt_jogo.php?cod_jogo=".$value['cod_jogo']."'>(+)</a></center></td>";
                         echo "<td class='exc-alt'><center><a class='del' href='adm_del_jogo.php?cod_jogo=".$value['cod_jogo']."'>(-)</a></center></td>";
                         echo "</tr>";

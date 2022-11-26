@@ -85,7 +85,6 @@ include_once "../include/functions.php";
                         <span class="obrigatorio"><?php echo '<br>'.$image_jogoErr ?></span><br>
                     </div>
                     <div class="botoes-alt">
-                        <button><a class="link-branco" href="adm_lista_jogo.php">VOLTAR</a></button>
                         <button type="submit" name="submit">ALTERAR</button>
                     </div>
                 </form>

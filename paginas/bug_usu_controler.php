@@ -4,10 +4,6 @@
     include_once "../include/functions.php";
 ?>
 <?php
-if($_SESSION['adm'] != 1){
-    header("location:n_adm_msg.php");
-    die;
-} else{
     $email_bug = $desc_bug = $cod_bug =  "";
     $email_bugErr = $desc_bugErr = $msgErr = "";
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
@@ -41,5 +37,4 @@ if($_SESSION['adm'] != 1){
     } else{
         header("Location:n_adm_msg.php");
     }
-}
 ?>

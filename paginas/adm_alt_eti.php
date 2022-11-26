@@ -50,7 +50,6 @@ include_once "../include/functions.php";
                     <span class="obrigatorio"><?php echo '<br>'.$nome_etiErr ?></span>
                     <br><br>
                     <div class="botoes-alt">
-                        <button><a class="link-branco" href="adm_lista_eti.php">VOLTAR</a></button>
                         <button type="submit" name="cadastro">ALTERAR</button>
                     </div>
                 </form>

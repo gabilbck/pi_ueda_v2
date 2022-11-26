@@ -154,7 +154,6 @@ include_once "../include/functions.php";
                         <br>
         
                     <div class="botoes-alt">
-                    <button><a class="link-branco" href="adm_lista_art.php">VOLTAR</a></button>
                     <button type="submit" name="submit">ALTERAR</button>
                     </div>
                 </form>

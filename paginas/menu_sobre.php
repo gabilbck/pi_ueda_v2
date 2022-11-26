@@ -53,15 +53,16 @@
             <div class="devs">
                 <h1 style="font-weight: 100; text-transform:none; font-size: 1.3rem;">
                     <a target='_blank' href='https://www.linkedin.com/in/adriano-ramos-3551b1243'>
-                        <i class="fa-brands fa-linkedin"></i>  Adriano Ramos</a> | 
-                            <a target='_blank' href='https://www.linkedin.com/in/felipe-schmitt-098066243/'>
-                                <i class="fa-brands fa-linkedin"></i>  Felipe Gabriel Schmitt</a> | 
-                                    <a target='_blank' href='https://www.linkedin.com/in/gabrieli-eduarda-l-aa0877231'>
-                                        <i class="fa-brands fa-linkedin"></i>  Gabrieli Eduarda Lembeck</a> | 
-                                            <a target='_blank' href='https://www.linkedin.com/in/lucas-coelho-357614243/'>
-                                                <i class="fa-brands fa-linkedin"></i>  Lucas Inacio Diomario Coelho</a> | 
-                                                    <a target='_blank' href='https://www.linkedin.com/in/nina-carolina-lima-barater-3651b1243'>
-                                                        <i class="fa-brands fa-linkedin"></i>  Nina Carolina Lima Barater</a></h1>
+                    <i class="fa-brands fa-linkedin"></i>  Adriano Ramos</a> | 
+                    <a target='_blank' href='https://www.linkedin.com/in/felipe-schmitt-098066243/'>
+                    <i class="fa-brands fa-linkedin"></i>  Felipe Gabriel Schmitt</a> | 
+                    <a target='_blank' href='https://www.linkedin.com/in/gabrieli-eduarda-l-aa0877231'>
+                    <i class="fa-brands fa-linkedin"></i>  Gabrieli Eduarda Lembeck</a>
+                    <br><br>
+                    <a target='_blank' href='https://www.linkedin.com/in/lucas-coelho-357614243/'>
+                    <i class="fa-brands fa-linkedin"></i>  Lucas Inacio Diomario Coelho</a> | 
+                    <a target='_blank' href='https://www.linkedin.com/in/nina-carolina-lima-barater-3651b1243'>
+                    <i class="fa-brands fa-linkedin"></i>  Nina Carolina Lima Barater</a></h1>
             </div>
         </div>
     </main>
