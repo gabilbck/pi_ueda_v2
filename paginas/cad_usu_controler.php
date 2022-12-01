@@ -8,7 +8,7 @@
     $nome_usuErr = $email_usuErr = $senha_usuErr = $nome_real_usuErr = $admErr = $msgErr = "";
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
         if (empty ($_POST['nome_usu'])){
-            $nome_usuErr = "Nome Completo é obrigatório!";
+            $nome_usuErr = "Nome de usuario é obrigatório!";
         } else {
             $nome_usu = test_input($_POST["nome_usu"]);
         }
@@ -23,7 +23,7 @@
             $senha_usu = test_input($_POST["senha_usu"]);
         }
         if (empty($_POST['nome_real_usu'])){
-            $nome_real_usuErr = "Nome de Usuário é obrigatório!";
+            $nome_real_usuErr = "Nome de Completo é obrigatório!";
         } else {
             $nome_real_usu = test_input($_POST["nome_real_usu"]);
         }
@@ -35,12 +35,13 @@
                     $dados = $sql->fetchAll(PDO::FETCH_ASSOC);
                     if($dados[0]['nome_usu'] == $nome_usu){
                         $nome_usuErr = "Nome de usuário já cadastrado";
+                        header('location:cad_usu.php?nome_usuErr='.$nome_usuErr);
                     }
                     if($dados[0]['email_usu'] == $email_usu){
                         $email_usuErr = "E-mail já cadastrado";
+                        header('location:cad_usu.php?email_usuErr='.$email_usuErr);
                     }
                 } else {
-                    //Inserir dados
                     $sql = $pdo->prepare("INSERT INTO usuario (id_usu, nome_usu, email_usu, senha_usu, nome_real_usu, adm)
                                         VALUES (null, ?, ?, ?, ?, 0)");
                     if ($sql->execute(array($nome_usu, $email_usu, MD5($senha_usu), $nome_real_usu))){
