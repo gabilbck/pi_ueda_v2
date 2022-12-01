@@ -6,8 +6,8 @@ Conscientizar a população para fazerem o uso eficiente da água, através de a
 
 ## Integrantes
 
-Adriano Ramos
-Felipe Gabriel Schmitt
-Gabrieli Eduarda Lembeck
-Lucas Inacio Diomario Coelho
+Adriano Ramos,
+Felipe Gabriel Schmitt,
+Gabrieli Eduarda Lembeck,
+Lucas Inacio Diomario Coelho,
 Nina Carolina Lima Barater
